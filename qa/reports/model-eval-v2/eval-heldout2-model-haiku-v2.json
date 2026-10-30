@@ -1,0 +1,207 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 10,
+  "seeded_detected": 10,
+  "recall": 1.0,
+  "missed": [],
+  "true_positive_findings": 11,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "K01": [
+      {
+        "rule": "hours_mismatch",
+        "line": 36,
+        "severity": "block"
+      }
+    ],
+    "K02": [
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "K03": [
+      {
+        "rule": "link_broken",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "K04": [
+      {
+        "rule": "unsourced_stat",
+        "line": 18,
+        "severity": "warn"
+      }
+    ],
+    "K05": [
+      {
+        "rule": "prohibited_promise",
+        "line": 37,
+        "severity": "block"
+      }
+    ],
+    "K06": [
+      {
+        "rule": "schema_mismatch",
+        "line": 44,
+        "severity": "block"
+      }
+    ],
+    "K07": [
+      {
+        "rule": "medical_myth",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "K08": [
+      {
+        "rule": "fake_testimonial",
+        "line": 34,
+        "severity": "block"
+      }
+    ],
+    "K09": [
+      {
+        "rule": "unsupported_superlative",
+        "line": 46,
+        "severity": "warn"
+      }
+    ],
+    "K10": [
+      {
+        "rule": "chatbot_residue",
+        "line": 32,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "PUBLICAR",
+    "clean/02-dental-implants-vs-bridges.md": "PUBLICAR",
+    "clean/03-is-teeth-whitening-safe.md": "PUBLICAR",
+    "clean/04-dental-emergency-austin.md": "PUBLICAR",
+    "heldout2/01-how-often-dental-cleaning.md": "BLOQUEAR",
+    "heldout2/02-dental-implants-vs-bridges.md": "BLOQUEAR",
+    "heldout2/03-is-teeth-whitening-safe.md": "BLOQUEAR",
+    "heldout2/04-dental-emergency-austin.md": "BLOQUEAR"
+  },
+  "llm": {
+    "status": "ok",
+    "failed": [],
+    "cost_usd": 0.0217,
+    "model_detected": [
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "K07",
+      "K08",
+      "K09",
+      "K10"
+    ],
+    "model_recall": 0.8,
+    "model_missed": [
+      "K01",
+      "K02"
+    ],
+    "fixture_disclaimer_findings_ignored": 1,
+    "clean_posts_not_publish_with_model": 4,
+    "rules_detected_ids": [
+      "K01",
+      "K02",
+      "K03",
+      "K06",
+      "K07",
+      "K09",
+      "K10"
+    ],
+    "model_tp": 8,
+    "model_fp": 9,
+    "model_precision": 0.47058823529411764,
+    "model_clean_fp": 6,
+    "model_only_extra": [
+      "K04",
+      "K05",
+      "K08"
+    ],
+    "combined_recall": 1.0,
+    "combined_detected": 10,
+    "combined_precision": null,
+    "false_positive_list": [
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "block",
+        "type": "fact_vs_ficha",
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "why": "The ficha lists Delta Dental, Cigna and MetLife only as accepted insurance and says nothing about in-network contracts, so 'in network' asse"
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "reviewed_by: Dr. Elena Marsh",
+        "why": "The front matter attributes a clinical review to a named dentist, but nothing in the ficha or the post supports that a review took place, so"
+      },
+      {
+        "file": "clean/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "The ADA's [MouthHealthy page on bridges](https://www.mouthhealthy.org/all-topics-a-z/bridg",
+        "why": "I cannot verify that this exact URL exists or says what the sentence claims, so the citation is unverified and must not be published as-is."
+      },
+      {
+        "file": "clean/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "most patients describe soreness afterward rather than sharp pain",
+        "why": "This is a statistic-like statement about patient experience with no source, and a reader could take it as established fact."
+      },
+      {
+        "file": "clean/03-is-teeth-whitening-safe.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+        "why": "I cannot verify that this ADA MouthHealthy path exists, so the link may be broken or invented and cannot be confirmed to support the whiteni"
+      },
+      {
+        "file": "clean/04-dental-emergency-austin.md",
+        "severity": "block",
+        "type": "false_medical_claim",
+        "quote": "Pain that lasts more than a day or two, or comes with fever or swelling, needs a prompt ex",
+        "why": "Fever or swelling with a toothache can signal a spreading infection that needs same-day urgent care, and the post's own intro sends swelling"
+      },
+      {
+        "file": "heldout2/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+        "why": "I cannot verify that this ADA MouthHealthy URL exists or that the page supports the sentence it is attached to, and the path format looks un"
+      },
+      {
+        "file": "heldout2/04-dental-emergency-austin.md",
+        "severity": "block",
+        "type": "fact_vs_ficha",
+        "quote": "We are open Monday through Thursday from 8 a.m. to 5 p.m., and on Friday from 8 a.m. to 5 ",
+        "why": "The ficha lists Friday hours as 08:00 to 13:00, not 8 a.m. to 5 p.m., so the post gives patients wrong hours during an emergency."
+      },
+      {
+        "file": "heldout2/04-dental-emergency-austin.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "The ADA's [MouthHealthy page on dental emergencies](https://www.mouthhealthy.org/all-topic",
+        "why": "I cannot verify that this URL exists or that the page says what the post claims, so the citation is unverified and could be a fabricated or "
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+--- draft.md
++++ final-candidate.md
+@@ -14,7 +14,7 @@
+   - question: "Is teeth whitening safe?"
+     answer: "Whitening supervised by a dentist after an exam is a common, accepted treatment. Tooth sensitivity and gum irritation can happen, so tell your dentist if you notice either."
+   - question: "How much is in-office whitening at Bluebonnet Hollow Dental?"
+-    answer: "In-office whitening is $395. The new patient exam and X-rays are $129."
++    answer: "In-office whitening at Bluebonnet Hollow Dental is $395."
+   - question: "Why does my filling look different after whitening?"
+     answer: "Whitening lightens natural tooth structure, not fillings, so a filling can stand out once the surrounding tooth is lighter. Ask your dentist whether it should be replaced."
+ ---
+@@ -35,7 +35,7 @@
+ 
+ Whitening supervised by a dentist is a common cosmetic treatment. A dentist can check for cavities, gum problems and worn areas first, since these can make whitening uncomfortable.
+ 
+-Some people notice tooth sensitivity or gum irritation. The ADA's [MouthHealthy page on whitening](https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening) covers sensitivity and what to ask your dentist. Tell us if anything feels off during or after treatment.
++Some people notice tooth sensitivity or gum irritation. Tell us if anything feels off during or after treatment.
+ 
+ ## What if a filling shows after whitening?
+ 
+@@ -52,7 +52,7 @@
+ 
+ ## How much is in-office whitening?
+ 
+-In-office whitening at Bluebonnet Hollow Dental is $395. A new patient exam and X-rays are $129.
++In-office whitening at Bluebonnet Hollow Dental is $395.
+ 
+ For questions about your own situation, call us at (512) 555-0142 or use the [contact page](/contact).
+ 

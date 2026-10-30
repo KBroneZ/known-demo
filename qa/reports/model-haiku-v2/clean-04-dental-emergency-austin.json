@@ -1,0 +1,63 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "qa/fixtures/posts/clean/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-haiku-v2/prompts/clean-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.0031105000000000004,
+    "output": "qa/reports/model-haiku-v2/llm/clean-04-dental-emergency-austin.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Pain that lasts more than a day or two, or comes with fever or swelling, needs a prompt exam.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "Fever or swelling with a toothache can signal a spreading infection that needs same-day urgent care, and the post's own intro sends swelling that spreads to the face or neck to an emergency room, so 'prompt exam' understates the urgency.",
+        "fix": "Replace with: Fever or swelling with a toothache needs same-day dental care, and if swelling spreads to your face or neck, or you have trouble breathing or swallowing, go to an emergency room or call 911.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "The ADA's [MouthHealthy page on dental emergencies](https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies) lists common cases and what to do.",
+        "type": "broken_or_fake_source",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The link plausibly supports the claim, but I could not confirm that this exact URL path resolves, so it should be checked before publication.",
+        "fix": "Open the link to confirm it resolves to the ADA MouthHealthy dental emergencies page, and update the path if it does not.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Our emergency dental care is led by Dr. Elena Marsh.",
+        "type": "fact_vs_ficha",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha lists emergency care as one of Dr. Marsh's focus areas but does not say she leads the service, so 'led by' is stronger than the source supports.",
+        "fix": "Reword to: Dr. Elena Marsh, who focuses on emergency care, is one of our dentists for these visits.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Dental emergencies rarely happen at a convenient time.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This generic opener reads like stock AI copy and adds no specific information for the reader.",
+        "fix": "Open with a concrete scenario, such as a tooth that cracked while eating, and state the first step to take.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-04-dental-emergency-austin"
+}

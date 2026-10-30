@@ -1,0 +1,52 @@
+{
+  "post": "02-tooth-colored-fillings",
+  "file": "fixtures/posts/heldout3/02-tooth-colored-fillings.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 20,
+      "evidence": "last forever",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "price_not_in_ficha",
+      "severity": "block",
+      "line": 28,
+      "evidence": "$180",
+      "message": "Price is not published in the ficha.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "insurance_not_in_ficha",
+      "severity": "block",
+      "line": 34,
+      "evidence": "Aetna",
+      "message": "Carrier is not listed as accepted in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout3-02-tooth-colored-fillings.prompt.md"
+  },
+  "name": "heldout3-02-tooth-colored-fillings"
+}

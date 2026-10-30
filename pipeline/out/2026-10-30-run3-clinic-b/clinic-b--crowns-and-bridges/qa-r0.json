@@ -1,0 +1,26 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.58,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0030402,
+    "seconds": 16.2,
+    "findings": [
+      {
+        "quote": "The American Dental Association lists [what to do in dental emergencies](https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies), including a lost crown or a toothache.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The specific examples attributed to the ADA page (lost crown, toothache) are not verifiable from the link and no page content was provided to confirm them.",
+        "fix": "Confirm the page lists these examples or remove the attribution to the specific items."
+      }
+    ],
+    "dropped_unverifiable_url": 1,
+    "downgraded_blocks": 0,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

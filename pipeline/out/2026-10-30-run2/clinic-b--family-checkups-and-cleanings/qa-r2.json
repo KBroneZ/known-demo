@@ -1,0 +1,27 @@
+{
+  "name": "r2",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.05,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0047734000000000006,
+    "seconds": 32.5,
+    "findings": [
+      {
+        "quote": "instead of waiting for your next yearly checkup",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha says most people come in about twice a year and that the dentist sets the schedule, so the post's implied yearly recall misstates the clinic's stated practice.",
+        "fix": "Replace \"your next yearly checkup\" with \"your next scheduled checkup\" or \"your next checkup\", or align the wording with the twice-a-year schedule in the ficha.",
+        "downgraded_from": "block"
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 1,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

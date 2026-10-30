@@ -1,0 +1,22 @@
+---
+import Page from '../../layouts/Page.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import Cta from '../../components/Cta.astro';
+import { clinic, metaFor, servicePages } from '../../lib/site.ts';
+
+const meta = await metaFor('/services');
+const others = clinic.services.filter((s) => !s.slug);
+---
+<Page {...meta} heading="Dental services" trail={[{ name: 'Services', path: '/services' }]}>
+  <div class="grid">
+    {servicePages().map((s) => <ServiceCard as="h2" name={s.name} summary={s.summary!} href={`/services/${s.slug}`} />)}
+  </div>
+  {others.length > 0 && (
+    <>
+      <h2>Also available</h2>
+      <ul>{others.map((s) => <li>{s.name}</li>)}</ul>
+      <p>Ask about these when you <a href="/contact">contact us</a>.</p>
+    </>
+  )}
+  <Cta />
+</Page>

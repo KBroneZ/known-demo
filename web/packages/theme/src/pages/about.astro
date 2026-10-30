@@ -1,0 +1,19 @@
+---
+import Page from '../layouts/Page.astro';
+import Cta from '../components/Cta.astro';
+import { clinic, metaFor, servicePages } from '../lib/site.ts';
+import { dentistLd } from '../lib/jsonld.ts';
+
+const meta = await metaFor('/about');
+---
+<Page {...meta} heading={clinic.about.headline} trail={[{ name: 'About us', path: '/about' }]} jsonld={[dentistLd(clinic)]} narrow>
+  <div class="prose">
+    {clinic.about.paragraphs.map((p) => <p>{p}</p>)}
+    <p>Meet <a href="/team">our dentists</a>, browse <a href="/services">what we treat</a>, or <a href="/contact">get in touch</a>.</p>
+    <h2>What we offer</h2>
+    <ul>
+      {clinic.services.map((s) => <li>{s.slug ? <a href={`/services/${s.slug}`}>{s.name}</a> : s.name}</li>)}
+    </ul>
+  </div>
+  <Cta />
+</Page>

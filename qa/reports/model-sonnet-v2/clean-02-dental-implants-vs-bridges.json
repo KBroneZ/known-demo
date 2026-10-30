@@ -1,0 +1,45 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "qa/fixtures/posts/clean/02-dental-implants-vs-bridges.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v2/prompts/clean-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.02943,
+    "output": "qa/reports/model-sonnet-v2/llm/clean-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "PUBLICAR",
+    "model_verdict": "PUBLICAR",
+    "raw_verdict": "PUBLICAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "most patients describe soreness afterward rather than sharp pain",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a harmless general statement about post-implant discomfort, but it has no source behind it.",
+        "fix": "Cite an ADA or NIDCR page, or soften it to something like 'Some soreness afterward is common; your dentist will explain what to expect.'",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "reviewed_by: Dr. Marcus Oyelaran",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha lists Dr. Oyelaran's focus as family and pediatric dentistry and clear aligners, not implants, so he is an odd medical reviewer for an implant post.",
+        "fix": "Consider having Dr. Elena Marsh, who lists implants as a focus, be named as the clinical reviewer, or add a note on who reviewed which part.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-02-dental-implants-vs-bridges"
+}

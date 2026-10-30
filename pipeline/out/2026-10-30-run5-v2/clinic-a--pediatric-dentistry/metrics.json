@@ -1,0 +1,46 @@
+{
+  "clinic": "clinic-a",
+  "service": "Pediatric dentistry",
+  "topic": "When should a child first see a dentist?",
+  "dir": "clinic-a--pediatric-dentistry",
+  "status": "published",
+  "rounds": 0,
+  "verdict_path": [
+    "PUBLICAR"
+  ],
+  "human_review": [
+    "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+    "Open each external link in a browser (the check only fetches status codes)",
+    "4 model style suggestion(s) were logged and did not block; see qa-r*.json"
+  ],
+  "slug": "when-should-child-first-see-dentist-parent-s-guide",
+  "verdict": "PUBLICAR",
+  "pages_route_added": true,
+  "published_to": "web/sites/clinic-a/src/content/posts/when-should-child-first-see-dentist-parent-s-guide.md",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.04574,
+      "seconds": 28.1,
+      "input_tokens": 2,
+      "output_tokens": 3462,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "sonnet",
+      "cost_usd": 0.05219,
+      "seconds": 17.6
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 28.13,
+    "qa": 18.28
+  },
+  "cost_usd": 0.0979,
+  "input_tokens": 2,
+  "output_tokens": 3462,
+  "wall_seconds": 46.4
+}

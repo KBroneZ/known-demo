@@ -1,0 +1,112 @@
+{
+  "post": "02-tooth-colored-fillings",
+  "file": "fixtures/posts/heldout3/02-tooth-colored-fillings.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "price_not_in_ficha",
+      "severity": "block",
+      "line": 28,
+      "evidence": "$180",
+      "message": "Price is not published in the ficha.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "insurance_not_in_ficha",
+      "severity": "block",
+      "line": 34,
+      "evidence": "Aetna",
+      "message": "Carrier is not listed as accepted in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-sonnet/prompts/02-tooth-colored-fillings.prompt.md",
+    "cost_usd": 0.02817,
+    "output": "reports/model-sonnet/llm/02-tooth-colored-fillings.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "Tooth-colored fillings last forever.",
+        "type": "false_medical_claim",
+        "severity": "block",
+        "why": "Fillings wear, stain, loosen and need replacement, which the post itself says later, and ADA/NIDCR guidance says no filling lasts forever; this is also an implied guarantee.",
+        "fix": "Replace with 'Tooth-colored fillings can last many years, but they may eventually need repair or replacement.'"
+      },
+      {
+        "quote": "A tooth-colored filling costs $180.",
+        "type": "fact_vs_ficha",
+        "severity": "block",
+        "why": "The ficha lists no filling price; only $129 exam/x-rays, $395 whitening and $95 emergency exam may appear.",
+        "fix": "Delete the price and tell readers to call (512) 555-0142 for an estimate."
+      },
+      {
+        "quote": "We accept Aetna.",
+        "type": "fact_vs_ficha",
+        "severity": "block",
+        "why": "Aetna is not in the accepted insurance list (Delta Dental, Cigna, MetLife), so this is a false claim about coverage.",
+        "fix": "Remove it or name only Delta Dental, Cigna and MetLife, and advise readers to confirm their plan with the office."
+      },
+      {
+        "quote": "Tooth color does not mean the material will remain unchanged forever.",
+        "type": "other",
+        "severity": "info",
+        "why": "This sentence is accurate and contradicts the earlier 'last forever' claim, which makes the inconsistency obvious.",
+        "fix": "Keep this sentence and fix the earlier claim."
+      },
+      {
+        "quote": "no single material is the best choice for every situation",
+        "type": "other",
+        "severity": "info",
+        "why": "This is a hedged statement, not an unsupported superlative, so no action is needed.",
+        "fix": "No change needed."
+      },
+      {
+        "quote": "A dental exam is the best way to discuss your particular tooth and the available options.",
+        "type": "unsupported_superlative",
+        "severity": "info",
+        "why": "'Best way' is a mild generic superlative, though it is reasonable advice and does not refer to the clinic's quality.",
+        "fix": "Optionally soften to 'A dental exam is a good way to discuss...'."
+      },
+      {
+        "quote": "Composite is placed in layers and hardened with a special light.",
+        "type": "unsourced_claim",
+        "severity": "info",
+        "why": "This is consistent with mainstream dental guidance, and the sources listed plausibly support it, but I could not open the links to confirm their URLs or content.",
+        "fix": "Check that the three source URLs resolve before publishing."
+      },
+      {
+        "quote": "[National Institute of Dental and Craniofacial Research: Dental Fillings](https://www.nidcr.nih.gov/health-info/dental-fillings)",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "I cannot verify that this URL exists; NIDCR's actual page paths may differ, and I will not assume it resolves.",
+        "fix": "Open each of the three source links and replace any that return an error with working pages."
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental offers tooth-colored fillings.",
+        "type": "schema_incoherent",
+        "severity": "info",
+        "why": "No JSON-LD block was included in the post, so the structured data cannot be checked against the visible text.",
+        "fix": "Supply the JSON-LD and confirm that name, address, phone, hours and any price match the ficha."
+      }
+    ]
+  },
+  "name": "02-tooth-colored-fillings"
+}

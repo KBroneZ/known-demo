@@ -1,0 +1,46 @@
+{
+  "clinic": "clinic-a",
+  "service": "Clear aligners",
+  "topic": "Do clear aligners hurt?",
+  "dir": "clinic-a--clear-aligners",
+  "status": "published",
+  "rounds": 0,
+  "verdict_path": [
+    "PUBLICAR"
+  ],
+  "human_review": [
+    "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+    "Open each external link in a browser (the check only fetches status codes)",
+    "2 model style suggestion(s) were logged and did not block; see qa-r*.json"
+  ],
+  "slug": "do-clear-aligners-hurt-what-expect-austin",
+  "verdict": "PUBLICAR",
+  "pages_route_added": true,
+  "published_to": "web/sites/clinic-a/src/content/posts/do-clear-aligners-hurt-what-expect-austin.md",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.02302,
+      "seconds": 12.4,
+      "input_tokens": 2,
+      "output_tokens": 1206,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "sonnet",
+      "cost_usd": 0.04038,
+      "seconds": 10.9
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 12.44,
+    "qa": 10.9
+  },
+  "cost_usd": 0.0634,
+  "input_tokens": 2,
+  "output_tokens": 1206,
+  "wall_seconds": 23.3
+}

@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-30T05:09:03.350Z",
+  "sites": {
+    "clinic-a": {
+      "jsonld": {
+        "ok": true,
+        "scripts": 40,
+        "checks": 427,
+        "failures": []
+      },
+      "links": {
+        "ok": true,
+        "pages": 19,
+        "internalLinks": 411,
+        "externalLinks": 10,
+        "checks": 1065,
+        "failures": []
+      },
+      "weight": {
+        "pages": 19,
+        "avgHtmlRaw": 15081,
+        "avgHtmlGzip": 4305,
+        "avgHtmlBrotli": 3566,
+        "maxHtmlGzip": 5623,
+        "maxRoute": "/blog/root-canal-extraction-how-decide-austin",
+        "avgTotalRawWithRefs": 15329,
+        "avgRequests": 2,
+        "ogImageBytes": 18616
+      },
+      "browser": {
+        "site": "clinic-a",
+        "ok": true,
+        "axeRuns": 38,
+        "violations": 0,
+        "worstLcpMs": 208,
+        "worstCls": 0,
+        "failures": []
+      }
+    },
+    "clinic-b": {
+      "jsonld": {
+        "ok": true,
+        "scripts": 34,
+        "checks": 353,
+        "failures": []
+      },
+      "links": {
+        "ok": true,
+        "pages": 17,
+        "internalLinks": 363,
+        "externalLinks": 9,
+        "checks": 932,
+        "failures": []
+      },
+      "weight": {
+        "pages": 17,
+        "avgHtmlRaw": 14592,
+        "avgHtmlGzip": 4163,
+        "avgHtmlBrotli": 3442,
+        "maxHtmlGzip": 5810,
+        "maxRoute": "/blog/how-long-do-tooth-colored-fillings-last-when-replace",
+        "avgTotalRawWithRefs": 14840,
+        "avgRequests": 2,
+        "ogImageBytes": 19522
+      },
+      "browser": {
+        "site": "clinic-b",
+        "ok": true,
+        "axeRuns": 34,
+        "violations": 0,
+        "worstLcpMs": 60,
+        "worstCls": 0,
+        "failures": []
+      }
+    }
+  }
+}

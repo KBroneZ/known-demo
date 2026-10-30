@@ -1,0 +1,54 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "qa/fixtures/posts/clean/01-how-often-dental-cleaning.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v2/prompts/clean-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.0381,
+    "output": "qa/reports/model-sonnet-v2/llm/clean-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "PUBLICAR",
+    "model_verdict": "PUBLICAR",
+    "raw_verdict": "PUBLICAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "If you are new to us and paying without insurance, the new patient exam with X-rays is $129.",
+        "type": "fact_vs_ficha",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The $129 price matches the ficha, but the ficha does not say it applies only to patients paying without insurance, so that condition is not backed by the ficha.",
+        "fix": "Say 'The new patient exam with X-rays is $129' as the ficha states it, or confirm the self-pay condition with the clinic before keeping it.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "type": "fact_vs_ficha",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The carriers match the ficha, but the ficha only says they are accepted, and 'in network' is a more specific contractual claim.",
+        "fix": "Use 'we accept Delta Dental, Cigna and MetLife', matching the ficha wording.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "Tartar buildup varies by person (saliva, hygiene, diet), and the claim slightly conflicts with the post's own point that schedules should be individualized.",
+        "fix": "Rephrase to say tartar builds up at different rates for different people, which is why six months is a common starting point.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-01-how-often-dental-cleaning"
+}

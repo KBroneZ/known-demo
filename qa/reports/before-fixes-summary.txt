@@ -1,0 +1,3 @@
+BEFORE (README as of the heldout3 round): rules blind 7/10, 7/10, 3/12; Sonnet 10/10, 10/10, 12/12;
+Sonnet strict precision 11/19, 10/23, 13/24 (58/43/54%), pooled over sets 1-2 earlier 33/64=52%;
+Haiku 31/60=52%.

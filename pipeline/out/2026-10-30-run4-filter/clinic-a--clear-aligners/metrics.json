@@ -1,0 +1,76 @@
+{
+  "clinic": "clinic-a",
+  "service": "Clear aligners",
+  "topic": "How long does it take to straighten teeth with clear aligners?",
+  "dir": "clinic-a--clear-aligners",
+  "status": "needs-human",
+  "rounds": 2,
+  "verdict_path": [
+    "CORREGIR",
+    "CORREGIR",
+    "CORREGIR"
+  ],
+  "human_review": [
+    "Still CORREGIR after 2 auto-fix round(s): model:unsourced_claim"
+  ],
+  "slug": "how-long-do-clear-aligners-take-straighten-teeth",
+  "verdict": "CORREGIR",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.02428,
+      "seconds": 15.0,
+      "input_tokens": 2,
+      "output_tokens": 1412,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.00295,
+      "seconds": 16.0
+    },
+    {
+      "stage": "fix-r1",
+      "model": "sonnet",
+      "cost_usd": 0.04039,
+      "seconds": 14.9,
+      "input_tokens": 2,
+      "output_tokens": 2228,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r1",
+      "model": "haiku",
+      "cost_usd": 0.00324,
+      "seconds": 18.6
+    },
+    {
+      "stage": "fix-r2",
+      "model": "sonnet",
+      "cost_usd": 0.03982,
+      "seconds": 16.1,
+      "input_tokens": 2,
+      "output_tokens": 2291,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r2",
+      "model": "haiku",
+      "cost_usd": 0.00305,
+      "seconds": 17.0
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 15.06,
+    "qa": 51.75,
+    "fix-r1": 14.89,
+    "fix-r2": 16.15
+  },
+  "cost_usd": 0.1137,
+  "input_tokens": 6,
+  "output_tokens": 5931,
+  "wall_seconds": 97.9
+}

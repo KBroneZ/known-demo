@@ -1,0 +1,59 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "fixtures/posts/clean/01-how-often-dental-cleaning.md",
+  "verdict": "CORREGIR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-haiku/prompts/clean-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.0027132,
+    "output": "reports/model-haiku/llm/clean-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "CORREGIR",
+    "findings": [
+      {
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha lists only Delta Dental, Cigna and MetLife as accepted insurance and says nothing about contracted in-network status, so the post asserts more than the source of truth supports.",
+        "fix": "Replace with \"We accept Delta Dental, Cigna and MetLife\" to match the ficha wording."
+      },
+      {
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "This claim about how uniform tartar buildup is across patients has no link or citation, and the post does not back it with dental guidance.",
+        "fix": "Cite an ADA or NIDCR source for the tartar timeline, or soften the sentence to a general statement that does not assert uniformity."
+      },
+      {
+        "quote": "our front desk can check your benefits before you come in",
+        "type": "unsourced_claim",
+        "severity": "info",
+        "why": "The ficha contains no information about front-desk benefit verification, so this operational promise cannot be checked against the source of truth.",
+        "fix": "Confirm the front-desk service with the clinic and keep it, or remove it if it is not offered."
+      },
+      {
+        "quote": "https://www.nidcr.nih.gov/health-info/gum-disease",
+        "type": "broken_or_fake_source",
+        "severity": "info",
+        "why": "The URL follows a plausible NIDCR path, but this review could not load it, so its availability and content are unverified.",
+        "fix": "Open the link before publication to confirm it resolves and covers gum disease and ongoing professional care."
+      },
+      {
+        "quote": "Ask five people how often they see the dentist and you will hear five answers.",
+        "type": "ai_tell",
+        "severity": "info",
+        "why": "The rhetorical hook and the balanced \"sensible starting point, but it is not a rule\" cadence read like generic AI-generated framing rather than the clinic's own voice.",
+        "fix": "Open with a specific, clinic-voiced observation about patients' actual schedules instead of the generic five-people hook."
+      }
+    ]
+  },
+  "name": "clean-01-how-often-dental-cleaning"
+}

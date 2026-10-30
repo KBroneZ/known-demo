@@ -1,0 +1,98 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "qa/fixtures/posts/heldout2/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "chatbot_residue",
+      "severity": "block",
+      "line": 32,
+      "evidence": "Let me know if you want",
+      "message": "Chatbot residue left in the draft.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsupported_superlative",
+      "severity": "warn",
+      "line": 46,
+      "evidence": "most trusted implant dentists",
+      "message": "'Best/top' claim with no verifiable basis in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-haiku-v2/prompts/heldout2-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.0025743,
+    "output": "qa/reports/model-haiku-v2/llm/heldout2-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Dr. Elena Marsh, one of Austin's most trusted implant dentists, sees implant patients at our office.",
+        "type": "unsupported_superlative",
+        "kind": "error",
+        "severity": "block",
+        "why": "\"Most trusted\" is an unsupported superlative, and no awards or testimonials are on file to back it (ficha: awards: [], testimonials_on_file: []), which the ADA advertising rules do not allow.",
+        "fix": "Replace it with a factual description, such as \"Dr. Elena Marsh, DDS, focuses on dental implants and sees implant patients at our office.\"",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Let me know if you want me to add typical price ranges for implants and bridges here.",
+        "type": "chatbot_residue",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is an assistant's conversational offer addressed to an editor, not published clinic copy, and it would appear to patients on the live page.",
+        "fix": "Delete the sentence, and add any price ranges only if they are sourced and approved (the ficha lists only the three prices allowed in posts).",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "warn",
+        "why": "I cannot verify that this ADA MouthHealthy URL exists or that the page supports the sentence it is attached to, and the path format looks unusual, so the source is unverified.",
+        "fix": "Open the link and confirm that it resolves to an ADA MouthHealthy bridges page that describes how a bridge is built; if it does not, replace it with a verified page or remove the citation.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Local anesthetic is used during the procedure, and most patients describe soreness afterward rather than sharp pain.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a general clinical statement with no citation, though it is consistent with common dental guidance.",
+        "fix": "Add a link to an ADA or NIDCR page on dental implant procedures, or soften it to \"Your dentist will explain what to expect.\"",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "is typically completed in fewer visits",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The comparison of visit counts is a general statement without a source.",
+        "fix": "Cite a dental association source for typical visit counts, or phrase it as a general pattern that varies by case.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This demo disclaimer belongs to the QA exercise and would confuse readers if the post were published as real clinic content.",
+        "fix": "Remove it before publication, or keep it only in the demo fixture rather than the public post.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout2-02-dental-implants-vs-bridges"
+}

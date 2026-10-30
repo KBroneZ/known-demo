@@ -1,0 +1,131 @@
+{
+  "post": "01-root-canal-myths",
+  "file": "qa/fixtures/posts/heldout3/01-root-canal-myths.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 4,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "cannot return",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "absolute_clinic_claim",
+      "severity": "warn",
+      "line": 34,
+      "evidence": "Dr. Elena Marsh completes every",
+      "message": "Absolute claim about how the clinic or a dentist works; the ficha does not support it.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 44,
+      "evidence": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.aae.org/patients/your-office-visit/post-treatment-care/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v2/prompts/heldout3-01-root-canal-myths.prompt.md",
+    "cost_usd": 0.029408000000000004,
+    "output": "qa/reports/model-sonnet-v2/llm/heldout3-01-root-canal-myths.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "A root canal removes the tooth's nerve, so the tooth is no longer alive and cannot feel anything afterward.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "A root canal removes the pulp, but the tooth stays anchored in living tissue and the surrounding ligament and bone can still sense pressure and become tender or inflamed; saying it 'cannot feel anything' is misleading and contradicts the post's own mention of post-treatment tenderness.",
+        "fix": "Replace with accurate wording such as: the pulp is removed, so the tooth no longer senses hot and cold, but the surrounding tissues can still feel pressure and may be tender for a few days.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Once the canal is sealed, the infection cannot return.",
+        "type": "prohibited_promise",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is an absolute guarantee that contradicts mainstream guidance, since reinfection can occur if the restoration leaks, the tooth cracks, or a canal was missed, and it also contradicts the post's own follow-up section.",
+        "fix": "Remove it or say that a proper seal and permanent restoration lower the risk of reinfection, though a treated tooth can still need further care.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Dr. Elena Marsh completes every root canal in a single visit.",
+        "type": "prohibited_promise",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha does not support this claim, it contradicts the post's own text about a next appointment, referral to an endodontist and follow-up visits, and it reads as a guarantee about treatment.",
+        "fix": "Delete the sentence, or state only that the number of visits depends on the tooth and will be explained after an exam.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "A tooth can feel tender for a few days afterward, especially if it was sore before treatment. Follow the instructions from your dentist, and contact the office if pain is severe, swelling develops, or symptoms get worse rather than better.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The advice is reasonable, but it does not mention the clinic's after-hours on-call line from the ficha for urgent symptoms like swelling.",
+        "fix": "Optionally add that after hours patients can call (512) 555-0142 and follow the prompt for the on-call dentist.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "stories from years ago may not reflect current dental care",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a harmless general statement that has no specific source.",
+        "fix": "Optionally support it with the AAE source or soften the wording.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "The name can sound worse than the procedure itself",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a generic, balanced-sounding phrase typical of AI-written openings.",
+        "fix": "Rewrite it in a more specific, concrete way.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "reviewed_by: Dr. Marcus Oyelaran",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha lists Dr. Oyelaran's focus as family and pediatric dentistry and clear aligners, not endodontics, so the review credit is not backed by anything on file and should be confirmed as accurate.",
+        "fix": "Confirm that Dr. Oyelaran actually reviewed the post, or remove the reviewer credit.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout3-01-root-canal-myths"
+}

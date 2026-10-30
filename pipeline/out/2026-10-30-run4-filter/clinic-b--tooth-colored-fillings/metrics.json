@@ -1,0 +1,45 @@
+{
+  "clinic": "clinic-b",
+  "service": "Tooth-colored fillings",
+  "topic": "How long does a tooth-colored filling last and when does it need replacing?",
+  "dir": "clinic-b--tooth-colored-fillings",
+  "status": "published",
+  "rounds": 0,
+  "verdict_path": [
+    "PUBLICAR"
+  ],
+  "human_review": [
+    "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+    "Open each external link in a browser (the check only fetches status codes)"
+  ],
+  "slug": "how-long-do-tooth-colored-fillings-last-when-replace",
+  "verdict": "PUBLICAR",
+  "pages_route_added": false,
+  "published_to": "web/sites/clinic-b/src/content/posts/how-long-do-tooth-colored-fillings-last-when-replace.md",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.03692,
+      "seconds": 22.1,
+      "input_tokens": 2,
+      "output_tokens": 2580,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.00315,
+      "seconds": 19.2
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 22.15,
+    "qa": 19.76
+  },
+  "cost_usd": 0.0401,
+  "input_tokens": 2,
+  "output_tokens": 2580,
+  "wall_seconds": 41.9
+}

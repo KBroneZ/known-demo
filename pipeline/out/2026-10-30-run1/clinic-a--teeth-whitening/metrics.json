@@ -1,0 +1,76 @@
+{
+  "clinic": "clinic-a",
+  "service": "Teeth whitening",
+  "topic": "will teeth whitening be able to get my teeth as white as the whites in my eyes?",
+  "dir": "clinic-a--teeth-whitening",
+  "status": "needs-human",
+  "rounds": 2,
+  "verdict_path": [
+    "CORREGIR",
+    "CORREGIR",
+    "CORREGIR"
+  ],
+  "human_review": [
+    "Still CORREGIR after 2 auto-fix round(s): model:schema_incoherent; model:fact_vs_ficha"
+  ],
+  "slug": "teeth-whitening-austin-can-teeth-match-eye-whites",
+  "verdict": "CORREGIR",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.0373,
+      "seconds": 22.7,
+      "input_tokens": 2,
+      "output_tokens": 2684,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.0044,
+      "seconds": 29.9
+    },
+    {
+      "stage": "fix-r1",
+      "model": "sonnet",
+      "cost_usd": 0.03927,
+      "seconds": 14.7,
+      "input_tokens": 2,
+      "output_tokens": 2049,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r1",
+      "model": "haiku",
+      "cost_usd": 0.00347,
+      "seconds": 21.8
+    },
+    {
+      "stage": "fix-r2",
+      "model": "sonnet",
+      "cost_usd": 0.03471,
+      "seconds": 12.0,
+      "input_tokens": 2,
+      "output_tokens": 1587,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r2",
+      "model": "haiku",
+      "cost_usd": 0.00344,
+      "seconds": 20.4
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 22.75,
+    "qa": 73.49,
+    "fix-r1": 14.75,
+    "fix-r2": 12.05
+  },
+  "cost_usd": 0.1226,
+  "input_tokens": 6,
+  "output_tokens": 6320,
+  "wall_seconds": 123.1
+}

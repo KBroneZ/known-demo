@@ -1,0 +1,26 @@
+{
+  "name": "r2",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.46,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0040506000000000006,
+    "seconds": 25.1,
+    "findings": [
+      {
+        "quote": "You are entitled to understand what was done to your tooth.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "This is a statement about patient rights with no source, and the post does not say what rule or law it relies on.",
+        "fix": "Reword it as general advice (for example, \"You can ask your dentist to explain what was done\") or cite the specific patient-rights source it depends on."
+      }
+    ],
+    "dropped_unverifiable_url": 1,
+    "downgraded_blocks": 0,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

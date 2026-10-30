@@ -1,0 +1,45 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "qa/fixtures/posts/clean/02-dental-implants-vs-bridges.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/clean-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.03229,
+    "output": "qa/reports/model-sonnet-v3/llm/clean-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "PUBLICAR",
+    "model_verdict": "PUBLICAR",
+    "raw_verdict": "PUBLICAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "most patients describe soreness afterward rather than sharp pain",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a general statement about patient experience with no source, though it is consistent with mainstream dental guidance and is harmless.",
+        "fix": "Soften it to something like 'some soreness is common afterward' or link an ADA or MouthHealthy page on implant recovery.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "reviewed_by: Dr. Marcus Oyelaran",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha lists Dr. Oyelaran's focus as family and pediatric dentistry and clear aligners, not implants, and it does not confirm that he reviewed this post, so the attribution cannot be verified.",
+        "fix": "Confirm that the review took place, or drop the reviewed_by line if it did not.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-02-dental-implants-vs-bridges"
+}

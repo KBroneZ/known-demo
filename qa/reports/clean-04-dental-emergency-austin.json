@@ -1,0 +1,19 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "fixtures/posts/clean/04-dental-emergency-austin.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/clean-04-dental-emergency-austin.prompt.md"
+  },
+  "name": "clean-04-dental-emergency-austin"
+}

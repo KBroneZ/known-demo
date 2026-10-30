@@ -1,0 +1,32 @@
+{
+  "name": "r2",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.48,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0034400999999999998,
+    "seconds": 20.4,
+    "findings": [
+      {
+        "quote": "https://www.bluebonnethollowdental.example/blog/teeth-whitening-austin-can-teeth-match-eye-whites",
+        "type": "schema_incoherent",
+        "severity": "warn",
+        "why": "The post's canonical URL and the slug it implies are not among the site's listed pages in the ficha, so the structured data points to a route the site does not have.",
+        "fix": "Add this post's route to the site's page list or change the slug and canonical URL to a route that exists, and use the same value in the BlogPosting url and mainEntityOfPage fields."
+      },
+      {
+        "quote": "Our front desk can also check benefits for your plan.",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha says the front desk checks benefits only with Delta Dental, Cigna or MetLife, and this sentence could be read as acceptance of any plan.",
+        "fix": "Replace it with wording that names only Delta Dental, Cigna and MetLife, for example: \"Our front desk can check your benefits with Delta Dental, Cigna or MetLife.\""
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

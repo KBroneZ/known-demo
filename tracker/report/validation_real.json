@@ -1,0 +1,42 @@
+{
+ "n_items": 40,
+ "n_judged": 40,
+ "n_items_with_a_tracked_brand": 9,
+ "n_true_mentions": 12,
+ "labeled_by": [
+  "model (Claude), read the full answer; not yet spot-checked by a human"
+ ],
+ "regex": {
+  "tp": 12,
+  "fp": 0,
+  "fn": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0
+ },
+ "judge": {
+  "tp": 12,
+  "fp": 0,
+  "fn": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0
+ },
+ "either": {
+  "tp": 12,
+  "fp": 0,
+  "fn": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0
+ },
+ "both": {
+  "tp": 12,
+  "fp": 0,
+  "fn": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0
+ },
+ "errors": []
+}

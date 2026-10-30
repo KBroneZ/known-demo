@@ -1,0 +1,83 @@
+{
+  "post": "03-is-teeth-whitening-safe",
+  "file": "fixtures/posts/seeded/03-is-teeth-whitening-safe.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 24,
+      "evidence": "\"I was terrified of whitening, but Dr. Oyelaran made it painless and my smile has never lo",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsupported_superlative",
+      "severity": "warn",
+      "line": 43,
+      "evidence": "best dentist",
+      "message": "'Best/top' claim with no verifiable basis in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-haiku/prompts/seeded-03-is-teeth-whitening-safe.prompt.md",
+    "cost_usd": 0.0024498000000000002,
+    "output": "reports/model-haiku/llm/seeded-03-is-teeth-whitening-safe.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "I was terrified of whitening, but Dr. Oyelaran made it painless and my smile has never looked better!",
+        "type": "testimonial",
+        "severity": "block",
+        "why": "The ficha lists no testimonials on file (testimonials_on_file: []), so this patient quote, attributed to \"Jessica R.\", has no basis and is a fabricated testimonial.",
+        "fix": "Delete the blockquote and its attribution, and do not replace it with any patient quote unless a real, consented testimonial is on file."
+      },
+      {
+        "quote": "Patients choose us because we are the best dentist in Austin.",
+        "type": "unsupported_superlative",
+        "severity": "block",
+        "why": "The ficha contains no evidence or awards (awards: []) for a \"best dentist in Austin\" claim, and the ADA advertising rules prohibit unsupported superlatives.",
+        "fix": "Replace the sentence with a factual, verifiable statement such as \"Call (512) 555-0142 to book.\""
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration.",
+        "type": "chatbot_residue",
+        "severity": "block",
+        "why": "This sentence is generation-context meta-language about a \"software demonstration\" and would be false or confusing in a published clinic post.",
+        "fix": "Remove the disclaimer and the sentence \"This post is sample content.\" before publishing, keeping any demo labeling only in the QA system."
+      },
+      {
+        "quote": "Whitening is one of the most requested cosmetic treatments, and one of the most misunderstood.",
+        "type": "ai_tell",
+        "severity": "info",
+        "why": "This generic opener, paired with \"The details matter, though, so here is what to know\", reads as formulaic AI prose rather than the clinic's own voice.",
+        "fix": "Rewrite the opening in specific, clinic-voiced language, or open directly with the safety answer."
+      },
+      {
+        "quote": "The ADA's [MouthHealthy page on teeth whitening](https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening) covers the basics.",
+        "type": "broken_or_fake_source",
+        "severity": "info",
+        "why": "I cannot verify this URL live from the review context, so the link's existence and content remain unconfirmed.",
+        "fix": "Open the link manually to confirm it resolves to the ADA MouthHealthy teeth whitening page before publishing."
+      },
+      {
+        "quote": "At-home kits are cheaper and slower, and results depend on how consistently you use them.",
+        "type": "unsourced_claim",
+        "severity": "info",
+        "why": "The general cost and speed comparison has no cited source and no pricing in the ficha to support it.",
+        "fix": "Either cite a source for the comparison or soften it to a statement the clinic can stand behind, such as \"Results depend on how consistently you use at-home kits.\""
+      }
+    ]
+  },
+  "name": "seeded-03-is-teeth-whitening-safe"
+}

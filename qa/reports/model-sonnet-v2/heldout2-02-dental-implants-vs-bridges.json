@@ -1,0 +1,98 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "qa/fixtures/posts/heldout2/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "chatbot_residue",
+      "severity": "block",
+      "line": 32,
+      "evidence": "Let me know if you want",
+      "message": "Chatbot residue left in the draft.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsupported_superlative",
+      "severity": "warn",
+      "line": 46,
+      "evidence": "most trusted implant dentists",
+      "message": "'Best/top' claim with no verifiable basis in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v2/prompts/heldout2-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.033888,
+    "output": "qa/reports/model-sonnet-v2/llm/heldout2-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Let me know if you want me to add typical price ranges for implants and bridges here.",
+        "type": "chatbot_residue",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is leftover AI assistant text addressed to the requester, and it also implies price ranges that the ficha does not allow.",
+        "fix": "Delete the sentence.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "one of Austin's most trusted implant dentists",
+        "type": "unsupported_superlative",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is an unsupported 'most trusted' claim: the ficha has no awards or rankings, and ADA advertising rules bar unsubstantiated superlatives.",
+        "fix": "Replace it with a factual line such as 'Dr. Elena Marsh, DDS, whose focus includes dental implants, sees implant patients at our office.'",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The demo disclaimer would be out of place in a live post and conflicts with the schema presenting the clinic as a real Dentist.",
+        "fix": "Keep it only if the post is meant to be labeled as a demo; otherwise remove it before real publication.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "\"publisher\": {\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\", \"telephone\": \"(512) 555-0142\"}",
+        "type": "schema_incoherent",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "BlogPosting publisher is normally an Organization, and Dentist is a LocalBusiness type, so this is valid but unusual. The schema also lacks the reviewer and address shown elsewhere.",
+        "fix": "Use an Organization or a Dentist with the full address, and consider adding reviewedBy if appropriate.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "reviewed_by: Dr. Marcus Oyelaran",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha lists Dr. Oyelaran's focus as family and pediatric dentistry and clear aligners, not implants, so he is an odd reviewer for an implant-versus-bridge post.",
+        "fix": "Consider having Dr. Marsh's work reviewed by someone with relevant expertise, or leave the reviewer out.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "most patients describe soreness afterward rather than sharp pain",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a harmless general statement about patient experience, but it has no source.",
+        "fix": "Soften it to 'some soreness afterward is common' or cite an ADA or NIDCR page.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout2-02-dental-implants-vs-bridges"
+}

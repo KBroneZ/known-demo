@@ -1,0 +1,73 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "fixtures/posts/clean/01-how-often-dental-cleaning.md",
+  "verdict": "CORREGIR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-sonnet/prompts/clean-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.044354,
+    "output": "reports/model-sonnet/llm/clean-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "CORREGIR",
+    "findings": [
+      {
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "Tartar formation rates vary considerably between individuals, no source is given, and the claim conflicts with the post's own 'heavy tartar buildup' bullet.",
+        "fix": "Remove the sentence or reword it to say buildup varies by person, and cite ADA or NIDCR guidance if a timeline is kept."
+      },
+      {
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha lists these carriers as accepted, not as in network, and in-network status is a specific contractual claim that cannot be verified.",
+        "fix": "Change to 'We accept Delta Dental, Cigna and MetLife' and ask patients to confirm their plan benefits with the front desk."
+      },
+      {
+        "quote": "If you are new to us and paying without insurance, the new patient exam with X-rays is $129.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The ficha confirms the $129 new patient exam with X-rays but does not say it applies only to patients paying without insurance.",
+        "fix": "State the price as 'The new patient exam with X-rays is $129' without the self-pay condition, unless the clinic confirms that condition."
+      },
+      {
+        "quote": "Ask five people how often they see the dentist and you will hear five answers.",
+        "type": "ai_tell",
+        "severity": "info",
+        "why": "This is a generic, formulaic hook typical of AI-written openings.",
+        "fix": "Open with a concrete, specific statement about cleaning frequency."
+      },
+      {
+        "quote": "That is a sensible starting point, but it is not a rule, and some patients do better on a different schedule.",
+        "type": "ai_tell",
+        "severity": "info",
+        "why": "The 'sensible starting point, but not a rule' hedge is a common AI cadence.",
+        "fix": "Tighten it to a direct statement, such as 'Your dentist sets the interval based on your gum health and risk.'"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "severity": "info",
+        "why": "This demo disclaimer is meta text that would be out of place on a live clinic blog post.",
+        "fix": "Remove it for real publication, or keep it only if the post is intentionally published as a labeled demo."
+      },
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Marcus Oyelaran\"}",
+        "type": "schema_incoherent",
+        "severity": "info",
+        "why": "The JSON-LD matches the visible author, dates, headline, phone and URL, but it omits the reviewer Dr. Elena Marsh shown in the front matter and the clinic's address.",
+        "fix": "Optionally add reviewedBy for Dr. Elena Marsh and an address to the publisher object."
+      }
+    ]
+  },
+  "name": "clean-01-how-often-dental-cleaning"
+}

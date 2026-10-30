@@ -1,0 +1,23 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "fixtures/posts/clean/04-dental-emergency-austin.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-sonnet/prompts/clean-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.027544000000000003,
+    "output": "reports/model-sonnet/llm/clean-04-dental-emergency-austin.llm.txt",
+    "verdict": "PUBLICAR",
+    "findings": []
+  },
+  "name": "clean-04-dental-emergency-austin"
+}

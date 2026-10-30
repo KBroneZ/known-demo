@@ -1,0 +1,41 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.01,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "sonnet",
+    "cost_usd": 0.040378,
+    "seconds": 10.9,
+    "findings": [],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 0,
+    "suggestions": [
+      {
+        "quote": "Your dentist will tell you which steps fit your situation.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The phrase \"your dentist\" and similar hedges recur throughout the post, which reads as formulaic, templated AI prose.",
+        "fix": "Vary the wording and add one or two concrete, mainstream tips, such as using the next aligner tray on schedule or the usual timing of soreness after a new tray.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "If you are looking into clear aligners in Austin, it helps to know what the discomfort is, what is not normal, and who to ask.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a generic signpost sentence that adds little for the reader.",
+        "fix": "Cut it or replace it with a direct statement of what the post covers.",
+        "raw_severity": "info"
+      }
+    ],
+    "verdict": "PUBLICAR",
+    "model_said": "PUBLICAR",
+    "raw_verdict": "PUBLICAR",
+    "note": ""
+  },
+  "verdict": "PUBLICAR"
+}

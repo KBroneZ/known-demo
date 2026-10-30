@@ -1,0 +1,20 @@
+[
+  {
+    "site": "clinic-a",
+    "ok": true,
+    "axeRuns": 38,
+    "violations": 0,
+    "worstLcpMs": 208,
+    "worstCls": 0,
+    "failures": []
+  },
+  {
+    "site": "clinic-b",
+    "ok": true,
+    "axeRuns": 34,
+    "violations": 0,
+    "worstLcpMs": 60,
+    "worstCls": 0,
+    "failures": []
+  }
+]

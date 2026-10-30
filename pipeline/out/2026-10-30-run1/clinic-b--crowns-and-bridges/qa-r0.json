@@ -1,0 +1,25 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.5,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0037707,
+    "seconds": 23.5,
+    "findings": [
+      {
+        "quote": "reviewed_by: Dr. Tomas Alvarez",
+        "type": "fact_vs_ficha",
+        "severity": "block",
+        "why": "The ficha states that Dr. Priya Raman reviews the clinical content on this site and that Dr. Alvarez's focus is children's dentistry and clear aligners, so this crown article's reviewer attribution contradicts the source of truth.",
+        "fix": "Set reviewed_by to Dr. Priya Raman, or get the ficha corrected if Dr. Alvarez really reviewed this article."
+      }
+    ],
+    "dropped_unverifiable_url": 1,
+    "verdict": "BLOQUEAR"
+  },
+  "verdict": "BLOQUEAR"
+}

@@ -1,0 +1,8 @@
+# Generated output and approved snapshots stay byte-for-byte as built.
+dist/
+golden/
+reports/
+node_modules/
+package-lock.json
+# .astro templates are not reformatted: whitespace in them reaches the built HTML and the golden snapshots.
+*.astro

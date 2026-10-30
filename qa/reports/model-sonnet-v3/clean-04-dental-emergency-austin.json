@@ -1,0 +1,45 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "qa/fixtures/posts/clean/04-dental-emergency-austin.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/clean-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.032282,
+    "output": "qa/reports/model-sonnet-v3/llm/clean-04-dental-emergency-austin.llm.txt",
+    "verdict": "PUBLICAR",
+    "model_verdict": "PUBLICAR",
+    "raw_verdict": "PUBLICAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Elena Marsh\"}",
+        "type": "schema_incoherent",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The visible post names Dr. Marcus Oyelaran as reviewer, but the JSON-LD omits him; this is not a contradiction, only a missing detail.",
+        "fix": "Optionally add a reviewedBy Person entry for Dr. Marcus Oyelaran to the JSON-LD.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This demo disclaimer is accurate for the fictional clinic but would need to be removed if the post were published for a real practice.",
+        "fix": "Keep it for the demo and drop it only if the content moves to a real clinic.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-04-dental-emergency-austin"
+}

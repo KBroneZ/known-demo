@@ -1,0 +1,229 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 10,
+  "seeded_detected": 10,
+  "recall": 1.0,
+  "missed": [],
+  "true_positive_findings": 13,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "E01": [
+      {
+        "rule": "nap_phone_mismatch",
+        "line": 39,
+        "severity": "block"
+      }
+    ],
+    "E02": [
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "E03": [
+      {
+        "rule": "link_broken",
+        "line": 24,
+        "severity": "block"
+      }
+    ],
+    "E04": [
+      {
+        "rule": "unsourced_stat",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "E05": [
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      },
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "E06": [
+      {
+        "rule": "schema_mismatch",
+        "line": 51,
+        "severity": "block"
+      }
+    ],
+    "E07": [
+      {
+        "rule": "fake_testimonial",
+        "line": 24,
+        "severity": "block"
+      }
+    ],
+    "E08": [
+      {
+        "rule": "unsupported_superlative",
+        "line": 43,
+        "severity": "warn"
+      }
+    ],
+    "E09": [
+      {
+        "rule": "medical_myth",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "E10": [
+      {
+        "rule": "chatbot_residue",
+        "line": 14,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "PUBLICAR",
+    "clean/02-dental-implants-vs-bridges.md": "PUBLICAR",
+    "clean/03-is-teeth-whitening-safe.md": "PUBLICAR",
+    "clean/04-dental-emergency-austin.md": "PUBLICAR",
+    "seeded/01-how-often-dental-cleaning.md": "BLOQUEAR",
+    "seeded/02-dental-implants-vs-bridges.md": "BLOQUEAR",
+    "seeded/03-is-teeth-whitening-safe.md": "BLOQUEAR",
+    "seeded/04-dental-emergency-austin.md": "BLOQUEAR"
+  },
+  "llm": {
+    "status": "ok",
+    "failed": [],
+    "cost_usd": 0.0183,
+    "model_detected": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07",
+      "E08",
+      "E09",
+      "E10"
+    ],
+    "model_recall": 1.0,
+    "model_missed": [],
+    "fixture_disclaimer_findings_ignored": 2,
+    "clean_posts_not_publish_with_model": 4,
+    "rules_detected_ids": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07",
+      "E08",
+      "E09",
+      "E10"
+    ],
+    "model_tp": 10,
+    "model_fp": 11,
+    "model_precision": 0.47619047619047616,
+    "model_clean_fp": 6,
+    "model_only_extra": [],
+    "combined_recall": 1.0,
+    "combined_detected": 10,
+    "combined_precision": 0.6764705882352942,
+    "false_positive_list": [
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "fact_vs_ficha",
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "why": "The ficha lists only Delta Dental, Cigna and MetLife as accepted insurance and says nothing about contracted in-network status, so the post "
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "why": "This claim about how uniform tartar buildup is across patients has no link or citation, and the post does not back it with dental guidance."
+      },
+      {
+        "file": "clean/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "The ADA's [MouthHealthy page on bridges](https://www.mouthhealthy.org/all-topics-a-z/bridg",
+        "why": "I cannot verify that this MouthHealthy URL path exists or that it matches the claim, and the path structure looks unusual for that site."
+      },
+      {
+        "file": "clean/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "most patients describe soreness afterward rather than sharp pain.",
+        "why": "This statement about typical patient experience has no citation or clinic data behind it."
+      },
+      {
+        "file": "clean/03-is-teeth-whitening-safe.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Whitening is one of the most requested cosmetic treatments, and one of the most misunderst",
+        "why": "The claim that whitening is among the most requested cosmetic treatments has no source and cannot be verified from the ficha or any linked p"
+      },
+      {
+        "file": "clean/04-dental-emergency-austin.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "The ADA's [MouthHealthy page on dental emergencies](https://www.mouthhealthy.org/all-topic",
+        "why": "I could not verify that this URL resolves or that the page supports the description of its contents, so the claim is unverified."
+      },
+      {
+        "file": "seeded/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "fact_vs_ficha",
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "why": "The ficha only says these carriers are accepted; 'in network' is a stronger contractual claim that the ficha does not support."
+      },
+      {
+        "file": "seeded/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "why": "This general claim about tartar formation rate has no supporting link and is not verifiable from the ficha or the cited sources."
+      },
+      {
+        "file": "seeded/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+        "why": "I cannot confirm that this exact MouthHealthy path exists, so the link may be broken or misattributed."
+      },
+      {
+        "file": "seeded/04-dental-emergency-austin.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies",
+        "why": "I cannot verify that this exact MouthHealthy path exists or that it covers the cases described, so the citation is unverified."
+      },
+      {
+        "file": "seeded/04-dental-emergency-austin.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "If the edge is sharp, a piece of sugar-free gum or dental wax can protect your tongue unti",
+        "why": "Sugar-free gum is not standard ADA interim guidance for a chipped tooth, and the sentence has no source, while dental wax is the commonly re"
+      }
+    ]
+  }
+}

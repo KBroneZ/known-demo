@@ -1,0 +1,15 @@
+---
+import { clinic } from '../lib/site.ts';
+import { hoursSentence, endSentence, telHref } from '../lib/format.ts';
+interface Props { heading?: string }
+const { heading = 'Book your visit' } = Astro.props;
+---
+<section class="cta" aria-labelledby="cta-h">
+  <h2 id="cta-h">{heading}</h2>
+  <p>Call <a href={telHref(clinic.nap.phone)}>{clinic.nap.phone}</a> or see <a href="/contact">hours and directions</a>. We are open {endSentence(hoursSentence(clinic))}</p>
+</section>
+<style>
+  .cta{background:var(--c-surface);border:1px solid var(--c-border);border-left:6px solid var(--c-accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-top:2.5rem}
+  .cta h2{margin-top:0;font-size:1.4rem}
+  .cta p{margin:0}
+</style>

@@ -1,0 +1,73 @@
+{
+  "clinic_id": "clinic-b",
+  "clinic_name": "Copper Wren Dental Studio",
+  "topic": {
+    "question": "I found cavities between my teeth and i've already had my yearly checkup. Can this wait or should I book an earlier appointment?",
+    "source": "reddit:r/askdentists",
+    "source_id": "1vrp9vl",
+    "comments": 6,
+    "retrieved": "2026-10-30"
+  },
+  "service": "Family checkups and cleanings",
+  "service_slug": "family-checkups",
+  "service_summary": "Exams and cleanings for every age in one visit, with X-rays only when your dentist needs them.",
+  "primary_keyword": "checkup austin",
+  "keyword_note": "heuristic: service alias + city; no search-volume data was consulted",
+  "intent": "informational; a local patient researching before booking",
+  "questions": [
+    "I found cavities between my teeth and i've already had my yearly checkup. Can this wait or should I book an earlier appointment?",
+    "Can the whole family book on the same day?",
+    "Do you take dental insurance?"
+  ],
+  "related_questions": [
+    "Can my teeth now be this bad off at a 6 mo checkup?",
+    "Seeing same dentist for checkup and cavity treatment?"
+  ],
+  "author": "Dr. Priya Raman",
+  "reviewer": "Dr. Tomas Alvarez",
+  "category": "family-checkups-and-cleanings",
+  "internal_links": [
+    {
+      "url": "/services/family-checkups",
+      "why": "the Family checkups and cleanings service page"
+    },
+    {
+      "url": "/contact",
+      "why": "booking and contact"
+    },
+    {
+      "url": "/team",
+      "why": "the dentists"
+    },
+    {
+      "url": "/blog/clear-aligners-or-braces",
+      "why": "related post: Clear Aligners or Braces? Questions to Ask Before You Start"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://medlineplus.gov/dentalhealth.html",
+      "publisher": "MedlinePlus (US National Library of Medicine)",
+      "covers": [
+        "dental health",
+        "checkup",
+        "cleaning",
+        "brushing",
+        "flossing"
+      ]
+    },
+    {
+      "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+      "publisher": "National Institute of Dental and Craniofacial Research (NIH)",
+      "covers": [
+        "gum disease",
+        "gingivitis",
+        "periodontitis",
+        "bleeding gums",
+        "cleaning"
+      ]
+    }
+  ],
+  "word_range": "about 600 to 850 words (length follows the content; it is not a target)",
+  "facts": "- Clinic name: Copper Wren Dental Studio\n- Phone: (512) 555-0176\n- Address: 4107 Shoal Terrace Lane, Suite 3, Austin, TX 78702\n- Hours (use this exact wording): We are open Monday, Tuesday and Thursday from 9 a.m. to 6 p.m., Wednesday from 11 a.m. to 7 p.m., and on Saturday from 9 a.m. to 2 p.m.\n- After-hours instruction: Outside office hours, leave a message on the main line and the on-call dentist will call you back.\n- Published price 'new_patient_exam_xrays': $110\n- Published price 'kids_first_visit': $60\n- Published price 'emergency_exam': $85\n- Insurance accepted: Aetna, Guardian, Principal (say 'accepted', not 'in network')\n- Dentist: Dr. Priya Raman, DDS - general and restorative dentistry, emergency care\n- Dentist: Dr. Tomas Alvarez, DMD - children's dentistry, clear aligners"
+}

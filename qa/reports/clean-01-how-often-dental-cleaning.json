@@ -1,0 +1,19 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "fixtures/posts/clean/01-how-often-dental-cleaning.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/clean-01-how-often-dental-cleaning.prompt.md"
+  },
+  "name": "clean-01-how-often-dental-cleaning"
+}

@@ -1,0 +1,100 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 10,
+  "seeded_detected": 10,
+  "recall": 1.0,
+  "missed": [],
+  "true_positive_findings": 11,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "K01": [
+      {
+        "rule": "hours_mismatch",
+        "line": 36,
+        "severity": "block"
+      }
+    ],
+    "K02": [
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "K03": [
+      {
+        "rule": "link_broken",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "K04": [
+      {
+        "rule": "unsourced_stat",
+        "line": 18,
+        "severity": "warn"
+      }
+    ],
+    "K05": [
+      {
+        "rule": "prohibited_promise",
+        "line": 37,
+        "severity": "block"
+      }
+    ],
+    "K06": [
+      {
+        "rule": "schema_mismatch",
+        "line": 44,
+        "severity": "block"
+      }
+    ],
+    "K07": [
+      {
+        "rule": "medical_myth",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "K08": [
+      {
+        "rule": "fake_testimonial",
+        "line": 34,
+        "severity": "block"
+      }
+    ],
+    "K09": [
+      {
+        "rule": "unsupported_superlative",
+        "line": 46,
+        "severity": "warn"
+      }
+    ],
+    "K10": [
+      {
+        "rule": "chatbot_residue",
+        "line": 32,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "PUBLICAR",
+    "clean/02-dental-implants-vs-bridges.md": "PUBLICAR",
+    "clean/03-is-teeth-whitening-safe.md": "PUBLICAR",
+    "clean/04-dental-emergency-austin.md": "PUBLICAR",
+    "heldout2/01-how-often-dental-cleaning.md": "BLOQUEAR",
+    "heldout2/02-dental-implants-vs-bridges.md": "BLOQUEAR",
+    "heldout2/03-is-teeth-whitening-safe.md": "BLOQUEAR",
+    "heldout2/04-dental-emergency-austin.md": "BLOQUEAR"
+  },
+  "llm": null
+}

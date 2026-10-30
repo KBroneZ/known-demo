@@ -1,0 +1,104 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 14,
+  "seeded_detected": 10,
+  "recall": 0.7142857142857143,
+  "missed": [
+    "B02",
+    "B04",
+    "B05",
+    "B06"
+  ],
+  "true_positive_findings": 10,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "B01": [
+      {
+        "rule": "numeric_inconsistency",
+        "line": 54,
+        "severity": "warn"
+      }
+    ],
+    "B02": [],
+    "B03": [
+      {
+        "rule": "banned_character",
+        "line": 26,
+        "severity": "warn"
+      }
+    ],
+    "B04": [],
+    "B05": [],
+    "B06": [],
+    "B07": [
+      {
+        "rule": "affiliate_disclosure_missing",
+        "line": 35,
+        "severity": "block"
+      }
+    ],
+    "B08": [
+      {
+        "rule": "unsupported_first_hand_claim",
+        "line": 27,
+        "severity": "warn"
+      }
+    ],
+    "B09": [
+      {
+        "rule": "review_stamp_is_publish_date",
+        "line": 21,
+        "severity": "warn"
+      }
+    ],
+    "B10": [
+      {
+        "rule": "event_date_past",
+        "line": 27,
+        "severity": "warn"
+      }
+    ],
+    "B11": [
+      {
+        "rule": "price_no_as_of",
+        "line": 39,
+        "severity": "warn"
+      }
+    ],
+    "B12": [
+      {
+        "rule": "link_broken",
+        "line": 35,
+        "severity": "block"
+      }
+    ],
+    "B13": [
+      {
+        "rule": "link_blocked",
+        "line": 25,
+        "severity": "warn"
+      }
+    ],
+    "B14": [
+      {
+        "rule": "link_broken_internal",
+        "line": 31,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-lisbon-three-days-walkable-plan.md": "PUBLICAR",
+    "clean/02-iceland-winter-packing-list.md": "PUBLICAR",
+    "clean/03-kyoto-cherry-blossom-season-2027.md": "PUBLICAR",
+    "clean/04-banff-summer-three-day-plan.md": "PUBLICAR",
+    "heldout/01-vienna-three-days-trams-coffee-houses.md": "CORREGIR",
+    "heldout/02-cape-town-four-days-mountain-winelands.md": "BLOQUEAR",
+    "heldout/03-hanoi-old-quarter-two-days.md": "CORREGIR",
+    "heldout/04-tallinn-old-town-two-days.md": "BLOQUEAR"
+  },
+  "llm": null
+}

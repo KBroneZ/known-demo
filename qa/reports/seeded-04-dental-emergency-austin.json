@@ -1,0 +1,36 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "fixtures/posts/seeded/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "chatbot_residue",
+      "severity": "block",
+      "line": 14,
+      "evidence": "As an AI language model",
+      "message": "Chatbot residue left in the draft.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 18,
+      "evidence": "scrub it",
+      "message": "Knocked-out teeth must not be scrubbed or soaped; rinse gently with water or milk.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/seeded-04-dental-emergency-austin.prompt.md"
+  },
+  "name": "seeded-04-dental-emergency-austin"
+}

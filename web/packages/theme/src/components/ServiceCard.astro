@@ -1,0 +1,13 @@
+---
+interface Props { name: string; summary: string; href: string; as?: 'h2' | 'h3' }
+const { name, summary, href, as: Tag = 'h3' } = Astro.props;
+---
+<article class="card svc">
+  <Tag><a href={href}>{name}</a></Tag>
+  <p>{summary}</p>
+</article>
+<style>
+  .svc :is(h2,h3){margin:0 0 .4rem;font-size:1.2rem}
+  .svc a{text-decoration:none}
+  .svc p{margin:0}
+</style>

@@ -1,0 +1,32 @@
+{
+  "name": "r1",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.42,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0034659,
+    "seconds": 21.8,
+    "findings": [
+      {
+        "quote": "A chipped or loose filling that you notice after whitening is not an emergency by itself.",
+        "type": "other",
+        "severity": "warn",
+        "why": "Telling readers a chipped or loose restoration is not urgent could delay care for a tooth that needs prompt attention, and it conflicts with the post's own advice to call a dentist for a tooth that hurts or a filling that has come loose.",
+        "fix": "Replace it with advice to contact the office promptly for a chipped or loose filling, and note that same-day care is available when the schedule allows."
+      },
+      {
+        "quote": "We accept Delta Dental, Cigna, and MetLife.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "Placed under the whitening price, this implies insurance applies to whitening, which the ficha does not state; the ficha names these carriers only as accepted insurance, not as covering this service.",
+        "fix": "Say the front desk can check benefits for your plan, and do not imply that these carriers cover in-office whitening."
+      }
+    ],
+    "dropped_unverifiable_url": 1,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

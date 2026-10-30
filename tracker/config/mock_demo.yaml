@@ -1,0 +1,50 @@
+# MOCK configuration: every business below is FICTIONAL (.example domains are reserved and never resolve).
+# Used with `--mock` to exercise the pipeline. Numbers it produces are synthetic, not measurements.
+name: mock-demo
+repetitions: 5
+budget_usd: 25
+
+market:
+  city: Austin
+  region: Texas
+  country: US
+  timezone: America/Chicago
+  lat: 30.2672
+  lng: -97.7431
+  dfs_location_name: "Austin,Texas,United States"
+
+engines:
+  openai:         { enabled: true }
+  anthropic:      { enabled: true }
+  perplexity:     { enabled: true }
+  google_aio:     { enabled: true }
+  google_ai_mode: { enabled: true }
+
+brands:
+  - { id: cedar-hollow,   name: Cedar Hollow Dental,         domains: [cedarhollowdental.example] }
+  - { id: pecan-row,      name: Pecan Row Smiles,            aliases: [Pecan Row Dental], domains: [pecanrowsmiles.example] }
+  - { id: bluff-street,   name: Bluff Street Dentistry,      domains: [bluffstreetdentistry.example] }
+  - { id: mesquite-grove, name: Mesquite Grove Family Dental, domains: [mesquitegrovedental.example] }
+  - { id: lantana-smile,  name: Lantana Smile Studio,        domains: [lantanasmile.example] }
+  - { id: oakline,        name: Oakline Dental Arts,         domains: [oaklinedentalarts.example] }
+
+mock:
+  fillers:
+    - { name: Riverbend Dental Group,  domain: riverbenddental.example }
+    - { name: Sunrise Hills Dentistry, domain: sunrisehillsdentistry.example }
+    - { name: Capital Smile Center,    domain: capitalsmile.example }
+    - { name: Willow Creek Dental,     domain: willowcreekdental.example }
+    - { name: North Loop Dentistry,    domain: northloopdentistry.example }
+    - { name: Violet Crown Dental,     domain: violetcrowndental.example }
+
+prompts:
+  - { id: p01, text: "best dentist in Austin TX" }
+  - { id: p02, text: "best cosmetic dentist in Austin" }
+  - { id: p03, text: "emergency dentist in Austin open today" }
+  - { id: p04, text: "who is the best dentist for dental implants in Austin" }
+  - { id: p05, text: "affordable dentist in Austin without insurance" }
+  - { id: p06, text: "best dentist for veneers in Austin" }
+  - { id: p07, text: "Invisalign provider in Austin, who do you recommend" }
+  - { id: p08, text: "family dentist in Austin accepting new patients" }
+  - { id: p09, text: "best dentist in South Austin" }
+  - { id: p10, text: "sedation dentist in Austin for nervous patients" }

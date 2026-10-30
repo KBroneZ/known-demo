@@ -1,0 +1,35 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.45,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0035706,
+    "seconds": 22.9,
+    "findings": [
+      {
+        "quote": "At Bluebonnet Hollow Dental, a new patient exam with X-rays is $129",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha limits the $129 price to new patients paying without insurance, but the post states it unconditionally, which could mislead insured patients about their cost.",
+        "fix": "Add the qualifier: for new patients paying without insurance, the new patient exam with X-rays is $129.",
+        "downgraded_from": "block"
+      },
+      {
+        "quote": "Go to an emergency room if you have facial swelling along with trouble breathing or swallowing, or a fever with a painful tooth.",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha's emergency guidance also sends patients to the ER or 911 for swelling that spreads to the face or neck and for uncontrolled bleeding, and the post omits both, so its red-flag list is incomplete and understates urgency.",
+        "fix": "Rewrite the list to match the ficha: trouble breathing or swallowing, uncontrolled bleeding, or swelling that spreads to the face or neck means going to an emergency room or calling 911.",
+        "downgraded_from": "block"
+      }
+    ],
+    "dropped_unverifiable_url": 1,
+    "downgraded_blocks": 2,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

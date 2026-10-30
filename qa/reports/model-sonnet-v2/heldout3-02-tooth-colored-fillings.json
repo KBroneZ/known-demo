@@ -1,0 +1,123 @@
+{
+  "post": "02-tooth-colored-fillings",
+  "file": "qa/fixtures/posts/heldout3/02-tooth-colored-fillings.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 20,
+      "evidence": "last forever",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "price_not_in_ficha",
+      "severity": "block",
+      "line": 28,
+      "evidence": "$180",
+      "message": "Price is not published in the ficha.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "insurance_not_in_ficha",
+      "severity": "block",
+      "line": 34,
+      "evidence": "Aetna",
+      "message": "Carrier is not listed as accepted in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v2/prompts/heldout3-02-tooth-colored-fillings.prompt.md",
+    "cost_usd": 0.02729,
+    "output": "qa/reports/model-sonnet-v2/llm/heldout3-02-tooth-colored-fillings.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Tooth-colored fillings last forever.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "Fillings wear, stain, loosen and need replacement (the post itself says so later), so 'last forever' is false and works as a guarantee.",
+        "fix": "Delete the sentence or say that longevity varies with the tooth, the size of the filling and daily habits.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "A tooth-colored filling costs $180.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha lists no filling price (only $129 exam/X-rays, $395 whitening, $95 emergency exam), so $180 is an invented price.",
+        "fix": "Remove the price and tell readers to ask for an estimate, or use only ficha-approved prices.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "We accept Aetna.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "Aetna is not among the accepted carriers (Delta Dental, Cigna, MetLife), so this misleads readers about coverage.",
+        "fix": "Delete it, or name only Delta Dental, Cigna and MetLife and advise confirming coverage with the office.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "no single material is the best choice for every situation",
+        "type": "unsupported_superlative",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a negated, hedged statement, not a 'best' claim about the clinic, so it is harmless.",
+        "fix": "Keep it as is, or rephrase as 'no single material suits every situation'.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "A dental exam is the best way to discuss your particular tooth and the available options.",
+        "type": "unsupported_superlative",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "'Best way' is a mild general statement about exams, not a claim of clinic superiority.",
+        "fix": "Optionally soften to 'A dental exam is a good way to discuss...'.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental offers tooth-colored fillings.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The post gives no call to action, contact details or link to the clinic's pages, and no internal links, which would help readers.",
+        "fix": "Add a call to action with the phone number (512) 555-0142 and a link to /services or /contact.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Early tooth decay can sometimes be managed before a hole forms",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is consistent with mainstream dental guidance (remineralization, fluoride) but is not tied to a specific source in the text.",
+        "fix": "Cite the NIDCR or ADA source inline for this statement.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout3-02-tooth-colored-fillings"
+}

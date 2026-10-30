@@ -1,0 +1,40 @@
+{
+  "verdict": "PASS",
+  "baselineBuild": {
+    "seconds": 4.77,
+    "pages": 36
+  },
+  "approvedGoldenFiles": 42,
+  "approvedGoldenDiffs": 0,
+  "goldenFiles": 42,
+  "control": {
+    "changedFiles": 0
+  },
+  "changeBuild": {
+    "seconds": 4.7,
+    "pages": 36
+  },
+  "templateChange": {
+    "sites": 2,
+    "htmlFiles": 36,
+    "goldenFilesIncludingXmlTxt": 42,
+    "changedFiles": 36,
+    "onlyFooterChanged": 36,
+    "changedOutsideFooter": 0,
+    "contentTextDiffs": 0,
+    "nonHtmlChanged": 0,
+    "footerBytesAddedTotal": 7308
+  },
+  "negativeControl": {
+    "pagesFlaggedOutsideFooter": 32,
+    "pagesWithContentTextDiff": 32
+  },
+  "restoreBuild": {
+    "seconds": 4.75,
+    "pages": 36
+  },
+  "restored": {
+    "changedFiles": 0,
+    "failed": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "fixtures/posts/clean/02-dental-implants-vs-bridges.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/clean-02-dental-implants-vs-bridges.prompt.md"
+  },
+  "name": "clean-02-dental-implants-vs-bridges"
+}

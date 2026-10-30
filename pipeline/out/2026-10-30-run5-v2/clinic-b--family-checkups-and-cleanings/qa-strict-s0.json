@@ -1,0 +1,61 @@
+{
+  "name": "s0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 12.68,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "sonnet",
+    "cost_usd": 0.055959999999999996,
+    "seconds": 22.7,
+    "findings": [
+      {
+        "quote": "Parents and children can book back to back.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The ficha says parents and children can \"often\" book back to back (and the FAQ answers \"Often, yes\"), so dropping \"often\" promises same-day availability more firmly than the clinic does.",
+        "fix": "Change to \"Parents and children can often book back to back.\"",
+        "raw_severity": "block",
+        "downgraded_from": "block"
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 1,
+    "suggestions": [
+      {
+        "quote": "If you are looking for family checkups and cleanings in Austin, you can read more on our",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This sentence reads as keyword-stuffed SEO filler, and the first-visit child price that follows is out of place in an article about adults.",
+        "fix": "Rewrite it naturally, for example \"Read more about our family checkups and cleanings,\" and move or drop the child price.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "The emergency exam at Copper Wren Dental Studio is $85.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha adds that any treatment is quoted after the exam, and the post leaves this out.",
+        "fix": "Add \"Any treatment is quoted after the exam.\"",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "## Frequently asked questions",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The FAQ section repeats, almost word for word, the body sections on same-day booking and insurance, which feels templated and padded.",
+        "fix": "Remove the duplicated body sections or vary the FAQ wording so the page doesn't repeat itself.",
+        "raw_severity": "info"
+      }
+    ],
+    "verdict": "CORREGIR",
+    "model_said": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "note": ""
+  },
+  "verdict": "CORREGIR"
+}

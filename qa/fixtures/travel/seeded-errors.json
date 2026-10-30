@@ -1,0 +1,272 @@
+{
+  "description": "21 errors seeded into copies of the 4 clean travel posts. Built by fixtures/travel/build_seeded.py.",
+  "site": "Tripnotes Example (fictional)",
+  "errors": [
+    {
+      "id": "T01",
+      "file": "seeded/01-lisbon-three-days-walkable-plan.md",
+      "category": "numeric-inconsistency",
+      "rules": [
+        "numeric_inconsistency"
+      ],
+      "description": "The day pass is given a second, different price.",
+      "original": "The ferry is part of the day pass, so the crossing costs nothing extra on that day.",
+      "injected": "The Tagus Hop day pass costs €11, and the ferry is part of it, so the crossing costs nothing extra on that day.",
+      "snippet": "costs €11",
+      "line": 36
+    },
+    {
+      "id": "T02",
+      "file": "seeded/04-banff-summer-three-day-plan.md",
+      "category": "weekday-inconsistency",
+      "rules": [
+        "weekday_inconsistency"
+      ],
+      "description": "The same event is placed on Thursday and on Friday.",
+      "original": "Day two is for the lakes.",
+      "injected": "Day two is for the lakes. Plan for Friday if the Summer Night Market is on your list.",
+      "snippet": "if the Summer Night Market is on your list",
+      "line": 30
+    },
+    {
+      "id": "T03",
+      "file": "seeded/04-banff-summer-three-day-plan.md",
+      "category": "stale-event-date",
+      "rules": [
+        "event_date_past"
+      ],
+      "description": "An event date in July 2026 written as upcoming, after the check date of 2026-10-30.",
+      "original": "Return by the same route or take the shuttle back from the trailhead.",
+      "injected": "Return by the same route or take the shuttle back from the trailhead. The Mountain Film Weekend runs July 10 to July 12, 2026 and fills the town.",
+      "snippet": "Mountain Film Weekend runs July 10",
+      "line": 26
+    },
+    {
+      "id": "T04",
+      "file": "seeded/03-kyoto-cherry-blossom-season-2027.md",
+      "category": "stale-title-year",
+      "rules": [
+        "stale_year_title"
+      ],
+      "description": "The title names 2025.",
+      "original": "title: \"Kyoto Cherry Blossom Season: When to Go in 2027\"",
+      "injected": "title: \"Kyoto Cherry Blossom Season: When to Go in 2025\"",
+      "snippet": "When to Go in 2025",
+      "line": 2
+    },
+    {
+      "id": "T05",
+      "file": "seeded/01-lisbon-three-days-walkable-plan.md",
+      "category": "stale-review-stamp",
+      "rules": [
+        "review_stamp_is_publish_date"
+      ],
+      "description": "'Last reviewed' repeats the publish date of a six-week-old post.",
+      "original": "Last reviewed October 20, 2026",
+      "injected": "Last reviewed September 14, 2026",
+      "snippet": "Last reviewed September 14, 2026",
+      "line": 14
+    },
+    {
+      "id": "T06",
+      "file": "seeded/04-banff-summer-three-day-plan.md",
+      "category": "price-no-as-of",
+      "rules": [
+        "price_no_as_of"
+      ],
+      "description": "The as-of line for the prices is removed.",
+      "original": "Prices checked September 2026.\n\n",
+      "injected": "",
+      "snippet": "Bow Valley Shuttle day ticket",
+      "line": 34
+    },
+    {
+      "id": "T07",
+      "file": "seeded/01-lisbon-three-days-walkable-plan.md",
+      "category": "first-hand-claim",
+      "rules": [
+        "unsupported_first_hand_claim"
+      ],
+      "description": "A testing claim with no evidence block.",
+      "original": "Allow half a day here and keep the afternoon free for the riverside walk.",
+      "injected": "We tested every tram route and ferry timetable ourselves, so allow half a day here for the riverside walk.",
+      "snippet": "We tested every tram route",
+      "line": 32
+    },
+    {
+      "id": "T08",
+      "file": "seeded/02-iceland-winter-packing-list.md",
+      "category": "missing-section",
+      "rules": [
+        "missing_required_section"
+      ],
+      "whole_file": true,
+      "description": "The Sources heading is renamed, so the required section is missing.",
+      "original": "## Sources\n",
+      "injected": "## More reading\n",
+      "snippet": "## More reading",
+      "line": 0
+    },
+    {
+      "id": "T09",
+      "file": "seeded/01-lisbon-three-days-walkable-plan.md",
+      "category": "affiliate-disclosure",
+      "rules": [
+        "affiliate_disclosure_missing"
+      ],
+      "description": "The affiliate disclosure footer is removed.",
+      "original": "This post contains affiliate links. We may earn a commission if you book through them, at no extra cost to you.\n\n",
+      "injected": "",
+      "snippet": "stays.example/lisbon",
+      "line": 24
+    },
+    {
+      "id": "T10",
+      "file": "seeded/02-iceland-winter-packing-list.md",
+      "category": "banned-character",
+      "rules": [
+        "banned_character"
+      ],
+      "description": "An em dash, which the site rules ban.",
+      "original": "Cotton jeans dry slowly, so choose synthetic trousers instead.",
+      "injected": "Cotton jeans dry slowly — choose synthetic trousers instead.",
+      "snippet": "Cotton jeans dry slowly —",
+      "line": 22
+    },
+    {
+      "id": "T11",
+      "file": "seeded/04-banff-summer-three-day-plan.md",
+      "category": "byline",
+      "rules": [
+        "byline_not_allowed"
+      ],
+      "description": "The author is not on the byline list.",
+      "original": "author: Theo Marsh",
+      "injected": "author: Priya Anand",
+      "snippet": "author: Priya Anand",
+      "line": 7
+    },
+    {
+      "id": "T12",
+      "file": "seeded/04-banff-summer-three-day-plan.md",
+      "category": "dead-link",
+      "rules": [
+        "link_broken"
+      ],
+      "description": "A mistyped host that does not resolve.",
+      "original": "https://banff-visitor.example/shuttle",
+      "injected": "https://banff-visitr.example/shuttle",
+      "snippet": "banff-visitr.example",
+      "line": 55
+    },
+    {
+      "id": "T13",
+      "file": "seeded/02-iceland-winter-packing-list.md",
+      "category": "blocked-link",
+      "rules": [
+        "link_blocked"
+      ],
+      "description": "A link whose server answers 403: inconclusive, to be checked by hand, never dead.",
+      "original": "https://safetravel-iceland.example/winter",
+      "injected": "https://safetravel-iceland.example/winter-roads",
+      "snippet": "winter-roads",
+      "line": 61
+    },
+    {
+      "id": "T14",
+      "file": "seeded/03-kyoto-cherry-blossom-season-2027.md",
+      "category": "weekday-date-mismatch",
+      "rules": [
+        "weekday_date_mismatch"
+      ],
+      "description": "Friday, March 27, 2027 is a Saturday.",
+      "original": "is on Saturday, March 27, 2027",
+      "injected": "is on Friday, March 27, 2027",
+      "snippet": "Friday, March 27, 2027",
+      "line": 31
+    },
+    {
+      "id": "T15",
+      "file": "seeded/01-lisbon-three-days-walkable-plan.md",
+      "category": "broken-internal-link",
+      "rules": [
+        "link_broken_internal"
+      ],
+      "description": "A link to a page that is not on the site.",
+      "original": "blog/porto-weekend-guide>",
+      "injected": "blog/porto-weekend-itinerary>",
+      "snippet": "porto-weekend-itinerary",
+      "line": 65
+    },
+    {
+      "id": "T16",
+      "file": "seeded/04-banff-summer-three-day-plan.md",
+      "category": "distance-inconsistency",
+      "rules": [
+        "numeric_inconsistency"
+      ],
+      "description": "4 km and about 4.5 miles for the same trail.",
+      "original": "about 2.5 miles one way",
+      "injected": "about 4.5 miles one way",
+      "snippet": "about 4.5 miles",
+      "line": 26
+    },
+    {
+      "id": "T17",
+      "file": "seeded/03-kyoto-cherry-blossom-season-2027.md",
+      "category": "date-inconsistency",
+      "rules": [
+        "date_inconsistency"
+      ],
+      "description": "The table gives the evening walk another date than the text.",
+      "original": "| Gion Evening Walk | April 3, 2027 | ¥1,500 |",
+      "injected": "| Gion Evening Walk | April 10, 2027 | ¥1,500 |",
+      "snippet": "| Gion Evening Walk | April 10, 2027",
+      "line": 36
+    },
+    {
+      "id": "T18",
+      "file": "seeded/01-lisbon-three-days-walkable-plan.md",
+      "category": "entity-wrong",
+      "rules": [],
+      "description": "Belém Tower is on the Tagus, not the Douro (the river of Porto). Needs world knowledge.",
+      "original": "Belém Tower beside the river.",
+      "injected": "Belém Tower beside the Douro river.",
+      "snippet": "Douro river",
+      "line": 32
+    },
+    {
+      "id": "T19",
+      "file": "seeded/03-kyoto-cherry-blossom-season-2027.md",
+      "category": "seasonality",
+      "rules": [],
+      "description": "Cherry blossoms in Kyoto peak in spring, not at the end of June. Needs world knowledge.",
+      "original": "between the last week of March and the first week of April. Warm",
+      "injected": "between the last week of June and the first week of July. Warm",
+      "snippet": "last week of June",
+      "line": 23
+    },
+    {
+      "id": "T20",
+      "file": "seeded/02-iceland-winter-packing-list.md",
+      "category": "seasonality",
+      "rules": [],
+      "description": "Reykjavik has about four to five hours of daylight at the solstice, not eleven.",
+      "original": "only about four to five hours of usable daylight",
+      "injected": "about eleven hours of usable daylight",
+      "snippet": "eleven hours",
+      "line": 26
+    },
+    {
+      "id": "T21",
+      "file": "seeded/02-iceland-winter-packing-list.md",
+      "category": "source-does-not-support-figure",
+      "rules": [],
+      "description": "A visitor count cited to a daylight-hours page.",
+      "original": "December has the most dramatic dark skies but the shortest days.",
+      "injected": "December has the most dramatic dark skies but the shortest days. Roughly 2.3 million people visit each year ([visitor numbers](https://iceland-weather.example/daylight)).",
+      "snippet": "2.3 million",
+      "line": 44
+    }
+  ]
+}

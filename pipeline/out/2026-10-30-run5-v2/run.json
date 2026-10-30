@@ -1,0 +1,240 @@
+{
+  "run_id": "2026-10-30-run5-v2",
+  "draft_model": "sonnet",
+  "qa_model": "sonnet",
+  "max_rounds": 2,
+  "posts": [
+    {
+      "clinic": "clinic-a",
+      "service": "Tooth-colored fillings",
+      "topic": "Does getting a tooth-colored filling hurt?",
+      "dir": "clinic-a--tooth-colored-fillings",
+      "status": "published",
+      "rounds": 0,
+      "verdict_path": [
+        "PUBLICAR"
+      ],
+      "human_review": [
+        "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+        "Open each external link in a browser (the check only fetches status codes)",
+        "2 model style suggestion(s) were logged and did not block; see qa-r*.json"
+      ],
+      "slug": "does-tooth-colored-filling-hurt-what-expect",
+      "verdict": "PUBLICAR",
+      "pages_route_added": true,
+      "published_to": "web/sites/clinic-a/src/content/posts/does-tooth-colored-filling-hurt-what-expect.md",
+      "calls": [
+        {
+          "stage": "draft",
+          "model": "sonnet",
+          "cost_usd": 0.03828,
+          "seconds": 22.2,
+          "input_tokens": 2,
+          "output_tokens": 2650,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r0",
+          "model": "sonnet",
+          "cost_usd": 0.05448,
+          "seconds": 19.6
+        }
+      ],
+      "stage_seconds": {
+        "brief": 0.0,
+        "draft": 22.24,
+        "qa": 21.82
+      },
+      "cost_usd": 0.0928,
+      "input_tokens": 2,
+      "output_tokens": 2650,
+      "wall_seconds": 44.1
+    },
+    {
+      "clinic": "clinic-a",
+      "service": "Pediatric dentistry",
+      "topic": "When should a child first see a dentist?",
+      "dir": "clinic-a--pediatric-dentistry",
+      "status": "published",
+      "rounds": 0,
+      "verdict_path": [
+        "PUBLICAR"
+      ],
+      "human_review": [
+        "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+        "Open each external link in a browser (the check only fetches status codes)",
+        "4 model style suggestion(s) were logged and did not block; see qa-r*.json"
+      ],
+      "slug": "when-should-child-first-see-dentist-parent-s-guide",
+      "verdict": "PUBLICAR",
+      "pages_route_added": true,
+      "published_to": "web/sites/clinic-a/src/content/posts/when-should-child-first-see-dentist-parent-s-guide.md",
+      "calls": [
+        {
+          "stage": "draft",
+          "model": "sonnet",
+          "cost_usd": 0.04574,
+          "seconds": 28.1,
+          "input_tokens": 2,
+          "output_tokens": 3462,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r0",
+          "model": "sonnet",
+          "cost_usd": 0.05219,
+          "seconds": 17.6
+        }
+      ],
+      "stage_seconds": {
+        "brief": 0.0,
+        "draft": 28.13,
+        "qa": 18.28
+      },
+      "cost_usd": 0.0979,
+      "input_tokens": 2,
+      "output_tokens": 3462,
+      "wall_seconds": 46.4
+    },
+    {
+      "clinic": "clinic-a",
+      "service": "Clear aligners",
+      "topic": "Do clear aligners hurt?",
+      "dir": "clinic-a--clear-aligners",
+      "status": "published",
+      "rounds": 0,
+      "verdict_path": [
+        "PUBLICAR"
+      ],
+      "human_review": [
+        "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+        "Open each external link in a browser (the check only fetches status codes)",
+        "2 model style suggestion(s) were logged and did not block; see qa-r*.json"
+      ],
+      "slug": "do-clear-aligners-hurt-what-expect-austin",
+      "verdict": "PUBLICAR",
+      "pages_route_added": true,
+      "published_to": "web/sites/clinic-a/src/content/posts/do-clear-aligners-hurt-what-expect-austin.md",
+      "calls": [
+        {
+          "stage": "draft",
+          "model": "sonnet",
+          "cost_usd": 0.02302,
+          "seconds": 12.4,
+          "input_tokens": 2,
+          "output_tokens": 1206,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r0",
+          "model": "sonnet",
+          "cost_usd": 0.04038,
+          "seconds": 10.9
+        }
+      ],
+      "stage_seconds": {
+        "brief": 0.0,
+        "draft": 12.44,
+        "qa": 10.9
+      },
+      "cost_usd": 0.0634,
+      "input_tokens": 2,
+      "output_tokens": 1206,
+      "wall_seconds": 23.3
+    },
+    {
+      "clinic": "clinic-b",
+      "service": "Crowns and bridges",
+      "topic": "How long does a dental crown last?",
+      "dir": "clinic-b--crowns-and-bridges",
+      "status": "published",
+      "rounds": 0,
+      "verdict_path": [
+        "PUBLICAR"
+      ],
+      "human_review": [
+        "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+        "Open each external link in a browser (the check only fetches status codes)",
+        "4 model style suggestion(s) were logged and did not block; see qa-r*.json"
+      ],
+      "slug": "how-long-does-dental-crown-last-austin-guide",
+      "verdict": "PUBLICAR",
+      "pages_route_added": false,
+      "published_to": "web/sites/clinic-b/src/content/posts/how-long-does-dental-crown-last-austin-guide.md",
+      "calls": [
+        {
+          "stage": "draft",
+          "model": "sonnet",
+          "cost_usd": 0.03659,
+          "seconds": 21.7,
+          "input_tokens": 2,
+          "output_tokens": 2518,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r0",
+          "model": "sonnet",
+          "cost_usd": 0.04625,
+          "seconds": 17.1
+        }
+      ],
+      "stage_seconds": {
+        "brief": 0.0,
+        "draft": 21.76,
+        "qa": 18.11
+      },
+      "cost_usd": 0.0828,
+      "input_tokens": 2,
+      "output_tokens": 2518,
+      "wall_seconds": 39.9
+    },
+    {
+      "clinic": "clinic-b",
+      "service": "Family checkups and cleanings",
+      "topic": "How often should adults get a dental checkup and cleaning?",
+      "dir": "clinic-b--family-checkups-and-cleanings",
+      "status": "published",
+      "rounds": 0,
+      "verdict_path": [
+        "PUBLICAR"
+      ],
+      "human_review": [
+        "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+        "Open each external link in a browser (the check only fetches status codes)",
+        "3 model style suggestion(s) were logged and did not block; see qa-r*.json"
+      ],
+      "slug": "how-often-should-adults-get-dental-checkup-cleaning",
+      "verdict": "PUBLICAR",
+      "pages_route_added": false,
+      "published_to": "web/sites/clinic-b/src/content/posts/how-often-should-adults-get-dental-checkup-cleaning.md",
+      "calls": [
+        {
+          "stage": "draft",
+          "model": "sonnet",
+          "cost_usd": 0.03724,
+          "seconds": 18.6,
+          "input_tokens": 2,
+          "output_tokens": 2423,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r0",
+          "model": "sonnet",
+          "cost_usd": 0.05073,
+          "seconds": 19.0
+        }
+      ],
+      "stage_seconds": {
+        "brief": 0.0,
+        "draft": 18.64,
+        "qa": 19.91
+      },
+      "cost_usd": 0.088,
+      "input_tokens": 2,
+      "output_tokens": 2423,
+      "wall_seconds": 38.6
+    }
+  ],
+  "total_cost_usd": 0.4249,
+  "total_wall_seconds": 192.3
+}

@@ -1,0 +1,52 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "fixtures/posts/heldout2/01-how-often-dental-cleaning.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 3,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "Let's delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 44,
+      "evidence": "author.name: schema='Dr. Elena Marsh' vs post='Dr. Marcus Oyelaran'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout2-01-how-often-dental-cleaning.prompt.md"
+  },
+  "name": "heldout2-01-how-often-dental-cleaning"
+}

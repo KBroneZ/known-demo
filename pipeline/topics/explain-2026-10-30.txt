@@ -1,0 +1,143 @@
+clinic-a | Checkups and cleanings |   0 |  | skipped: already has a post
+clinic-a | Tooth-colored fillings |  12 | should i get my wisdom teeth removed or find a dentist who’s willing t | rejected: mentions 'wisdom teeth', which the clinic does not list
+clinic-a | Tooth-colored fillings |   6 | Filling fell out or sealant broke? | rejected: no search-style intent in the wording
+clinic-a | Tooth-colored fillings |   5 | New crack appeared after filling | rejected: not phrased as a question
+clinic-a | Tooth-colored fillings |   4 | Premolar with a 10-year-old amalgam filling: composite filling or e.ma | rejected: a personal case (first person or a number), not a general question
+clinic-a | Tooth-colored fillings |   4 | Is it normal for a brand new filling to have brown still around it? | rejected: no search-style intent in the wording
+clinic-a | Tooth-colored fillings |   4 | Poor care in past trying to start journey to fix wondering if filling  | rejected: not phrased as a question
+clinic-a | Tooth-colored fillings |   4 | Does the upper first molar need a filling? How should the dentist and  | rejected: no search-style intent in the wording
+clinic-a | Tooth-colored fillings |   3 | i just got a filling on a tooth i was told needs a root canal, will i  | rejected: a personal case (first person or a number), not a general question
+clinic-a | Tooth-colored fillings |   3 | 2 week post filling pain | rejected: not phrased as a question
+clinic-a | Tooth-colored fillings |   3 | Eating after Amalgam filling | rejected: not phrased as a question
+clinic-a | Tooth-colored fillings |   3 | I felt what's off with my tooth. How do I manage until my filling appo | rejected: a personal case (first person or a number), not a general question
+clinic-a | Tooth-colored fillings |   3 | Do my cavities need a filling right now, or should it be monitored? | rejected: a personal case (first person or a number), not a general question
+clinic-a | Tooth-colored fillings |   3 | Cavity filling anxiety | rejected: not phrased as a question
+clinic-a | Tooth-colored fillings |   3 | Issue w/ dentist and a failed filling | rejected: not phrased as a question
+clinic-a | Tooth-colored fillings |   1 | friend used dentemp cap and filling repair to apply halloween fangs | rejected: not phrased as a question
+clinic-a | Tooth-colored fillings |   1 | Staining or cavity? On natural tooth or filling? | rejected: fewer than 3 comments
+clinic-a | Tooth-colored fillings |   1 | Cocaine and Filling | rejected: not phrased as a question
+clinic-a | Tooth-colored fillings |   1 | Cavity filling | rejected: not phrased as a question
+clinic-a | Tooth-colored fillings |   1 | Part of my filling came out | rejected: not phrased as a question
+clinic-a | Root canal therapy |   0 |  | skipped: already has a post
+clinic-a | Dental implants |   0 |  | skipped: already has a post
+clinic-a | Crowns and bridges |   0 |  | skipped: already has a post
+clinic-a | Teeth whitening |   0 |  | skipped: already has a post
+clinic-a | Clear aligners |   8 | Brace/aligner alternatives | rejected: not phrased as a question
+clinic-a | Clear aligners |   6 | One dentist told me 3 cavities,the other told me 7. Also aligner quest | rejected: not phrased as a question
+clinic-a | Clear aligners |   5 | Clear aligner hurt so much I can't eat or take them out | rejected: not phrased as a question
+clinic-a | Clear aligners |   5 | Continue aligner treatment or undergo free gingival graft around LR1 n | rejected: a personal case (first person or a number), not a general question
+clinic-a | Clear aligners |   3 | Is it possible to get the full clear aligner process done in 8 days wh | rejected: a personal case (first person or a number), not a general question
+clinic-a | Clear aligners |   3 | Aligner migraines | rejected: not phrased as a question
+clinic-a | Clear aligners |   3 | Can I get a bridge before braces/aligner? | rejected: mentions 'braces', which the clinic does not list
+clinic-a | Clear aligners |   3 | My provider wants me to wear my elastics like this, but wouldn’t the e | rejected: a personal case (first person or a number), not a general question
+clinic-a | Clear aligners |   2 | Does my aligner expected results look odd? | rejected: fewer than 3 comments
+clinic-a | Clear aligners |   2 | How To Incentivize Staff For More Aligner Cases | rejected: fewer than 3 comments
+clinic-a | Clear aligners |   2 | Invisalign or Angel clear aligner | rejected: not phrased as a question
+clinic-a | Clear aligners |   2 | I need help since I don’t have access to many dentists. ALIGNER OR EXP | rejected: fewer than 3 comments
+clinic-a | Clear aligners |   1 | 21M, mild crowding but good bite: is a €2,990 Impress aligner quote wo | rejected: fewer than 3 comments
+clinic-a | Clear aligners |   1 | Need advice choosing between Invisalign, Damon braces, and aligner + T | rejected: not phrased as a question
+clinic-a | Clear aligners |   1 | Sudden cold sensitivity during clear aligner treatment | rejected: not phrased as a question
+clinic-a | Clear aligners |   1 | Is this clear aligner plan worth it for my tongue thrust / flare up? ( | rejected: fewer than 3 comments
+clinic-a | Clear aligners |   1 | Help with my aligner plan! | rejected: not phrased as a question
+clinic-a | Clear aligners |   1 | Invisalign Near Rhyl: Is Clear Aligner Treatment Right for You? | rejected: fewer than 3 comments
+clinic-a | Clear aligners |   1 | Please can I get a second opinion if it is safe to put my elastic band | rejected: not phrased as a question
+clinic-a | Clear aligners |   1 | Is braces or aligner treatment better? | rejected: fewer than 3 comments
+clinic-a | Clear aligners |   1 | i'm on my 6th aligner tray & I feel like my teeth are so much worse th | rejected: fewer than 3 comments
+clinic-a | Clear aligners |   1 | [Announcement] The second stop of our JumpStart for Clear Aligner Ther | rejected: not phrased as a question
+clinic-a | Clear aligners |   1 | Spark aligner mis-alignment | rejected: not phrased as a question
+clinic-a | Clear aligners |   1 | Looking for affordable clear aligner providers – including internation | rejected: not phrased as a question
+clinic-a | Clear aligners |   1 | Is this leftover aligner residue and should it be removed? | rejected: fewer than 3 comments
+clinic-a | Emergency dental care |   0 |  | skipped: already has a post
+clinic-a | Pediatric dentistry |  18 | Pediatric dental question | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |  12 | Pediatric dentistry | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   7 | Sedation for pediatric dental work? | rejected: mentions 'sedation', which the clinic does not list
+clinic-a | Pediatric dentistry |   7 | Need Pediatric Dental Advice | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   6 | 20 years old and STILL seeing my pediatric dentist… did I mess up? | rejected: a personal case (first person or a number), not a general question
+clinic-a | Pediatric dentistry |   4 | Looking for a conservative pediatric dentist who prefers fillings over | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   4 | How bad is this? Pediatric | rejected: no search-style intent in the wording
+clinic-a | Pediatric dentistry |   4 | Pediatric baby tooth abcess | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   4 | Pediatric dentists please help!!! | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   4 | Pediatric: needing advice on seeking a second opinion for tooth extrac | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   3 | Pediatric crown size different for same tooth? | rejected: no search-style intent in the wording
+clinic-a | Pediatric dentistry |   2 | Pediatric dental concern | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   2 | Pediatric dentist found 9 cavities, 2 baby root canals?? | rejected: fewer than 3 comments
+clinic-a | Pediatric dentistry |   2 | Question about my Pediatric dentistry. | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   2 | Pediatric dentists: Would you attempt to restore this second primary m | rejected: fewer than 3 comments
+clinic-a | Pediatric dentistry |   2 | Italian pediatric dentists don't want to give my kids flouride varnish | rejected: fewer than 3 comments
+clinic-a | Pediatric dentistry |   2 | My daughter (2) recently had her procedure done (3 days ago) Should I  | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   1 | Pediatric Dentistry | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   1 | Pediatric case | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   1 | Pediatric Enamel hypoplasia? | rejected: fewer than 3 comments
+clinic-a | Pediatric dentistry |   1 | How should I go about contacting my pediatric dentist to ask for his h | rejected: fewer than 3 comments
+clinic-a | Pediatric dentistry |   1 | Pediatric Dentist in Los Angeles: A Parent’s Guide to Stress-Free Kids | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   1 | Pediatric dentists help?! | rejected: not phrased as a question
+clinic-a | Pediatric dentistry |   1 | What happens during pediatric root canals? | rejected: fewer than 3 comments
+clinic-a | Pediatric dentistry |   1 | Natural-Looking Pediatric Zirconia Crowns Near You in Inver Grove Heig | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |  10 | Just got back from an emergency appointment and she disregarded this h | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   6 | I found cavities between my teeth and i've already had my yearly check | rejected: a personal case (first person or a number), not a general question
+clinic-b | Family checkups and cleanings |   6 | I’m not sure if my dentist was actually rude to me at my first braces  | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   5 | Can my teeth now be this bad off at a 6 mo checkup? | rejected: a personal case (first person or a number), not a general question
+clinic-b | Family checkups and cleanings |   5 | Not my tooth but i have a hole in my tooth that looks like this but sm | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   4 | I went to dentist for a normal checkup and came out with a huge bill a | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   4 | Seeing same dentist for checkup and cavity treatment? | rejected: no search-style intent in the wording
+clinic-b | Family checkups and cleanings |   3 | should i see my dentist now or wait until my next regular checkup? | rejected: a personal case (first person or a number), not a general question
+clinic-b | Family checkups and cleanings |   3 | do i have any cavities? didn’t have any my last checkup but very mild  | rejected: a personal case (first person or a number), not a general question
+clinic-b | Family checkups and cleanings |   3 | Did the dentist miss a spot after checkup? | rejected: no search-style intent in the wording
+clinic-b | Family checkups and cleanings |   2 | Left side of tongue numbness/paresthesia 8+ years after wisdom tooth r | rejected: fewer than 3 comments
+clinic-b | Family checkups and cleanings |   1 | First checkup in 6 years dentist recommended $800 of Curodont | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   1 | How should I go about a mouth checkup after giving oral since one of m | rejected: fewer than 3 comments
+clinic-b | Family checkups and cleanings |   1 | Is this small line on my premolar a crack or a sign of gum recession?  | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   1 | Sore spot/split(?) behind lower right molar, not long after a checkup. | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   1 | Dentist in South Bopal: What Happens During a Routine Dental Checkup? | rejected: fewer than 3 comments
+clinic-b | Family checkups and cleanings |   1 | Mini pimple on the gums after regular checkup | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   1 | Is this a reason to call the orthodontist and request a checkup? | rejected: fewer than 3 comments
+clinic-b | Family checkups and cleanings |   1 | Dental hygienist before or after dental checkup? | rejected: fewer than 3 comments
+clinic-b | Family checkups and cleanings |   1 | Almost 2 weeks of pain in jaw after seeing dentist for wisdom tooth pa | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   1 | Nonunion of mandible - ok for checkup/x-rays? | rejected: fewer than 3 comments
+clinic-b | Family checkups and cleanings |   1 | Just had 3 month post implant checkup and it was decently painful when | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   1 | Smoking and Cavity checkup | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   1 | First oral health checkup as an adult, transparency on some treatments | rejected: not phrased as a question
+clinic-b | Family checkups and cleanings |   1 | Anxious about dental state, next checkup is distant | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |  12 | should i get my wisdom teeth removed or find a dentist who’s willing t | rejected: mentions 'wisdom teeth', which the clinic does not list
+clinic-b | Tooth-colored fillings |   6 | Filling fell out or sealant broke? | rejected: no search-style intent in the wording
+clinic-b | Tooth-colored fillings |   5 | New crack appeared after filling | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |   4 | Premolar with a 10-year-old amalgam filling: composite filling or e.ma | rejected: a personal case (first person or a number), not a general question
+clinic-b | Tooth-colored fillings |   4 | Is it normal for a brand new filling to have brown still around it? | rejected: no search-style intent in the wording
+clinic-b | Tooth-colored fillings |   4 | Poor care in past trying to start journey to fix wondering if filling  | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |   4 | Does the upper first molar need a filling? How should the dentist and  | rejected: no search-style intent in the wording
+clinic-b | Tooth-colored fillings |   3 | i just got a filling on a tooth i was told needs a root canal, will i  | rejected: a personal case (first person or a number), not a general question
+clinic-b | Tooth-colored fillings |   3 | 2 week post filling pain | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |   3 | Eating after Amalgam filling | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |   3 | I felt what's off with my tooth. How do I manage until my filling appo | rejected: a personal case (first person or a number), not a general question
+clinic-b | Tooth-colored fillings |   3 | Do my cavities need a filling right now, or should it be monitored? | rejected: a personal case (first person or a number), not a general question
+clinic-b | Tooth-colored fillings |   3 | Cavity filling anxiety | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |   3 | Issue w/ dentist and a failed filling | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |   1 | friend used dentemp cap and filling repair to apply halloween fangs | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |   1 | Staining or cavity? On natural tooth or filling? | rejected: fewer than 3 comments
+clinic-b | Tooth-colored fillings |   1 | Cocaine and Filling | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |   1 | Cavity filling | rejected: not phrased as a question
+clinic-b | Tooth-colored fillings |   1 | Part of my filling came out | rejected: not phrased as a question
+clinic-b | Crowns and bridges |  12 | Temporary crown | rejected: not phrased as a question
+clinic-b | Crowns and bridges |  12 | Question about buccal reduction during crown preparation | rejected: not phrased as a question
+clinic-b | Crowns and bridges |  10 | Do I need a crown replacement or just seal the gap? | rejected: a personal case (first person or a number), not a general question
+clinic-b | Crowns and bridges |   5 | 3 month old crown pain | rejected: not phrased as a question
+clinic-b | Crowns and bridges |   4 | Can i ask a different dentist to give me a new crown? | rejected: a personal case (first person or a number), not a general question
+clinic-b | Crowns and bridges |   4 | Permanent crown installed today, but second X-ray showed a slight gap. | rejected: a personal case (first person or a number), not a general question
+clinic-b | Crowns and bridges |   4 | Factors in deciding on root canal/new crown OR extraction/implant? | rejected: no search-style intent in the wording
+clinic-b | Crowns and bridges |   3 | Should i go for a crown?? | rejected: a personal case (first person or a number), not a general question
+clinic-b | Crowns and bridges |   3 | Pain after crown - do I need a root canal? | rejected: a personal case (first person or a number), not a general question
+clinic-b | Crowns and bridges |   3 | 1 week till the crown is done, chipped off one side, doc said she can  | rejected: not phrased as a question
+clinic-b | Crowns and bridges |   3 | Glaze chipping on crown? | rejected: not phrased as a question
+clinic-b | Crowns and bridges |   3 | Crown & bridge makeover vs. snap on dentures? | rejected: mentions 'denture', which the clinic does not list
+clinic-b | Crowns and bridges |   3 | Tooth Pain from Temporary Crown | rejected: not phrased as a question
+clinic-b | Crowns and bridges |   3 | Temp crown keeps falling off. | rejected: not phrased as a question
+clinic-b | Crowns and bridges |   3 | Should I get a crown this morning ? | rejected: a personal case (first person or a number), not a general question
+clinic-b | Crowns and bridges |   3 | Almost chocked on this after temporary crown | rejected: not phrased as a question
+clinic-b | Crowns and bridges |   1 | temporary crown pain | rejected: not phrased as a question
+clinic-b | Crowns and bridges |   1 | How does this new full cast gold crown look? | rejected: fewer than 3 comments
+clinic-b | Crowns and bridges |   1 | How does this newly placed full cast gold crown look? | rejected: fewer than 3 comments
+clinic-b | Crowns and bridges |   1 | Do you think my crown is too white? | rejected: fewer than 3 comments
+clinic-b | Crowns and bridges |   1 | Just got my permanent crown, but the second X-ray showed a small gap.  | rejected: fewer than 3 comments
+clinic-b | Clear aligners |   0 |  | skipped: already has a post
+clinic-b | Children's dentistry |   0 |  | skipped: already has a post
+clinic-b | Same-day emergency care |   0 |  | skipped: already has a post

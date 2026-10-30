@@ -1,0 +1,106 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "fixtures/posts/seeded/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "Studies show that 98% of dental implants are still working after 25 years.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "guarantee",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "guaranteed",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 51,
+      "evidence": "author.name: schema='Dr. Brian Walsh' vs post='Dr. Elena Marsh'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-sonnet/prompts/seeded-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.027636,
+    "output": "reports/model-sonnet/llm/seeded-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "Studies show that 98% of dental implants are still working after 25 years.",
+        "type": "unsourced_claim",
+        "severity": "block",
+        "why": "The statistic is given with no citation, and long-term implant survival figures in the literature are generally lower and vary by study, so the claim is unverified and likely overstated.",
+        "fix": "Remove the figure or replace it with a cited, accurately worded statement such as survival rates reported in a named peer-reviewed study or ADA resource."
+      },
+      {
+        "quote": "Our implants come with a lifetime guarantee, so your new tooth is guaranteed to last.",
+        "type": "prohibited_promise",
+        "severity": "block",
+        "why": "A lifetime guarantee and a guarantee that the tooth will last violate ADA advertising rules on guarantees, and nothing in the ficha supports any such warranty.",
+        "fix": "Delete the sentence and, if desired, say that implant longevity depends on gum health, habits and follow-up care."
+      },
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Brian Walsh\"}",
+        "type": "schema_incoherent",
+        "severity": "block",
+        "why": "The JSON-LD names Dr. Brian Walsh as author, who is not in the ficha, while the visible byline is Dr. Elena Marsh.",
+        "fix": "Change the JSON-LD author name to Dr. Elena Marsh so it matches the visible byline and the ficha."
+      },
+      {
+        "quote": "Habits such as grinding your teeth and smoking, and your gum health, all play a part.",
+        "type": "other",
+        "severity": "warn",
+        "why": "The sentence is orphaned after the guarantee line and no longer follows from question 5 about repair or replacement, so the flow breaks once the guarantee is removed.",
+        "fix": "Move it to follow question 4 or 5, or rewrite it as a lead-in such as 'Longevity depends on habits such as grinding and smoking, and on your gum health.'"
+      },
+      {
+        "quote": "A bridge needs them as anchors, and an implant does not.",
+        "type": "other",
+        "severity": "info",
+        "why": "The statement is broadly accurate but flat, because neighboring teeth still matter for implant planning (spacing, bite).",
+        "fix": "Soften to 'an implant does not rely on them for support'."
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "severity": "info",
+        "why": "The disclaimer is appropriate for the demo but would need to be removed if the post were published for a real practice.",
+        "fix": "Keep it for the demo only; remove it for any real publication."
+      },
+      {
+        "quote": "\"publisher\": {\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\", \"telephone\": \"(512) 555-0142\"}",
+        "type": "schema_incoherent",
+        "severity": "info",
+        "why": "A Dentist is not a typical publisher type (Organization is expected), though the name and phone do match the ficha.",
+        "fix": "Use an Organization publisher, or keep the Dentist type only if intentional."
+      }
+    ]
+  },
+  "name": "seeded-02-dental-implants-vs-bridges"
+}

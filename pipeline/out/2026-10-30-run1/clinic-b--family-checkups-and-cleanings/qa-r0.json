@@ -1,0 +1,56 @@
+{
+  "name": "r0",
+  "rules_verdict": "CORREGIR",
+  "rules_seconds": 0.54,
+  "rules_findings": [
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 61,
+      "evidence": "**Booking the family together.** Our [family checkups and cleanings](/services/family-checkups) include exams",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 71,
+      "evidence": "If you are looking for a checkup in Austin, Copper Wren Dental Studio offers exams and cleanings for every age",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    }
+  ],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0036336,
+    "seconds": 24.4,
+    "findings": [
+      {
+        "quote": "If you have facial swelling along with a fever, or trouble breathing or swallowing, go to an emergency room or call 911.",
+        "type": "fact_vs_ficha",
+        "severity": "block",
+        "why": "The ficha says swelling that spreads to the face or neck is an emergency, but the post sends facial swelling to an ER only when a fever is also present, which could delay care for a spreading dental infection.",
+        "fix": "Replace the sentence with the ficha rule: go to an emergency room or call 911 for swelling that spreads to your face or neck, trouble breathing or swallowing, or uncontrolled bleeding."
+      },
+      {
+        "quote": "Swelling in your gum, jaw, or face",
+        "type": "other",
+        "severity": "warn",
+        "why": "Listing facial swelling only under 'call soon' conflicts with the ficha's emergency rule and gives no urgency for swelling that may be spreading.",
+        "fix": "Move facial or neck swelling into the emergency guidance and keep only gum swelling that stays local under 'call soon'."
+      },
+      {
+        "quote": "Can teeth change in six months?",
+        "type": "other",
+        "severity": "warn",
+        "why": "The heading asks about a six-month timeframe that the paragraph never addresses, and the answer given ('a visit that comes soon after a clean checkup') does not match the question.",
+        "fix": "Retitle the section to match its content, for example 'Can a cavity be found soon after a checkup?'."
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "verdict": "BLOQUEAR"
+  },
+  "verdict": "BLOQUEAR"
+}

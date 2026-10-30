@@ -1,0 +1,44 @@
+{
+  "clinic_id": "clinic-a",
+  "clinic_name": "Bluebonnet Hollow Dental",
+  "topic": {
+    "question": "Do clear aligners hurt?",
+    "source": "seed",
+    "source_id": "seed",
+    "comments": 0,
+    "retrieved": "n/a",
+    "intent": "",
+    "patient_wording": ""
+  },
+  "service": "Clear aligners",
+  "service_slug": null,
+  "service_summary": "",
+  "service_text": [],
+  "primary_keyword": "clear aligners austin",
+  "keyword_note": "heuristic: service alias + city; no search-volume data was consulted",
+  "intent": "informational; a local patient researching before booking",
+  "questions": [
+    "Do clear aligners hurt?"
+  ],
+  "related_questions": [],
+  "author": "Dr. Marcus Oyelaran",
+  "reviewer": "Dr. Elena Marsh",
+  "category": "clear-aligners",
+  "internal_links": [
+    {
+      "url": "/contact",
+      "why": "booking and contact"
+    },
+    {
+      "url": "/team",
+      "why": "the dentists"
+    },
+    {
+      "url": "/blog/can-teeth-whitening-match-whites-eyes",
+      "why": "related post: Can Teeth Whitening Match the Whites of Your Eyes?"
+    }
+  ],
+  "sources": [],
+  "word_range": "about 600 to 850 words (length follows the content; it is not a target)",
+  "facts": "- Clinic name: Bluebonnet Hollow Dental\n- Phone: (512) 555-0142\n- Address: 2214 Meridian Park Drive, Suite 110, Austin, TX 78704\n- Hours (use this exact wording): We are open Monday through Thursday from 8 a.m. to 5 p.m., and on Friday from 8 a.m. to 1 p.m.\n- After-hours instruction: After hours, call the main number and follow the prompt for the on-call dentist.\n- Published price 'new_patient_exam_xrays': $129\n- Published price 'in_office_whitening': $395\n- Published price 'emergency_exam': $95\n- Insurance carriers: Delta Dental, Cigna, MetLife\n- Dentist: Dr. Elena Marsh, DDS - general dentistry, dental implants, emergency care\n- Dentist: Dr. Marcus Oyelaran, DMD - family and pediatric dentistry, clear aligners\n- Price and insurance statements as the clinic publishes them (repeat only WITH their conditions, in this wording):\n    * If you are new to us and paying without insurance, the new patient exam with X-rays is $129.\n    * We are in network with Delta Dental, Cigna and MetLife, and our front desk can check your benefits before you come in.\n    * Our front desk can check your benefits with Delta Dental, Cigna or MetLife.\n    * In-office whitening at our practice is $395.\n- Safety instructions (never contradict them; repeat when you discuss pain, swelling or injuries):\n    * If you have trouble breathing or swallowing, uncontrolled bleeding or swelling that spreads to your face or neck, go to an emergency room or call 911."
+}

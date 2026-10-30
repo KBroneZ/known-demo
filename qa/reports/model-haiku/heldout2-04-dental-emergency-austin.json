@@ -1,0 +1,98 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "fixtures/posts/heldout2/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 18,
+      "evidence": "scrub it",
+      "message": "Knocked-out teeth must not be scrubbed or soaped; rinse gently with water or milk.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 34,
+      "evidence": "A patient who came in last month with a cracked molar on a Thursday evening told",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "hours_mismatch",
+      "severity": "block",
+      "line": 36,
+      "evidence": "Friday from 8 a.m. to 5 p.m.",
+      "message": "Hours for fri do not match the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-haiku/prompts/heldout2-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.0027184,
+    "output": "reports/model-haiku/llm/heldout2-04-dental-emergency-austin.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "A patient who came in last month with a cracked molar on a Thursday evening told us she was out the door pain-free within the hour.",
+        "type": "testimonial",
+        "severity": "block",
+        "why": "The ficha lists no patient testimonials on file, so this patient account is fabricated or unsupported.",
+        "fix": "Delete the patient anecdote and describe the emergency visit process in neutral, verifiable terms."
+      },
+      {
+        "quote": "told us she was out the door pain-free within the hour",
+        "type": "prohibited_promise",
+        "severity": "block",
+        "why": "It promises a specific outcome (pain relief within a set time) that no clinic can guarantee, which ADA advertising rules prohibit.",
+        "fix": "Remove the time-bound pain-relief outcome and say only that the clinic offers emergency exams when schedule allows."
+      },
+      {
+        "quote": "on a Thursday evening",
+        "type": "fact_vs_ficha",
+        "severity": "block",
+        "why": "The ficha lists Thursday hours as 08:00 to 17:00, so an evening visit on Thursday contradicts the clinic's schedule.",
+        "fix": "Remove the evening reference or replace it with a daytime example that matches the ficha hours."
+      },
+      {
+        "quote": "and on Friday from 8 a.m. to 5 p.m.",
+        "type": "fact_vs_ficha",
+        "severity": "block",
+        "why": "The ficha lists Friday hours as 08:00 to 13:00, not 08:00 to 17:00.",
+        "fix": "Change the Friday hours to 8 a.m. to 1 p.m."
+      },
+      {
+        "quote": "If it is dirty, scrub it clean with soap and warm water before you put it back.",
+        "type": "false_medical_claim",
+        "severity": "block",
+        "why": "ADA and IADT guidance says a knocked-out tooth should be rinsed gently with water or milk without scrubbing or using soap, since scrubbing can damage the root's periodontal ligament cells needed for reattachment.",
+        "fix": "Replace it with: gently rinse the tooth with milk or water, without scrubbing or using soap, and do not handle the root."
+      },
+      {
+        "quote": "The ADA's [MouthHealthy page on dental emergencies](https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies) lists common cases and what to do.",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "I cannot verify from the provided materials that this URL resolves or that the page says what the post claims, so the citation is unconfirmed.",
+        "fix": "Open the link, confirm the page exists and supports the sentence, and fix or remove the link if it does not."
+      },
+      {
+        "quote": "Dental emergencies rarely happen at a convenient time.",
+        "type": "ai_tell",
+        "severity": "info",
+        "why": "This generic opener is a stock phrase that adds no specific information for readers.",
+        "fix": "Open with a concrete scenario or the specific first step the reader needs."
+      }
+    ]
+  },
+  "name": "heldout2-04-dental-emergency-austin"
+}

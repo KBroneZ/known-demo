@@ -1,0 +1,132 @@
+{
+  "post": "04-childs-first-dental-visit",
+  "file": "qa/fixtures/posts/heldout3/04-childs-first-dental-visit.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "hours_mismatch",
+      "severity": "block",
+      "line": 28,
+      "evidence": "Sundays from 9:00 a.m. to 1:00 p.m.",
+      "message": "Hours for sun do not match the ficha.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_broken_internal",
+      "severity": "block",
+      "line": 34,
+      "evidence": "https://www.bluebonnethollowdental.example/services/clear-aligners",
+      "message": "Internal link points to a page that is not in the ficha page list.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.cdc.gov/oral-health/prevention/oral-health-tips-for-children.html",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-haiku-v2/prompts/heldout3-04-childs-first-dental-visit.prompt.md",
+    "cost_usd": 0.0029617000000000003,
+    "output": "qa/reports/model-haiku-v2/llm/heldout3-04-childs-first-dental-visit.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "A child's first dental visit should happen at age three.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "Mainstream guidance from the AAPD and ADA recommends a first visit by age one or within six months of the first tooth erupting, and the post's own AAPD source says so, so age three is wrong and risks delaying care.",
+        "fix": "Replace with guidance that the first visit should occur by age one or within six months of the first tooth appearing, citing the AAPD.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "We are open Sundays from 9:00 a.m. to 1:00 p.m.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha lists hours only Monday through Friday and states that anything not listed is closed, so the clinic is closed on Sundays and this sentence is false.",
+        "fix": "Delete the sentence, or replace it with the ficha hours for Monday through Friday, which are already stated later in the post.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "[clear aligner page](https://www.bluebonnethollowdental.example/services/clear-aligners)",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "block",
+        "why": "The /services/clear-aligners path is not among the pages that exist on the site, so this internal link is broken and the post also steers a children's article toward an unrelated service page.",
+        "fix": "Link to an existing page such as /services, or remove the link and keep the reference to the clinic's pediatric services.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "reviewed_by: Dr. Elena Marsh",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha lists Dr. Marsh's focus as general dentistry, implants and emergency care, not pediatrics, and nothing in the file confirms she actually reviewed this post, so the credit is unverified.",
+        "fix": "Confirm that Dr. Marsh reviewed this post and that she is qualified to review pediatric content, or change the attribution to a reviewer whose focus matches.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "A child\u2019s first dental appointment is a chance to get guidance as well as have the mouth checked.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The opening is generic filler that could fit any dental article and reads like an AI-generated template sentence.",
+        "fix": "Open with a concrete point about this clinic's pediatric first visit, or cut the sentence.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Use an age-appropriate amount of fluoride toothpaste based on your dentist\u2019s or doctor\u2019s advice.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The guidance is vague and gives no specific amounts or source, though it is not unsafe.",
+        "fix": "Add the ADA amounts (a smear for children under three, a pea-sized amount for ages three to six) with a citation to the ADA or AAPD.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Early dental visits help families talk through brushing, feeding habits, fluoride, and ways to lower the risk of cavities.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This general statement is harmless but has no supporting link.",
+        "fix": "Cite the AAPD FAQ or remove the claim about what early visits achieve.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "[American Academy of Pediatric Dentistry: Frequently Asked Questions](https://www.aapd.org/resources/parent/faq/)",
+        "type": "broken_or_fake_source",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I could not verify this URL or confirm that it supports the post's claims, so the source is unverified.",
+        "fix": "Check that the link resolves and that the cited page supports the specific claims it is meant to back, and link each claim to its source.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout3-04-childs-first-dental-visit"
+}

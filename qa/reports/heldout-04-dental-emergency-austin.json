@@ -1,0 +1,36 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "fixtures/posts/heldout/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "In today's fast-paced",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 22,
+      "evidence": "aspirin directly against the gum",
+      "message": "Aspirin placed on gums or teeth burns the tissue; swallow it as directed.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout-04-dental-emergency-austin.prompt.md"
+  },
+  "name": "heldout-04-dental-emergency-austin"
+}

@@ -1,0 +1,42 @@
+{
+  "clinic": "clinic-b",
+  "service": "Family checkups and cleanings",
+  "topic": "I found cavities between my teeth and i've already had my yearly checkup. Can this wait or should I book an earlier appointment?",
+  "dir": "clinic-b--family-checkups-and-cleanings",
+  "status": "needs-human",
+  "rounds": 0,
+  "verdict_path": [
+    "BLOQUEAR"
+  ],
+  "human_review": [
+    "BLOQUEAR (model only, confirm or dismiss) fact_vs_ficha: 'If you have facial swelling along with a fever, or trouble breathing or swallowing, go to an emergen': The ficha says swelling that spreads to the face or neck is an emergency, but the post sends facial swelling to an ER only when a fever is also present, which could delay care for a spreading dental infection."
+  ],
+  "slug": "cavities-between-teeth-after-checkup-wait-book",
+  "verdict": "BLOQUEAR",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.05223,
+      "seconds": 32.6,
+      "input_tokens": 2,
+      "output_tokens": 4123,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.00363,
+      "seconds": 24.4
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 32.64,
+    "qa": 24.9
+  },
+  "cost_usd": 0.0559,
+  "input_tokens": 2,
+  "output_tokens": 4123,
+  "wall_seconds": 57.5
+}

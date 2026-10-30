@@ -1,0 +1,70 @@
+{
+  "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/": {
+    "checked": "2026-10-30",
+    "status": 403
+  },
+  "https://www.aae.org/patients/your-office-visit/post-treatment-care/": {
+    "checked": "2026-10-30",
+    "status": 403
+  },
+  "https://www.aapd.org/resources/parent/faq/": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.ada.org/resources/ada-library/oral-health-topics/materials-for-direct-restorations": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.ada.org/sitecore/content/ADA-Organization/ADA/MouthHealthy/home/all-topics-a-z/braces": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.cdc.gov/oral-health/prevention/oral-health-tips-for-children.html": {
+    "checked": "2026-10-30",
+    "status": 403
+  },
+  "https://www.fda.gov/medical-devices/dental-devices/clear-dental-aligners": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.mouthhealthy.org/": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.mouthhealthy.org/all-topics-a-z/bridges": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.mouthhealthy.org/all-topics-a-z/fillings-tooth-colored/": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.mouthhealthy.org/all-topics-a-z/tooth-whitening-safety": {
+    "checked": "2026-10-30",
+    "status": 404
+  },
+  "https://www.nidcr.nih.gov/health-info/dental-fillings": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.nidcr.nih.gov/health-info/gum-disease": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://www.nidcr.nih.gov/health-info/gum-disease-treatment-guidelines-2026": {
+    "checked": "2026-10-30",
+    "status": 404
+  },
+  "https://www.nidcr.nih.gov/health-info/implant-maintenance-guide": {
+    "checked": "2026-10-30",
+    "status": 404
+  }
+}

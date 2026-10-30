@@ -1,0 +1,18 @@
+{
+  "https://coffeehouse-history.example/guild-origins": 200,
+  "https://tram-info.example/vienna/network": 200,
+  "https://palace-tickets.example/visit": 200,
+  "https://danube-cruises.example/evening": 200,
+  "https://stays.example/cape-town/gardens?aff_id=tn42": 200,
+  "https://cableway-status.example/today": 200,
+  "https://peninsula-tours.example/full-day": 200,
+  "https://vine-line.example/timetable": 200,
+  "https://lantern-lane.example/food-walk": 200,
+  "https://lotus-alley.example/class": 200,
+  "https://lakeside-cyclo.example/rides": 200,
+  "https://tallinn-museum-pass.example/card": 403,
+  "https://baltic-ferry-info.exmaple/tallinn-helsinki": "nxdomain",
+  "https://gate-lantern.example/old-town": 200,
+  "https://factory-quarter-bites.example/tour": 200,
+  "https://old-town-events.example/ice-lantern-2027": 200
+}

@@ -1,0 +1,55 @@
+---
+import Page from '../../layouts/Page.astro';
+import Faq from '../../components/Faq.astro';
+import PostCard from '../../components/PostCard.astro';
+import Cta from '../../components/Cta.astro';
+import { clinic, getPosts, metaFor, servicePages, dentistSlug } from '../../lib/site.ts';
+import { faqLd } from '../../lib/jsonld.ts';
+
+export async function getStaticPaths() {
+  return servicePages().map((s) => ({ params: { slug: s.slug } }));
+}
+const { slug } = Astro.params;
+const service = servicePages().find((s) => s.slug === slug)!;
+const path = `/services/${slug}`;
+const meta = await metaFor(path);
+const related = (await getPosts()).filter((p) => p.data.service === slug);
+const price = service.price_key ? clinic.prices[service.price_key] : undefined;
+const otherServices = servicePages().filter((s) => s.slug !== slug);
+---
+<Page
+  {...meta}
+  heading={service.name}
+  trail={[{ name: 'Services', path: '/services' }, { name: service.name, path }]}
+  jsonld={service.faq.length ? [faqLd(service.faq)] : []}
+  narrow
+>
+  <p class="lead">{service.summary}</p>
+  <div class="prose">
+    {service.body!.map((p) => <p>{p}</p>)}
+  </div>
+  {price && <p class="card"><strong>Price on file:</strong> {price}. Other costs depend on an exam.</p>}
+  {service.lead_dentist && (
+    <p>Led by <a href={`/team#${dentistSlug(service.lead_dentist)}`}>{service.lead_dentist}</a>.</p>
+  )}
+  {service.faq.length > 0 && (
+    <>
+      <h2>Common questions</h2>
+      <Faq items={service.faq} />
+    </>
+  )}
+  {related.length > 0 && (
+    <>
+      <h2>Related articles</h2>
+      <div class="grid">
+        {related.map((p) => <PostCard slug={p.data.slug} title={p.data.title} description={p.data.description} author={p.data.author} date={p.data.date} />)}
+      </div>
+    </>
+  )}
+  <h2>Other services</h2>
+  <ul>{otherServices.map((s) => <li><a href={`/services/${s.slug}`}>{s.name}</a></li>)}</ul>
+  <Cta />
+</Page>
+<style>
+  .lead{font-size:1.2rem}
+</style>

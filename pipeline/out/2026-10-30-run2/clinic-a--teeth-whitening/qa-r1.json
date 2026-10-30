@@ -1,0 +1,26 @@
+{
+  "name": "r1",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.46,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0033886999999999997,
+    "seconds": 19.1,
+    "findings": [
+      {
+        "quote": "The ADA's [MouthHealthy page on whitening](https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening) covers whitening and sensitivity.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The link is to a real ADA consumer-site domain, but nothing in the post or the ficha confirms that this specific page covers sensitivity, so the claim it supports is unverified.",
+        "fix": "Open the linked page, confirm it discusses whitening-related sensitivity, and quote or paraphrase only what it says; otherwise drop the sentence or the link."
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 0,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

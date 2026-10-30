@@ -1,0 +1,30 @@
+# Site profile for a FICTIONAL travel blog used by the QA gate demo. Not a real site; all .example domains never resolve.
+# The editorial rules below are generic (they mirror the kind of rules a travel publisher writes for itself).
+profile: travel
+name: Tripnotes Example
+website: https://www.tripnotes.example
+required_sections: [Sources]
+banned_characters: ["—", "...", "!"]
+bylines: [Nora Vale, Theo Marsh]
+author_titles: [Editor, Contributor]
+evidence_headings: [How we tested, Methodology, Test log]
+affiliate:
+  hosts: [stays.example, rail-deals.example]
+  params: [aff_id]
+  disclosure_phrases: [affiliate links, may earn a commission]
+review_max_age_days: 180
+stamp_grace_days: 30
+pages:
+  - /
+  - /blog
+  - /about
+  - /blog/lisbon-three-days-walkable-plan
+  - /blog/iceland-winter-packing-list
+  - /blog/kyoto-cherry-blossom-season-2027
+  - /blog/banff-summer-three-day-plan
+  - /blog/porto-weekend-guide
+  - /blog/lofoten-in-february
+  - /blog/vienna-three-days-trams-coffee-houses
+  - /blog/cape-town-four-days-mountain-winelands
+  - /blog/hanoi-old-quarter-two-days
+  - /blog/tallinn-old-town-two-days

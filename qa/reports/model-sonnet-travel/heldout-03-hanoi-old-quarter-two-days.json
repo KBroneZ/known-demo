@@ -1,0 +1,111 @@
+{
+  "post": "03-hanoi-old-quarter-two-days",
+  "file": "qa/fixtures/travel/posts/heldout/03-hanoi-old-quarter-two-days.md",
+  "verdict": "CORREGIR",
+  "deterministic_verdict": "CORREGIR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 3,
+    "block": 0
+  },
+  "findings": [
+    {
+      "rule": "review_stamp_is_publish_date",
+      "severity": "warn",
+      "line": 21,
+      "evidence": "2026-06-03",
+      "message": "'Last reviewed' is the publish date and the post is 149 days old; it reads as a template stamp, not a review.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "event_date_past",
+      "severity": "warn",
+      "line": 27,
+      "evidence": "12 September 2026",
+      "message": "This date is already past (2026-09-12) and the sentence is not written as history; update it from the organiser's page or remove it.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "price_no_as_of",
+      "severity": "warn",
+      "line": 39,
+      "evidence": "VND 750,000",
+      "message": "Prices are stated with no as-of date; add 'prices checked <month year>' near them.",
+      "layer": "deterministic",
+      "also": [
+        40,
+        41,
+        43
+      ]
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-travel/prompts/heldout-03-hanoi-old-quarter-two-days.prompt.md",
+    "cost_usd": 0.034722,
+    "output": "qa/reports/model-sonnet-travel/llm/heldout-03-hanoi-old-quarter-two-days.llm.txt",
+    "verdict": "CORREGIR",
+    "model_verdict": "CORREGIR",
+    "raw_verdict": "CORREGIR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "The Old Quarter Lantern Weekend takes place on 12 September 2026, so reserve a room near the lake early if you want to see the lanterns.",
+        "type": "stale_fact",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The date 12 September 2026 is before today (2026-10-30) but the sentence still presents the event as upcoming and tells readers to book ahead.",
+        "fix": "Remove the event or update it to the next verified edition, with a date and an organiser source, and write it in the correct tense.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "The Old Quarter Lantern Weekend takes place on 12 September 2026",
+        "type": "entity_unverified",
+        "kind": "error",
+        "severity": "warn",
+        "why": "I cannot verify that this event exists, who organises it or when it runs, and no source is linked for it.",
+        "fix": "Cite an official organiser or tourism-board page for the event and its date, or delete the claim.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "A bowl of noodles at Lotus Alley Kitchen costs about VND 60,000 on the day-class menu.",
+        "type": "source_does_not_support_figure",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "A cooking-class operator selling noodles on a 'day-class menu' is odd, and the linked class-details page is unlikely to back a noodle price.",
+        "fix": "Source this price to a menu or page that lists it, or remove the sentence.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "| Street food walking tour | Lantern Lane Tours | 2.5 hours | VND 540,000 |",
+        "type": "entity_unverified",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I do not recognise this small operator, and the prices carry no inline source, only an operator link in the Sources list.",
+        "fix": "Link each operator's price to its own booking page and add a price-checked date.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Join a morning cooking class at Lotus Alley Kitchen, where you shop at a local market and cook three dishes.",
+        "type": "entity_unverified",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I cannot verify Lotus Alley Kitchen as a real Hanoi business offering this format.",
+        "fix": "Add the address and an official booking link, or confirm the operator before publishing.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "| Cyclo ride around the lake | Lakeside Cyclo Co-op | 45 minutes | VND 250,000 |",
+        "type": "entity_unverified",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I cannot verify the Lakeside Cyclo Co-op, and the post never names the lake (presumably Hoan Kiem).",
+        "fix": "Name the lake and confirm the cooperative and its price with the operator.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout-03-hanoi-old-quarter-two-days"
+}

@@ -1,0 +1,132 @@
+{
+  "post": "03-clear-aligners-for-adults",
+  "file": "qa/fixtures/posts/heldout3/03-clear-aligners-for-adults.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "dentist_not_in_roster",
+      "severity": "block",
+      "line": 7,
+      "evidence": "author: Dr. Priya Shah",
+      "message": "'author' is not on the ficha dentist roster.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 34,
+      "evidence": "Every adult finishes aligner treatment in six weeks.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_broken_internal",
+      "severity": "block",
+      "line": 42,
+      "evidence": "https://www.bluebonnethollowdental.example/services/clear-aligners",
+      "message": "Internal link points to a page that is not in the ficha page list.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/heldout3-03-clear-aligners-for-adults.prompt.md",
+    "cost_usd": 0.029994,
+    "output": "qa/reports/model-sonnet-v3/llm/heldout3-03-clear-aligners-for-adults.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Every adult finishes aligner treatment in six weeks.",
+        "type": "prohibited_promise",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is a false, guaranteed treatment timeline; aligner treatment length varies by case and is typically many months.",
+        "fix": "Delete the sentence or replace it with a conditional statement that treatment length varies and the dentist can give an estimate after an evaluation.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "For mild cases, aligners work safely without a dental professional.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "This contradicts ADA and FDA guidance, which say aligner treatment needs supervision by a licensed dental professional, and it contradicts the post's own later warning.",
+        "fix": "Delete the sentence or state that aligner treatment, including mild cases, should be planned and monitored by a licensed dental professional.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "https://www.bluebonnethollowdental.example/services/clear-aligners",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "block",
+        "why": "The /services/clear-aligners page is not in the ficha's list of existing pages, so the internal link would be broken.",
+        "fix": "Link to the existing /services page instead, or remove the link until a clear aligners page exists.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "author: Dr. Priya Shah",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "Dr. Priya Shah is not a dentist listed in the ficha, so the authorship attribution is unverified and probably invented.",
+        "fix": "Use a dentist from the ficha (such as Dr. Marcus Oyelaran) as author, or remove the author credit unless it can be confirmed.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Aligners are usually worn for most of the day, including while sleeping, and removed for meals and drinks other than water.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is general wear guidance that usually matches common aligner instructions, but it is not tied to a specific source, and the wear time varies by product.",
+        "fix": "Say that wear time is set by the clinician (commonly 20 to 22 hours a day) and cite the FDA or ADA page.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "https://www.ada.org/sitecore/content/ADA-Organization/ADA/MouthHealthy/home/all-topics-a-z/braces",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "warn",
+        "why": "This is an internal CMS-style path that is unlikely to be a live public URL, and I cannot verify that it supports the post.",
+        "fix": "Replace it with the verified public MouthHealthy URL for braces or aligners, or remove it.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "It is possible to consider orthodontic treatment as an adult.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The phrasing is stilted and generic, and it reads as filler.",
+        "fix": "Rewrite it as, for example, 'Adults can get orthodontic treatment, and many do.'",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Dr. Marcus Oyelaran provides family and pediatric dentistry and clear aligners at Bluebonnet Hollow Dental.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This matches the ficha, but the post has no address, phone number or contact call to action and says only that 'an appointment can help'.",
+        "fix": "Add the phone number (512) 555-0142 and a link to /contact.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout3-03-clear-aligners-for-adults"
+}

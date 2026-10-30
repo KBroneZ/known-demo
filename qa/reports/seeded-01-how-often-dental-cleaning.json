@@ -1,0 +1,60 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "fixtures/posts/seeded/01-how-often-dental-cleaning.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 3,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "In today's fast-paced",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "Let's delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_broken",
+      "severity": "block",
+      "line": 24,
+      "evidence": "https://www.nidcr.nih.gov/health-info/gum-disease-treatment-guidelines-2026",
+      "message": "External link is dead (404).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "nap_phone_mismatch",
+      "severity": "block",
+      "line": 39,
+      "evidence": "(512) 555-0187",
+      "message": "Phone does not match the ficha ((512) 555-0142).",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/seeded-01-how-often-dental-cleaning.prompt.md"
+  },
+  "name": "seeded-01-how-often-dental-cleaning"
+}

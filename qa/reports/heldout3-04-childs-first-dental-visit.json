@@ -1,0 +1,52 @@
+{
+  "post": "04-childs-first-dental-visit",
+  "file": "fixtures/posts/heldout3/04-childs-first-dental-visit.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "hours_mismatch",
+      "severity": "block",
+      "line": 28,
+      "evidence": "Sundays from 9:00 a.m. to 1:00 p.m.",
+      "message": "Hours for sun do not match the ficha.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_broken_internal",
+      "severity": "block",
+      "line": 34,
+      "evidence": "https://www.bluebonnethollowdental.example/services/clear-aligners",
+      "message": "Internal link points to a page that is not in the ficha page list.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.cdc.gov/oral-health/prevention/oral-health-tips-for-children.html",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout3-04-childs-first-dental-visit.prompt.md"
+  },
+  "name": "heldout3-04-childs-first-dental-visit"
+}

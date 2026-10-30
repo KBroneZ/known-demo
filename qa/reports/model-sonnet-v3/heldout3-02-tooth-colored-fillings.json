@@ -1,0 +1,123 @@
+{
+  "post": "02-tooth-colored-fillings",
+  "file": "qa/fixtures/posts/heldout3/02-tooth-colored-fillings.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 20,
+      "evidence": "last forever",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "price_not_in_ficha",
+      "severity": "block",
+      "line": 28,
+      "evidence": "$180",
+      "message": "Price is not published in the ficha.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "insurance_not_in_ficha",
+      "severity": "block",
+      "line": 34,
+      "evidence": "Aetna",
+      "message": "Carrier is not listed as accepted in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/heldout3-02-tooth-colored-fillings.prompt.md",
+    "cost_usd": 0.028428000000000002,
+    "output": "qa/reports/model-sonnet-v3/llm/heldout3-02-tooth-colored-fillings.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Tooth-colored fillings last forever.",
+        "type": "prohibited_promise",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is an absolute guarantee that is false, and it contradicts the post's own later statement that fillings can wear, stain, loosen or need replacement.",
+        "fix": "Delete it, or say that longevity varies with the tooth, the size of the filling, and your habits, and that fillings may eventually need repair or replacement.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "A tooth-colored filling costs $180.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha lists no price for fillings; only the new patient exam with X-rays ($129), in-office whitening ($395) and the emergency exam ($95) may appear, so $180 is an invented price.",
+        "fix": "Remove the price and tell readers to ask the office for an estimate for their specific tooth.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "We accept Aetna.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha accepts only Delta Dental, Cigna and MetLife, so naming Aetna is false and could mislead patients about coverage.",
+        "fix": "Remove it, or name only Delta Dental, Cigna and MetLife and advise confirming benefits with the office and the plan.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "We accept Aetna.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The first-person 'We' appears nowhere else in a post otherwise written in the third person, so the voice is inconsistent.",
+        "fix": "Use the clinic name or a consistent voice if an insurance statement is kept.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "A dental exam is the best way to discuss your particular tooth and the available options.",
+        "type": "unsupported_superlative",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "'The best way' is a mild superlative with no source, though it is general advice and not a claim about the clinic.",
+        "fix": "Rephrase to 'A dental exam is a good way to discuss...'.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Because composite is applied in layers, placing it may take longer than placing some other types of fillings.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a generally accepted statement but is not tied to a specific source; the listed ADA and NIDCR pages plausibly support it.",
+        "fix": "Optionally cite the ADA or NIDCR page inline.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental offers tooth-colored fillings. Dr. Elena Marsh provides general dentistry, and Dr. Marcus Oyelaran provides family and pediatric dentistry.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "These statements match the ficha, but the post gives no contact details or link to a clinic page for readers who want to book an appointment.",
+        "fix": "Add a short call to action with the phone number (512) 555-0142 or a link to /contact.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout3-02-tooth-colored-fillings"
+}

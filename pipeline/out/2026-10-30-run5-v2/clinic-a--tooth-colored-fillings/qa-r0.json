@@ -1,0 +1,41 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 1.79,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "sonnet",
+    "cost_usd": 0.054478,
+    "seconds": 19.6,
+    "findings": [],
+    "dropped_unverifiable_url": 2,
+    "downgraded_blocks": 0,
+    "suggestions": [
+      {
+        "quote": "Your dentist will numb the area first, so what you feel during the visit should be pressure or vibration, not pain.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "It states numbing as certain, while the body later says only that the dentist will 'talk with you about numbing', and some small fillings may not need anesthesia.",
+        "fix": "Soften to 'Your dentist will usually numb the area' and align it with the bullet about discussing numbing.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "If you are looking into tooth-colored fillings in Austin, it helps to know the steps before you book.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a generic filler sentence that adds only a local keyword and no information.",
+        "fix": "Delete it or replace it with something specific to the practice or the procedure.",
+        "raw_severity": "info"
+      }
+    ],
+    "verdict": "PUBLICAR",
+    "model_said": "CORREGIR",
+    "raw_verdict": "CORREGIR",
+    "note": ""
+  },
+  "verdict": "PUBLICAR"
+}

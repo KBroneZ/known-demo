@@ -1,0 +1,66 @@
+{
+ "n_items": 40,
+ "mentioned": {
+  "tp": 33,
+  "fp": 2,
+  "fn": 2,
+  "precision": 0.9428571428571428,
+  "recall": 0.9428571428571428,
+  "f1": 0.9428571428571428
+ },
+ "cited": {
+  "tp": 9,
+  "fp": 0,
+  "fn": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0
+ },
+ "item_exact_match": {
+  "k": 36,
+  "n": 40,
+  "rate": 0.9,
+  "wilson95": [
+   0.7694822477247771,
+   0.9604204713173936
+  ]
+ },
+ "errors": [
+  {
+   "id": "g11",
+   "field": "mentioned",
+   "note": "generic wording that happens to contain an alias, not the practice (known hard case)",
+   "false_positive": [
+    "practice-c"
+   ],
+   "false_negative": []
+  },
+  {
+   "id": "g29",
+   "field": "mentioned",
+   "note": "indirect reference, no name (regex cannot catch; a judge could)",
+   "false_positive": [],
+   "false_negative": [
+    "practice-c"
+   ]
+  },
+  {
+   "id": "g30",
+   "field": "mentioned",
+   "note": "missing space typo (hard case)",
+   "false_positive": [],
+   "false_negative": [
+    "practice-b"
+   ]
+  },
+  {
+   "id": "g38",
+   "field": "mentioned",
+   "note": "generic phrase 'Practice G dental works' as a noun phrase, not the practice (known hard case)",
+   "false_positive": [
+    "practice-g"
+   ],
+   "false_negative": []
+  }
+ ]
+}

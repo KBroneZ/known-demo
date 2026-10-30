@@ -1,0 +1,72 @@
+{
+  "post": "01-lisbon-three-days-walkable-plan",
+  "file": "qa/fixtures/travel/posts/clean/01-lisbon-three-days-walkable-plan.md",
+  "verdict": "CORREGIR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-travel/prompts/clean-01-lisbon-three-days-walkable-plan.prompt.md",
+    "cost_usd": 0.037914,
+    "output": "qa/reports/model-sonnet-travel/llm/clean-01-lisbon-three-days-walkable-plan.llm.txt",
+    "verdict": "CORREGIR",
+    "model_verdict": "CORREGIR",
+    "raw_verdict": "CORREGIR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Prices checked October 2026.",
+        "type": "unsupported_first_hand_claim",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The post claims a price verification in a money topic, but gives no method, date of check or person, and the only support is a bare source link.",
+        "fix": "Link the exact pass page next to each price with the check date, or reword to 'Prices as listed on the operator site in October 2026'.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Tagus Hop day pass | \u20ac9 | Ferry plus two shuttle routes",
+        "type": "entity_unverified",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I cannot verify that a product called 'Tagus Hop' exists or that it includes the Cacilhas ferry, which is normally a public ferry service.",
+        "fix": "Confirm the pass name, price and inclusions against the operator page and name the ferry operator.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Bel\u00e9m Combi Ticket",
+        "type": "entity_unverified",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I cannot verify that this combined ticket exists, what it includes, or that the Tagus Hop site sells it.",
+        "fix": "Cite the official ticket page and list what the ticket covers.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "walk the waterfront to the viewpoint near the Cristo Rei statue",
+        "type": "seasonality",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "Cristo Rei sits on a hill several kilometres from Cacilhas, so a waterfront walk does not reach it and most visitors take a bus or taxi.",
+        "fix": "Say that the waterfront walk and the Cristo Rei viewpoint are separate, and add the bus or taxi link and the approximate distance with a source.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "- <https://www.tripnotes.example/blog/porto-weekend-guide>",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "A Porto weekend guide is not a source for any Lisbon claim in this post.",
+        "fix": "Remove it or replace it with a Lisbon source such as the Jer\u00f3nimos Monastery or ferry operator page.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-01-lisbon-three-days-walkable-plan"
+}

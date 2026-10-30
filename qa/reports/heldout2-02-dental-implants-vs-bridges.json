@@ -1,0 +1,36 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "fixtures/posts/heldout2/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "chatbot_residue",
+      "severity": "block",
+      "line": 32,
+      "evidence": "Let me know if you want",
+      "message": "Chatbot residue left in the draft.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsupported_superlative",
+      "severity": "warn",
+      "line": 46,
+      "evidence": "most trusted implant dentists",
+      "message": "'Best/top' claim with no verifiable basis in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout2-02-dental-implants-vs-bridges.prompt.md"
+  },
+  "name": "heldout2-02-dental-implants-vs-bridges"
+}

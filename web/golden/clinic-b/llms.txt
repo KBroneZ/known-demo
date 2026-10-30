@@ -1,0 +1,29 @@
+# Copper Wren Dental Studio
+> Copper Wren Dental Studio is a fictional East Austin, TX practice offering family checkups, clear aligners, children's dentistry and emergency visits.
+
+This is a fictional demo clinic. It is not a real practice.
+
+Address: 4107 Shoal Terrace Lane, Suite 3, Austin, TX 78702. Phone: (512) 555-0176. Open Monday, Tuesday and Thursday from 9 a.m. to 6 p.m., Wednesday from 11 a.m. to 7 p.m., and on Saturday from 9 a.m. to 2 p.m.
+
+## Main pages
+- [Home](https://www.copperwrendental.example/): Copper Wren Dental Studio is a fictional East Austin, TX practice offering family checkups, clear aligners, children's dentistry and emergency visits.
+- [About us](https://www.copperwrendental.example/about): Copper Wren Dental Studio is a fictional practice in East Austin, invented to demonstrate that one codebase can run many clinic websites that each look…
+- [Our dentists](https://www.copperwrendental.example/team): Meet Dr. Priya Raman and Dr. Tomas Alvarez, dentists at Copper Wren Dental Studio in Austin, TX.
+- [FAQ](https://www.copperwrendental.example/faq): Answers about hours, insurance, booking and care at Copper Wren Dental Studio in Austin, TX.
+- [Contact and hours](https://www.copperwrendental.example/contact): Call (512) 555-0176 or visit us at 4107 Shoal Terrace Lane, Suite 3, Austin, TX 78702. See our opening hours and how to reach us.
+
+## Services
+- [Services](https://www.copperwrendental.example/services): Dental care at Copper Wren Dental Studio in Austin, TX: family checkups and cleanings, tooth-colored fillings, crowns and bridges, clear aligners and more.
+- [Family checkups and cleanings](https://www.copperwrendental.example/services/family-checkups): Exams and cleanings for every age in one visit, with X-rays only when your dentist needs them.
+- [Clear aligners](https://www.copperwrendental.example/services/clear-aligners): Removable clear trays that move teeth gradually, planned after an exam and a conversation about your goals.
+- [Children's dentistry](https://www.copperwrendental.example/services/kids-dentistry): Gentle, unhurried visits for children, starting with a first appointment where the main goal is to feel at home.
+- [Same-day emergency care](https://www.copperwrendental.example/services/same-day-emergency): Pain, a broken tooth or a lost crown? We hold time each day for emergency visits and an on-call dentist outside office hours.
+
+## Blog
+- [Blog](https://www.copperwrendental.example/blog): Plain-language dental advice from the dentists at Copper Wren Dental Studio in Austin, TX.
+- [How Long Do Tooth-Colored Fillings Last? When to Replace](https://www.copperwrendental.example/blog/how-long-do-tooth-colored-fillings-last-when-replace): Learn what affects how long a tooth-colored filling lasts, the signs it may need replacing, and when to see a dentist in Austin.
+- [How Long Does a Dental Crown Last? Austin Guide](https://www.copperwrendental.example/blog/how-long-does-dental-crown-last-austin-guide): Learn what affects how long a dental crown lasts, what to ask your dentist, and when to call. Copper Wren Dental Studio, Austin.
+- [How Often Should Adults Get a Dental Checkup and Cleaning?](https://www.copperwrendental.example/blog/how-often-should-adults-get-dental-checkup-cleaning): Learn how often adults should get a dental checkup and cleaning, and how family visits work at Copper Wren Dental Studio in Austin.
+- [Dental Emergency in East Austin: What to Do First](https://www.copperwrendental.example/blog/dental-emergency-east-austin): A cracked tooth, a lost crown or sudden pain can all be handled calmly. Here are first steps at home and when to call us right away.
+- [Clear Aligners or Braces? Questions to Ask Before You Start](https://www.copperwrendental.example/blog/clear-aligners-or-braces): Both straighten teeth, but they suit different people. These are the questions worth talking through with your dentist before you choose.
+- [How Often Should Kids See the Dentist?](https://www.copperwrendental.example/blog/how-often-should-kids-see-the-dentist): Most children do well with a checkup about twice a year, but some need more. Here is how we set a schedule for your child.

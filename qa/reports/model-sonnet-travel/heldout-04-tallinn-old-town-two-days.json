@@ -1,0 +1,115 @@
+{
+  "post": "04-tallinn-old-town-two-days",
+  "file": "qa/fixtures/travel/posts/heldout/04-tallinn-old-town-two-days.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "link_blocked",
+      "severity": "warn",
+      "line": 25,
+      "evidence": "https://tallinn-museum-pass.example/card",
+      "message": "The site answered 403 (anti-bot or login wall): the link is inconclusive, not dead; open it by hand or use a browser check.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_broken_internal",
+      "severity": "block",
+      "line": 31,
+      "evidence": "/blog/porto-weekends-guide",
+      "message": "Internal link points to a page that is not in the ficha page list.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_broken",
+      "severity": "block",
+      "line": 35,
+      "evidence": "https://baltic-ferry-info.exmaple/tallinn-helsinki",
+      "message": "External link is dead (domain does not resolve).",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-travel/prompts/heldout-04-tallinn-old-town-two-days.prompt.md",
+    "cost_usd": 0.036685999999999996,
+    "output": "qa/reports/model-sonnet-travel/llm/heldout-04-tallinn-old-town-two-days.llm.txt",
+    "verdict": "CORREGIR",
+    "model_verdict": "CORREGIR",
+    "raw_verdict": "CORREGIR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "[ferry timetable overview](https://baltic-ferry-info.exmaple/tallinn-helsinki)",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The domain is misspelled (\"exmaple\"), so the link cannot work, and readers are sent there to check live sailing times.",
+        "fix": "Replace it with the correct ferry operator or timetable URL, or remove the link and tell readers to check the operator's own site.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "[Porto weekend guide](/blog/porto-weekends-guide)",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The internal link slug \"porto-weekends-guide\" does not match the existing page /blog/porto-weekend-guide, so it leads to a dead page.",
+        "fix": "Change the link to /blog/porto-weekend-guide.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "| Day-trip ferry return | Baltic Crossing Lines | 07:30 outbound | EUR 54 |",
+        "type": "source_does_not_support_figure",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ferry price, departure time and operator have no source in the Sources list, and I cannot verify that Baltic Crossing Lines exists.",
+        "fix": "Add a link to the operator's fare page, or remove the operator name and give a hedged price range with a source.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Prices checked September 2026.",
+        "type": "unsupported_first_hand_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The post claims prices were checked but cites no source for the ferry price, and no method is described for the others.",
+        "fix": "Say which sources the prices come from, or soften it to \"prices as listed by the operators in September 2026\".",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "consider [the city museum card](https://tallinn-museum-pass.example/card), which bundles entry to many sites",
+        "type": "entity_unverified",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I cannot verify that a product called \"the city museum card\" exists under this name; the better-known Tallinn pass is the Tallinn Card, and the claim about bundled entry is unsourced.",
+        "fix": "Name the pass exactly and link to the official provider's page.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "The Old Town Ice Lantern Walk is planned for 20 February 2027",
+        "type": "entity_unverified",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I cannot confirm this event or its organiser. The source is a generic events domain that does not name the organiser, and the date is not independently backed.",
+        "fix": "Link to the organiser's official announcement and name the organiser.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "A winter visit can be magical",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is generic filler wording that adds no concrete information.",
+        "fix": "Replace it with a specific detail, such as typical winter temperatures or what is open.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout-04-tallinn-old-town-two-days"
+}

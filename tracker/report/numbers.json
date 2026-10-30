@@ -1,0 +1,221 @@
+{
+ "batch": "austin-dental-first-batch-real",
+ "name_overlap": {
+  "claude_cli": {
+   "answers": 30,
+   "prompts": 10,
+   "reps": [
+    3
+   ],
+   "mean_names_per_answer": 5.766666666666667,
+   "mean_jaccard": 0.3229280904280904,
+   "per_prompt_min": 0.05555555555555555,
+   "per_prompt_max": 0.6742424242424242,
+   "distinct_names": 97,
+   "name_prompt_pairs": 114,
+   "pairs_in_every_rep": 19,
+   "pairs_in_one_rep": 74
+  },
+  "codex_cli": {
+   "answers": 50,
+   "prompts": 10,
+   "reps": [
+    5
+   ],
+   "mean_names_per_answer": 2.98,
+   "mean_jaccard": 0.26812844185293166,
+   "per_prompt_min": 0.10185185185185185,
+   "per_prompt_max": 0.6799999999999999,
+   "distinct_names": 67,
+   "name_prompt_pairs": 77,
+   "pairs_in_every_rep": 1,
+   "pairs_in_one_rep": 38
+  }
+ },
+ "engines": {
+  "codex_cli": {
+   "answers": 50,
+   "any_tracked_named": 9,
+   "any_tracked_named_ci95": [
+    0.09770192670234178,
+    0.30796053674300783
+   ],
+   "reps": 5,
+   "rates": {
+    "Practice A": {
+     "k": 4,
+     "n": 50,
+     "rate": 0.08,
+     "lo": 0.03154951408859298,
+     "hi": 0.18838246918342838,
+     "k_cited": 4
+    },
+    "Practice B": {
+     "k": 0,
+     "n": 50,
+     "rate": 0.0,
+     "lo": 0.0,
+     "hi": 0.07134759913335872,
+     "k_cited": 0
+    },
+    "Practice C": {
+     "k": 1,
+     "n": 50,
+     "rate": 0.02,
+     "lo": 0.003539259271646236,
+     "hi": 0.10495443589637815,
+     "k_cited": 1
+    },
+    "Practice D": {
+     "k": 0,
+     "n": 50,
+     "rate": 0.0,
+     "lo": 0.0,
+     "hi": 0.07134759913335872,
+     "k_cited": 0
+    },
+    "Practice E": {
+     "k": 3,
+     "n": 50,
+     "rate": 0.06,
+     "lo": 0.02061497034897397,
+     "hi": 0.16217091688838173,
+     "k_cited": 3
+    },
+    "Practice F": {
+     "k": 0,
+     "n": 50,
+     "rate": 0.0,
+     "lo": 0.0,
+     "hi": 0.07134759913335872,
+     "k_cited": 0
+    },
+    "Practice G": {
+     "k": 0,
+     "n": 50,
+     "rate": 0.0,
+     "lo": 0.0,
+     "hi": 0.07134759913335872,
+     "k_cited": 0
+    },
+    "Practice H": {
+     "k": 4,
+     "n": 50,
+     "rate": 0.08,
+     "lo": 0.03154951408859298,
+     "hi": 0.18838246918342838,
+     "k_cited": 4
+    }
+   }
+  },
+  "claude_cli": {
+   "answers": 30,
+   "any_tracked_named": 9,
+   "any_tracked_named_ci95": [
+    0.16664748268243793,
+    0.47875787458714947
+   ],
+   "reps": 3,
+   "rates": {
+    "Practice A": {
+     "k": 0,
+     "n": 30,
+     "rate": 0.0,
+     "lo": 0.0,
+     "hi": 0.11351339317396876,
+     "k_cited": 0
+    },
+    "Practice B": {
+     "k": 0,
+     "n": 30,
+     "rate": 0.0,
+     "lo": 0.0,
+     "hi": 0.11351339317396876,
+     "k_cited": 0
+    },
+    "Practice C": {
+     "k": 4,
+     "n": 30,
+     "rate": 0.13333333333333333,
+     "lo": 0.053096554840547455,
+     "hi": 0.296813266820363,
+     "k_cited": 0
+    },
+    "Practice D": {
+     "k": 0,
+     "n": 30,
+     "rate": 0.0,
+     "lo": 0.0,
+     "hi": 0.11351339317396876,
+     "k_cited": 0
+    },
+    "Practice E": {
+     "k": 3,
+     "n": 30,
+     "rate": 0.1,
+     "lo": 0.03459988874733419,
+     "hi": 0.25621082579184085,
+     "k_cited": 0
+    },
+    "Practice F": {
+     "k": 2,
+     "n": 30,
+     "rate": 0.06666666666666667,
+     "lo": 0.018477023791270378,
+     "hi": 0.2132345836261692,
+     "k_cited": 0
+    },
+    "Practice G": {
+     "k": 0,
+     "n": 30,
+     "rate": 0.0,
+     "lo": 0.0,
+     "hi": 0.11351339317396876,
+     "k_cited": 0
+    },
+    "Practice H": {
+     "k": 6,
+     "n": 30,
+     "rate": 0.2,
+     "lo": 0.0950510717728987,
+     "hi": 0.3730569641314825,
+     "k_cited": 0
+    }
+   }
+  }
+ },
+ "own_site_cited_in_answers": 9,
+ "top_domains": [
+  [
+   "lantern.llc",
+   17,
+   0.2125
+  ],
+  [
+   "reviews.birdeye.com",
+   13,
+   0.1625
+  ],
+  [
+   "rankmydentist.com",
+   8,
+   0.1
+  ],
+  [
+   "tsbde.texas.gov",
+   7,
+   0.0875
+  ],
+  [
+   "aidm.org",
+   7,
+   0.0875
+  ],
+  [
+   "zocdoc.com",
+   7,
+   0.0875
+  ]
+ ],
+ "answers_total": 80
+}

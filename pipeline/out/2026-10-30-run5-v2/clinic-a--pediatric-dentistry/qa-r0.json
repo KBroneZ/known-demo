@@ -1,0 +1,59 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.4,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "sonnet",
+    "cost_usd": 0.052188,
+    "seconds": 17.6,
+    "findings": [],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 0,
+    "suggestions": [
+      {
+        "quote": "Many parents wait until a child has a full set of teeth, or until something hurts.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a general statement about parent behavior with no source, though it is harmless and not a safety claim.",
+        "fix": "Soften it (for example, 'Some parents may wait...') or cite a source.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Yes, the first visit is recommended once the first tooth appears, even though it is a baby tooth.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The AAPD timing is within six months of the first tooth and no later than the first birthday, so 'once the first tooth appears' is slightly less precise than the opening answer.",
+        "fix": "Say 'within six months after the first tooth appears, and no later than the first birthday' to match the first FAQ answer.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "A tooth that looks chipped, loose or out of place after a fall",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The list does not mention a completely knocked-out tooth, which parents often worry about, and the ficha has emergency guidance for that.",
+        "fix": "Add 'a tooth that has been knocked out' and tell parents to call right away, noting that a dentist will advise what to do for a baby tooth versus a permanent tooth.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "The AAPD parent FAQ covers baby teeth and the first visit in more detail, and it is a good place to read more before your appointment.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This sentence is generic filler that repeats the earlier citation and adds no information.",
+        "fix": "Remove it or replace it with a specific point from the AAPD page.",
+        "raw_severity": "info"
+      }
+    ],
+    "verdict": "PUBLICAR",
+    "model_said": "PUBLICAR",
+    "raw_verdict": "PUBLICAR",
+    "note": ""
+  },
+  "verdict": "PUBLICAR"
+}

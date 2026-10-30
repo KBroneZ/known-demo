@@ -1,0 +1,110 @@
+{
+  "https://baltic-ferry-info.exmaple/tallinn-helsinki": {
+    "checked": "2026-10-30",
+    "error": "nxdomain"
+  },
+  "https://banff-visitor.example/shuttle": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://banff-visitr.example/shuttle": {
+    "checked": "2026-10-30",
+    "error": "nxdomain"
+  },
+  "https://bloom-forecast.example/kyoto": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://cableway-status.example/today": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://coffeehouse-history.example/guild-origins": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://danube-cruises.example/evening": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://factory-quarter-bites.example/tour": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://gate-lantern.example/old-town": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://iceland-weather.example/daylight": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://kyoto-tourism.example/events/spring-lights": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://lakeside-cyclo.example/rides": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://lantern-lane.example/food-walk": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://lotus-alley.example/class": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://old-town-events.example/ice-lantern-2027": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://palace-tickets.example/visit": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://parks-pass.example/banff": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://peninsula-tours.example/full-day": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://safetravel-iceland.example/winter": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://safetravel-iceland.example/winter-roads": {
+    "checked": "2026-10-30",
+    "status": 403
+  },
+  "https://stays.example/cape-town/gardens?aff_id=tn42": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://stays.example/lisbon?aff_id=tn-77": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://tagus-hop.example/passes": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://tallinn-museum-pass.example/card": {
+    "checked": "2026-10-30",
+    "status": 403
+  },
+  "https://tram-info.example/vienna/network": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://vine-line.example/timetable": {
+    "checked": "2026-10-30",
+    "status": 200
+  },
+  "https://visit-lisbon.example/transport": {
+    "checked": "2026-10-30",
+    "status": 200
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "fixtures/posts/heldout2/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "chatbot_residue",
+      "severity": "block",
+      "line": 32,
+      "evidence": "Let me know if you want",
+      "message": "Chatbot residue left in the draft.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsupported_superlative",
+      "severity": "warn",
+      "line": 46,
+      "evidence": "most trusted implant dentists",
+      "message": "'Best/top' claim with no verifiable basis in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-haiku/prompts/heldout2-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.00217,
+    "output": "reports/model-haiku/llm/heldout2-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "Let me know if you want me to add typical price ranges for implants and bridges here.",
+        "type": "chatbot_residue",
+        "severity": "block",
+        "why": "This is a conversational offer addressed to the reader or editor that a chatbot left in the published text and that has no place in a clinic blog post.",
+        "fix": "Delete the sentence and, if price ranges are wanted, have a staff member add approved figures that match the ficha, which lists only the three permitted prices."
+      },
+      {
+        "quote": "Dr. Elena Marsh, one of Austin's most trusted implant dentists",
+        "type": "unsupported_superlative",
+        "severity": "block",
+        "why": "Calling the dentist one of Austin's most trusted implant dentists is an unsubstantiated superlative with no supporting source, and the ADA advertising guidance does not allow it.",
+        "fix": "Replace it with a factual description from the ficha, such as Dr. Elena Marsh, DDS, who focuses on general dentistry, dental implants and emergency care."
+      },
+      {
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "The URL path could not be verified from the available context, so the citation cannot be confirmed to exist or to support the sentence it follows.",
+        "fix": "Open the link, confirm it resolves to the ADA MouthHealthy bridges page, and correct the path if it does not."
+      },
+      {
+        "quote": "Neither is right for everyone",
+        "type": "ai_tell",
+        "severity": "info",
+        "why": "The opening uses a generic hedge that reads as formulaic AI phrasing rather than specific, clinic-voiced copy.",
+        "fix": "Rewrite it in a specific clinic voice, for example by stating the factors that decide the choice."
+      }
+    ]
+  },
+  "name": "heldout2-02-dental-implants-vs-bridges"
+}

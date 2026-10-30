@@ -1,0 +1,18 @@
+---
+// Visible Q&A. The FAQPage JSON-LD is built from the same array by the page, so text and markup always match.
+interface Props { items: { question: string; answer: string }[]; as?: 'h2' | 'h3' }
+const { items, as: Tag = 'h3' } = Astro.props;
+---
+<div class="faq">
+  {items.map((q) => (
+    <div class="card">
+      <Tag>{q.question}</Tag>
+      <p>{q.answer}</p>
+    </div>
+  ))}
+</div>
+<style>
+  .faq{display:grid;gap:1rem}
+  .faq :is(h2,h3){margin:0 0 .4rem;font-size:1.2rem}
+  .faq p{margin:0}
+</style>

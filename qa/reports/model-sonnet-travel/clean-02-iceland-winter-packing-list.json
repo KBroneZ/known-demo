@@ -1,0 +1,45 @@
+{
+  "post": "02-iceland-winter-packing-list",
+  "file": "qa/fixtures/travel/posts/clean/02-iceland-winter-packing-list.md",
+  "verdict": "CORREGIR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-travel/prompts/clean-02-iceland-winter-packing-list.prompt.md",
+    "cost_usd": 0.028924,
+    "output": "qa/reports/model-sonnet-travel/llm/clean-02-iceland-winter-packing-list.llm.txt",
+    "verdict": "CORREGIR",
+    "model_verdict": "CORREGIR",
+    "raw_verdict": "CORREGIR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "The notes and dates are summarised here so you can judge how much weight to give them",
+        "type": "unsupported_first_hand_claim",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The section claims notes and dates are summarised, but it gives no actual dates, per-day notes, weather or results, so the six-day test cannot be verified.",
+        "fix": "Add the real test dates, conditions and per-item results (for example a short test log table), or remove the testing claim and the 'worked in our trial' wording in the description.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Around the winter solstice, Reykjavik gets only about four to five hours of usable daylight. Late February brings roughly nine hours.",
+        "type": "source_does_not_support_figure",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The daylight figures are plausible, but no source sits next to them and the generic Sources list does not show which link backs which figure; this affects driving safety.",
+        "fix": "Link the daylight source directly after these sentences and say whether the figures mean sunrise to sunset or usable light.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-02-iceland-winter-packing-list"
+}

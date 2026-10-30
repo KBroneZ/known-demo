@@ -1,0 +1,265 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 14,
+  "seeded_detected": 10,
+  "recall": 0.7142857142857143,
+  "missed": [
+    "B02",
+    "B04",
+    "B05",
+    "B06"
+  ],
+  "true_positive_findings": 10,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "B01": [
+      {
+        "rule": "numeric_inconsistency",
+        "line": 54,
+        "severity": "warn"
+      }
+    ],
+    "B02": [],
+    "B03": [
+      {
+        "rule": "banned_character",
+        "line": 26,
+        "severity": "warn"
+      }
+    ],
+    "B04": [],
+    "B05": [],
+    "B06": [],
+    "B07": [
+      {
+        "rule": "affiliate_disclosure_missing",
+        "line": 35,
+        "severity": "block"
+      }
+    ],
+    "B08": [
+      {
+        "rule": "unsupported_first_hand_claim",
+        "line": 27,
+        "severity": "warn"
+      }
+    ],
+    "B09": [
+      {
+        "rule": "review_stamp_is_publish_date",
+        "line": 21,
+        "severity": "warn"
+      }
+    ],
+    "B10": [
+      {
+        "rule": "event_date_past",
+        "line": 27,
+        "severity": "warn"
+      }
+    ],
+    "B11": [
+      {
+        "rule": "price_no_as_of",
+        "line": 39,
+        "severity": "warn"
+      }
+    ],
+    "B12": [
+      {
+        "rule": "link_broken",
+        "line": 35,
+        "severity": "block"
+      }
+    ],
+    "B13": [
+      {
+        "rule": "link_blocked",
+        "line": 25,
+        "severity": "warn"
+      }
+    ],
+    "B14": [
+      {
+        "rule": "link_broken_internal",
+        "line": 31,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-lisbon-three-days-walkable-plan.md": "PUBLICAR",
+    "clean/02-iceland-winter-packing-list.md": "PUBLICAR",
+    "clean/03-kyoto-cherry-blossom-season-2027.md": "PUBLICAR",
+    "clean/04-banff-summer-three-day-plan.md": "PUBLICAR",
+    "heldout/01-vienna-three-days-trams-coffee-houses.md": "CORREGIR",
+    "heldout/02-cape-town-four-days-mountain-winelands.md": "BLOQUEAR",
+    "heldout/03-hanoi-old-quarter-two-days.md": "CORREGIR",
+    "heldout/04-tallinn-old-town-two-days.md": "BLOQUEAR"
+  },
+  "llm": {
+    "status": "ok",
+    "failed": [],
+    "cost_usd": 0.2618,
+    "model_detected": [
+      "B01",
+      "B02",
+      "B04",
+      "B05",
+      "B08",
+      "B10",
+      "B12",
+      "B14"
+    ],
+    "model_recall": 0.5714285714285714,
+    "model_missed": [
+      "B03",
+      "B06",
+      "B07",
+      "B09",
+      "B11",
+      "B13"
+    ],
+    "fixture_disclaimer_findings_ignored": 0,
+    "clean_posts_not_publish_with_model": 4,
+    "rules_detected_ids": [
+      "B03",
+      "B07",
+      "B10",
+      "B12",
+      "B13",
+      "B14"
+    ],
+    "model_tp": 9,
+    "model_fp": 16,
+    "model_precision": 0.36,
+    "model_clean_fp": 12,
+    "model_only_extra": [
+      "B01",
+      "B02",
+      "B04",
+      "B05",
+      "B08"
+    ],
+    "combined_recall": 0.7857142857142857,
+    "combined_detected": 11,
+    "combined_precision": null,
+    "false_positive_list": [
+      {
+        "file": "clean/01-lisbon-three-days-walkable-plan.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "Prices checked October 2026.",
+        "why": "The post claims a price verification in a money topic, but gives no method, date of check or person, and the only support is a bare source l"
+      },
+      {
+        "file": "clean/02-iceland-winter-packing-list.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "The notes and dates are summarised here so you can judge how much weight to give them",
+        "why": "The section claims notes and dates are summarised, but it gives no actual dates, per-day notes, weather or results, so the six-day test cann"
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "Both are run by the city tourism office, and tickets are sold in advance.",
+        "why": "The only event source is a kyoto-tourism.example spring-lights page, which cannot back the Gion Evening Walk or the claim that the city tour"
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "entity_unverified",
+        "quote": "The Kyoto Spring Lights evening walk is on Saturday, March 27, 2027 and lights up several ",
+        "why": "I cannot verify that an event called Kyoto Spring Lights exists on this date, and the linked page does not confirm the date."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "entity_unverified",
+        "quote": "A second evening walk, the Gion Evening Walk, is on Saturday, April 3, 2027.",
+        "why": "I cannot verify that a Gion Evening Walk event exists on this date, and no source is linked for it."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Kyoto Spring Lights | March 27, 2027 | \u00a51,800 |",
+        "why": "The ticket price is a money figure, and the linked page is only an events page with no evidence that it lists \u00a51,800."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Gion Evening Walk | April 3, 2027 | \u00a51,500 |",
+        "why": "The \u00a51,500 price has no source, and the only events source is for Spring Lights, so it cannot back this price."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "Prices checked October 2026.",
+        "why": "The post claims a verification that has no evidence, and the sources listed do not show it."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "entity_unverified",
+        "quote": "Use the Hanami Shuttle on busy weekends; it connects the main blossom spots and costs \u00a5600",
+        "why": "I cannot verify that a Hanami Shuttle exists in Kyoto, and the fare has no source in a money-related context."
+      },
+      {
+        "file": "clean/04-banff-summer-three-day-plan.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "Prices checked September 2026.",
+        "why": "The post claims the prices were verified but gives no dated evidence or per-figure source, and the post was updated in October."
+      },
+      {
+        "file": "clean/04-banff-summer-three-day-plan.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Banff park pass | $11 | Per adult, per day |",
+        "why": "This is a money figure with no currency and no source next to it; the generic Sources list cannot be tied to this price, and the figure may "
+      },
+      {
+        "file": "clean/04-banff-summer-three-day-plan.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Bow Valley Shuttle day ticket | $12 | Summer season only |",
+        "why": "This is a money figure with no currency and no inline source, so readers cannot tell what the $12 is based on."
+      },
+      {
+        "file": "heldout/01-vienna-three-days-trams-coffee-houses.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "Prices checked June 2026.",
+        "why": "The post claims prices were verified but gives no method, evidence or per-price source, and the table figures conflict with the FAQ."
+      },
+      {
+        "file": "heldout/02-cape-town-four-days-mountain-winelands.md",
+        "severity": "warn",
+        "type": "internal_inconsistency",
+        "quote": "Plan your last evening around the Friday night market at the harbourside, where food stall",
+        "why": "The prose says Friday but the table lists the Harbourside Night Market on Thursday 17:00 to 21:00, so readers could arrive on the wrong day."
+      },
+      {
+        "file": "heldout/02-cape-town-four-days-mountain-winelands.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Full-day peninsula tour | Peninsula Day Tours | 08:00 | ZAR 1,150 |",
+        "why": "The price and departure time are stated as checked, but the only linked source is a generic 'tour overview' page whose address does not indi"
+      },
+      {
+        "file": "heldout/02-cape-town-four-days-mountain-winelands.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Winelands hop shuttle | Vine Line Shuttles | 09:30 | ZAR 690 |",
+        "why": "The source is a 'timetable' page, which may back the departure time but not the ZAR 690 price, and the operator is unverified."
+      }
+    ]
+  }
+}

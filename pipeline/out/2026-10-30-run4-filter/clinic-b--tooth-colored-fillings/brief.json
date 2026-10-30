@@ -1,0 +1,76 @@
+{
+  "clinic_id": "clinic-b",
+  "clinic_name": "Copper Wren Dental Studio",
+  "topic": {
+    "question": "How long does a tooth-colored filling last and when does it need replacing?",
+    "source": "seed",
+    "source_id": "seed",
+    "comments": 0,
+    "retrieved": "n/a",
+    "intent": "",
+    "patient_wording": ""
+  },
+  "service": "Tooth-colored fillings",
+  "service_slug": null,
+  "service_summary": "",
+  "primary_keyword": "tooth-colored fillings austin",
+  "keyword_note": "heuristic: service alias + city; no search-volume data was consulted",
+  "intent": "informational; a local patient researching before booking",
+  "questions": [
+    "How long does a tooth-colored filling last and when does it need replacing?"
+  ],
+  "related_questions": [],
+  "author": "Dr. Tomas Alvarez",
+  "reviewer": "Dr. Priya Raman",
+  "category": "tooth-colored-fillings",
+  "internal_links": [
+    {
+      "url": "/contact",
+      "why": "booking and contact"
+    },
+    {
+      "url": "/team",
+      "why": "the dentists"
+    },
+    {
+      "url": "/blog/clear-aligners-or-braces",
+      "why": "related post: Clear Aligners or Braces? Questions to Ask Before You Start"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/fillings-tooth-colored/",
+      "publisher": "American Dental Association (MouthHealthy)",
+      "covers": [
+        "filling",
+        "fillings",
+        "composite",
+        "tooth-colored",
+        "cavity"
+      ]
+    },
+    {
+      "url": "https://www.nidcr.nih.gov/health-info/dental-fillings",
+      "publisher": "National Institute of Dental and Craniofacial Research (NIH)",
+      "covers": [
+        "filling",
+        "fillings",
+        "composite",
+        "amalgam"
+      ]
+    },
+    {
+      "url": "https://www.nidcr.nih.gov/health-info/tooth-decay",
+      "publisher": "National Institute of Dental and Craniofacial Research (NIH)",
+      "covers": [
+        "cavity",
+        "cavities",
+        "tooth decay",
+        "caries",
+        "filling"
+      ]
+    }
+  ],
+  "word_range": "about 600 to 850 words (length follows the content; it is not a target)",
+  "facts": "- Clinic name: Copper Wren Dental Studio\n- Phone: (512) 555-0176\n- Address: 4107 Shoal Terrace Lane, Suite 3, Austin, TX 78702\n- Hours (use this exact wording): We are open Monday, Tuesday and Thursday from 9 a.m. to 6 p.m., Wednesday from 11 a.m. to 7 p.m., and on Saturday from 9 a.m. to 2 p.m.\n- After-hours instruction: Outside office hours, leave a message on the main line and the on-call dentist will call you back.\n- Published price 'new_patient_exam_xrays': $110\n- Published price 'kids_first_visit': $60\n- Published price 'emergency_exam': $85\n- Insurance accepted: Aetna, Guardian, Principal (say 'accepted', not 'in network')\n- Dentist: Dr. Priya Raman, DDS - general and restorative dentistry, emergency care\n- Dentist: Dr. Tomas Alvarez, DMD - children's dentistry, clear aligners\n- Price statements as the clinic publishes them (repeat a price only WITH its condition):\n    * For new patients paying without insurance, the new patient exam with X-rays is $110.\n    * The first visit for a child is $60.\n    * The emergency exam at Copper Wren Dental Studio is $85.\n- Safety instructions (never contradict them; repeat when you discuss pain, swelling or injuries):\n    * If you have trouble breathing or swallowing, uncontrolled bleeding or swelling that spreads to your face or neck, go to an emergency room or call 911."
+}

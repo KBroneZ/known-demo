@@ -1,0 +1,30 @@
+---
+// Standard inner page: breadcrumbs + h1 + content. Breadcrumb JSON-LD is generated from the same trail.
+import Base from './Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { clinic } from '../lib/site.ts';
+import { breadcrumbLd } from '../lib/jsonld.ts';
+import type { JsonLd } from '../lib/jsonld.ts';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  heading: string;
+  trail: { name: string; path: string }[]; // without Home
+  jsonld?: JsonLd[];
+  ogType?: 'website' | 'article';
+  published?: string;
+  modified?: string;
+  narrow?: boolean;
+}
+const { heading, trail, jsonld = [], narrow = false, ...base } = Astro.props;
+const full = [{ name: 'Home', path: '/' }, ...trail];
+---
+<Base {...base} jsonld={[...jsonld, breadcrumbLd(clinic, full)]}>
+  <div class:list={['wrap', { narrow }]} style="padding-top:1.5rem;padding-bottom:3rem">
+    <Breadcrumbs trail={full} />
+    <h1>{heading}</h1>
+    <slot />
+  </div>
+</Base>

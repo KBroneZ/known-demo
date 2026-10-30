@@ -1,0 +1,124 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "qa/fixtures/posts/heldout/01-how-often-dental-cleaning.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "Studies show that about 70% of adults who keep to a six-month schedule avoid a major restoration over the foll",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsupported_superlative",
+      "severity": "warn",
+      "line": 33,
+      "evidence": "top-rated dental team",
+      "message": "'Best/top' claim with no verifiable basis in the ficha.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "insurance_not_in_ficha",
+      "severity": "block",
+      "line": 35,
+      "evidence": "Aetna",
+      "message": "Carrier is not listed as accepted in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/heldout-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.029288,
+    "output": "qa/reports/model-sonnet-v3/llm/heldout-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Studies show that about 70% of adults who keep to a six-month schedule avoid a major restoration over the following five years.",
+        "type": "unsourced_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is an invented statistic attributed to unnamed studies, with no link or source that supports it.",
+        "fix": "Remove the statistic or replace it with a figure from a cited, verifiable source such as the ADA or NIDCR.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Austin's top-rated dental team",
+        "type": "unsupported_superlative",
+        "kind": "error",
+        "severity": "block",
+        "why": "'Top-rated' is an unsupported superlative, and the ficha lists no awards or ratings to back it up.",
+        "fix": "Delete the claim or write a neutral description such as 'our Austin dental team'.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "We are in network with Delta Dental, Aetna and MetLife",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "Aetna is not an accepted carrier in the ficha (Delta Dental, Cigna, MetLife), and Cigna is omitted.",
+        "fix": "List only Delta Dental, Cigna and MetLife.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "If you are new to us and paying without insurance, the new patient exam with X-rays is $129.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The $129 price matches the ficha, but the added condition 'paying without insurance' is not in the ficha, so the stated condition is invented.",
+        "fix": "State the price as the ficha gives it, e.g. 'the new patient exam with X-rays is $129', without adding an insurance condition.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "[cleanings and exams page](/services/cleanings-exams)",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "block",
+        "why": "This internal link is not in the ficha's page list; the real page is /services/cleanings-exams only under that exact path, and '/services/cleanings-exams' is not it (the ficha lists /services/cleanings-exams as written differently).",
+        "fix": "Point the link to /services/cleanings-exams exactly as listed in the ficha's pages, after confirming the path matches.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "chatbot_residue",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The demo disclaimer is meta text that would not belong on a live post, though it is accurate for the fictional clinic.",
+        "fix": "Remove it before publishing on a real site, or keep it only in the demo context.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Tartar builds up on a timeline that is similar for most people, and six months is long enough to see changes but short enough to catch a small problem before it grows.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a general statement that lacks a source, and tartar accumulation does vary between people.",
+        "fix": "Soften it, for example 'Tartar builds up at different rates', and cite the ADA if desired.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\", \"telephone\": \"(512) 555-0142\"",
+        "type": "schema_incoherent",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The publisher is typed as Dentist rather than Organization, and the schema omits the reviewer and address that the visible text shows.",
+        "fix": "Use an Organization publisher with a url, or add the address and reviewedBy details so the markup matches the visible page.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout-01-how-often-dental-cleaning"
+}

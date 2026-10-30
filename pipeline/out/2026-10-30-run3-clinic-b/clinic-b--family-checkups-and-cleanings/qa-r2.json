@@ -1,0 +1,26 @@
+{
+  "name": "r2",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.35,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0035700000000000003,
+    "seconds": 22.2,
+    "findings": [
+      {
+        "quote": "You can ask to see the same dentist for the checkup and the cavity treatment.",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha does not state any policy about keeping the same dentist for a checkup and a follow-up treatment, so this clinic practice claim is unverified.",
+        "fix": "Confirm the policy with the clinic and add it to the ficha, or remove the sentence."
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 0,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

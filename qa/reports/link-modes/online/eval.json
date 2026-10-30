@@ -1,0 +1,110 @@
+{
+  "link_mode": "online",
+  "seeded_total": 10,
+  "seeded_detected": 10,
+  "recall": 1.0,
+  "missed": [],
+  "true_positive_findings": 13,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "E01": [
+      {
+        "rule": "nap_phone_mismatch",
+        "line": 39,
+        "severity": "block"
+      }
+    ],
+    "E02": [
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "E03": [
+      {
+        "rule": "link_broken",
+        "line": 24,
+        "severity": "block"
+      }
+    ],
+    "E04": [
+      {
+        "rule": "unsourced_stat",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "E05": [
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      },
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "E06": [
+      {
+        "rule": "schema_mismatch",
+        "line": 51,
+        "severity": "block"
+      }
+    ],
+    "E07": [
+      {
+        "rule": "fake_testimonial",
+        "line": 24,
+        "severity": "block"
+      }
+    ],
+    "E08": [
+      {
+        "rule": "unsupported_superlative",
+        "line": 43,
+        "severity": "warn"
+      }
+    ],
+    "E09": [
+      {
+        "rule": "medical_myth",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "E10": [
+      {
+        "rule": "chatbot_residue",
+        "line": 14,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "PUBLICAR",
+    "clean/02-dental-implants-vs-bridges.md": "PUBLICAR",
+    "clean/03-is-teeth-whitening-safe.md": "PUBLICAR",
+    "clean/04-dental-emergency-austin.md": "PUBLICAR",
+    "seeded/01-how-often-dental-cleaning.md": "BLOQUEAR",
+    "seeded/02-dental-implants-vs-bridges.md": "BLOQUEAR",
+    "seeded/03-is-teeth-whitening-safe.md": "BLOQUEAR",
+    "seeded/04-dental-emergency-austin.md": "BLOQUEAR"
+  },
+  "llm": null
+}

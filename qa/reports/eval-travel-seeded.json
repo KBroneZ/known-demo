@@ -1,0 +1,153 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 21,
+  "seeded_detected": 17,
+  "recall": 0.8095238095238095,
+  "missed": [
+    "T18",
+    "T19",
+    "T20",
+    "T21"
+  ],
+  "true_positive_findings": 17,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "T01": [
+      {
+        "rule": "numeric_inconsistency",
+        "line": 40,
+        "severity": "warn"
+      }
+    ],
+    "T02": [
+      {
+        "rule": "weekday_inconsistency",
+        "line": 30,
+        "severity": "warn"
+      }
+    ],
+    "T03": [
+      {
+        "rule": "event_date_past",
+        "line": 26,
+        "severity": "warn"
+      }
+    ],
+    "T04": [
+      {
+        "rule": "stale_year_title",
+        "line": 2,
+        "severity": "warn"
+      }
+    ],
+    "T05": [
+      {
+        "rule": "review_stamp_is_publish_date",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "T06": [
+      {
+        "rule": "price_no_as_of",
+        "line": 34,
+        "severity": "warn"
+      }
+    ],
+    "T07": [
+      {
+        "rule": "unsupported_first_hand_claim",
+        "line": 32,
+        "severity": "block"
+      }
+    ],
+    "T08": [
+      {
+        "rule": "missing_required_section",
+        "line": 0,
+        "severity": "block"
+      }
+    ],
+    "T09": [
+      {
+        "rule": "affiliate_disclosure_missing",
+        "line": 24,
+        "severity": "block"
+      }
+    ],
+    "T10": [
+      {
+        "rule": "banned_character",
+        "line": 22,
+        "severity": "warn"
+      }
+    ],
+    "T11": [
+      {
+        "rule": "byline_not_allowed",
+        "line": 7,
+        "severity": "block"
+      }
+    ],
+    "T12": [
+      {
+        "rule": "link_broken",
+        "line": 55,
+        "severity": "block"
+      }
+    ],
+    "T13": [
+      {
+        "rule": "link_blocked",
+        "line": 61,
+        "severity": "warn"
+      }
+    ],
+    "T14": [
+      {
+        "rule": "weekday_date_mismatch",
+        "line": 31,
+        "severity": "block"
+      }
+    ],
+    "T15": [
+      {
+        "rule": "link_broken_internal",
+        "line": 65,
+        "severity": "block"
+      }
+    ],
+    "T16": [
+      {
+        "rule": "numeric_inconsistency",
+        "line": 26,
+        "severity": "warn"
+      }
+    ],
+    "T17": [
+      {
+        "rule": "date_inconsistency",
+        "line": 36,
+        "severity": "warn"
+      }
+    ],
+    "T18": [],
+    "T19": [],
+    "T20": [],
+    "T21": []
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-lisbon-three-days-walkable-plan.md": "PUBLICAR",
+    "clean/02-iceland-winter-packing-list.md": "PUBLICAR",
+    "clean/03-kyoto-cherry-blossom-season-2027.md": "PUBLICAR",
+    "clean/04-banff-summer-three-day-plan.md": "PUBLICAR",
+    "seeded/01-lisbon-three-days-walkable-plan.md": "BLOQUEAR",
+    "seeded/02-iceland-winter-packing-list.md": "BLOQUEAR",
+    "seeded/03-kyoto-cherry-blossom-season-2027.md": "BLOQUEAR",
+    "seeded/04-banff-summer-three-day-plan.md": "BLOQUEAR"
+  },
+  "llm": null
+}

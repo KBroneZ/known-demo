@@ -1,0 +1,31 @@
+# Bluebonnet Hollow Dental
+> Bluebonnet Hollow Dental is a fictional Austin, TX practice offering checkups, implants, whitening and same-day emergency care.
+
+This is a fictional demo clinic. It is not a real practice.
+
+Address: 2214 Meridian Park Drive, Suite 110, Austin, TX 78704. Phone: (512) 555-0142. Open Monday through Thursday from 8 a.m. to 5 p.m., and on Friday from 8 a.m. to 1 p.m.
+
+## Main pages
+- [Home](https://www.bluebonnethollowdental.example/): Bluebonnet Hollow Dental is a fictional Austin, TX practice offering checkups, implants, whitening and same-day emergency care.
+- [About us](https://www.bluebonnethollowdental.example/about): Bluebonnet Hollow Dental is a fictional practice in South Austin, invented to demonstrate how many local-business websites can be built and kept…
+- [Our dentists](https://www.bluebonnethollowdental.example/team): Meet Dr. Elena Marsh and Dr. Marcus Oyelaran, dentists at Bluebonnet Hollow Dental in Austin, TX.
+- [FAQ](https://www.bluebonnethollowdental.example/faq): Answers about hours, insurance, booking and care at Bluebonnet Hollow Dental in Austin, TX.
+- [Contact and hours](https://www.bluebonnethollowdental.example/contact): Call (512) 555-0142 or visit us at 2214 Meridian Park Drive, Suite 110, Austin, TX 78704. See our opening hours and how to reach us.
+
+## Services
+- [Services](https://www.bluebonnethollowdental.example/services): Dental care at Bluebonnet Hollow Dental in Austin, TX: checkups and cleanings, tooth-colored fillings, root canal therapy, dental implants and more.
+- [Checkups and cleanings](https://www.bluebonnethollowdental.example/services/cleanings-exams): Routine exams and professional cleanings, with X-rays when they are needed, to keep small problems small.
+- [Dental implants](https://www.bluebonnethollowdental.example/services/dental-implants): A post placed in the jawbone replaces a missing tooth root and holds a crown. We start with an exam to see whether it is right for you.
+- [Teeth whitening](https://www.bluebonnethollowdental.example/services/teeth-whitening): Supervised in-office whitening, after an exam confirms your mouth is ready and what shade change to expect.
+- [Emergency dental care](https://www.bluebonnethollowdental.example/services/emergency-dentist): Same-day emergency visits when we have room in the schedule, and an on-call dentist after hours.
+
+## Blog
+- [Blog](https://www.bluebonnethollowdental.example/blog): Plain-language dental advice from the dentists at Bluebonnet Hollow Dental in Austin, TX.
+- [Can Teeth Whitening Match the Whites of Your Eyes?](https://www.bluebonnethollowdental.example/blog/can-teeth-whitening-match-whites-eyes): Learn what teeth whitening can and cannot do, whether it is safe, and what in-office whitening costs at Bluebonnet Hollow Dental in Austin.
+- [Do Clear Aligners Hurt? What to Expect in Austin](https://www.bluebonnethollowdental.example/blog/do-clear-aligners-hurt-what-expect-austin): Clear aligners can cause soreness as your teeth move. Learn what that feels like and when to call a dentist in Austin.
+- [Does a Tooth-Colored Filling Hurt? What to Expect](https://www.bluebonnethollowdental.example/blog/does-tooth-colored-filling-hurt-what-expect): Wondering if a tooth-colored filling hurts? Learn what to expect during and after the visit, and when to call a dentist in Austin.
+- [Root Canal or Extraction? How to Decide in Austin](https://www.bluebonnethollowdental.example/blog/root-canal-extraction-how-decide-austin): Not sure whether to save a painful tooth with a root canal or have it pulled? Here is how to weigh the choice before you see a dentist.
+- [When Should a Child First See a Dentist? A Parent's Guide](https://www.bluebonnethollowdental.example/blog/when-should-child-first-see-dentist-parent-s-guide): Learn when a child should have a first dental visit, what to expect, and when to call a dentist sooner.
+- [What to Do in a Dental Emergency in Austin](https://www.bluebonnethollowdental.example/blog/dental-emergency-austin): Knocked-out tooth, severe toothache or a broken crown? Here are the first steps to take at home and when to call a dentist right away.
+- [Dental Implants vs. Bridges: Questions to Ask Before You Decide](https://www.bluebonnethollowdental.example/blog/dental-implants-vs-bridges): Both replace a missing tooth, but they work differently. Here are the trade-offs to talk through with your dentist before choosing.
+- [How Often Should You Get a Dental Cleaning?](https://www.bluebonnethollowdental.example/blog/how-often-dental-cleaning): Six months is the usual interval, but the right schedule depends on your gums, history and risk. Here is how our Austin team decides.

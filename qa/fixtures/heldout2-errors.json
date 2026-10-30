@@ -1,0 +1,84 @@
+{
+  "errors": [
+    {
+      "id": "K01",
+      "file": "04-dental-emergency-austin.md",
+      "category": "nap",
+      "snippet": "Monday through Thursday from 8 a.m. to 5 p.m., and on Friday from 8 a.m. to 5 p.m. After hours",
+      "original": "on Friday from 8 a.m. to 1 p.m. After hours",
+      "injected": "on Friday from 8 a.m. to 5 p.m. After hours"
+    },
+    {
+      "id": "K02",
+      "file": "01-how-often-dental-cleaning.md",
+      "category": "ai_phrase",
+      "snippet": "Let's delve into what actually drives the right interval",
+      "original": "and some patients do better on a different schedule.",
+      "injected": "and some patients do better on a different schedule. Let's delve into what actually drives the right interval for you."
+    },
+    {
+      "id": "K03",
+      "file": "03-is-teeth-whitening-safe.md",
+      "category": "broken_link",
+      "snippet": "tooth-whitening-safety",
+      "original": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+      "injected": "https://www.mouthhealthy.org/all-topics-a-z/tooth-whitening-safety"
+    },
+    {
+      "id": "K04",
+      "file": "01-how-often-dental-cleaning.md",
+      "category": "unsourced_stat",
+      "snippet": "lose about a third fewer teeth over a decade",
+      "original": "six months is long enough to see changes but short enough to catch a small problem before it grows.",
+      "injected": "six months is long enough to see changes but short enough to catch a small problem before it grows. Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade."
+    },
+    {
+      "id": "K05",
+      "file": "03-is-teeth-whitening-safe.md",
+      "category": "prohibited_promise",
+      "snippet": "we promise a visibly brighter smile after a single visit",
+      "original": "and what shade change is realistic for you.",
+      "injected": "and we promise a visibly brighter smile after a single visit."
+    },
+    {
+      "id": "K06",
+      "file": "01-how-often-dental-cleaning.md",
+      "category": "schema",
+      "snippet": "\"name\": \"Dr. Elena Marsh\"}, \"publisher\"",
+      "original": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Marcus Oyelaran\"}, \"publisher\"",
+      "injected": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Elena Marsh\"}, \"publisher\""
+    },
+    {
+      "id": "K07",
+      "file": "04-dental-emergency-austin.md",
+      "category": "medical_false",
+      "snippet": "scrub it clean with soap and warm water",
+      "original": "If it is dirty, rinse it gently with water. Do not scrub it.",
+      "injected": "If it is dirty, scrub it clean with soap and warm water before you put it back."
+    },
+    {
+      "id": "K08",
+      "file": "04-dental-emergency-austin.md",
+      "category": "testimonial",
+      "snippet": "told us she was out the door pain-free within the hour",
+      "original": "Our emergency dental care is led by Dr. Elena Marsh.",
+      "injected": "Our emergency dental care is led by Dr. Elena Marsh. A patient who came in last month with a cracked molar on a Thursday evening told us she was out the door pain-free within the hour."
+    },
+    {
+      "id": "K09",
+      "file": "02-dental-implants-vs-bridges.md",
+      "category": "superlative",
+      "snippet": "one of Austin's most trusted implant dentists",
+      "original": "Dr. Elena Marsh sees implant patients at our Austin office.",
+      "injected": "Dr. Elena Marsh, one of Austin's most trusted implant dentists, sees implant patients at our office."
+    },
+    {
+      "id": "K10",
+      "file": "02-dental-implants-vs-bridges.md",
+      "category": "chatbot",
+      "snippet": "Let me know if you want me to add typical price ranges",
+      "original": "The new patient exam with X-rays is $129.",
+      "injected": "The new patient exam with X-rays is $129. Let me know if you want me to add typical price ranges for implants and bridges here."
+    }
+  ]
+}

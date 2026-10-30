@@ -1,0 +1,43 @@
+{
+  "clinic": "clinic-a",
+  "service": "Root canal therapy",
+  "topic": "wondering if i should get the root canal or just have them pull the tooth?",
+  "dir": "clinic-a--root-canal-therapy",
+  "status": "needs-human",
+  "rounds": 0,
+  "verdict_path": [
+    "BLOQUEAR"
+  ],
+  "human_review": [
+    "BLOQUEAR (model only, confirm or dismiss) false_medical_claim: 'Call soon if you have tooth pain that lingers or wakes you at night, swelling in your gums or face, ': Facial swelling can signal a spreading infection that needs same-day care, and the post omits the ficha's emergency guidance (trouble breathing or swallowing, or swelling spreading to the face or neck, means going to an emergency room or calling 911).",
+    "BLOQUEAR (model only, confirm or dismiss) fact_vs_ficha: 'Our published prices include a new patient exam with X-rays for $129 and an emergency exam for $95.': The ficha limits the $129 price to new patients paying without insurance, and the post states it without that qualifier."
+  ],
+  "slug": "root-canal-extraction-how-decide-austin",
+  "verdict": "BLOQUEAR",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.02513,
+      "seconds": 14.6,
+      "input_tokens": 2,
+      "output_tokens": 1519,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.00413,
+      "seconds": 27.5
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 14.59,
+    "qa": 28.0
+  },
+  "cost_usd": 0.0293,
+  "input_tokens": 2,
+  "output_tokens": 1519,
+  "wall_seconds": 42.6
+}

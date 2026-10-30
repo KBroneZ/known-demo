@@ -1,0 +1,107 @@
+{
+  "post": "03-is-teeth-whitening-safe",
+  "file": "qa/fixtures/posts/heldout/03-is-teeth-whitening-safe.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 37,
+      "evidence": "\" says Maria",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 46,
+      "evidence": "author.name: schema='Dr. Elena Marsh' vs post='Dr. Marcus Oyelaran'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v2/prompts/heldout-03-is-teeth-whitening-safe.prompt.md",
+    "cost_usd": 0.026866,
+    "output": "qa/reports/model-sonnet-v2/llm/heldout-03-is-teeth-whitening-safe.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "\"I was nervous about whitening, but my teeth are four shades brighter and I had no sensitivity at all,\" says Maria T., a recent patient.",
+        "type": "testimonial",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha has no testimonials on file, so this quote and patient are invented, and it also implies a specific result with no sensitivity (FTC endorsement and ADA advertising risk).",
+        "fix": "Remove the quote and the named patient entirely.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Elena Marsh\"}",
+        "type": "schema_incoherent",
+        "kind": "error",
+        "severity": "block",
+        "why": "The visible byline and front matter name Dr. Marcus Oyelaran as author (Dr. Marsh is the reviewer), so the JSON-LD contradicts the visible text.",
+        "fix": "Set the JSON-LD author to Dr. Marcus Oyelaran and optionally add Dr. Elena Marsh as reviewer (reviewedBy).",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "In-office whitening at our practice is $395.",
+        "type": "fact_vs_ficha",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The price matches the ficha, but it is stated without the context of what is included.",
+        "fix": "Optionally note that the price should be confirmed by calling the office.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Pregnancy or breastfeeding, where many dentists advise waiting.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a common cautious recommendation but is not backed by a cited source.",
+        "fix": "Cite ADA guidance or phrase it as 'ask your dentist first'.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Sensitivity usually settles after treatment ends. If it does not, stop and call your dentist.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The advice is sound, but the post could say more about what to do for persistent sensitivity or gum irritation.",
+        "fix": "Add that any persistent or severe pain or gum irritation warrants a dental visit.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Whitening is one of the most requested cosmetic treatments, and one of the most misunderstood.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "A harmless general statement with no source, and its phrasing is a mild AI-style rhetorical pairing.",
+        "fix": "Soften or cite a source, for example: 'Whitening is a popular cosmetic treatment.'",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This demo disclaimer would be out of place on a real published post.",
+        "fix": "Keep it only for the demo context and remove it for any real publication.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout-03-is-teeth-whitening-safe"
+}

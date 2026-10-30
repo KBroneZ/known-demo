@@ -1,0 +1,16 @@
+[
+  {
+    "site": "clinic-a",
+    "seconds": 2.39,
+    "astroSeconds": 1.07,
+    "htmlPages": 19,
+    "files": 24
+  },
+  {
+    "site": "clinic-b",
+    "seconds": 2.38,
+    "astroSeconds": 1.06,
+    "htmlPages": 17,
+    "files": 22
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "fixtures/posts/clean/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-haiku/prompts/clean-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.0021922,
+    "output": "reports/model-haiku/llm/clean-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "chatbot_residue",
+        "severity": "block",
+        "why": "This demo disclaimer is production-breaking text that would tell patients the clinic and post are fake if published.",
+        "fix": "Delete the disclaimer paragraph before publishing."
+      },
+      {
+        "quote": "The ADA's [MouthHealthy page on bridges](https://www.mouthhealthy.org/all-topics-a-z/bridges)",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "I cannot verify that this MouthHealthy URL path exists or that it matches the claim, and the path structure looks unusual for that site.",
+        "fix": "Open the link, confirm it resolves to the ADA bridges page, and replace the path with the verified URL if it does not."
+      },
+      {
+        "quote": "most patients describe soreness afterward rather than sharp pain.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "This statement about typical patient experience has no citation or clinic data behind it.",
+        "fix": "Cite an ADA or NIDCR source for post-procedure discomfort or soften the wording to what the dentist would confirm at the consultation."
+      },
+      {
+        "quote": "reviewed_by: Dr. Marcus Oyelaran",
+        "type": "other",
+        "severity": "info",
+        "why": "The ficha lists Dr. Oyelaran's focus as family, pediatric and aligner care, not implants or restorative work, so his review credential for this clinical topic is unclear.",
+        "fix": "Confirm his review role for restorative content or have a restorative dentist review the post."
+      }
+    ]
+  },
+  "name": "clean-02-dental-implants-vs-bridges"
+}

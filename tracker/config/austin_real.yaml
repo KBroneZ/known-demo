@@ -1,0 +1,70 @@
+# Example configuration for a real batch (shareable): the practices are anonymized as Practice A-H and the
+# domains are reserved .example names. The real list lives in config/austin_real.local.yaml (git-ignored; same
+# structure plus public_id / public_name / public_domain per brand, which `--anonymize` uses to relabel results).
+# The practices were a convenience sample from public directory listings, NOT a ranking and NOT clients.
+name: austin-dental-first-batch
+notes: >-
+  The first validation on the 40 real labelled answers gave regex precision 100% and recall 83% (10 of 12 true mentions):
+  engines write "Dr. H at Practice H Cosmetic Dentistry", which the full practice name never matched. An alias for the
+  doctor's name was then added and the same sample re-measured (100% / 100%), so that figure is tuned on the sample and
+  will overstate accuracy on new answers. The LLM judge (Claude Haiku via the Claude Code CLI) found all 12 from the start.
+  Both the labels and the judge come from Claude models, so their errors may be correlated.
+repetitions: 5
+budget_usd: 25
+
+market:
+  city: Austin
+  region: Texas
+  country: US
+  timezone: America/Chicago
+  lat: 30.2672
+  lng: -97.7431
+  dfs_location_name: "Austin,Texas,United States"
+
+# Gemini is deliberately not an engine: its grounding terms forbid storing/analysing results (research 04, 1.2).
+engines:
+  # Subscription CLIs (no API keys): coding-agent CLIs with web search, NOT the consumer apps.
+  codex_cli:      { enabled: true, model: gpt-6-luna, reps: 5, params: { effort: medium, pause_seconds: 20 } }
+  claude_cli:     { enabled: true, model: haiku, reps: 3, params: { pause_seconds: 20 } }
+  # API engines: skipped automatically when their keys are missing.
+  openai:         { enabled: true, model: gpt-5.4-mini }
+  anthropic:      { enabled: true, model: claude-haiku-5-5 }
+  perplexity:     { enabled: true, model: perplexity/sonar }
+  google_aio:     { enabled: true }
+  google_ai_mode: { enabled: true }
+
+# Aliases show the patterns that matter: a leading "The", a spelling variant, an "&" form, a doctor-name alias.
+# Do NOT add a generic phrase as an alias (it would match unrelated text); the LLM judge handles those cases.
+brands:
+  - { id: practice-a, name: Practice A Smiles, domains: [practice-a.example] }
+  - { id: practice-b, name: Practice B Dental, domains: [practice-b.example] }
+  - id: practice-c
+    name: The Practice C Dentists
+    aliases: [Practice C Dentists]
+    domains: [practice-c.example]
+  - id: practice-d
+    name: Practice D Dental
+    aliases: [Prac D Dental]
+    domains: [practice-d.example]
+  - { id: practice-e, name: Practice E Dentistry, domains: [practice-e.example] }
+  - id: practice-f
+    name: Practice F Dental
+    aliases: [Practice F & Associates, Practice F Associates]
+    domains: [practice-f.example]
+  - { id: practice-g, name: Practice G Smile Studio, domains: [practice-g.example] }
+  - id: practice-h
+    name: Practice H Cosmetic Dentistry by Dr. H
+    aliases: [Practice H Cosmetic Dentistry, Dr. H]
+    domains: [practice-h.example]
+
+prompts:
+  - { id: p01, text: "best dentist in Austin TX" }
+  - { id: p02, text: "best cosmetic dentist in Austin" }
+  - { id: p03, text: "emergency dentist in Austin open today" }
+  - { id: p04, text: "who is the best dentist for dental implants in Austin" }
+  - { id: p05, text: "affordable dentist in Austin without insurance" }
+  - { id: p06, text: "best dentist for veneers in Austin" }
+  - { id: p07, text: "Invisalign provider in Austin, who do you recommend" }
+  - { id: p08, text: "family dentist in Austin accepting new patients" }
+  - { id: p09, text: "best dentist in South Austin" }
+  - { id: p10, text: "sedation dentist in Austin for nervous patients" }

@@ -1,0 +1,63 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "qa/fixtures/posts/clean/02-dental-implants-vs-bridges.md",
+  "verdict": "CORREGIR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-haiku-v2/prompts/clean-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.002688,
+    "output": "qa/reports/model-haiku-v2/llm/clean-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "CORREGIR",
+    "model_verdict": "CORREGIR",
+    "raw_verdict": "CORREGIR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "The ADA's [MouthHealthy page on bridges](https://www.mouthhealthy.org/all-topics-a-z/bridges)",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "warn",
+        "why": "I cannot verify that this exact URL exists or says what the sentence claims, so the citation is unverified and must not be published as-is.",
+        "fix": "Open the link, confirm it resolves to an ADA MouthHealthy page that describes bridges, and replace it with a verified URL or remove the citation.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "most patients describe soreness afterward rather than sharp pain",
+        "type": "unsourced_claim",
+        "kind": "error",
+        "severity": "warn",
+        "why": "This is a statistic-like statement about patient experience with no source, and a reader could take it as established fact.",
+        "fix": "Rewrite it as general guidance (for example, 'Some soreness is common after the procedure, and your dentist will explain how to manage it') or cite a source that supports it.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "while a bridge is typically completed in fewer visits",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a harmless general comparison that is broadly reasonable but lacks a source.",
+        "fix": "Keep it as a general note, or say 'often' and add that visit counts vary with each case.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "This post is sample content.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The disclaimer describes the post as a demo, which would confuse real readers if this text is published on a live clinic site.",
+        "fix": "Remove the disclaimer before publishing, or keep it only in the demo build.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-02-dental-implants-vs-bridges"
+}

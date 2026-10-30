@@ -1,0 +1,56 @@
+{
+  "name": "r1",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.04,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0036722,
+    "seconds": 23.7,
+    "findings": [
+      {
+        "quote": "These are our published prices:",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha limits the $110 new-patient exam-with-X-rays price to new patients paying without insurance, but the post presents it as a general published price.",
+        "fix": "Add the qualifier that the $110 price applies to new patients paying without insurance, or remove the price from this list and link to the services page.",
+        "downgraded_from": "block"
+      },
+      {
+        "quote": "New patient exam and X-rays: $110",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The price is stated without the ficha's condition that it applies only to new patients paying without insurance, so a patient with insurance could be misled about cost.",
+        "fix": "Change the line to 'New patient exam and X-rays, without insurance: $110' to match the ficha.",
+        "downgraded_from": "block"
+      },
+      {
+        "quote": "[contact page](/contact)",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "The /contact route is not in the ficha and cannot be verified from the material provided.",
+        "fix": "Confirm that /contact exists on the published site, or link to the ficha website and phone number instead."
+      },
+      {
+        "quote": "[team page](/team)",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "The /team route is not in the ficha and cannot be verified from the material provided.",
+        "fix": "Confirm that /team exists on the published site, or remove the link."
+      },
+      {
+        "quote": "[MedlinePlus](https://medlineplus.gov/dentalhealth.html) has plain-language information on brushing, flossing and dental checkups.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "I cannot verify from this review that the linked page exists or covers brushing, flossing and checkups as described, so the citation is unconfirmed.",
+        "fix": "Open the link, confirm the page matches the description, and keep the citation only if it does."
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 2,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

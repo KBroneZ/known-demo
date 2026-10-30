@@ -1,0 +1,43 @@
+---
+import { clinic, NAV } from '../lib/site.ts';
+import { addressLine, hoursRows, telHref } from '../lib/format.ts';
+const rows = hoursRows(clinic);
+---
+<footer data-region="footer" class="foot">
+  <div class="wrap cols">
+    <div>
+      <p class="name">{clinic.name}</p>
+      <address>
+        {addressLine(clinic)}<br />
+        <a href={telHref(clinic.nap.phone)}>{clinic.nap.phone}</a><br />
+        <a href={`mailto:${clinic.nap.email}`}>{clinic.nap.email}</a>
+      </address>
+    </div>
+    <div>
+      <p class="name">Hours</p>
+      <ul class="plain">
+        {rows.map((r) => <li>{r.days}: {r.time}</li>)}
+      </ul>
+    </div>
+    <div>
+      <p class="name">Explore</p>
+      <ul class="plain">
+        {NAV.map((n) => <li><a href={n.path}>{n.label}</a></li>)}
+        <li><a href="/about">About us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap fine">
+    <p>Fictional demo: {clinic.name} is not a real practice. Names, address, phone and content are invented for a software demonstration.</p>
+  </div>
+</footer>
+<style>
+  .foot{background:var(--c-primary);color:var(--c-primary-contrast);padding:2.5rem 0 1.5rem;margin-top:2rem}
+  .foot a{color:var(--c-primary-contrast)}
+  .cols{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+  .name{font-family:var(--font-heading);font-weight:700;margin:0 0 .4rem}
+  address{font-style:normal}
+  .plain{list-style:none;padding:0;margin:0}
+  .fine{margin-top:1.5rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--c-primary-contrast) 35%,transparent);font-size:.9rem}
+  .fine p{margin:0}
+</style>

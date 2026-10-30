@@ -1,0 +1,27 @@
+---
+import { clinic, NAV } from '../lib/site.ts';
+import { telHref } from '../lib/format.ts';
+const current = Astro.url.pathname.replace(/\.html$/, '');
+---
+<header data-region="header" class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/">{clinic.name}</a>
+    <nav aria-label="Main">
+      <ul>
+        {NAV.map((n) => (
+          <li><a href={n.path} aria-current={current === n.path || current.startsWith(n.path + '/') ? 'page' : undefined}>{n.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <a class="btn call" href={telHref(clinic.nap.phone)}>Call {clinic.nap.phone}</a>
+  </div>
+</header>
+<style>
+  .top{background:var(--c-surface);border-bottom:1px solid var(--c-border)}
+  .bar{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem;padding-top:.9rem;padding-bottom:.9rem}
+  .brand{font-family:var(--font-heading);font-weight:700;font-size:1.25rem;color:var(--c-text);text-decoration:none;margin-right:auto}
+  nav ul{display:flex;flex-wrap:wrap;gap:.25rem 1.1rem;list-style:none;margin:0;padding:0}
+  nav a{color:var(--c-text);text-decoration:none;padding:.25rem 0;border-bottom:2px solid transparent}
+  nav a:hover,nav a[aria-current]{border-bottom-color:var(--c-accent)}
+  .call{padding:.5rem 1rem}
+</style>

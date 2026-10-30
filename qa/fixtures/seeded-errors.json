@@ -1,0 +1,136 @@
+{
+  "description": "10 errors seeded into copies of the 4 clean posts. Built by fixtures/build_seeded.py.",
+  "clinic": "Bluebonnet Hollow Dental (fictional)",
+  "errors": [
+    {
+      "id": "E01",
+      "file": "seeded/01-how-often-dental-cleaning.md",
+      "category": "NAP mismatch (phone)",
+      "rules": [
+        "nap_phone_mismatch"
+      ],
+      "description": "Phone number differs from the ficha.",
+      "original": "You can reach us at (512) 555-0142, or visit us",
+      "injected": "You can reach us at (512) 555-0187, or visit us",
+      "snippet": "(512) 555-0187",
+      "line": 39
+    },
+    {
+      "id": "E02",
+      "file": "seeded/01-how-often-dental-cleaning.md",
+      "category": "Typical AI phrases",
+      "rules": [
+        "ai_phrase"
+      ],
+      "description": "Generic AI opener and 'delve'.",
+      "original": "Ask five people how often they see the dentist and you will hear five answers.",
+      "injected": "In today's fast-paced world, maintaining a healthy smile is more important than ever. Let's delve into how often you should really see the dentist.",
+      "snippet": "In today's fast-paced world",
+      "line": 14
+    },
+    {
+      "id": "E03",
+      "file": "seeded/01-how-often-dental-cleaning.md",
+      "category": "Broken link",
+      "rules": [
+        "link_broken"
+      ],
+      "description": "Hallucinated NIDCR URL that returns 404.",
+      "original": "https://www.nidcr.nih.gov/health-info/gum-disease)",
+      "injected": "https://www.nidcr.nih.gov/health-info/gum-disease-treatment-guidelines-2026)",
+      "snippet": "gum-disease-treatment-guidelines-2026",
+      "line": 24
+    },
+    {
+      "id": "E04",
+      "file": "seeded/02-dental-implants-vs-bridges.md",
+      "category": "Invented statistic, no source",
+      "rules": [
+        "unsourced_stat"
+      ],
+      "description": "Made-up implant success figure with no citation.",
+      "original": "and the choice depends on your health, your bone and your goals.",
+      "injected": "and the choice depends on your health, your bone and your goals. Studies show that 98% of dental implants are still working after 25 years.",
+      "snippet": "Studies show that 98%",
+      "line": 14
+    },
+    {
+      "id": "E05",
+      "file": "seeded/02-dental-implants-vs-bridges.md",
+      "category": "Prohibited promise",
+      "rules": [
+        "prohibited_promise"
+      ],
+      "description": "Lifetime guarantee on an implant.",
+      "original": "No dentist can predict exactly how long a restoration will last in your mouth.",
+      "injected": "Our implants come with a lifetime guarantee, so your new tooth is guaranteed to last.",
+      "snippet": "lifetime guarantee",
+      "line": 28
+    },
+    {
+      "id": "E06",
+      "file": "seeded/02-dental-implants-vs-bridges.md",
+      "category": "Incoherent schema",
+      "rules": [
+        "schema_mismatch"
+      ],
+      "description": "JSON-LD author is a dentist who is not the post author nor on the roster.",
+      "original": "\"name\": \"Dr. Elena Marsh\"}, \"publisher\"",
+      "injected": "\"name\": \"Dr. Brian Walsh\"}, \"publisher\"",
+      "snippet": "\"name\": \"Dr. Brian Walsh\"",
+      "line": 51
+    },
+    {
+      "id": "E07",
+      "file": "seeded/03-is-teeth-whitening-safe.md",
+      "category": "Invented testimonial",
+      "rules": [
+        "fake_testimonial"
+      ],
+      "description": "Patient quote with no testimonial on file.",
+      "original": "## Who should talk to a dentist first",
+      "injected": "> \"I was terrified of whitening, but Dr. Oyelaran made it painless and my smile has never looked better!\" — Jessica R., Austin patient\n\n## Who should talk to a dentist first",
+      "snippet": "Jessica R., Austin patient",
+      "line": 24
+    },
+    {
+      "id": "E08",
+      "file": "seeded/03-is-teeth-whitening-safe.md",
+      "category": "Unsupported 'best dentist'",
+      "rules": [
+        "unsupported_superlative"
+      ],
+      "description": "'Best dentist in Austin' with no basis.",
+      "original": "Call (512) 555-0142 to book.",
+      "injected": "Patients choose us because we are the best dentist in Austin. Call (512) 555-0142 to book.",
+      "snippet": "the best dentist in Austin",
+      "line": 43
+    },
+    {
+      "id": "E09",
+      "file": "seeded/04-dental-emergency-austin.md",
+      "category": "False/dangerous medical claim",
+      "rules": [
+        "medical_myth"
+      ],
+      "description": "Says to scrub a knocked-out tooth with soap (it damages the root).",
+      "original": "If it is dirty, rinse it gently with water. Do not scrub it.",
+      "injected": "If it is dirty, scrub it clean with soap and water before putting it back.",
+      "snippet": "scrub it clean with soap",
+      "line": 18
+    },
+    {
+      "id": "E10",
+      "file": "seeded/04-dental-emergency-austin.md",
+      "category": "Chatbot residue",
+      "rules": [
+        "chatbot_residue"
+      ],
+      "description": "'As an AI language model' left in the text.",
+      "original": "This is general information and not a substitute for professional advice.",
+      "injected": "As an AI language model, I cannot provide medical advice, but I hope this helps!",
+      "snippet": "As an AI language model",
+      "line": 14
+    }
+  ]
+}

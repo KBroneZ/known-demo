@@ -1,0 +1,14 @@
+---
+import { dentistSlug } from '../lib/site.ts';
+interface Props { name: string; credentials: string; focus: string; bio?: string }
+const { name, credentials, focus, bio } = Astro.props;
+---
+<article class="card doc" id={dentistSlug(name)}>
+  <h2>{name}, {credentials}</h2>
+  <p class="meta">Focus: {focus}</p>
+  {bio && <p>{bio}</p>}
+</article>
+<style>
+  .doc h2{margin-top:0;font-size:1.4rem}
+  .doc p:last-child{margin:0}
+</style>

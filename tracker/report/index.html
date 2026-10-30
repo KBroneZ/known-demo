@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Visibility Tracker Report</title>
+<style>
+:root{--bg:#fafaf7;--fg:#1c1b19;--muted:#6b6860;--card:#fff;--line:#e3e0d8;--accent:#1f6f5c;--bar:#9cc9bd;--warn-bg:#fff1d6;--warn-fg:#6b4300;--mock-bg:#fde4e1;--mock-fg:#7a1f14}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#ecebe6;--muted:#9a978e;--card:#1f1f1c;--line:#34332e;--accent:#6fcfb6;--bar:#2f5a50;--warn-bg:#3a2f12;--warn-fg:#f1d391;--mock-bg:#44201b;--mock-fg:#ffc9c0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1080px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.6rem;margin:0 0 4px}h2{font-size:1.2rem;margin:36px 0 8px}h3{font-size:1rem;margin:20px 0 6px}
+p,li{max-width:75ch}.muted{color:var(--muted)}.small{font-size:.85rem}
+.banner{padding:12px 14px;border-radius:8px;margin:16px 0;font-weight:500}
+.banner.mock{background:var(--mock-bg);color:var(--mock-fg)}.banner.real{background:var(--warn-bg);color:var(--warn-fg)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.card b{display:block;font-size:1.35rem}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--card);border:1px solid var(--line);border-radius:8px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:.8rem;font-weight:600;color:var(--muted)}td.num,th.num{text-align:right}
+.rate{font-variant-numeric:tabular-nums;white-space:nowrap}.rate b{font-size:1rem}
+.bar{display:block;position:relative;height:6px;background:var(--line);border-radius:3px;margin-top:4px;min-width:90px}
+.bar i{position:absolute;top:0;height:6px;background:var(--bar);border-radius:3px}
+.bar b{position:absolute;top:-2px;width:3px;height:10px;background:var(--accent);margin-left:-1px}
+.sub{font-size:.75rem;color:var(--muted)}
+code{background:var(--line);padding:1px 4px;border-radius:3px;font-size:.85em}
+details{margin:8px 0}summary{cursor:pointer;color:var(--accent)}
+.reps li{margin:2px 0}
+.hm td{text-align:center;font-variant-numeric:tabular-nums;padding:4px 6px}
+</style>
+</head>
+<body>
+<main>
+<h1>AI Visibility Tracker: Austin dental practices</h1>
+<p class="muted">Batch <code>austin-dental-first-batch-real</code> · generated 2026-10-30 04:47 UTC · location set to Austin, Texas, US</p>
+
+<p class="small muted">Anonymized version: the tracked practices are labelled Practice A to H, and other businesses are not listed.</p>
+
+<div class="banner real">Real batch, small sample. 80 runs between 2026-10-30 and 2026-10-30. Wide intervals are expected and are the honest result. Practices were chosen as a convenience sample from public directories; this is not a ranking.</div>
+
+
+
+<p class="small muted">Engines not run: openai (missing: OPENAI_API_KEY); anthropic (missing: ANTHROPIC_API_KEY); perplexity (missing: PERPLEXITY_API_KEY); google_aio (missing: DATAFORSEO_LOGIN, DATAFORSEO_PASSWORD); google_ai_mode (missing: DATAFORSEO_LOGIN, DATAFORSEO_PASSWORD).</p>
+
+
+<div class="cards">
+  <div class="card"><span class="muted small">Runs stored</span><b>80</b></div>
+  <div class="card"><span class="muted small">Engines</span><b>2</b></div>
+  <div class="card"><span class="muted small">Prompts × repetitions</span><b>10 × 5 / 3</b><span class="sub">per engine, in column order</span></div>
+  <div class="card"><span class="muted small">API cost</span><b>$0.00</b></div>
+</div>
+
+<h2>1. How often each practice is named</h2>
+<p>Share of answers that name the practice, per engine, with a 95% Wilson interval. The small line under each rate is a second interval that treats the <em>prompt</em> as the unit (prompt-level bootstrap), because repeated answers to the same prompt are not independent. It is wider than the Wilson interval when practices do much better on some prompts than others; with 10 prompts it is itself rough. Only answers that were actually returned count; errors and "no AI Overview shown" are excluded from the denominator.</p>
+<div class="scroll"><table>
+<thead><tr><th>Practice</th><th>OpenAI model via Codex CLI<br><span class="sub">n = 50 answers</span></th><th>Claude Haiku via Claude Code CLI<br><span class="sub">n = 30 answers</span></th></tr></thead>
+<tbody>
+
+<tr><td>Practice A</td>
+
+<td><span class="rate"><b>8%</b> <span class="sub">4/50</span></span>
+<span class="sub">95% CI 3%–19%</span>
+<span class="bar"><i style="left:3.2%;width:15.7%"></i><b style="left:8.0%"></b></span>
+<span class="sub">by prompt: 0%–22%</span></td>
+
+<td><span class="rate"><b>0%</b> <span class="sub">0/30</span></span>
+<span class="sub">95% CI 0%–11%</span>
+<span class="bar"><i style="left:0.0%;width:11.4%"></i><b style="left:0.0%"></b></span>
+<span class="sub">by prompt: n/a (same rate on every prompt)</span></td>
+</tr>
+
+<tr><td>Practice B</td>
+
+<td><span class="rate"><b>0%</b> <span class="sub">0/50</span></span>
+<span class="sub">95% CI 0%–7%</span>
+<span class="bar"><i style="left:0.0%;width:7.1%"></i><b style="left:0.0%"></b></span>
+<span class="sub">by prompt: n/a (same rate on every prompt)</span></td>
+
+<td><span class="rate"><b>0%</b> <span class="sub">0/30</span></span>
+<span class="sub">95% CI 0%–11%</span>
+<span class="bar"><i style="left:0.0%;width:11.4%"></i><b style="left:0.0%"></b></span>
+<span class="sub">by prompt: n/a (same rate on every prompt)</span></td>
+</tr>
+
+<tr><td>Practice C</td>
+
+<td><span class="rate"><b>2%</b> <span class="sub">1/50</span></span>
+<span class="sub">95% CI 0%–10%</span>
+<span class="bar"><i style="left:0.4%;width:10.1%"></i><b style="left:2.0%"></b></span>
+<span class="sub">by prompt: 0%–6%</span></td>
+
+<td><span class="rate"><b>13%</b> <span class="sub">4/30</span></span>
+<span class="sub">95% CI 5%–30%</span>
+<span class="bar"><i style="left:5.3%;width:24.4%"></i><b style="left:13.3%"></b></span>
+<span class="sub">by prompt: 0%–37%</span></td>
+</tr>
+
+<tr><td>Practice D</td>
+
+<td><span class="rate"><b>0%</b> <span class="sub">0/50</span></span>
+<span class="sub">95% CI 0%–7%</span>
+<span class="bar"><i style="left:0.0%;width:7.1%"></i><b style="left:0.0%"></b></span>
+<span class="sub">by prompt: n/a (same rate on every prompt)</span></td>
+
+<td><span class="rate"><b>0%</b> <span class="sub">0/30</span></span>
+<span class="sub">95% CI 0%–11%</span>
+<span class="bar"><i style="left:0.0%;width:11.4%"></i><b style="left:0.0%"></b></span>
+<span class="sub">by prompt: n/a (same rate on every prompt)</span></td>
+</tr>
+
+<tr><td>Practice E</td>
+
+<td><span class="rate"><b>6%</b> <span class="sub">3/50</span></span>
+<span class="sub">95% CI 2%–16%</span>
+<span class="bar"><i style="left:2.1%;width:14.2%"></i><b style="left:6.0%"></b></span>
+<span class="sub">by prompt: 0%–18%</span></td>
+
+<td><span class="rate"><b>10%</b> <span class="sub">3/30</span></span>
+<span class="sub">95% CI 3%–26%</span>
+<span class="bar"><i style="left:3.5%;width:22.2%"></i><b style="left:10.0%"></b></span>
+<span class="sub">by prompt: 0%–30%</span></td>
+</tr>
+
+<tr><td>Practice F</td>
+
+<td><span class="rate"><b>0%</b> <span class="sub">0/50</span></span>
+<span class="sub">95% CI 0%–7%</span>
+<span class="bar"><i style="left:0.0%;width:7.1%"></i><b style="left:0.0%"></b></span>
+<span class="sub">by prompt: n/a (same rate on every prompt)</span></td>
+
+<td><span class="rate"><b>7%</b> <span class="sub">2/30</span></span>
+<span class="sub">95% CI 2%–21%</span>
+<span class="bar"><i style="left:1.8%;width:19.5%"></i><b style="left:6.7%"></b></span>
+<span class="sub">by prompt: 0%–20%</span></td>
+</tr>
+
+<tr><td>Practice G</td>
+
+<td><span class="rate"><b>0%</b> <span class="sub">0/50</span></span>
+<span class="sub">95% CI 0%–7%</span>
+<span class="bar"><i style="left:0.0%;width:7.1%"></i><b style="left:0.0%"></b></span>
+<span class="sub">by prompt: n/a (same rate on every prompt)</span></td>
+
+<td><span class="rate"><b>0%</b> <span class="sub">0/30</span></span>
+<span class="sub">95% CI 0%–11%</span>
+<span class="bar"><i style="left:0.0%;width:11.4%"></i><b style="left:0.0%"></b></span>
+<span class="sub">by prompt: n/a (same rate on every prompt)</span></td>
+</tr>
+
+<tr><td>Practice H</td>
+
+<td><span class="rate"><b>8%</b> <span class="sub">4/50</span></span>
+<span class="sub">95% CI 3%–19%</span>
+<span class="bar"><i style="left:3.2%;width:15.7%"></i><b style="left:8.0%"></b></span>
+<span class="sub">by prompt: 0%–20%</span></td>
+
+<td><span class="rate"><b>20%</b> <span class="sub">6/30</span></span>
+<span class="sub">95% CI 10%–37%</span>
+<span class="bar"><i style="left:9.5%;width:27.8%"></i><b style="left:20.0%"></b></span>
+<span class="sub">by prompt: 0%–50%</span></td>
+</tr>
+
+</tbody></table></div>
+
+<h3>Cited as a source</h3>
+<p class="small muted">Share of answers whose cited URLs include the practice's own website. This needs a correct domain in the config; Perplexity counts only sources the answer marks with [n].</p>
+<div class="scroll"><table>
+<thead><tr><th>Practice</th><th>OpenAI model via Codex CLI</th><th>Claude Haiku via Claude Code CLI</th></tr></thead>
+<tbody>
+
+<tr><td>Practice A</td>
+
+<td class="rate"><b>8%</b> <span class="sub">4/50 · 3%–19%</span></td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/30 · 0%–11%</span></td>
+</tr>
+
+<tr><td>Practice B</td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/50 · 0%–7%</span></td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/30 · 0%–11%</span></td>
+</tr>
+
+<tr><td>Practice C</td>
+
+<td class="rate"><b>2%</b> <span class="sub">1/50 · 0%–10%</span></td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/30 · 0%–11%</span></td>
+</tr>
+
+<tr><td>Practice D</td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/50 · 0%–7%</span></td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/30 · 0%–11%</span></td>
+</tr>
+
+<tr><td>Practice E</td>
+
+<td class="rate"><b>6%</b> <span class="sub">3/50 · 2%–16%</span></td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/30 · 0%–11%</span></td>
+</tr>
+
+<tr><td>Practice F</td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/50 · 0%–7%</span></td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/30 · 0%–11%</span></td>
+</tr>
+
+<tr><td>Practice G</td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/50 · 0%–7%</span></td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/30 · 0%–11%</span></td>
+</tr>
+
+<tr><td>Practice H</td>
+
+<td class="rate"><b>8%</b> <span class="sub">4/50 · 3%–19%</span></td>
+
+<td class="rate"><b>0%</b> <span class="sub">0/30 · 0%–11%</span></td>
+</tr>
+
+</tbody></table></div>
+
+<h3>Share of voice among tracked practices</h3>
+<p class="small muted">Each practice's share of all mentions of the tracked list. Businesses outside the list are invisible to the regex layer (the optional LLM judge lists them), so this is not market share.</p>
+<div class="scroll"><table>
+<thead><tr><th>Practice</th><th class="num">OpenAI model via Codex CLI</th><th class="num">Claude Haiku via Claude Code CLI</th></tr></thead>
+<tbody>
+
+<tr><td>Practice A</td><td class="num">33%</td><td class="num">0%</td></tr>
+
+<tr><td>Practice B</td><td class="num">0%</td><td class="num">0%</td></tr>
+
+<tr><td>Practice C</td><td class="num">8%</td><td class="num">27%</td></tr>
+
+<tr><td>Practice D</td><td class="num">0%</td><td class="num">0%</td></tr>
+
+<tr><td>Practice E</td><td class="num">25%</td><td class="num">20%</td></tr>
+
+<tr><td>Practice F</td><td class="num">0%</td><td class="num">13%</td></tr>
+
+<tr><td>Practice G</td><td class="num">0%</td><td class="num">0%</td></tr>
+
+<tr><td>Practice H</td><td class="num">33%</td><td class="num">40%</td></tr>
+
+</tbody></table></div>
+
+<h2>2. Why one answer is not a result</h2>
+<p>Each prompt was sent several times to each engine (OpenAI model via Codex CLI: 5, Claude Haiku via Claude Code CLI: 3). If answers were stable, the repetitions would agree. This is how much they did.</p>
+
+<h3>All businesses named</h3>
+
+<div class="scroll"><table>
+<thead><tr><th>Engine</th><th class="num">Mean overlap between two repetitions</th><th class="num">Business-prompt pairs</th><th class="num">...named in every repetition</th><th class="num">...named in only one repetition</th><th class="num">Distinct business names</th></tr></thead>
+<tbody>
+
+<tr><td>OpenAI model via Codex CLI<br><span class="sub">50 answers judged</span></td>
+<td class="num">27%<br><span class="sub">per prompt 10%–68%</span></td>
+<td class="num">77</td>
+<td class="num">1 (1%)</td>
+<td class="num">38 (49%)</td>
+<td class="num">67</td></tr>
+
+<tr><td>Claude Haiku via Claude Code CLI<br><span class="sub">30 answers judged</span></td>
+<td class="num">32%<br><span class="sub">per prompt 6%–67%</span></td>
+<td class="num">114</td>
+<td class="num">19 (17%)</td>
+<td class="num">74 (65%)</td>
+<td class="num">97</td></tr>
+
+</tbody></table></div>
+<p class="small muted">Names come from the LLM judge plus the tracked practices. Overlap is the Jaccard similarity of the sets of business names in two repetitions of the same prompt, averaged over all pairs (100% = identical every time). A "business-prompt pair" is one business named at least once for one prompt and engine; a business named for two prompts counts twice, while "distinct business names" counts it once. Names are compared as written (lowercased, no punctuation), so one business under two spellings overstates the disagreement a little. The judge is a Claude model and one of the engines is too.</p>
+
+
+<h3>Tracked practices only</h3>
+<div class="scroll"><table>
+<thead><tr><th>Engine</th><th class="num">Prompts where a tracked practice was named in any repetition</th><th class="num">Mean overlap there</th><th class="num">...all repetitions identical</th><th class="num">Practice-prompt pairs named in only some repetitions</th></tr></thead>
+<tbody>
+
+<tr><td>OpenAI model via Codex CLI</td>
+<td class="num">2 <span class="sub">(of 10)</span></td>
+<td class="num">22%</td>
+<td class="num">0 of 2</td>
+<td class="num">6 of 6 (100%)</td></tr>
+
+<tr><td>Claude Haiku via Claude Code CLI</td>
+<td class="num">3 <span class="sub">(of 10)</span></td>
+<td class="num">81%</td>
+<td class="num">1 of 3</td>
+<td class="num">2 of 6 (33%)</td></tr>
+
+</tbody></table></div>
+<p class="small muted">Only prompts where at least one repetition named a tracked practice are compared: two repetitions that both name none say nothing about stability. The last column counts practices that appeared at least once for a prompt and engine and asks how often they did not appear every time: a single run would have said "named" or "not named" depending on luck.</p>
+
+
+<h3>Same question, 5 runs: OpenAI model via Codex CLI</h3>
+<p class="small">“best dentist in Austin TX”</p>
+<ul class="reps small">
+<li>Run 1: <span class="muted">no tracked practice named</span></li><li>Run 2: <span class="muted">no tracked practice named</span></li><li>Run 3: <span class="muted">no tracked practice named</span></li><li>Run 4: <span class="muted">no tracked practice named</span></li><li>Run 5: <span class="muted">no tracked practice named</span></li>
+</ul>
+
+<h3>Same question, 3 runs: Claude Haiku via Claude Code CLI</h3>
+<p class="small">“best dentist in Austin TX”</p>
+<ul class="reps small">
+<li>Run 1: <span class="muted">no tracked practice named</span></li><li>Run 2: <span class="muted">no tracked practice named</span></li><li>Run 3: <span class="muted">no tracked practice named</span></li>
+</ul>
+
+
+<h2>3. Most cited sources</h2>
+<p class="small muted">Share of all scored answers (all engines) whose citations include the domain. Directory and review sites often outrank practices' own websites: that is where the work is.</p>
+<div class="scroll"><table>
+<thead><tr><th>Domain</th><th>Type</th><th class="num">Answers citing it</th><th class="num">Share</th><th class="num">codex_cli</th><th class="num">claude_cli</th></tr></thead>
+<tbody>
+
+<tr><td>lantern.llc</td><td>directory / review / social</td><td class="num">17</td><td class="num">21%</td><td class="num">0</td><td class="num">17</td></tr>
+
+<tr><td>reviews.birdeye.com</td><td>directory / review / social</td><td class="num">13</td><td class="num">16%</td><td class="num">10</td><td class="num">3</td></tr>
+
+<tr><td>rankmydentist.com</td><td>directory / review / social</td><td class="num">8</td><td class="num">10%</td><td class="num">2</td><td class="num">6</td></tr>
+
+<tr><td>tsbde.texas.gov</td><td>other</td><td class="num">7</td><td class="num">9%</td><td class="num">5</td><td class="num">2</td></tr>
+
+<tr><td>aidm.org</td><td>other</td><td class="num">7</td><td class="num">9%</td><td class="num">7</td><td class="num">0</td></tr>
+
+<tr><td>zocdoc.com</td><td>directory / review / social</td><td class="num">7</td><td class="num">9%</td><td class="num">0</td><td class="num">7</td></tr>
+
+<tr><td>peakdentaltexas.com</td><td>other</td><td class="num">7</td><td class="num">9%</td><td class="num">0</td><td class="num">7</td></tr>
+
+<tr><td>myaustindds.com</td><td>other</td><td class="num">6</td><td class="num">8%</td><td class="num">2</td><td class="num">4</td></tr>
+
+<tr><td>newmouth.com</td><td>directory / review / social</td><td class="num">6</td><td class="num">8%</td><td class="num">0</td><td class="num">6</td></tr>
+
+<tr><td>realself.com</td><td>other</td><td class="num">6</td><td class="num">8%</td><td class="num">0</td><td class="num">6</td></tr>
+
+<tr><td>practicefinder.newpatientsinc.com</td><td>other</td><td class="num">6</td><td class="num">8%</td><td class="num">0</td><td class="num">6</td></tr>
+
+<tr><td>aacd.com</td><td>other</td><td class="num">5</td><td class="num">6%</td><td class="num">5</td><td class="num">0</td></tr>
+
+<tr><td>koladentistry.com</td><td>other</td><td class="num">5</td><td class="num">6%</td><td class="num">5</td><td class="num">0</td></tr>
+
+<tr><td>aidm.dental</td><td>other</td><td class="num">5</td><td class="num">6%</td><td class="num">5</td><td class="num">0</td></tr>
+
+<tr><td>limestonehillsorthodontics.com</td><td>other</td><td class="num">5</td><td class="num">6%</td><td class="num">3</td><td class="num">2</td></tr>
+
+</tbody></table></div>
+
+
+<h3>Other businesses named</h3>
+<p class="small muted">The engines also named 136 other distinct business names (found by the LLM judge). They are not listed in this anonymized version.</p>
+
+
+<h2>4. Prompt-level detail</h2>
+<p class="small muted">Counts of answers naming each practice, per prompt and engine (k/n).</p>
+
+<details><summary>Practice A</summary>
+<div class="scroll"><table class="hm">
+<thead><tr><th>Prompt</th><th>codex_cli</th><th>claude_cli</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">best dentist in Austin TX</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best cosmetic dentist in Austin</td><td>3/5</td><td>0/3</td></tr><tr><td style="text-align:left">emergency dentist in Austin open today</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">who is the best dentist for dental implants in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">affordable dentist in Austin without insurance</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist for veneers in Austin</td><td>1/5</td><td>0/3</td></tr><tr><td style="text-align:left">Invisalign provider in Austin, who do you recommend</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">family dentist in Austin accepting new patients</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist in South Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">sedation dentist in Austin for nervous patients</td><td>0/5</td><td>0/3</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Practice B</summary>
+<div class="scroll"><table class="hm">
+<thead><tr><th>Prompt</th><th>codex_cli</th><th>claude_cli</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">best dentist in Austin TX</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best cosmetic dentist in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">emergency dentist in Austin open today</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">who is the best dentist for dental implants in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">affordable dentist in Austin without insurance</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist for veneers in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">Invisalign provider in Austin, who do you recommend</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">family dentist in Austin accepting new patients</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist in South Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">sedation dentist in Austin for nervous patients</td><td>0/5</td><td>0/3</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Practice C</summary>
+<div class="scroll"><table class="hm">
+<thead><tr><th>Prompt</th><th>codex_cli</th><th>claude_cli</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">best dentist in Austin TX</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best cosmetic dentist in Austin</td><td>0/5</td><td>1/3</td></tr><tr><td style="text-align:left">emergency dentist in Austin open today</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">who is the best dentist for dental implants in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">affordable dentist in Austin without insurance</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist for veneers in Austin</td><td>1/5</td><td>3/3</td></tr><tr><td style="text-align:left">Invisalign provider in Austin, who do you recommend</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">family dentist in Austin accepting new patients</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist in South Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">sedation dentist in Austin for nervous patients</td><td>0/5</td><td>0/3</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Practice D</summary>
+<div class="scroll"><table class="hm">
+<thead><tr><th>Prompt</th><th>codex_cli</th><th>claude_cli</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">best dentist in Austin TX</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best cosmetic dentist in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">emergency dentist in Austin open today</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">who is the best dentist for dental implants in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">affordable dentist in Austin without insurance</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist for veneers in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">Invisalign provider in Austin, who do you recommend</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">family dentist in Austin accepting new patients</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist in South Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">sedation dentist in Austin for nervous patients</td><td>0/5</td><td>0/3</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Practice E</summary>
+<div class="scroll"><table class="hm">
+<thead><tr><th>Prompt</th><th>codex_cli</th><th>claude_cli</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">best dentist in Austin TX</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best cosmetic dentist in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">emergency dentist in Austin open today</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">who is the best dentist for dental implants in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">affordable dentist in Austin without insurance</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist for veneers in Austin</td><td>3/5</td><td>0/3</td></tr><tr><td style="text-align:left">Invisalign provider in Austin, who do you recommend</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">family dentist in Austin accepting new patients</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist in South Austin</td><td>0/5</td><td>3/3</td></tr><tr><td style="text-align:left">sedation dentist in Austin for nervous patients</td><td>0/5</td><td>0/3</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Practice F</summary>
+<div class="scroll"><table class="hm">
+<thead><tr><th>Prompt</th><th>codex_cli</th><th>claude_cli</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">best dentist in Austin TX</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best cosmetic dentist in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">emergency dentist in Austin open today</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">who is the best dentist for dental implants in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">affordable dentist in Austin without insurance</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist for veneers in Austin</td><td>0/5</td><td>2/3</td></tr><tr><td style="text-align:left">Invisalign provider in Austin, who do you recommend</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">family dentist in Austin accepting new patients</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist in South Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">sedation dentist in Austin for nervous patients</td><td>0/5</td><td>0/3</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Practice G</summary>
+<div class="scroll"><table class="hm">
+<thead><tr><th>Prompt</th><th>codex_cli</th><th>claude_cli</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">best dentist in Austin TX</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best cosmetic dentist in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">emergency dentist in Austin open today</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">who is the best dentist for dental implants in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">affordable dentist in Austin without insurance</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist for veneers in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">Invisalign provider in Austin, who do you recommend</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">family dentist in Austin accepting new patients</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist in South Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">sedation dentist in Austin for nervous patients</td><td>0/5</td><td>0/3</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Practice H</summary>
+<div class="scroll"><table class="hm">
+<thead><tr><th>Prompt</th><th>codex_cli</th><th>claude_cli</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">best dentist in Austin TX</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best cosmetic dentist in Austin</td><td>2/5</td><td>3/3</td></tr><tr><td style="text-align:left">emergency dentist in Austin open today</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">who is the best dentist for dental implants in Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">affordable dentist in Austin without insurance</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist for veneers in Austin</td><td>2/5</td><td>3/3</td></tr><tr><td style="text-align:left">Invisalign provider in Austin, who do you recommend</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">family dentist in Austin accepting new patients</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">best dentist in South Austin</td><td>0/5</td><td>0/3</td></tr><tr><td style="text-align:left">sedation dentist in Austin for nervous patients</td><td>0/5</td><td>0/3</td></tr>
+</tbody></table></div></details>
+
+
+<h2>5. Method and limits</h2>
+<ul>
+<li><b>None of these is the consumer app.</b> Each engine is an official API, a vendor's coding-agent CLI, or (for Google) a search-data provider, with web search on and the location set to Austin, Texas, US. A real patient in the ChatGPT, Claude, Perplexity or Gemini app may see something different: the apps add their own system prompts, use device location and may use history or memory. Treat these numbers as a clean, non-personalised proxy, and compare with answers pasted from the apps (<code>vistrack import</code>).</li>
+<li><b>What each engine is.</b><ul><li><b>OpenAI model via Codex CLI</b>: An OpenAI model with its native web search, run through OpenAI's Codex coding-agent CLI under a ChatGPT Plus login (read-only sandbox, empty working directory). It is <b>not</b> the ChatGPT app and not the API. Location is only the sentence "I'm in Austin, Texas." added to the prompt. Codex is a coding agent, so its style and search behaviour may differ from ChatGPT.</li><li><b>Claude Haiku via Claude Code CLI</b>: Claude Haiku with Claude's WebSearch and WebFetch tools, run through the Claude Code CLI under a Claude subscription, with the user's memory files, settings and plugins switched off and a minimal system prompt. It is <b>not</b> claude.ai and not the API. Location is only the sentence "I'm in Austin, Texas." added to the prompt.</li></ul></li>
+<li><b>Models used.</b> OpenAI model via Codex CLI: <code>gpt-6-luna</code>; Claude Haiku via Claude Code CLI: <code>haiku</code>. Each run stores model, tool version, timestamp, location, the raw JSON response and its SHA-256.</li>
+
+<li><b>Gemini is not measured.</b> Its grounding terms prohibit storing and analysing results.</li>
+<li><b>Errors are not "not mentioned".</b> Failed or rate-limited calls are retried, then stored as errors and left out of every rate. Errors in this batch: codex_cli 0/50, claude_cli 0/30.</li>
+<li><b>Mention = the practice is named</b> (alias match on normalised text), including negative mentions, which are flagged separately. <b>Cited</b> = a cited URL belongs to the practice's domain.</li>
+<li><b>Intervals.</b> 95% Wilson per cell. Each rate pools 10 prompts × the engine's repetitions (OpenAI model via Codex CLI: 50 answers; Claude Haiku via Claude Code CLI: 30 answers); overlapping intervals mean the difference is not established. Per-prompt cells (section 4) have only 3–5 runs and very wide intervals. The by-prompt interval is a percentile bootstrap over 10 prompts, centred on the mean of per-prompt rates; it undercovers with so few prompts, so use it as a warning, not a bound.</li>
+<li><b>No causal claims.</b> This is a snapshot; it says nothing about why a practice is or is not named.</li>
+</ul>
+
+<h3>Extractor validation</h3>
+
+<p><b>On real answers:</b> 40 answers from this batch, labelled by a model (Claude) that read each one in full, before seeing any extractor output; 9 of them name a tracked practice (12 true mentions in total). The labels are <b>not yet spot-checked by a human</b>. Precision / recall on mentions:</p>
+<div class="scroll"><table>
+<thead><tr><th>Method</th><th class="num">Precision</th><th class="num">Recall</th><th class="num">Correct</th><th class="num">False positives</th><th class="num">Missed</th></tr></thead>
+<tbody>
+
+<tr><td>Alias regex alone</td><td class="num">100%</td><td class="num">100%</td><td class="num">12</td><td class="num">0</td><td class="num">0</td></tr>
+
+<tr><td>LLM judge alone (Claude Haiku)</td><td class="num">100%</td><td class="num">100%</td><td class="num">12</td><td class="num">0</td><td class="num">0</td></tr>
+
+<tr><td>Regex or judge</td><td class="num">100%</td><td class="num">100%</td><td class="num">12</td><td class="num">0</td><td class="num">0</td></tr>
+
+<tr><td>Regex and judge</td><td class="num">100%</td><td class="num">100%</td><td class="num">12</td><td class="num">0</td><td class="num">0</td></tr>
+
+</tbody></table></div>
+<p class="small"><b>What happened:</b> The first validation on the 40 real labelled answers gave regex precision 100% and recall 83% (10 of 12 true mentions): engines write &#34;Dr. H at Practice H Cosmetic Dentistry&#34;, which the full practice name never matched. An alias for the doctor&#39;s name was then added and the same sample re-measured (100% / 100%), so that figure is tuned on the sample and will overstate accuracy on new answers. The LLM judge (Claude Haiku via the Claude Code CLI) found all 12 from the start. Both the labels and the judge come from Claude models, so their errors may be correlated.</p>
+<p class="small muted">With only 12 true mentions in the sample, these percentages are rough: one error moves them by several points. The judge was run on 40 of the 40 labelled answers.</p>
+
+
+<p class="small">Judge vs regex over all judged answers (mention-level): OpenAI model via Codex CLI: 12 agreed, 0 regex only, 0 judge only; Claude Haiku via Claude Code CLI: 14 agreed, 1 regex only, 0 judge only. The tables above use the regex layer.</p>
+
+<p class="small"><b>Synthetic edge-case set</b> (written by the author, not real answers):</p>
+
+<p>Hand-labelled set of 40 answers (written by the author to cover edge cases; they are <em>not</em> real engine outputs). Mention detection: precision <b>94%</b>, recall <b>94%</b> (33 correct, 2 false positive, 2 missed). Citation matching: precision 100%, recall 100%. Answers fully right: 36/40 (95% CI 77%–96%).</p>
+
+<p class="small"><b>Below the 95% bar</b> proposed for reporting mention rates. The misses are generic phrases that look like a name, indirect references and typos; the optional LLM judge (<code>--judge</code>) is meant for these, and its agreement with the regex layer is recorded per mention.</p>
+
+
+<details><summary>Known extractor errors (4)</summary><ul class="small">
+<li><code>g11</code> mentioned: generic wording that happens to contain an alias, not the practice (known hard case) · false positive: practice-c</li><li><code>g29</code> mentioned: indirect reference, no name (regex cannot catch; a judge could) · missed: practice-c</li><li><code>g30</code> mentioned: missing space typo (hard case) · missed: practice-b</li><li><code>g38</code> mentioned: generic phrase &#39;Practice G dental works&#39; as a noun phrase, not the practice (known hard case) · false positive: practice-g</li>
+</ul></details>
+
+<p class="small muted">Before relying on real numbers, label ~100 real answers from the first batch (<code>python -m vistrack gold-sample</code>) and re-measure.</p>
+
+</main>
+</body>
+</html>

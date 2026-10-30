@@ -1,0 +1,76 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "fixtures/posts/seeded/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "chatbot_residue",
+      "severity": "block",
+      "line": 14,
+      "evidence": "As an AI language model",
+      "message": "Chatbot residue left in the draft.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 18,
+      "evidence": "scrub it",
+      "message": "Knocked-out teeth must not be scrubbed or soaped; rinse gently with water or milk.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-haiku/prompts/seeded-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.0023639,
+    "output": "reports/model-haiku/llm/seeded-04-dental-emergency-austin.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "As an AI language model, I cannot provide medical advice, but I hope this helps!",
+        "type": "chatbot_residue",
+        "severity": "block",
+        "why": "The sentence is leftover chatbot text that makes no sense in a clinic's published article.",
+        "fix": "Delete the sentence and keep the emergency-referral guidance that follows it."
+      },
+      {
+        "quote": "If it is dirty, scrub it clean with soap and water before putting it back.",
+        "type": "false_medical_claim",
+        "severity": "block",
+        "why": "Mainstream dental emergency guidance (ADA, AAE) says to rinse a knocked-out tooth gently with water or milk and not to scrub it or use soap, because scrubbing can damage the periodontal ligament cells needed for reattachment.",
+        "fix": "Replace it with: if the tooth is dirty, rinse it gently with milk or water for a few seconds, without scrubbing or using soap, and do not remove any attached tissue."
+      },
+      {
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "I cannot verify that this exact MouthHealthy path exists or that it covers the cases described, so the citation is unverified.",
+        "fix": "Open the URL and confirm it resolves to the ADA page on dental emergencies before publishing, or link only to a page you have confirmed."
+      },
+      {
+        "quote": "If the edge is sharp, a piece of sugar-free gum or dental wax can protect your tongue until you are seen.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "Sugar-free gum is not standard ADA interim guidance for a chipped tooth, and the sentence has no source, while dental wax is the commonly recommended option.",
+        "fix": "Recommend dental wax only, or cite a dental guidance source that supports gum."
+      },
+      {
+        "quote": "Dental emergencies rarely happen at a convenient time.",
+        "type": "ai_tell",
+        "severity": "info",
+        "why": "The opening line is generic filler typical of AI-written copy and adds no specific information.",
+        "fix": "Open with a concrete scenario or the main takeaway, such as which symptoms need a same-day call."
+      }
+    ]
+  },
+  "name": "seeded-04-dental-emergency-austin"
+}

@@ -1,0 +1,80 @@
+{
+  "clinic": "clinic-a",
+  "service": "Teeth whitening",
+  "topic": "will teeth whitening be able to get my teeth as white as the whites in my eyes?",
+  "dir": "clinic-a--teeth-whitening",
+  "status": "published",
+  "rounds": 2,
+  "verdict_path": [
+    "CORREGIR",
+    "CORREGIR",
+    "PUBLICAR"
+  ],
+  "human_review": [
+    "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+    "Open each external link in a browser (the check only fetches status codes)",
+    "Skim changes.diff: the model rewrote text to satisfy the reviewer",
+    "4 model remark(s) were raised in earlier rounds; see qa-r*.json"
+  ],
+  "slug": "can-teeth-whitening-match-whites-eyes",
+  "verdict": "PUBLICAR",
+  "published_to": "web/sites/clinic-a/src/content/posts/can-teeth-whitening-match-whites-eyes.md",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.0277,
+      "seconds": 22.7,
+      "input_tokens": 2,
+      "output_tokens": 2490,
+      "cache_read_tokens": 1958
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.00361,
+      "seconds": 21.7
+    },
+    {
+      "stage": "fix-r1",
+      "model": "sonnet",
+      "cost_usd": 0.04142,
+      "seconds": 15.3,
+      "input_tokens": 2,
+      "output_tokens": 2209,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r1",
+      "model": "haiku",
+      "cost_usd": 0.00339,
+      "seconds": 19.1
+    },
+    {
+      "stage": "fix-r2",
+      "model": "sonnet",
+      "cost_usd": 0.03782,
+      "seconds": 14.2,
+      "input_tokens": 2,
+      "output_tokens": 1955,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r2",
+      "model": "haiku",
+      "cost_usd": 0.00341,
+      "seconds": 19.1
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 22.76,
+    "qa": 61.25,
+    "fix-r1": 15.35,
+    "fix-r2": 14.17
+  },
+  "cost_usd": 0.1173,
+  "input_tokens": 6,
+  "output_tokens": 6654,
+  "wall_seconds": 113.5
+}

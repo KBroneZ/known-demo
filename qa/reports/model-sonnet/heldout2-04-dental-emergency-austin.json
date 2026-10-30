@@ -1,0 +1,84 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "fixtures/posts/heldout2/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 18,
+      "evidence": "scrub it",
+      "message": "Knocked-out teeth must not be scrubbed or soaped; rinse gently with water or milk.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 34,
+      "evidence": "A patient who came in last month with a cracked molar on a Thursday evening told",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "hours_mismatch",
+      "severity": "block",
+      "line": 36,
+      "evidence": "Friday from 8 a.m. to 5 p.m.",
+      "message": "Hours for fri do not match the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-sonnet/prompts/heldout2-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.035618,
+    "output": "reports/model-sonnet/llm/heldout2-04-dental-emergency-austin.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "A patient who came in last month with a cracked molar on a Thursday evening told us she was out the door pain-free within the hour.",
+        "type": "testimonial",
+        "severity": "block",
+        "why": "The ficha lists no testimonials, so this anecdote is unverifiable and likely invented. It also implies a guaranteed fast, pain-free result, and Thursday evening is outside the listed hours (closes 5 p.m.).",
+        "fix": "Delete the anecdote, or replace it with a documented testimonial that has patient consent and any required FTC disclosures, and never imply a guaranteed outcome."
+      },
+      {
+        "quote": "and on Friday from 8 a.m. to 5 p.m.",
+        "type": "fact_vs_ficha",
+        "severity": "block",
+        "why": "The ficha lists Friday hours as 8:00 to 13:00, not until 5 p.m.",
+        "fix": "Change to 'and on Friday from 8 a.m. to 1 p.m.'"
+      },
+      {
+        "quote": "scrub it clean with soap and warm water before you put it back",
+        "type": "false_medical_claim",
+        "severity": "block",
+        "why": "ADA/NIDCR guidance is to rinse a knocked-out tooth gently with water only, without scrubbing or soap or removing tissue fragments, because scrubbing can damage root surface cells needed for reattachment.",
+        "fix": "Replace with 'If it is dirty, rinse it gently with water for a few seconds without scrubbing or using soap, then place it back in the socket.'"
+      },
+      {
+        "quote": "\"publisher\": {\"@type\": \"Dentist\"",
+        "type": "schema_incoherent",
+        "severity": "warn",
+        "why": "A BlogPosting publisher should be an Organization, and this entry omits the address and URL that appear in the visible text. The reviewer (Dr. Marcus Oyelaran) also does not appear in the markup.",
+        "fix": "Use publisher @type Organization (or a separate Dentist entity) with the ficha's address and URL, and add the reviewer via reviewedBy or contributor if needed."
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "severity": "info",
+        "why": "This demo disclaimer would be inappropriate on a live clinic page and conflicts with the real-practice voice of the post.",
+        "fix": "Remove it before publishing for a real practice, or keep it only if the page is explicitly a demo."
+      }
+    ]
+  },
+  "name": "heldout2-04-dental-emergency-austin"
+}

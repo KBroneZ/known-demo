@@ -1,0 +1,36 @@
+{
+  "post": "03-is-teeth-whitening-safe",
+  "file": "fixtures/posts/heldout/03-is-teeth-whitening-safe.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 37,
+      "evidence": "\" says Maria",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 46,
+      "evidence": "author.name: schema='Dr. Elena Marsh' vs post='Dr. Marcus Oyelaran'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout-03-is-teeth-whitening-safe.prompt.md"
+  },
+  "name": "heldout-03-is-teeth-whitening-safe"
+}

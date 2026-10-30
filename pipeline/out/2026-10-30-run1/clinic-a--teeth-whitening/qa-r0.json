@@ -1,0 +1,32 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.5,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0044043,
+    "seconds": 29.9,
+    "findings": [
+      {
+        "quote": "https://www.bluebonnethollowdental.example/blog/teeth-whitening-austin-can-teeth-match-eye-whites",
+        "type": "schema_incoherent",
+        "severity": "warn",
+        "why": "The canonical URL in both JSON-LD blocks points to a post route that is not in the ficha pages list, which contains only three blog posts.",
+        "fix": "Add this route to the site's page list before publishing, or correct the canonical URL to a route that exists."
+      },
+      {
+        "quote": "This is a common question from patients who notice a chipped tooth filling after whitening.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The claim that patients commonly ask this question has no source, and 'chipped tooth filling' is an imprecise term for a damaged restoration.",
+        "fix": "Delete 'common question from patients' or replace it with a sourced statement, and describe the problem as a chipped or loose filling."
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

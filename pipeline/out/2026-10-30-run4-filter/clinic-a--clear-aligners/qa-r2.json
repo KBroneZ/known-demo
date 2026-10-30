@@ -1,0 +1,26 @@
+{
+  "name": "r2",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.01,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0030547,
+    "seconds": 17.0,
+    "findings": [
+      {
+        "quote": "Mild crowding or small gaps usually take less time than bigger changes.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "This general timing claim has no source and the ficha offers no clinical basis for it, though it is broadly plausible.",
+        "fix": "Attribute it to a source such as the ADA or NIDCR, or soften it to say that the amount of movement is one factor your dentist weighs at your exam."
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 0,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

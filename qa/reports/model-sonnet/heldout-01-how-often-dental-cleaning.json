@@ -1,0 +1,98 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "fixtures/posts/heldout/01-how-often-dental-cleaning.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "Studies show that about 70% of adults who keep to a six-month schedule avoid a major restoration over the foll",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsupported_superlative",
+      "severity": "warn",
+      "line": 33,
+      "evidence": "top-rated dental team",
+      "message": "'Best/top' claim with no verifiable basis in the ficha.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "insurance_not_in_ficha",
+      "severity": "block",
+      "line": 35,
+      "evidence": "Aetna",
+      "message": "Carrier is not listed as accepted in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-sonnet/prompts/heldout-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.027318000000000002,
+    "output": "reports/model-sonnet/llm/heldout-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "Studies show that about 70% of adults who keep to a six-month schedule avoid a major restoration over the following five years.",
+        "type": "false_medical_claim",
+        "severity": "block",
+        "why": "The statistic is invented, cites no study, and is not backed by ADA or NIDCR guidance, so it is a fabricated and unverifiable medical claim.",
+        "fix": "Delete the statistic or replace it with a real, linked source that actually reports such a figure."
+      },
+      {
+        "quote": "We are in network with Delta Dental, Aetna and MetLife",
+        "type": "fact_vs_ficha",
+        "severity": "block",
+        "why": "Aetna is not in the ficha's accepted insurance list (Delta Dental, Cigna, MetLife); Cigna is the carrier that should appear.",
+        "fix": "Change to 'Delta Dental, Cigna and MetLife'."
+      },
+      {
+        "quote": "[cleanings and exams page](/services/cleanings-exams)",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "This internal link does not exist in the ficha pages list; the real page is /services/cleanings-exams only as listed, and the post uses '/services/cleanings-exams' which matches only if the ficha path '/services/cleanings-exams' is read exactly, but the ficha spells it 'cleanings-exams' under /services, so please verify the slug against the live site.",
+        "fix": "Confirm the link resolves to /services/cleanings-exams as listed in the ficha and correct any typo."
+      },
+      {
+        "quote": "Austin's top-rated dental team",
+        "type": "unsupported_superlative",
+        "severity": "warn",
+        "why": "'Top-rated' is an unsupported superlative with no ranking or rating source, and no awards are on file, which conflicts with ADA advertising rules.",
+        "fix": "Remove it or say something factual such as 'Our Austin dental team offers'."
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "severity": "info",
+        "why": "This demo disclaimer is not appropriate in a live published post, although it is consistent with the ficha's fictional flag.",
+        "fix": "Remove it before real publication, or keep it only if the post is intentionally a labeled demo."
+      },
+      {
+        "quote": "\"publisher\": {\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\", \"telephone\": \"(512) 555-0142\"}",
+        "type": "schema_incoherent",
+        "severity": "info",
+        "why": "BlogPosting publisher should be an Organization, and a Dentist type lacks address and a logo; the schema omits the reviewer (Dr. Elena Marsh) that the visible byline mentions.",
+        "fix": "Use an Organization or LocalBusiness/Dentist entity with address and add reviewedBy for Dr. Elena Marsh if desired."
+      },
+      {
+        "quote": "Gum disease, or a history of it. The [NIDCR overview of gum disease](https://www.nidcr.nih.gov/health-info/gum-disease)",
+        "type": "unsourced_claim",
+        "severity": "info",
+        "why": "The NIDCR link is plausible but I cannot confirm the exact URL resolves or that it supports the specific statement about ongoing professional care.",
+        "fix": "Open the link and confirm it exists and supports the sentence, or adjust the wording."
+      }
+    ]
+  },
+  "name": "heldout-01-how-often-dental-cleaning"
+}

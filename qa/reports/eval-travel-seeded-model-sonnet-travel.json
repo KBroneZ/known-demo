@@ -1,0 +1,366 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 21,
+  "seeded_detected": 17,
+  "recall": 0.8095238095238095,
+  "missed": [
+    "T18",
+    "T19",
+    "T20",
+    "T21"
+  ],
+  "true_positive_findings": 17,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "T01": [
+      {
+        "rule": "numeric_inconsistency",
+        "line": 40,
+        "severity": "warn"
+      }
+    ],
+    "T02": [
+      {
+        "rule": "weekday_inconsistency",
+        "line": 30,
+        "severity": "warn"
+      }
+    ],
+    "T03": [
+      {
+        "rule": "event_date_past",
+        "line": 26,
+        "severity": "warn"
+      }
+    ],
+    "T04": [
+      {
+        "rule": "stale_year_title",
+        "line": 2,
+        "severity": "warn"
+      }
+    ],
+    "T05": [
+      {
+        "rule": "review_stamp_is_publish_date",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "T06": [
+      {
+        "rule": "price_no_as_of",
+        "line": 34,
+        "severity": "warn"
+      }
+    ],
+    "T07": [
+      {
+        "rule": "unsupported_first_hand_claim",
+        "line": 32,
+        "severity": "block"
+      }
+    ],
+    "T08": [
+      {
+        "rule": "missing_required_section",
+        "line": 0,
+        "severity": "block"
+      }
+    ],
+    "T09": [
+      {
+        "rule": "affiliate_disclosure_missing",
+        "line": 24,
+        "severity": "block"
+      }
+    ],
+    "T10": [
+      {
+        "rule": "banned_character",
+        "line": 22,
+        "severity": "warn"
+      }
+    ],
+    "T11": [
+      {
+        "rule": "byline_not_allowed",
+        "line": 7,
+        "severity": "block"
+      }
+    ],
+    "T12": [
+      {
+        "rule": "link_broken",
+        "line": 55,
+        "severity": "block"
+      }
+    ],
+    "T13": [
+      {
+        "rule": "link_blocked",
+        "line": 61,
+        "severity": "warn"
+      }
+    ],
+    "T14": [
+      {
+        "rule": "weekday_date_mismatch",
+        "line": 31,
+        "severity": "block"
+      }
+    ],
+    "T15": [
+      {
+        "rule": "link_broken_internal",
+        "line": 65,
+        "severity": "block"
+      }
+    ],
+    "T16": [
+      {
+        "rule": "numeric_inconsistency",
+        "line": 26,
+        "severity": "warn"
+      }
+    ],
+    "T17": [
+      {
+        "rule": "date_inconsistency",
+        "line": 36,
+        "severity": "warn"
+      }
+    ],
+    "T18": [],
+    "T19": [],
+    "T20": [],
+    "T21": []
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-lisbon-three-days-walkable-plan.md": "PUBLICAR",
+    "clean/02-iceland-winter-packing-list.md": "PUBLICAR",
+    "clean/03-kyoto-cherry-blossom-season-2027.md": "PUBLICAR",
+    "clean/04-banff-summer-three-day-plan.md": "PUBLICAR",
+    "seeded/01-lisbon-three-days-walkable-plan.md": "BLOQUEAR",
+    "seeded/02-iceland-winter-packing-list.md": "BLOQUEAR",
+    "seeded/03-kyoto-cherry-blossom-season-2027.md": "BLOQUEAR",
+    "seeded/04-banff-summer-three-day-plan.md": "BLOQUEAR"
+  },
+  "llm": {
+    "status": "ok",
+    "failed": [],
+    "cost_usd": 0.2454,
+    "model_detected": [
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T06",
+      "T07",
+      "T15",
+      "T16",
+      "T17",
+      "T18",
+      "T19",
+      "T20",
+      "T21"
+    ],
+    "model_recall": 0.6190476190476191,
+    "model_missed": [
+      "T05",
+      "T08",
+      "T09",
+      "T10",
+      "T11",
+      "T12",
+      "T13",
+      "T14"
+    ],
+    "fixture_disclaimer_findings_ignored": 0,
+    "clean_posts_not_publish_with_model": 4,
+    "rules_detected_ids": [
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06",
+      "T07",
+      "T08",
+      "T09",
+      "T10",
+      "T11",
+      "T12",
+      "T13",
+      "T14",
+      "T15",
+      "T16",
+      "T17"
+    ],
+    "model_tp": 13,
+    "model_fp": 21,
+    "model_precision": 0.38235294117647056,
+    "model_clean_fp": 12,
+    "model_only_extra": [
+      "T18",
+      "T19",
+      "T20",
+      "T21"
+    ],
+    "combined_recall": 1.0,
+    "combined_detected": 21,
+    "combined_precision": 0.5882352941176471,
+    "false_positive_list": [
+      {
+        "file": "clean/01-lisbon-three-days-walkable-plan.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "Prices checked October 2026.",
+        "why": "The post claims a price verification in a money topic, but gives no method, date of check or person, and the only support is a bare source l"
+      },
+      {
+        "file": "clean/02-iceland-winter-packing-list.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "The notes and dates are summarised here so you can judge how much weight to give them",
+        "why": "The section claims notes and dates are summarised, but it gives no actual dates, per-day notes, weather or results, so the six-day test cann"
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "Both are run by the city tourism office, and tickets are sold in advance.",
+        "why": "The only event source is a kyoto-tourism.example spring-lights page, which cannot back the Gion Evening Walk or the claim that the city tour"
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "entity_unverified",
+        "quote": "The Kyoto Spring Lights evening walk is on Saturday, March 27, 2027 and lights up several ",
+        "why": "I cannot verify that an event called Kyoto Spring Lights exists on this date, and the linked page does not confirm the date."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "entity_unverified",
+        "quote": "A second evening walk, the Gion Evening Walk, is on Saturday, April 3, 2027.",
+        "why": "I cannot verify that a Gion Evening Walk event exists on this date, and no source is linked for it."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Kyoto Spring Lights | March 27, 2027 | \u00a51,800 |",
+        "why": "The ticket price is a money figure, and the linked page is only an events page with no evidence that it lists \u00a51,800."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Gion Evening Walk | April 3, 2027 | \u00a51,500 |",
+        "why": "The \u00a51,500 price has no source, and the only events source is for Spring Lights, so it cannot back this price."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "Prices checked October 2026.",
+        "why": "The post claims a verification that has no evidence, and the sources listed do not show it."
+      },
+      {
+        "file": "clean/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "entity_unverified",
+        "quote": "Use the Hanami Shuttle on busy weekends; it connects the main blossom spots and costs \u00a5600",
+        "why": "I cannot verify that a Hanami Shuttle exists in Kyoto, and the fare has no source in a money-related context."
+      },
+      {
+        "file": "clean/04-banff-summer-three-day-plan.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "Prices checked September 2026.",
+        "why": "The post claims the prices were verified but gives no dated evidence or per-figure source, and the post was updated in October."
+      },
+      {
+        "file": "clean/04-banff-summer-three-day-plan.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Banff park pass | $11 | Per adult, per day |",
+        "why": "This is a money figure with no currency and no source next to it; the generic Sources list cannot be tied to this price, and the figure may "
+      },
+      {
+        "file": "clean/04-banff-summer-three-day-plan.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Bow Valley Shuttle day ticket | $12 | Summer season only |",
+        "why": "This is a money figure with no currency and no inline source, so readers cannot tell what the $12 is based on."
+      },
+      {
+        "file": "seeded/01-lisbon-three-days-walkable-plan.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "Prices checked October 2026.",
+        "why": "The price-check claim has no evidence and the two prices conflict, so the verification cannot be trusted; the Bel\u00e9m Combi Ticket \u20ac12 is also"
+      },
+      {
+        "file": "seeded/02-iceland-winter-packing-list.md",
+        "severity": "block",
+        "type": "unsupported_first_hand_claim",
+        "quote": "We spent six days in January 2026 walking the same three routes in three jacket and boot c",
+        "why": "The section claims notes and dates are summarised, but gives no actual results, dates or per-combination findings, so the testing claim has "
+      },
+      {
+        "file": "seeded/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "block",
+        "type": "internal_inconsistency",
+        "quote": "A second evening walk, the Gion Evening Walk, is on Saturday, April 3, 2027.",
+        "why": "The text gives April 3, but the table gives April 10, 2027; readers could book or travel on the wrong date. April 3, 2027 is also a Saturday"
+      },
+      {
+        "file": "seeded/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Kyoto Spring Lights | March 27, 2027 | \u00a51,800 |",
+        "why": "Ticket prices are stated without being tied to a source, and the listed link (kyoto-tourism.example/events/spring-lights) covers only Spring"
+      },
+      {
+        "file": "seeded/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "entity_unverified",
+        "quote": "Both are run by the city tourism office, and tickets are sold in advance.",
+        "why": "The organiser claim is not backed by any listed source, and the Gion Evening Walk cannot be verified as an event run by the city tourism off"
+      },
+      {
+        "file": "seeded/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "unsupported_first_hand_claim",
+        "quote": "Prices checked October 2026.",
+        "why": "It claims a verification with no evidence or method, and no source in the list supports the prices."
+      },
+      {
+        "file": "seeded/03-kyoto-cherry-blossom-season-2027.md",
+        "severity": "warn",
+        "type": "entity_unverified",
+        "quote": "Use the Hanami Shuttle on busy weekends; it connects the main blossom spots and costs \u00a5600",
+        "why": "I cannot verify that a 'Hanami Shuttle' exists in Kyoto, and its fare has no source."
+      },
+      {
+        "file": "seeded/04-banff-summer-three-day-plan.md",
+        "severity": "warn",
+        "type": "source_does_not_support_figure",
+        "quote": "| Banff park pass | $11 | Per adult, per day |",
+        "why": "This is a money figure with no currency and no source next to it; the two sources are only listed at the bottom, so nothing ties them to the"
+      },
+      {
+        "file": "seeded/04-banff-summer-three-day-plan.md",
+        "severity": "warn",
+        "type": "entity_unverified",
+        "quote": "The Bow Valley Shuttle connects the town of Banff with the main lakes during the summer se",
+        "why": "The whole plan depends on this shuttle, but I cannot confirm a service with this name and route; Banff's public transit and the Parks Canada"
+      }
+    ]
+  }
+}

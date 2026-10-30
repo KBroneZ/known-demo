@@ -1,0 +1,229 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 10,
+  "seeded_detected": 10,
+  "recall": 1.0,
+  "missed": [],
+  "true_positive_findings": 13,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "E01": [
+      {
+        "rule": "nap_phone_mismatch",
+        "line": 39,
+        "severity": "block"
+      }
+    ],
+    "E02": [
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "E03": [
+      {
+        "rule": "link_broken",
+        "line": 24,
+        "severity": "block"
+      }
+    ],
+    "E04": [
+      {
+        "rule": "unsourced_stat",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "E05": [
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      },
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "E06": [
+      {
+        "rule": "schema_mismatch",
+        "line": 51,
+        "severity": "block"
+      }
+    ],
+    "E07": [
+      {
+        "rule": "fake_testimonial",
+        "line": 24,
+        "severity": "block"
+      }
+    ],
+    "E08": [
+      {
+        "rule": "unsupported_superlative",
+        "line": 43,
+        "severity": "warn"
+      }
+    ],
+    "E09": [
+      {
+        "rule": "medical_myth",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "E10": [
+      {
+        "rule": "chatbot_residue",
+        "line": 14,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "PUBLICAR",
+    "clean/02-dental-implants-vs-bridges.md": "PUBLICAR",
+    "clean/03-is-teeth-whitening-safe.md": "PUBLICAR",
+    "clean/04-dental-emergency-austin.md": "PUBLICAR",
+    "seeded/01-how-often-dental-cleaning.md": "BLOQUEAR",
+    "seeded/02-dental-implants-vs-bridges.md": "BLOQUEAR",
+    "seeded/03-is-teeth-whitening-safe.md": "BLOQUEAR",
+    "seeded/04-dental-emergency-austin.md": "BLOQUEAR"
+  },
+  "llm": {
+    "status": "ok",
+    "failed": [],
+    "cost_usd": 0.2644,
+    "model_detected": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07",
+      "E08",
+      "E09",
+      "E10"
+    ],
+    "model_recall": 1.0,
+    "model_missed": [],
+    "fixture_disclaimer_findings_ignored": 2,
+    "clean_posts_not_publish_with_model": 2,
+    "rules_detected_ids": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07",
+      "E08",
+      "E09",
+      "E10"
+    ],
+    "model_tp": 11,
+    "model_fp": 11,
+    "model_precision": 0.5,
+    "model_clean_fp": 4,
+    "model_only_extra": [],
+    "combined_recall": 1.0,
+    "combined_detected": 10,
+    "combined_precision": 0.6857142857142857,
+    "false_positive_list": [
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "why": "Tartar formation rates vary considerably between individuals, no source is given, and the claim conflicts with the post's own 'heavy tartar "
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "fact_vs_ficha",
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "why": "The ficha lists these carriers as accepted, not as in network, and in-network status is a specific contractual claim that cannot be verified"
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "If you are new to us and paying without insurance, the new patient exam with X-rays is $12",
+        "why": "The ficha confirms the $129 new patient exam with X-rays but does not say it applies only to patients paying without insurance."
+      },
+      {
+        "file": "clean/03-is-teeth-whitening-safe.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Whitening is one of the most requested cosmetic treatments, and one of the most misunderst",
+        "why": "The claim that whitening is among the most requested cosmetic treatments is a checkable statistic-style statement with no source, and the fi"
+      },
+      {
+        "file": "seeded/01-how-often-dental-cleaning.md",
+        "severity": "block",
+        "type": "broken_or_fake_source",
+        "quote": "[cleanings and exams page](/services/cleanings-exams)",
+        "why": "The internal link points to a page that is not in the ficha; the existing page is /services/cleanings-exams only as listed, but the post pat"
+      },
+      {
+        "file": "seeded/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "why": "Tartar buildup varies considerably between people, so this is an unsupported and likely inaccurate generalization."
+      },
+      {
+        "file": "seeded/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "six months is long enough to see changes but short enough to catch a small problem before ",
+        "why": "The rationale for the six-month interval is presented as fact without a source."
+      },
+      {
+        "file": "seeded/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Your dentist may suggest visits every three or four months if you have any of these:",
+        "why": "The specific three-to-four-month interval and risk factors are not backed by a source in the post."
+      },
+      {
+        "file": "seeded/01-how-often-dental-cleaning.md",
+        "severity": "block",
+        "type": "schema_incoherent",
+        "quote": "\"telephone\": \"(512) 555-0142\"",
+        "why": "The JSON-LD phone matches the ficha but contradicts the visible phone number in the post body."
+      },
+      {
+        "file": "seeded/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "other",
+        "quote": "Habits such as grinding your teeth and smoking, and your gum health, all play a part.",
+        "why": "The sentence is orphaned after the guarantee line and no longer follows from question 5 about repair or replacement, so the flow breaks once"
+      },
+      {
+        "file": "seeded/03-is-teeth-whitening-safe.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Pregnancy or breastfeeding, where many dentists advise waiting.",
+        "why": "The claim about what many dentists advise is a checkable generalization with no supporting source, and the advice is a precaution rather tha"
+      }
+    ]
+  }
+}

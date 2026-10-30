@@ -1,0 +1,76 @@
+{
+  "clinic": "clinic-b",
+  "service": "Family checkups and cleanings",
+  "topic": "I found cavities between my teeth and i've already had my yearly checkup. Can this wait or should I book an earlier appointment?",
+  "dir": "clinic-b--family-checkups-and-cleanings",
+  "status": "needs-human",
+  "rounds": 2,
+  "verdict_path": [
+    "CORREGIR",
+    "CORREGIR",
+    "CORREGIR"
+  ],
+  "human_review": [
+    "Still CORREGIR after 2 auto-fix round(s): model:fact_vs_ficha"
+  ],
+  "slug": "cavities-between-teeth-after-checkup-wait-book-early",
+  "verdict": "CORREGIR",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.05069,
+      "seconds": 32.7,
+      "input_tokens": 2,
+      "output_tokens": 3968,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.00344,
+      "seconds": 20.6
+    },
+    {
+      "stage": "fix-r1",
+      "model": "sonnet",
+      "cost_usd": 0.04423,
+      "seconds": 16.4,
+      "input_tokens": 2,
+      "output_tokens": 2394,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r1",
+      "model": "haiku",
+      "cost_usd": 0.00367,
+      "seconds": 23.7
+    },
+    {
+      "stage": "fix-r2",
+      "model": "sonnet",
+      "cost_usd": 0.04353,
+      "seconds": 15.0,
+      "input_tokens": 2,
+      "output_tokens": 2239,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r2",
+      "model": "haiku",
+      "cost_usd": 0.00477,
+      "seconds": 32.5
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 32.77,
+    "qa": 76.89,
+    "fix-r1": 16.38,
+    "fix-r2": 15.0
+  },
+  "cost_usd": 0.1503,
+  "input_tokens": 6,
+  "output_tokens": 8601,
+  "wall_seconds": 141.1
+}

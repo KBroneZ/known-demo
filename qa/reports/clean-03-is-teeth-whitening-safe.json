@@ -1,0 +1,19 @@
+{
+  "post": "03-is-teeth-whitening-safe",
+  "file": "fixtures/posts/clean/03-is-teeth-whitening-safe.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/clean-03-is-teeth-whitening-safe.prompt.md"
+  },
+  "name": "clean-03-is-teeth-whitening-safe"
+}

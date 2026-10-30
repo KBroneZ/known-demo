@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import PostCard from '../components/PostCard.astro';
+import Cta from '../components/Cta.astro';
+import { clinic, getPosts, metaFor, servicePages, generalFaq } from '../lib/site.ts';
+import { dentistLd } from '../lib/jsonld.ts';
+import { addressLine, hoursRows, telHref } from '../lib/format.ts';
+
+const meta = await metaFor('/');
+const posts = (await getPosts()).slice(0, 3);
+const rows = hoursRows(clinic);
+const faq = generalFaq().slice(0, 3);
+const centered = clinic.home_variant === 'centered';
+---
+<Base title={meta.title} description={meta.description} path="/" jsonld={[dentistLd(clinic)]}>
+  <section class:list={['hero', { centered }]}>
+    <div class="wrap hero-in">
+      <div>
+        <p class="eyebrow">{clinic.nap.city}, {clinic.nap.state} · fictional demo clinic</p>
+        <h1>{clinic.tagline}</h1>
+        <p class="lead">{clinic.description}</p>
+        <p class="actions">
+          <a class="btn" href={telHref(clinic.nap.phone)}>Call {clinic.nap.phone}</a>
+          <a class="btn alt" href="/services">See our services</a>
+        </p>
+      </div>
+      {!centered && (
+        <aside class="card" aria-label="Hours and address">
+          <h2>Visit us</h2>
+          <p>{addressLine(clinic)}</p>
+          <table class="hours">
+            <caption class="visually-hidden">Opening hours</caption>
+            <tbody>{rows.map((r) => <tr><th scope="row">{r.days}</th><td>{r.time}</td></tr>)}</tbody>
+          </table>
+        </aside>
+      )}
+    </div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="svc-h">
+    <h2 id="svc-h">Our services</h2>
+    <div class="grid">
+      {servicePages().map((s) => <ServiceCard name={s.name} summary={s.summary!} href={`/services/${s.slug}`} />)}
+    </div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="team-h">
+    <h2 id="team-h">Your dentists</h2>
+    <p>{clinic.dentists.map((d) => `${d.name}, ${d.credentials}`).join(' and ')} lead the care team. Read more <a href="/team">about our dentists</a> or <a href="/about">about the practice</a>.</p>
+  </section>
+
+  {posts.length > 0 && (
+    <section class="block wrap" aria-labelledby="blog-h">
+      <h2 id="blog-h">From the blog</h2>
+      <div class="grid">
+        {posts.map((p) => <PostCard slug={p.data.slug} title={p.data.title} description={p.data.description} author={p.data.author} date={p.data.date} />)}
+      </div>
+      <p><a href="/blog">All articles</a></p>
+    </section>
+  )}
+
+  <section class="block wrap" aria-labelledby="faq-h">
+    <h2 id="faq-h">Quick answers</h2>
+    <dl>
+      {faq.map((q) => <><dt><strong>{q.question}</strong></dt><dd>{q.answer}</dd></>)}
+    </dl>
+    <p><a href="/faq">More questions and answers</a> · <a href="/contact">Contact us</a></p>
+  </section>
+
+  <div class="wrap"><Cta /></div>
+</Base>
+<style>
+  .hero{background:var(--c-surface);border-bottom:1px solid var(--c-border);padding:3rem 0}
+  .hero-in{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));align-items:center}
+  .hero.centered .hero-in{text-align:center;justify-items:center}
+  .hero.centered .lead{max-width:40rem;margin-inline:auto;text-align:center}
+  .eyebrow{color:var(--c-muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.85rem;margin:0 0 .5rem}
+  .lead{font-size:1.2rem;max-width:34rem}
+  .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
+  .hero.centered .actions{justify-content:center}
+  dt{margin-top:1rem}
+  dd{margin:.25rem 0 0}
+</style>

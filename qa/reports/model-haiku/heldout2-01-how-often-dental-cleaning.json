@@ -1,0 +1,92 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "fixtures/posts/heldout2/01-how-often-dental-cleaning.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 3,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "Let's delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 44,
+      "evidence": "author.name: schema='Dr. Elena Marsh' vs post='Dr. Marcus Oyelaran'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-haiku/prompts/heldout2-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.0021612000000000003,
+    "output": "reports/model-haiku/llm/heldout2-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "CORREGIR",
+    "findings": [
+      {
+        "quote": "Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "This specific statistic has no link or citation, so it cannot be verified from the post.",
+        "fix": "Cite a named study with a working link that supports the figure, or remove the statistic and keep the general guidance."
+      },
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Elena Marsh\"}",
+        "type": "schema_incoherent",
+        "severity": "warn",
+        "why": "The JSON-LD author is Dr. Elena Marsh, but the visible byline and front matter list Dr. Marcus Oyelaran as author, and Dr. Marsh is only the reviewer.",
+        "fix": "Set the JSON-LD author to Dr. Marcus Oyelaran so it matches the visible byline, or change the byline if Dr. Marsh actually wrote the post."
+      },
+      {
+        "quote": "Let's delve into what actually drives the right interval for you.",
+        "type": "ai_tell",
+        "severity": "info",
+        "why": "The word \"delve\" and the conversational opener are common AI-writing markers that read as generic.",
+        "fix": "Rewrite the sentence in the clinic's own plain voice, such as \"Here is what actually sets the right interval for you.\""
+      },
+      {
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "type": "unsourced_claim",
+        "severity": "info",
+        "why": "The claim about a similar tartar timeline for most people is stated without any source.",
+        "fix": "Support it with a link to ADA or NIDCR guidance or soften it to a hedged general statement."
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "severity": "info",
+        "why": "The disclaimer is appropriate for this demo, but it would be wrong on a real clinic's published blog.",
+        "fix": "Remove this disclaimer before any real publication."
+      }
+    ]
+  },
+  "name": "heldout2-01-how-often-dental-cleaning"
+}

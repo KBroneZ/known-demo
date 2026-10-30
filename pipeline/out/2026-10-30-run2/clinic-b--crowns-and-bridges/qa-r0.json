@@ -1,0 +1,40 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.56,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0034411000000000003,
+    "seconds": 21.4,
+    "findings": [
+      {
+        "quote": "If you have facial swelling along with a fever, or trouble breathing or swallowing, go to an emergency room.",
+        "type": "false_medical_claim",
+        "severity": "block",
+        "why": "The ficha's emergency guidance also covers uncontrolled bleeding and swelling that spreads to the face or neck, and says to call 911, while this text narrows the trigger to swelling with fever and omits 911, which could delay care for a dangerous infection.",
+        "fix": "Replace it with the ficha's wording: trouble breathing or swallowing, uncontrolled bleeding, or swelling that spreads to the face or neck means going to an emergency room or calling 911."
+      },
+      {
+        "quote": "The American Dental Association has guidance on [dental emergencies](https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies), including what to do about a lost crown.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The claim that this page covers lost-crown guidance is unverified, and the post gives no such guidance itself.",
+        "fix": "Confirm the linked page covers lost crowns before keeping the sentence, or remove the 'including what to do about a lost crown' clause."
+      },
+      {
+        "quote": "Try to raise it at your next visit instead of waiting.",
+        "type": "other",
+        "severity": "warn",
+        "why": "For a newly placed crown with a visible gap, advising to wait for the next routine visit could delay a needed check, and it conflicts with the post's own advice to be checked rather than ignored.",
+        "fix": "Advise contacting the office promptly for a check and keep 'at your next visit' only as a fallback for minor, symptom-free gaps."
+      }
+    ],
+    "dropped_unverifiable_url": 1,
+    "downgraded_blocks": 0,
+    "verdict": "BLOQUEAR"
+  },
+  "verdict": "BLOQUEAR"
+}

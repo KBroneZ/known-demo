@@ -1,0 +1,60 @@
+{
+  "post": "01-root-canal-myths",
+  "file": "fixtures/posts/heldout3/01-root-canal-myths.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 4,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "cannot return",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "absolute_clinic_claim",
+      "severity": "warn",
+      "line": 34,
+      "evidence": "Dr. Elena Marsh completes every",
+      "message": "Absolute claim about how the clinic or a dentist works; the ficha does not support it.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 44,
+      "evidence": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.aae.org/patients/your-office-visit/post-treatment-care/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout3-01-root-canal-myths.prompt.md"
+  },
+  "name": "heldout3-01-root-canal-myths"
+}

@@ -1,0 +1,48 @@
+# Where real patient questions come from, and what each source needs.
+# The pipeline uses the first source it can read without an account; the rest are documented for a real client.
+sources:
+  - name: r/askdentists via Arctic Shift archive API
+    used: yes
+    account: none
+    gives: public question titles, comment counts, post ids (no usernames kept)
+    limits: Reddit users, not Austin patients; comment count is a rough interest signal, not search volume
+    url: https://arctic-shift.photon-reddit.com/api/posts/search
+  - name: Google Search Console queries for the client's own site
+    used: no
+    account: needs the client's GSC property
+    gives: real queries, impressions, clicks, position; the best signal once a site is indexed
+  - name: Front desk, phone and WhatsApp questions (monthly 5-question form to the clinic)
+    used: no
+    account: needs the clinic's cooperation
+    gives: first-party questions nobody else has; best source for E-E-A-T and against scaled-content risk
+  - name: Google "People also ask" / autosuggest
+    used: no
+    account: needs a SERP API (paid) or scraping, which Google forbids
+  - name: DataForSEO / Semrush keyword tools
+    used: no
+    account: paid account
+
+# Fallback only. Hand-written common patient questions, one per service, used when the archive returns nothing usable.
+questions:
+  - service: Tooth-colored fillings
+    question: How long does a tooth-colored filling last and when does it need replacing?
+  - service: Root canal therapy
+    question: Does a root canal hurt and how long does recovery take?
+  - service: Crowns and bridges
+    question: When is a crown needed instead of a filling?
+  - service: Teeth whitening
+    question: Is professional teeth whitening safe for sensitive teeth?
+  - service: Family checkups and cleanings
+    question: What happens at a first dental checkup for an adult?
+  - service: Clear aligners
+    question: How long does it take to straighten teeth with clear aligners?
+  - service: Pediatric dentistry
+    question: When should a child first see a dentist?
+  - service: Tooth-colored fillings
+    question: Does getting a tooth-colored filling hurt?
+  - service: Clear aligners
+    question: Do clear aligners hurt?
+  - service: Family checkups and cleanings
+    question: How often should adults get a dental checkup and cleaning?
+  - service: Crowns and bridges
+    question: How long does a dental crown last?

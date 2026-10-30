@@ -1,0 +1,84 @@
+# FICTIONAL CLINIC. Invented for the Known Marketing QA demo. Not a real practice.
+# Phone uses the 555-01xx range reserved for fiction; the domain uses the reserved .example TLD.
+# This file is the single source of truth ("ficha") the QA gate checks every post against.
+id: bluebonnet-hollow-dental
+fictional: true
+name: Bluebonnet Hollow Dental
+website: https://www.bluebonnethollowdental.example
+nap:
+  phone: "(512) 555-0142"
+  email: hello@bluebonnethollowdental.example
+  street: 2214 Meridian Park Drive
+  suite: Suite 110
+  city: Austin
+  state: TX
+  zip: "78704"
+
+dentists:
+  - name: Dr. Elena Marsh
+    credentials: DDS
+    focus: general dentistry, dental implants, emergency care
+  - name: Dr. Marcus Oyelaran
+    credentials: DMD
+    focus: family and pediatric dentistry, clear aligners
+
+# Days are mon..sun. Anything not listed here is closed.
+hours:
+  - days: [mon, tue, wed, thu]
+    open: "08:00"
+    close: "17:00"
+  - days: [fri]
+    open: "08:00"
+    close: "13:00"
+emergency_line: "After hours, call the main number and follow the prompt for the on-call dentist."
+
+# Services the clinic really offers. "aliases" are the words a post may use for each.
+services:
+  - name: Checkups and cleanings
+    aliases: [checkup, checkups, cleaning, cleanings, exam, exams, hygiene, x-rays, x-ray]
+  - name: Tooth-colored fillings
+    aliases: [filling, fillings, composite fillings, tooth-colored fillings]
+  - name: Root canal therapy
+    aliases: [root canal, root canals, root canal therapy]
+  - name: Dental implants
+    aliases: [implant, implants, dental implants, implant crowns]
+  - name: Crowns and bridges
+    aliases: [crown, crowns, bridge, bridges, crowns and bridges]
+  - name: Teeth whitening
+    aliases: [whitening, teeth whitening, tooth whitening, bleaching]
+  - name: Clear aligners
+    aliases: [aligner, aligners, clear aligners, invisalign]
+  - name: Emergency dental care
+    aliases: [emergency, emergencies, emergency care, emergency dental care, same-day emergency visits, same-day emergency care]
+  - name: Pediatric dentistry
+    aliases: [pediatric, children, kids, child, pediatric dentistry, family dentistry]
+
+# Only these prices may appear in posts.
+prices:
+  new_patient_exam_xrays: "$129"
+  in_office_whitening: "$395"
+  emergency_exam: "$95"
+
+# Only these insurance carriers may be named as accepted.
+insurance_accepted: [Delta Dental, Cigna, MetLife]
+
+# No patient testimonials are on file, so none may appear in posts.
+testimonials_on_file: []
+awards: []
+
+# Pages that exist on the (fictional) site. Internal links must point here.
+pages:
+  - /
+  - /about
+  - /contact
+  - /services
+  - /services/cleanings-exams
+  - /services/dental-implants
+  - /services/teeth-whitening
+  - /services/emergency-dentist
+  - /team
+  - /blog
+  - /blog/how-often-dental-cleaning
+  - /blog/dental-implants-vs-bridges
+  - /blog/is-teeth-whitening-safe
+  - /blog/dental-emergency-austin

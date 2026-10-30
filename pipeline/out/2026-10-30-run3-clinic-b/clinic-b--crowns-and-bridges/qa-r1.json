@@ -1,0 +1,26 @@
+{
+  "name": "r1",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.47,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0031936,
+    "seconds": 21.4,
+    "findings": [
+      {
+        "quote": "author: Dr. Tomas Alvarez",
+        "type": "other",
+        "severity": "warn",
+        "why": "The ficha describes Dr. Alvarez's focus as children's dentistry and clear aligners, not restorative work, so a crown-gap article credited to him is inconsistent with the team data.",
+        "fix": "Credit Dr. Priya Raman, who covers general and restorative care, as author, or confirm that Dr. Alvarez has the expertise to write this article."
+      }
+    ],
+    "dropped_unverifiable_url": 1,
+    "downgraded_blocks": 0,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

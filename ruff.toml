@@ -1,0 +1,16 @@
+# Shared lint and format settings for the Python packages (qa, tracker, pipeline).
+target-version = "py310"
+line-length = 120
+extend-exclude = ["**/out", "**/reports", "**/runs"]
+
+[lint]
+select = ["E", "F", "W", "I", "B", "UP", "C4", "SIM", "RUF"]
+ignore = [
+    "RUF001", "RUF002", "RUF003",  # ambiguous unicode: the rules match curly quotes and dashes on purpose
+]
+
+[lint.isort]
+known-first-party = ["qa_gate", "vistrack", "dental_pipeline"]
+
+[format]
+quote-style = "preserve"

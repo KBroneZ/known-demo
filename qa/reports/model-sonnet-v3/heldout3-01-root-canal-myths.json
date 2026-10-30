@@ -1,0 +1,140 @@
+{
+  "post": "01-root-canal-myths",
+  "file": "qa/fixtures/posts/heldout3/01-root-canal-myths.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 4,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "cannot return",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "absolute_clinic_claim",
+      "severity": "warn",
+      "line": 34,
+      "evidence": "Dr. Elena Marsh completes every",
+      "message": "Absolute claim about how the clinic or a dentist works; the ficha does not support it.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 44,
+      "evidence": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.aae.org/patients/your-office-visit/post-treatment-care/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/heldout3-01-root-canal-myths.prompt.md",
+    "cost_usd": 0.030304,
+    "output": "qa/reports/model-sonnet-v3/llm/heldout3-01-root-canal-myths.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "A root canal removes the tooth's nerve, so the tooth is no longer alive and cannot feel anything afterward.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "A root canal removes the pulp, but the tooth stays attached to surrounding tissue and ligament that can still sense pressure and can become inflamed or sore; saying it 'cannot feel anything' is misleading and also contradicts the post's own text about post-treatment tenderness.",
+        "fix": "Replace with: the pulp is removed, so the tooth no longer responds to hot or cold the same way, but the surrounding tissues can still sense pressure and the tooth may feel tender for a few days.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Once the canal is sealed, the infection cannot return.",
+        "type": "prohibited_promise",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is an absolute guarantee that is false (leakage, a cracked tooth, a failed seal or a missed canal can cause reinfection) and contradicts the post's own advice to get follow-up and restore the tooth.",
+        "fix": "Remove it or say that a proper restoration and regular follow-up help lower the chance of reinfection, though no outcome is guaranteed.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Dr. Elena Marsh completes every root canal in a single visit.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha says nothing about single-visit root canals, so this is an invented clinic fact, and it conflicts with the post's own mention of multiple appointments and referrals to an endodontist.",
+        "fix": "Delete the sentence, or replace it with a statement that the number of visits depends on the tooth and the exam findings.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "The next appointment is part of the treatment plan, so ask what restoration is recommended, when it should be placed, and how to care for the tooth in the meantime.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is fine as general advice, but it reads slightly as if a next appointment is always needed, which can be softened.",
+        "fix": "Say 'a follow-up appointment is often part of the treatment plan'.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "The name can sound worse than the procedure itself, and stories from years ago may not reflect current dental care.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "It is a harmless general statement that lacks a source.",
+        "fix": "Optionally support it with the cited AAE page or soften the wording.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "A toothache that lingers can make anyone worry about what comes next.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The generic, formulaic opening reads like AI-generated filler.",
+        "fix": "Open with a concrete, specific detail or a direct question the reader may have.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Those details matter because recovery varies from person to person.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "Vague filler transition that adds little.",
+        "fix": "Cut it or replace it with a specific timeframe and guidance sourced from the AAE page.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Until the tooth is fully restored, avoid biting hard foods with it if your dentist advises you to do so.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The conditional makes the advice weaker than common guidance, which is to avoid chewing on the treated tooth until it is restored.",
+        "fix": "Say to avoid chewing hard foods on the treated tooth until the permanent restoration is placed, unless the dentist says otherwise.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout3-01-root-canal-myths"
+}

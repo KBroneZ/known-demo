@@ -1,0 +1,267 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 12,
+  "seeded_detected": 9,
+  "recall": 0.75,
+  "missed": [
+    "H3-01",
+    "H3-07",
+    "H3-10"
+  ],
+  "true_positive_findings": 9,
+  "false_positive_findings": 19,
+  "precision": 0.32142857142857145,
+  "clean_false_positives": 5,
+  "detail": {
+    "H3-01": [],
+    "H3-02": [
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "H3-03": [
+      {
+        "rule": "absolute_clinic_claim",
+        "line": 34,
+        "severity": "warn"
+      }
+    ],
+    "H3-04": [
+      {
+        "rule": "prohibited_promise",
+        "line": 20,
+        "severity": "block"
+      }
+    ],
+    "H3-05": [
+      {
+        "rule": "price_not_in_ficha",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "H3-06": [
+      {
+        "rule": "insurance_not_in_ficha",
+        "line": 34,
+        "severity": "block"
+      }
+    ],
+    "H3-07": [],
+    "H3-08": [
+      {
+        "rule": "dentist_not_in_roster",
+        "line": 7,
+        "severity": "block"
+      }
+    ],
+    "H3-09": [
+      {
+        "rule": "unsourced_stat",
+        "line": 34,
+        "severity": "warn"
+      }
+    ],
+    "H3-10": [],
+    "H3-11": [
+      {
+        "rule": "hours_mismatch",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "H3-12": [
+      {
+        "rule": "link_broken_internal",
+        "line": 34,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [
+    {
+      "file": "clean/01-how-often-dental-cleaning.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 24,
+      "evidence": "https://www.nidcr.nih.gov/health-info/gum-disease",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "clean/01-how-often-dental-cleaning.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 33,
+      "evidence": "https://www.mouthhealthy.org/",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "clean/02-dental-implants-vs-bridges.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "clean/03-is-teeth-whitening-safe.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "clean/04-dental-emergency-austin.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 22,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/01-root-canal-myths.md",
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/01-root-canal-myths.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 44,
+      "evidence": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/01-root-canal-myths.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.aae.org/patients/your-office-visit/post-treatment-care/",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/02-tooth-colored-fillings.md",
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/02-tooth-colored-fillings.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 44,
+      "evidence": "https://www.nidcr.nih.gov/health-info/dental-fillings",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/02-tooth-colored-fillings.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.ada.org/resources/ada-library/oral-health-topics/materials-for-direct-restorations",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/02-tooth-colored-fillings.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 46,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/fillings-tooth-colored/",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/03-clear-aligners-for-adults.md",
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/03-clear-aligners-for-adults.md",
+      "rule": "link_broken_internal",
+      "severity": "block",
+      "line": 42,
+      "evidence": "https://www.bluebonnethollowdental.example/services/clear-aligners",
+      "message": "Internal link points to a page that is not in the ficha page list.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/03-clear-aligners-for-adults.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 46,
+      "evidence": "https://www.fda.gov/medical-devices/dental-devices/clear-dental-aligners",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/03-clear-aligners-for-adults.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 47,
+      "evidence": "https://www.ada.org/sitecore/content/ADA-Organization/ADA/MouthHealthy/home/all-topics-a-z/braces",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/04-childs-first-dental-visit.md",
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/04-childs-first-dental-visit.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 44,
+      "evidence": "https://www.aapd.org/resources/parent/faq/",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/04-childs-first-dental-visit.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.cdc.gov/oral-health/prevention/oral-health-tips-for-children.html",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "CORREGIR",
+    "clean/02-dental-implants-vs-bridges.md": "CORREGIR",
+    "clean/03-is-teeth-whitening-safe.md": "CORREGIR",
+    "clean/04-dental-emergency-austin.md": "CORREGIR",
+    "heldout3/01-root-canal-myths.md": "BLOQUEAR",
+    "heldout3/02-tooth-colored-fillings.md": "BLOQUEAR",
+    "heldout3/03-clear-aligners-for-adults.md": "BLOQUEAR",
+    "heldout3/04-childs-first-dental-visit.md": "BLOQUEAR"
+  },
+  "llm": null
+}

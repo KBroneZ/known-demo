@@ -1,0 +1,50 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.53,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "sonnet",
+    "cost_usd": 0.05072599999999999,
+    "seconds": 19.0,
+    "findings": [],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 0,
+    "suggestions": [
+      {
+        "quote": "Parents and children can book back to back.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha says families can \"often\" book back to back, and this sentence drops the hedge, though the next sentence (\"we will look for back-to-back times\") restores it.",
+        "fix": "Write \"Parents and children can often book back to back.\"",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "The first visit for a child is $60.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The $60 price matches the ficha, but it sits in the family-booking section of a post about adult checkups and may confuse readers about which visit it covers.",
+        "fix": "Move it to a clearly labelled children's visit sentence or remove it from this adult-focused post.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "If you are looking for family checkups and cleanings in Austin, you can read more on our",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The keyword-stuffed phrasing reads like SEO filler rather than natural prose.",
+        "fix": "Use a plain link sentence such as \"You can read more about family checkups and cleanings on our services page.\"",
+        "raw_severity": "info"
+      }
+    ],
+    "verdict": "PUBLICAR",
+    "model_said": "PUBLICAR",
+    "raw_verdict": "PUBLICAR",
+    "note": ""
+  },
+  "verdict": "PUBLICAR"
+}

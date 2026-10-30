@@ -1,0 +1,98 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "qa/fixtures/posts/heldout/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "In today's fast-paced",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 22,
+      "evidence": "aspirin directly against the gum",
+      "message": "Aspirin placed on gums or teeth burns the tissue; swallow it as directed.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-haiku-v2/prompts/heldout-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.0027,
+    "output": "qa/reports/model-haiku-v2/llm/heldout-04-dental-emergency-austin.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Placing an aspirin directly against the gum helps numb the pain faster.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "Placing aspirin on the gum is a known harmful home remedy that can burn oral tissue, and mainstream dental guidance (ADA, NIDCR) explicitly advises against it.",
+        "fix": "Delete the sentence and advise the reader to take over-the-counter pain relief by mouth as labeled and to avoid putting aspirin or other pain tablets on the gums.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "The ADA's [MouthHealthy page on dental emergencies](https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies) lists common cases and what to do.",
+        "type": "broken_or_fake_source",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I cannot confirm from here that this exact MouthHealthy URL is live, so the citation is unverified.",
+        "fix": "Open the link before publishing and confirm it resolves to the ADA page on dental emergencies, or link to the MouthHealthy topic index instead.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "get to a dentist as quickly as possible",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "For a knocked-out tooth, the post omits the commonly cited time window (ideally within about 30 minutes) that makes replantation more likely to succeed.",
+        "fix": "Add that the tooth has the best chance of saving if a dentist sees it within about 30 minutes, and check the wording against the ADA page once the link is verified.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "In today's fast-paced world, dental emergencies rarely happen at a convenient time.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The opening generic phrase is a stock AI-writing pattern that adds nothing specific for the reader.",
+        "fix": "Open with a concrete scenario, such as a tooth knocked out during sports or a toothache that wakes someone at night.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Our emergency dental care is led by Dr. Elena Marsh.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha lists emergency care among Dr. Marsh's focus areas, but 'led by' implies a\u7ba1\u7406 role the ficha does not state.",
+        "fix": "Reword to 'Dr. Elena Marsh, who focuses on emergency care, treats emergency patients,' or a similar phrasing that matches the ficha.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This demo disclaimer is accurate for the QA fixture but would tell real readers the clinic is fake if the post goes live as-is.",
+        "fix": "Remove this paragraph when the post is adapted for a real clinic, and keep the ficha's fictional flag as the source of truth for the demo.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout-04-dental-emergency-austin"
+}

@@ -1,0 +1,143 @@
+{
+  "post": "01-lisbon-three-days-walkable-plan",
+  "file": "qa/fixtures/travel/posts/seeded/01-lisbon-three-days-walkable-plan.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "review_stamp_is_publish_date",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "2026-09-14",
+      "message": "'Last reviewed' is the publish date and the post is 46 days old; it reads as a template stamp, not a review.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "affiliate_disclosure_missing",
+      "severity": "block",
+      "line": 24,
+      "evidence": "https://stays.example/lisbon?aff_id=tn-77",
+      "message": "The post has an affiliate link but no affiliate disclosure (FTC 16 CFR 255; site rule).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsupported_first_hand_claim",
+      "severity": "block",
+      "line": 32,
+      "evidence": "We tested",
+      "message": "A first-hand testing or verification claim with no evidence block (who tested, when, what) in the post; add the evidence or rewrite it as sourced reporting.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "numeric_inconsistency",
+      "severity": "warn",
+      "line": 40,
+      "evidence": "\u20ac11, (line 36) vs \u20ac9",
+      "message": "'tagus hop' is given two different prices in the same post; keep one.",
+      "layer": "deterministic",
+      "also": [
+        36
+      ]
+    },
+    {
+      "rule": "link_broken_internal",
+      "severity": "block",
+      "line": 65,
+      "evidence": "https://www.tripnotes.example/blog/porto-weekend-itinerary",
+      "message": "Internal link points to a page that is not in the ficha page list.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-travel/prompts/seeded-01-lisbon-three-days-walkable-plan.prompt.md",
+    "cost_usd": 0.025778000000000002,
+    "output": "qa/reports/model-sonnet-travel/llm/seeded-01-lisbon-three-days-walkable-plan.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Bel\u00e9m Tower beside the Douro river",
+        "type": "entity_not_found",
+        "kind": "error",
+        "severity": "block",
+        "why": "Bel\u00e9m Tower stands on the Tagus (Tejo) river in Lisbon; the Douro is in Porto, so the place is misdescribed.",
+        "fix": "Change to 'beside the Tagus river'.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "The Tagus Hop day pass costs \u20ac11, and the ferry is part of it, so the crossing costs nothing extra on that day.",
+        "type": "internal_inconsistency",
+        "kind": "error",
+        "severity": "block",
+        "why": "The text says \u20ac11 but the table says \u20ac9 for the same pass, so a reader could pay or budget wrongly.",
+        "fix": "Confirm the price on the linked tagus-hop.example source and use one consistent figure.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "We tested every tram route and ferry timetable ourselves, so allow half a day here for the riverside walk.",
+        "type": "unsupported_first_hand_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "It claims first-hand testing of every route and timetable, but the post has no evidence section (e.g. How we tested) and the claim is implausible.",
+        "fix": "Remove the testing claim or add a real methodology section with evidence.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "https://www.tripnotes.example/blog/porto-weekend-itinerary",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The internal page slug does not match the site's page list (/blog/porto-weekend-guide), so the link is broken, and a Porto page does not support a Lisbon claim anyway.",
+        "fix": "Remove it or replace it with a relevant, valid Lisbon source.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Prices checked October 2026.",
+        "type": "source_does_not_support_figure",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The price-check claim has no evidence and the two prices conflict, so the verification cannot be trusted; the Bel\u00e9m Combi Ticket \u20ac12 is also not covered by the visit-lisbon source in an identifiable way.",
+        "fix": "Verify the prices against tagus-hop.example/passes and cite the specific page next to each figure.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Last reviewed September 14, 2026",
+        "type": "stale_fact",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The front matter says the post was updated 2026-10-20, so the review date is out of step with the update and the claimed October price check.",
+        "fix": "Update the review date to match the latest actual review.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "walk the waterfront to the viewpoint near the Cristo Rei statue",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "Cristo Rei is in Almada, a fair distance from Cacilhas, and is not an easy waterfront walk; the description may mislead.",
+        "fix": "Say that Cristo Rei is reached by bus or a longer uphill walk from Cacilhas, or name the nearer viewpoint.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Take the train or tram west to Bel\u00e9m.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The Tagus Hop pass is described as covering shuttle routes, yet the post never says how it applies to Bel\u00e9m, and the Bel\u00e9m Combi Ticket is unexplained.",
+        "fix": "Clarify what the pass and the Combi Ticket include.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "seeded-01-lisbon-three-days-walkable-plan"
+}

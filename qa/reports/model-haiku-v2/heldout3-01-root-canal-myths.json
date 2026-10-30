@@ -1,0 +1,131 @@
+{
+  "post": "01-root-canal-myths",
+  "file": "qa/fixtures/posts/heldout3/01-root-canal-myths.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 4,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "cannot return",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "absolute_clinic_claim",
+      "severity": "warn",
+      "line": 34,
+      "evidence": "Dr. Elena Marsh completes every",
+      "message": "Absolute claim about how the clinic or a dentist works; the ficha does not support it.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 44,
+      "evidence": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.aae.org/patients/your-office-visit/post-treatment-care/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-haiku-v2/prompts/heldout3-01-root-canal-myths.prompt.md",
+    "cost_usd": 0.0029182,
+    "output": "qa/reports/model-haiku-v2/llm/heldout3-01-root-canal-myths.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Once the canal is sealed, the infection cannot return.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "Reinfection can occur after root canal treatment, so this guarantees an outcome that mainstream endodontic guidance does not support.",
+        "fix": "Replace it with a statement that a sealed canal greatly reduces reinfection risk, that success is not guaranteed, and that new pain or swelling should be reported to the dentist.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Dr. Elena Marsh completes every root canal in a single visit.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha does not list root canals among Dr. Marsh's focus areas, and the claim contradicts the post's own statement that the next appointment is part of the treatment plan.",
+        "fix": "Delete the sentence or replace it with a verified, practice-approved statement about how Dr. Marsh schedules treatment, and make it consistent with the rest of the post.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Follow the instructions from your dentist, and contact the office if pain is severe, swelling develops, or symptoms get worse rather than better.",
+        "type": "other",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha's emergency instruction is omitted, so readers with severe pain or swelling after hours are not told to call the main number and follow the prompt for the on-call dentist, and swelling can signal a serious infection that needs urgent care.",
+        "fix": "Add that swelling or severe pain should be reported promptly, and that after hours readers should call (512) 555-0142 and follow the prompt for the on-call dentist.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Local anesthetic is used to numb the area, and many people find the experience similar to having a filling.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The comparison to a filling is a general impression with no supporting source.",
+        "fix": "Keep the description of anesthesia but attribute the comparison to a source or drop it.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "A root canal removes the tooth's nerve, so the tooth is no longer alive and cannot feel anything afterward.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The statement is broadly accurate but oversimplifies, because the tooth's root still has living surrounding tissue; 'non-vital' is the more precise term.",
+        "fix": "Say the tooth no longer has a living pulp and will not feel sensation from inside the tooth, and cite the AAE explanation.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Understanding what the treatment is intended to do can help you have a calmer, more useful conversation with your dentist.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "Generic reassurance phrasing like this is typical of AI-written filler and adds little specific information.",
+        "fix": "Replace it with a concrete point about what to ask the dentist at the consultation.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "[American Association of Endodontists: Root Canal Explained](https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/)",
+        "type": "broken_or_fake_source",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I could not verify that these AAE URLs resolve or that they say what the post attributes to them.",
+        "fix": "Open both links, confirm they load and support the cited statements, and update any broken paths before publishing.",
+        "raw_severity": "warn"
+      }
+    ]
+  },
+  "name": "heldout3-01-root-canal-myths"
+}

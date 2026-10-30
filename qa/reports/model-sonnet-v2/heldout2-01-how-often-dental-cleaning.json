@@ -1,0 +1,105 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "qa/fixtures/posts/heldout2/01-how-often-dental-cleaning.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 3,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "Let's delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 44,
+      "evidence": "author.name: schema='Dr. Elena Marsh' vs post='Dr. Marcus Oyelaran'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v2/prompts/heldout2-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.04712,
+    "output": "qa/reports/model-sonnet-v2/llm/heldout2-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade.",
+        "type": "unsourced_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is a specific statistic attributed to unnamed studies, with no source or link, so it appears invented and could mislead readers.",
+        "fix": "Delete the statistic or replace it with a verifiable citation (for example an ADA or NIDCR page that actually supports it).",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Elena Marsh\"}",
+        "type": "schema_incoherent",
+        "kind": "error",
+        "severity": "block",
+        "why": "The JSON-LD names Dr. Elena Marsh as author, but the visible byline says Dr. Marcus Oyelaran wrote it and Dr. Marsh only reviewed it.",
+        "fix": "Set the schema author to Dr. Marcus Oyelaran, and add Dr. Elena Marsh as reviewer if desired.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha only says these carriers are accepted, and \"in network\" is a stronger contractual claim that the ficha does not support.",
+        "fix": "Say \"We accept Delta Dental, Cigna and MetLife\" and advise confirming benefits with the front desk.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "warn",
+        "why": "Tartar formation varies considerably between people, and the post itself says intervals should be individualized, so this is inaccurate and contradictory.",
+        "fix": "Say that tartar buildup varies from person to person, which is why the interval is individualized.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Let's delve into what actually drives the right interval for you.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "\"Delve\" is a common AI-writing tell and the sentence is filler.",
+        "fix": "Replace with a plain sentence such as \"Here is what drives the right interval for you.\"",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout2-01-how-often-dental-cleaning"
+}

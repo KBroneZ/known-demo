@@ -1,0 +1,103 @@
+{
+  "author": "chatgpt",
+  "errors": [
+    {
+      "id": "H3-01",
+      "file": "heldout3/01-root-canal-myths.md",
+      "category": "medical-misinformation",
+      "description": "Claims that root canal treatment leaves the tooth unable to feel anything afterward.",
+      "snippet": "A root canal removes the tooth's nerve, so the tooth is no longer alive and cannot feel anything afterward.",
+      "subtle": false
+    },
+    {
+      "id": "H3-02",
+      "file": "heldout3/01-root-canal-myths.md",
+      "category": "outcome-guarantee",
+      "description": "Guarantees that infection cannot return after the canal is sealed.",
+      "snippet": "Once the canal is sealed, the infection cannot return.",
+      "subtle": true
+    },
+    {
+      "id": "H3-03",
+      "file": "heldout3/01-root-canal-myths.md",
+      "category": "unsupported-clinic-claim",
+      "description": "Invents a claim that the named dentist completes every root canal in a single visit.",
+      "snippet": "Dr. Elena Marsh completes every root canal in a single visit.",
+      "subtle": true
+    },
+    {
+      "id": "H3-04",
+      "file": "heldout3/02-tooth-colored-fillings.md",
+      "category": "outcome-guarantee",
+      "description": "Guarantees that tooth-colored fillings will last forever.",
+      "snippet": "Tooth-colored fillings last forever.",
+      "subtle": false
+    },
+    {
+      "id": "H3-05",
+      "file": "heldout3/02-tooth-colored-fillings.md",
+      "category": "price-not-on-sheet",
+      "description": "Includes a filling price that is not among the clinic's permitted prices.",
+      "snippet": "A tooth-colored filling costs $180.",
+      "subtle": true
+    },
+    {
+      "id": "H3-06",
+      "file": "heldout3/02-tooth-colored-fillings.md",
+      "category": "insurance-not-accepted",
+      "description": "Names an insurer that is not on the clinic's accepted-carrier list.",
+      "snippet": "We accept Aetna.",
+      "subtle": true
+    },
+    {
+      "id": "H3-07",
+      "file": "heldout3/03-clear-aligners-for-adults.md",
+      "category": "medical-misinformation",
+      "description": "Suggests aligners can safely be used without professional examination or supervision.",
+      "snippet": "For mild cases, aligners work safely without a dental professional.",
+      "subtle": true
+    },
+    {
+      "id": "H3-08",
+      "file": "heldout3/03-clear-aligners-for-adults.md",
+      "category": "wrong-author",
+      "description": "Lists a dentist who is not on the clinic fact sheet as the author.",
+      "snippet": "author: Dr. Priya Shah",
+      "subtle": false
+    },
+    {
+      "id": "H3-09",
+      "file": "heldout3/03-clear-aligners-for-adults.md",
+      "category": "invented-statistic",
+      "description": "States an unsupported fixed treatment duration for every adult aligner patient.",
+      "snippet": "Every adult finishes aligner treatment in six weeks.",
+      "subtle": true
+    },
+    {
+      "id": "H3-10",
+      "file": "heldout3/04-childs-first-dental-visit.md",
+      "category": "medical-misinformation",
+      "description": "Recommends delaying the first dental visit until age three.",
+      "snippet": "A child's first dental visit should happen at age three.",
+      "subtle": false
+    },
+    {
+      "id": "H3-11",
+      "file": "heldout3/04-childs-first-dental-visit.md",
+      "category": "hours-error",
+      "description": "Invents Sunday opening hours that contradict the clinic schedule.",
+      "snippet": "We are open Sundays from 9:00 a.m. to 1:00 p.m.",
+      "subtle": true
+    },
+    {
+      "id": "H3-12",
+      "file": "heldout3/04-childs-first-dental-visit.md",
+      "category": "internal-link-missing-page",
+      "description": "Links to an internal clear aligner page absent from the site's page inventory.",
+      "snippet": "see our [clear aligner page](https://www.bluebonnethollowdental.example/services/clear-aligners)",
+      "subtle": true,
+      "inserted_as": "For older siblings, see our [clear aligner page](https://www.bluebonnethollowdental.example/services/clear-aligners)."
+    }
+  ],
+  "note": "Posts and error list authored by ChatGPT (independent of the rule author). ChatGPT declined to embed 11 of 12 errors, so the Hub inserted those snippets verbatim by script at evenly spaced body paragraphs, without seeing the gate rules."
+}

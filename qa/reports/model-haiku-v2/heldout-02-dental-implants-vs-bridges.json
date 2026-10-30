@@ -1,0 +1,133 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "qa/fixtures/posts/heldout/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "link_broken",
+      "severity": "block",
+      "line": 28,
+      "evidence": "https://www.nidcr.nih.gov/health-info/implant-maintenance-guide",
+      "message": "External link is dead (404).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 46,
+      "evidence": "guarantee",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "chatbot_residue",
+      "severity": "block",
+      "line": 48,
+      "evidence": "I hope this helps",
+      "message": "Chatbot residue left in the draft.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-haiku-v2/prompts/heldout-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.0029971,
+    "output": "qa/reports/model-haiku-v2/llm/heldout-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "and every implant we place comes with a lifetime guarantee",
+        "type": "prohibited_promise",
+        "kind": "error",
+        "severity": "block",
+        "why": "A lifetime guarantee is an unsupported promise about outcomes that the ADA advertising rules prohibit, and the post itself says no dentist can predict how long a restoration will last.",
+        "fix": "Delete the guarantee sentence and replace it with a neutral statement such as 'Dr. Elena Marsh places dental implants at our Austin office; ask us about the care plan during your consultation.'",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "I hope this helps! Let me know if you would like me to adjust the tone or add a section on costs.",
+        "type": "chatbot_residue",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is a conversational reply to the author, not patient-facing content, and would appear verbatim on the published page.",
+        "fix": "Remove both sentences entirely before publishing.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "kind": "error",
+        "severity": "block",
+        "why": "This disclaimer tells readers the practice is fictional and the post is sample content, which would mislead patients if the post went live for the real clinic; it also conflicts with publishing it as clinic guidance.",
+        "fix": "Remove the disclaimer for publication, or keep it only in the internal demo build and not in the public post body.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "The ADA's [MouthHealthy page on bridges](https://www.mouthhealthy.org/all-topics-a-z/bridges)",
+        "type": "broken_or_fake_source",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I cannot verify from this review that this URL resolves or that the page says what the sentence claims about bridge construction.",
+        "fix": "Open the link, confirm it loads and supports the sentence, and note the access date if needed.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "The [NIDCR guide to implant maintenance](https://www.nidcr.nih.gov/health-info/implant-maintenance-guide)",
+        "type": "broken_or_fake_source",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "I cannot verify from this review that this NIDCR URL exists or covers daily implant upkeep.",
+        "fix": "Confirm the link resolves on nidcr.nih.gov and that the page covers daily implant maintenance before publishing.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "most patients describe soreness afterward rather than sharp pain",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The general pain description is plausible but makes a patient-experience generalization with no source.",
+        "fix": "Soften to 'Many patients report soreness afterward; your dentist will explain how to manage it' or cite a source.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "a bridge is typically completed in fewer visits",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The visit-count comparison is a general statement with no source or ficha support.",
+        "fix": "Phrase it as 'treatment timelines vary; ask your dentist how many visits each option would need for your case.'",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "reviewed_by: Dr. Marcus Oyelaran",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha lists Dr. Oyelaran's focus as family, pediatric dentistry and clear aligners, not implants, so a medical review attribution on an implant post may imply expertise the ficha does not show.",
+        "fix": "Confirm the reviewer's role for this topic or attribute the review to a dentist whose ficha focus covers dental implants.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Neither is right for everyone, and the choice depends on your health, your bone and your goals.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The stock 'neither is right for everyone' framing and the three-part list read as generic AI-style phrasing.",
+        "fix": "Rewrite in a more specific clinic voice, for example naming the factors Dr. Marsh checks at a consultation.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout-02-dental-implants-vs-bridges"
+}

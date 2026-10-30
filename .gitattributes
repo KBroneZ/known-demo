@@ -1,0 +1,15 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.webp binary
+*.ico binary
+*.zip binary
+
+# Recorded run output and approved snapshots: kept as evidence for the numbers in the READMEs.
+pipeline/out/** linguist-generated
+qa/reports/** linguist-generated
+tracker/report/** linguist-generated
+web/golden/** linguist-generated
+web/reports/** linguist-generated
+web/package-lock.json linguist-generated

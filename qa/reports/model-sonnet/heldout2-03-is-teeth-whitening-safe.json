@@ -1,0 +1,96 @@
+{
+  "post": "03-is-teeth-whitening-safe",
+  "file": "fixtures/posts/heldout2/03-is-teeth-whitening-safe.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "link_broken",
+      "severity": "block",
+      "line": 18,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/tooth-whitening-safety",
+      "message": "External link is dead (404).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 37,
+      "evidence": "promise a",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-sonnet/prompts/heldout2-03-is-teeth-whitening-safe.prompt.md",
+    "cost_usd": 0.027606,
+    "output": "reports/model-sonnet/llm/heldout2-03-is-teeth-whitening-safe.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "we promise a visibly brighter smile after a single visit",
+        "type": "prohibited_promise",
+        "severity": "block",
+        "why": "This is a guarantee of results, which ADA advertising rules prohibit, and it contradicts the post's own statement that results vary by person and stain type.",
+        "fix": "Remove the promise and say that results vary and the dentist will discuss realistic expectations at the exam."
+      },
+      {
+        "quote": "Whitening is safe for most healthy mouths when done correctly.",
+        "type": "other",
+        "why": "The meta description states safety more firmly than the body, which says 'generally considered safe', and it has no source attached in that spot.",
+        "fix": "Align the description with the body wording, for example 'Whitening is generally considered safe for healthy mouths when done correctly.'"
+      },
+      {
+        "quote": "Whitening is one of the most requested cosmetic treatments, and one of the most misunderstood.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "This is a checkable popularity claim with no supporting source or clinic data.",
+        "fix": "Remove it or cite a source, or reword it as a non-quantitative opener."
+      },
+      {
+        "quote": "Pregnancy or breastfeeding, where many dentists advise waiting.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The claim about what many dentists advise is plausible but has no cited ADA or NIDCR support.",
+        "fix": "Cite ADA guidance or soften it to 'ask your dentist whether to wait'."
+      },
+      {
+        "quote": "At-home kits are cheaper and slower, and results depend on how consistently you use them.",
+        "type": "unsourced_claim",
+        "severity": "info",
+        "why": "The cost and speed comparison is a general claim with no source, and the ficha lists no at-home price.",
+        "fix": "Soften it to 'often cost less and may take longer' or add a source."
+      },
+      {
+        "quote": "The ADA's [MouthHealthy page on teeth whitening](https://www.mouthhealthy.org/all-topics-a-z/tooth-whitening-safety) covers the basics.",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "I cannot confirm that this exact URL exists, and the slug 'tooth-whitening-safety' looks guessed even though MouthHealthy is a real ADA site.",
+        "fix": "Open the link and confirm it resolves to the whitening page, or replace it with a verified ADA or MouthHealthy URL."
+      },
+      {
+        "quote": "Whitening products use a peroxide-based gel to break up stains inside and on the surface of the tooth.",
+        "type": "unsourced_claim",
+        "severity": "info",
+        "why": "The statement is broadly consistent with mainstream guidance but is uncited, and some products use other agents.",
+        "fix": "Say 'most whitening products use peroxide' and rely on the ADA source."
+      },
+      {
+        "quote": "\"publisher\": {\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\", \"telephone\": \"(512) 555-0142\"}",
+        "type": "schema_incoherent",
+        "severity": "warn",
+        "why": "A Dentist is a local business type, not a valid publisher, which should be an Organization, and the JSON-LD omits the address even though the visible text contains it.",
+        "fix": "Use an Organization publisher (or a separate Dentist entity) and add the ficha address if you keep the local-business markup."
+      }
+    ]
+  },
+  "name": "heldout2-03-is-teeth-whitening-safe"
+}

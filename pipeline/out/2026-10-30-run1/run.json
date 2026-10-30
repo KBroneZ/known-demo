@@ -1,0 +1,213 @@
+{
+  "run_id": "2026-10-30-run1",
+  "draft_model": "sonnet",
+  "qa_model": "haiku",
+  "max_rounds": 2,
+  "posts": [
+    {
+      "clinic": "clinic-a",
+      "service": "Teeth whitening",
+      "topic": "will teeth whitening be able to get my teeth as white as the whites in my eyes?",
+      "dir": "clinic-a--teeth-whitening",
+      "status": "needs-human",
+      "rounds": 2,
+      "verdict_path": [
+        "CORREGIR",
+        "CORREGIR",
+        "CORREGIR"
+      ],
+      "human_review": [
+        "Still CORREGIR after 2 auto-fix round(s): model:schema_incoherent; model:fact_vs_ficha"
+      ],
+      "slug": "teeth-whitening-austin-can-teeth-match-eye-whites",
+      "verdict": "CORREGIR",
+      "calls": [
+        {
+          "stage": "draft",
+          "model": "sonnet",
+          "cost_usd": 0.0373,
+          "seconds": 22.7,
+          "input_tokens": 2,
+          "output_tokens": 2684,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r0",
+          "model": "haiku",
+          "cost_usd": 0.0044,
+          "seconds": 29.9
+        },
+        {
+          "stage": "fix-r1",
+          "model": "sonnet",
+          "cost_usd": 0.03927,
+          "seconds": 14.7,
+          "input_tokens": 2,
+          "output_tokens": 2049,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r1",
+          "model": "haiku",
+          "cost_usd": 0.00347,
+          "seconds": 21.8
+        },
+        {
+          "stage": "fix-r2",
+          "model": "sonnet",
+          "cost_usd": 0.03471,
+          "seconds": 12.0,
+          "input_tokens": 2,
+          "output_tokens": 1587,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r2",
+          "model": "haiku",
+          "cost_usd": 0.00344,
+          "seconds": 20.4
+        }
+      ],
+      "stage_seconds": {
+        "brief": 0.0,
+        "draft": 22.75,
+        "qa": 73.49,
+        "fix-r1": 14.75,
+        "fix-r2": 12.05
+      },
+      "cost_usd": 0.1226,
+      "input_tokens": 6,
+      "output_tokens": 6320,
+      "wall_seconds": 123.1
+    },
+    {
+      "clinic": "clinic-a",
+      "service": "Root canal therapy",
+      "topic": "wondering if i should get the root canal or just have them pull the tooth?",
+      "dir": "clinic-a--root-canal-therapy",
+      "status": "needs-human",
+      "rounds": 0,
+      "verdict_path": [
+        "BLOQUEAR"
+      ],
+      "human_review": [
+        "BLOQUEAR (model only, confirm or dismiss) false_medical_claim: 'Call soon if you have tooth pain that lingers or wakes you at night, swelling in your gums or face, ': Facial swelling can signal a spreading infection that needs same-day care, and the post omits the ficha's emergency guidance (trouble breathing or swallowing, or swelling spreading to the face or neck, means going to an emergency room or calling 911).",
+        "BLOQUEAR (model only, confirm or dismiss) fact_vs_ficha: 'Our published prices include a new patient exam with X-rays for $129 and an emergency exam for $95.': The ficha limits the $129 price to new patients paying without insurance, and the post states it without that qualifier."
+      ],
+      "slug": "root-canal-extraction-how-decide-austin",
+      "verdict": "BLOQUEAR",
+      "calls": [
+        {
+          "stage": "draft",
+          "model": "sonnet",
+          "cost_usd": 0.02513,
+          "seconds": 14.6,
+          "input_tokens": 2,
+          "output_tokens": 1519,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r0",
+          "model": "haiku",
+          "cost_usd": 0.00413,
+          "seconds": 27.5
+        }
+      ],
+      "stage_seconds": {
+        "brief": 0.0,
+        "draft": 14.59,
+        "qa": 28.0
+      },
+      "cost_usd": 0.0293,
+      "input_tokens": 2,
+      "output_tokens": 1519,
+      "wall_seconds": 42.6
+    },
+    {
+      "clinic": "clinic-b",
+      "service": "Crowns and bridges",
+      "topic": "Do I need a crown replacement or just seal the gap?",
+      "dir": "clinic-b--crowns-and-bridges",
+      "status": "needs-human",
+      "rounds": 0,
+      "verdict_path": [
+        "BLOQUEAR"
+      ],
+      "human_review": [
+        "BLOQUEAR (model only, confirm or dismiss) fact_vs_ficha: 'reviewed_by: Dr. Tomas Alvarez': The ficha states that Dr. Priya Raman reviews the clinical content on this site and that Dr. Alvarez's focus is children's dentistry and clear aligners, so this crown article's reviewer attribution contradicts the source of truth."
+      ],
+      "slug": "crown-gap-austin-replace-crown-seal-it",
+      "verdict": "BLOQUEAR",
+      "calls": [
+        {
+          "stage": "draft",
+          "model": "sonnet",
+          "cost_usd": 0.04338,
+          "seconds": 28.3,
+          "input_tokens": 2,
+          "output_tokens": 3299,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r0",
+          "model": "haiku",
+          "cost_usd": 0.00377,
+          "seconds": 23.5
+        }
+      ],
+      "stage_seconds": {
+        "brief": 0.0,
+        "draft": 28.32,
+        "qa": 24.01
+      },
+      "cost_usd": 0.0472,
+      "input_tokens": 2,
+      "output_tokens": 3299,
+      "wall_seconds": 52.3
+    },
+    {
+      "clinic": "clinic-b",
+      "service": "Family checkups and cleanings",
+      "topic": "I found cavities between my teeth and i've already had my yearly checkup. Can this wait or should I book an earlier appointment?",
+      "dir": "clinic-b--family-checkups-and-cleanings",
+      "status": "needs-human",
+      "rounds": 0,
+      "verdict_path": [
+        "BLOQUEAR"
+      ],
+      "human_review": [
+        "BLOQUEAR (model only, confirm or dismiss) fact_vs_ficha: 'If you have facial swelling along with a fever, or trouble breathing or swallowing, go to an emergen': The ficha says swelling that spreads to the face or neck is an emergency, but the post sends facial swelling to an ER only when a fever is also present, which could delay care for a spreading dental infection."
+      ],
+      "slug": "cavities-between-teeth-after-checkup-wait-book",
+      "verdict": "BLOQUEAR",
+      "calls": [
+        {
+          "stage": "draft",
+          "model": "sonnet",
+          "cost_usd": 0.05223,
+          "seconds": 32.6,
+          "input_tokens": 2,
+          "output_tokens": 4123,
+          "cache_read_tokens": 0
+        },
+        {
+          "stage": "qa-r0",
+          "model": "haiku",
+          "cost_usd": 0.00363,
+          "seconds": 24.4
+        }
+      ],
+      "stage_seconds": {
+        "brief": 0.0,
+        "draft": 32.64,
+        "qa": 24.9
+      },
+      "cost_usd": 0.0559,
+      "input_tokens": 2,
+      "output_tokens": 4123,
+      "wall_seconds": 57.5
+    }
+  ],
+  "total_cost_usd": 0.255,
+  "total_wall_seconds": 275.5
+}

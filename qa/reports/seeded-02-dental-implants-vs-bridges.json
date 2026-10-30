@@ -1,0 +1,52 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "fixtures/posts/seeded/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "Studies show that 98% of dental implants are still working after 25 years.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "guarantee",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "guaranteed",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 51,
+      "evidence": "author.name: schema='Dr. Brian Walsh' vs post='Dr. Elena Marsh'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/seeded-02-dental-implants-vs-bridges.prompt.md"
+  },
+  "name": "seeded-02-dental-implants-vs-bridges"
+}

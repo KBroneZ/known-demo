@@ -1,0 +1,53 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.47,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0041272,
+    "seconds": 27.5,
+    "findings": [
+      {
+        "quote": "Call soon if you have tooth pain that lingers or wakes you at night, swelling in your gums or face, a bad taste in your mouth, or a tooth that hurts when you bite.",
+        "type": "false_medical_claim",
+        "severity": "block",
+        "why": "Facial swelling can signal a spreading infection that needs same-day care, and the post omits the ficha's emergency guidance (trouble breathing or swallowing, or swelling spreading to the face or neck, means going to an emergency room or calling 911).",
+        "fix": "Add that facial or neck swelling, or any trouble breathing or swallowing, requires same-day emergency care, and direct readers to the emergency room or 911 in those cases."
+      },
+      {
+        "quote": "Our published prices include a new patient exam with X-rays for $129 and an emergency exam for $95.",
+        "type": "fact_vs_ficha",
+        "severity": "block",
+        "why": "The ficha limits the $129 price to new patients paying without insurance, and the post states it without that qualifier.",
+        "fix": "Write 'for new patients paying without insurance, the new patient exam with X-rays is $129' to match the ficha wording."
+      },
+      {
+        "quote": "reviewed_by: Dr. Marcus Oyelaran",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha says Dr. Marsh reviews the clinical content published on the site, but the post names Dr. Oyelaran as reviewer.",
+        "fix": "Confirm the reviewer with the clinic and align the frontmatter and the ficha's bio wording."
+      },
+      {
+        "quote": "Ask your dentist about this before and after your visit.",
+        "type": "other",
+        "severity": "warn",
+        "why": "The answer to 'Can I vape after a root canal?' is a non-answer that leaves out the well-documented point that nicotine and tobacco products impair healing after dental procedures.",
+        "fix": "State plainly that smoking and vaping can slow healing and should generally be avoided during recovery, then defer specific timing to the dentist."
+      },
+      {
+        "quote": "After a root canal, most teeth need a crown to protect them.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The statement is a generalization presented as a rule and is not backed by a specific source for the 'most teeth' proportion.",
+        "fix": "Soften to 'many teeth, especially back teeth, benefit from a crown' or attribute the figure to a source."
+      }
+    ],
+    "dropped_unverifiable_url": 1,
+    "verdict": "BLOQUEAR"
+  },
+  "verdict": "BLOQUEAR"
+}

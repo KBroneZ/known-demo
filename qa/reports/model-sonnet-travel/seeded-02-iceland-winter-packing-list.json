@@ -1,0 +1,88 @@
+{
+  "post": "02-iceland-winter-packing-list",
+  "file": "qa/fixtures/travel/posts/seeded/02-iceland-winter-packing-list.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "missing_required_section",
+      "severity": "block",
+      "line": 0,
+      "evidence": "Sources",
+      "message": "The site requires a 'Sources' section in every post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "banned_character",
+      "severity": "warn",
+      "line": 22,
+      "evidence": "\u2014",
+      "message": "The site's editorial rules ban '\u2014'.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_blocked",
+      "severity": "warn",
+      "line": 61,
+      "evidence": "https://safetravel-iceland.example/winter-roads",
+      "message": "The site answered 403 (anti-bot or login wall): the link is inconclusive, not dead; open it by hand or use a browser check.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-travel/prompts/seeded-02-iceland-winter-packing-list.prompt.md",
+    "cost_usd": 0.031740000000000004,
+    "output": "qa/reports/model-sonnet-travel/llm/seeded-02-iceland-winter-packing-list.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Around the winter solstice, Reykjavik gets about eleven hours of usable daylight.",
+        "type": "seasonality",
+        "kind": "error",
+        "severity": "block",
+        "why": "Reykjavik has only about four to five hours of daylight at the winter solstice, so readers planning December drives around an eleven-hour window could end up on icy roads in the dark.",
+        "fix": "Correct the figure to roughly four to five hours around the solstice, check the late-February figure (about nine to ten hours), and cite a real daylight source.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Roughly 2.3 million people visit each year ([visitor numbers](https://iceland-weather.example/daylight)).",
+        "type": "source_does_not_support_figure",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The link text promises visitor statistics, but the address is a daylight/weather page that cannot back a tourist-arrivals count.",
+        "fix": "Cite a tourism statistics source (such as the national tourist board) with the year of the figure, or remove the number.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "We spent six days in January 2026 walking the same three routes in three jacket and boot combinations, noting each evening which items stayed dry and which layers we removed.",
+        "type": "unsupported_first_hand_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "The section claims notes and dates are summarised, but gives no actual results, dates or per-combination findings, so the testing claim has no verifiable evidence.",
+        "fix": "Add the real dated test log with per-combination outcomes, or remove the testing claims here and in the description (\"layers that worked in our trial\").",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Northern lights season runs from late August to April, but clear skies are never guaranteed.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The season window is a stated figure with no source next to it, though it is broadly consistent with common guidance.",
+        "fix": "Add a source such as the Icelandic Met Office aurora forecast page.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "seeded-02-iceland-winter-packing-list"
+}

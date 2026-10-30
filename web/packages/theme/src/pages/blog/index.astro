@@ -1,0 +1,16 @@
+---
+import Page from '../../layouts/Page.astro';
+import PostCard from '../../components/PostCard.astro';
+import { clinic, getPosts, metaFor } from '../../lib/site.ts';
+
+const meta = await metaFor('/blog');
+const posts = await getPosts();
+---
+<Page {...meta} heading="Dental health blog" trail={[{ name: 'Blog', path: '/blog' }]}>
+  <p>Plain-language advice from the dentists at {clinic.name}. Every article is dated and credited to a dentist on <a href="/team">our team</a>.</p>
+  {posts.length === 0 ? <p>New articles are on the way. Meanwhile, see <a href="/services">our services</a>.</p> : (
+    <div class="grid">
+      {posts.map((p) => <PostCard as="h2" slug={p.data.slug} title={p.data.title} description={p.data.description} author={p.data.author} date={p.data.date} />)}
+    </div>
+  )}
+</Page>

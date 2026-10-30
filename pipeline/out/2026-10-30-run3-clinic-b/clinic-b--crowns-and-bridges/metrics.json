@@ -1,0 +1,76 @@
+{
+  "clinic": "clinic-b",
+  "service": "Crowns and bridges",
+  "topic": "Do I need a crown replacement or just seal the gap?",
+  "dir": "clinic-b--crowns-and-bridges",
+  "status": "needs-human",
+  "rounds": 2,
+  "verdict_path": [
+    "CORREGIR",
+    "CORREGIR",
+    "CORREGIR"
+  ],
+  "human_review": [
+    "Still CORREGIR after 2 auto-fix round(s): model:unsourced_claim"
+  ],
+  "slug": "crown-gap-austin-replace-it-seal-gap",
+  "verdict": "CORREGIR",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.04798,
+      "seconds": 31.5,
+      "input_tokens": 2,
+      "output_tokens": 3683,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.00304,
+      "seconds": 16.2
+    },
+    {
+      "stage": "fix-r1",
+      "model": "sonnet",
+      "cost_usd": 0.0389,
+      "seconds": 13.8,
+      "input_tokens": 2,
+      "output_tokens": 2015,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r1",
+      "model": "haiku",
+      "cost_usd": 0.00319,
+      "seconds": 21.4
+    },
+    {
+      "stage": "fix-r2",
+      "model": "sonnet",
+      "cost_usd": 0.04052,
+      "seconds": 15.4,
+      "input_tokens": 2,
+      "output_tokens": 2184,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r2",
+      "model": "haiku",
+      "cost_usd": 0.00405,
+      "seconds": 25.1
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 31.55,
+    "qa": 64.16,
+    "fix-r1": 13.77,
+    "fix-r2": 15.43
+  },
+  "cost_usd": 0.1377,
+  "input_tokens": 6,
+  "output_tokens": 7882,
+  "wall_seconds": 124.9
+}

@@ -1,0 +1,80 @@
+{
+  "clinic": "clinic-a",
+  "service": "Root canal therapy",
+  "topic": "wondering if i should get the root canal or just have them pull the tooth?",
+  "dir": "clinic-a--root-canal-therapy",
+  "status": "published",
+  "rounds": 2,
+  "verdict_path": [
+    "CORREGIR",
+    "CORREGIR",
+    "PUBLICAR"
+  ],
+  "human_review": [
+    "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+    "Open each external link in a browser (the check only fetches status codes)",
+    "Skim changes.diff: the model rewrote text to satisfy the reviewer",
+    "3 model remark(s) were raised in earlier rounds; see qa-r*.json"
+  ],
+  "slug": "root-canal-extraction-how-decide-austin",
+  "verdict": "PUBLICAR",
+  "published_to": "web/sites/clinic-a/src/content/posts/root-canal-extraction-how-decide-austin.md",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.03605,
+      "seconds": 23.4,
+      "input_tokens": 2,
+      "output_tokens": 2609,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.00357,
+      "seconds": 22.9
+    },
+    {
+      "stage": "fix-r1",
+      "model": "sonnet",
+      "cost_usd": 0.03782,
+      "seconds": 13.8,
+      "input_tokens": 2,
+      "output_tokens": 1970,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r1",
+      "model": "haiku",
+      "cost_usd": 0.00384,
+      "seconds": 24.8
+    },
+    {
+      "stage": "fix-r2",
+      "model": "sonnet",
+      "cost_usd": 0.0332,
+      "seconds": 10.7,
+      "input_tokens": 2,
+      "output_tokens": 1574,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r2",
+      "model": "haiku",
+      "cost_usd": 0.00345,
+      "seconds": 21.0
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 23.37,
+    "qa": 70.04,
+    "fix-r1": 13.83,
+    "fix-r2": 10.67
+  },
+  "cost_usd": 0.1179,
+  "input_tokens": 6,
+  "output_tokens": 6153,
+  "wall_seconds": 117.9
+}

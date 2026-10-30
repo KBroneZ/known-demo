@@ -1,0 +1,44 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "fixtures/posts/heldout2/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 18,
+      "evidence": "scrub it",
+      "message": "Knocked-out teeth must not be scrubbed or soaped; rinse gently with water or milk.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 34,
+      "evidence": "A patient who came in last month with a cracked molar on a Thursday evening told",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "hours_mismatch",
+      "severity": "block",
+      "line": 36,
+      "evidence": "Friday from 8 a.m. to 5 p.m.",
+      "message": "Hours for fri do not match the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout2-04-dental-emergency-austin.prompt.md"
+  },
+  "name": "heldout2-04-dental-emergency-austin"
+}

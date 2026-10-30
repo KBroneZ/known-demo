@@ -1,0 +1,54 @@
+{
+  "post": "03-is-teeth-whitening-safe",
+  "file": "qa/fixtures/posts/clean/03-is-teeth-whitening-safe.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/clean-03-is-teeth-whitening-safe.prompt.md",
+    "cost_usd": 0.032984,
+    "output": "qa/reports/model-sonnet-v3/llm/clean-03-is-teeth-whitening-safe.llm.txt",
+    "verdict": "PUBLICAR",
+    "model_verdict": "PUBLICAR",
+    "raw_verdict": "PUBLICAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Whitening is one of the most requested cosmetic treatments, and one of the most misunderstood.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a harmless general statement about popularity that has no source, and it reads like a generic AI opener.",
+        "fix": "Soften it, for example 'Whitening is a common cosmetic treatment with many misconceptions', or cite a source.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Pregnancy or breastfeeding, where many dentists advise waiting.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The statement is cautious and consistent with common practice, but it cites no source, and the ADA page linked earlier in the post does not clearly support it.",
+        "fix": "Cite ADA or other authoritative guidance, or phrase it as 'ask your dentist or doctor first'.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "We will tell you at your exam whether whitening is a good fit and what shade change is realistic for you.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha says nothing about how whitening candidacy is assessed, and the post does not mention the $129 new-patient exam price, which readers may want when it tells them to book an exam first.",
+        "fix": "Optionally add that the new patient exam and X-rays are $129, as the ficha states, and keep the wording conditional.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-03-is-teeth-whitening-safe"
+}

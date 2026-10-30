@@ -1,0 +1,44 @@
+{
+  "name": "r0",
+  "rules_verdict": "CORREGIR",
+  "rules_seconds": 0.06,
+  "rules_findings": [
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 65,
+      "evidence": "Our family checkups and cleanings are for every age, with exams and cleanings in one visit. If you want to bri",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 81,
+      "evidence": "Our [family checkups and cleanings](/services/family-checkups) include exams and cleanings for every age in on",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    }
+  ],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0034388,
+    "seconds": 20.6,
+    "findings": [
+      {
+        "quote": "If swelling spreads to your face or neck, or you have trouble breathing or swallowing, go to an emergency room.",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha's same-day emergency instruction says to go to an emergency room or call 911 for trouble breathing, swallowing, or uncontrolled bleeding, and the post omits 911 for these airway-threatening symptoms.",
+        "fix": "Change the sentence to match the ficha: \"If swelling spreads to your face or neck, or you have trouble breathing or swallowing, call 911 or go to the nearest emergency room.\"",
+        "downgraded_from": "block"
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 1,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

@@ -1,0 +1,44 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "fixtures/posts/heldout/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "link_broken",
+      "severity": "block",
+      "line": 28,
+      "evidence": "https://www.nidcr.nih.gov/health-info/implant-maintenance-guide",
+      "message": "External link is dead (404).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 46,
+      "evidence": "guarantee",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "chatbot_residue",
+      "severity": "block",
+      "line": 48,
+      "evidence": "I hope this helps",
+      "message": "Chatbot residue left in the draft.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout-02-dental-implants-vs-bridges.prompt.md"
+  },
+  "name": "heldout-02-dental-implants-vs-bridges"
+}

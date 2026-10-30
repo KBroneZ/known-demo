@@ -1,0 +1,52 @@
+{
+  "post": "03-clear-aligners-for-adults",
+  "file": "fixtures/posts/heldout3/03-clear-aligners-for-adults.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "dentist_not_in_roster",
+      "severity": "block",
+      "line": 7,
+      "evidence": "author: Dr. Priya Shah",
+      "message": "'author' is not on the ficha dentist roster.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 34,
+      "evidence": "Every adult finishes aligner treatment in six weeks.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_broken_internal",
+      "severity": "block",
+      "line": 42,
+      "evidence": "https://www.bluebonnethollowdental.example/services/clear-aligners",
+      "message": "Internal link points to a page that is not in the ficha page list.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout3-03-clear-aligners-for-adults.prompt.md"
+  },
+  "name": "heldout3-03-clear-aligners-for-adults"
+}

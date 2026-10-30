@@ -1,0 +1,56 @@
+{
+  "clinic_id": "clinic-a",
+  "clinic_name": "Bluebonnet Hollow Dental",
+  "topic": {
+    "question": "wondering if i should get the root canal or just have them pull the tooth?",
+    "source": "reddit:r/askdentists",
+    "source_id": "1xio1hv",
+    "comments": 6,
+    "retrieved": "2026-10-30"
+  },
+  "service": "Root canal therapy",
+  "service_slug": null,
+  "service_summary": "",
+  "primary_keyword": "root canal austin",
+  "keyword_note": "heuristic: service alias + city; no search-volume data was consulted",
+  "intent": "informational; a local patient researching before booking",
+  "questions": [
+    "wondering if i should get the root canal or just have them pull the tooth?"
+  ],
+  "related_questions": [
+    "Factors in deciding on root canal/new crown OR extraction/implant?",
+    "vaping after root canal??"
+  ],
+  "author": "Dr. Marcus Oyelaran",
+  "reviewer": "Dr. Elena Marsh",
+  "category": "root-canal-therapy",
+  "internal_links": [
+    {
+      "url": "/contact",
+      "why": "booking and contact"
+    },
+    {
+      "url": "/team",
+      "why": "the dentists"
+    },
+    {
+      "url": "/blog/dental-emergency-austin",
+      "why": "related post: What to Do in a Dental Emergency in Austin"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/root-canals",
+      "publisher": "American Dental Association (MouthHealthy)",
+      "covers": [
+        "root canal",
+        "root canals",
+        "endodontic",
+        "tooth nerve",
+        "infected tooth"
+      ]
+    }
+  ],
+  "word_range": "about 600 to 850 words (length follows the content; it is not a target)",
+  "facts": "- Clinic name: Bluebonnet Hollow Dental\n- Phone: (512) 555-0142\n- Address: 2214 Meridian Park Drive, Suite 110, Austin, TX 78704\n- Hours (use this exact wording): We are open Monday through Thursday from 8 a.m. to 5 p.m., and on Friday from 8 a.m. to 1 p.m.\n- After-hours instruction: After hours, call the main number and follow the prompt for the on-call dentist.\n- Published price 'new_patient_exam_xrays': $129\n- Published price 'in_office_whitening': $395\n- Published price 'emergency_exam': $95\n- Insurance accepted: Delta Dental, Cigna, MetLife (say 'accepted', not 'in network')\n- Dentist: Dr. Elena Marsh, DDS - general dentistry, dental implants, emergency care\n- Dentist: Dr. Marcus Oyelaran, DMD - family and pediatric dentistry, clear aligners"
+}

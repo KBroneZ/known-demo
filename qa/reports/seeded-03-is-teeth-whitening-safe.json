@@ -1,0 +1,36 @@
+{
+  "post": "03-is-teeth-whitening-safe",
+  "file": "fixtures/posts/seeded/03-is-teeth-whitening-safe.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 24,
+      "evidence": "\"I was terrified of whitening, but Dr. Oyelaran made it painless and my smile has never lo",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsupported_superlative",
+      "severity": "warn",
+      "line": 43,
+      "evidence": "best dentist",
+      "message": "'Best/top' claim with no verifiable basis in the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/seeded-03-is-teeth-whitening-safe.prompt.md"
+  },
+  "name": "seeded-03-is-teeth-whitening-safe"
+}

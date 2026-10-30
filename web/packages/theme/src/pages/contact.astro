@@ -1,0 +1,31 @@
+---
+import Page from '../layouts/Page.astro';
+import { clinic, metaFor } from '../lib/site.ts';
+import { dentistLd } from '../lib/jsonld.ts';
+import { addressLine, hoursRows, telHref } from '../lib/format.ts';
+
+const meta = await metaFor('/contact');
+const rows = hoursRows(clinic);
+---
+<Page {...meta} heading="Contact and hours" trail={[{ name: 'Contact and hours', path: '/contact' }]} jsonld={[dentistLd(clinic)]} narrow>
+  <h2>Find us</h2>
+  <address>
+    {clinic.name}<br />
+    {addressLine(clinic)}
+  </address>
+  <p>Phone: <a href={telHref(clinic.nap.phone)}>{clinic.nap.phone}</a><br />
+  Email: <a href={`mailto:${clinic.nap.email}`}>{clinic.nap.email}</a></p>
+  <h2>Hours</h2>
+  <table class="hours">
+    <caption class="visually-hidden">Opening hours</caption>
+    <tbody>{rows.map((r) => <tr><th scope="row">{r.days}</th><td>{r.time}</td></tr>)}</tbody>
+  </table>
+  {clinic.emergency_line && <p>{clinic.emergency_line}</p>}
+  {clinic.insurance_accepted.length > 0 && (
+    <>
+      <h2>Insurance</h2>
+      <p>We are in network with {clinic.insurance_accepted.join(', ')}. Questions? See the <a href="/faq">FAQ</a> or call us.</p>
+    </>
+  )}
+  <p>New here? Start with our <a href="/services">services</a> or meet <a href="/team">the dentists</a>.</p>
+</Page>

@@ -1,0 +1,36 @@
+{
+  "post": "03-is-teeth-whitening-safe",
+  "file": "fixtures/posts/heldout2/03-is-teeth-whitening-safe.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "link_broken",
+      "severity": "block",
+      "line": 18,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/tooth-whitening-safety",
+      "message": "External link is dead (404).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 37,
+      "evidence": "promise a",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "prompt-only",
+    "backend": "none",
+    "prompt": "qa/reports/prompts/heldout2-03-is-teeth-whitening-safe.prompt.md"
+  },
+  "name": "heldout2-03-is-teeth-whitening-safe"
+}

@@ -1,0 +1,15 @@
+---
+import Page from '../layouts/Page.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import { metaFor, generalFaq } from '../lib/site.ts';
+import { faqLd } from '../lib/jsonld.ts';
+
+const meta = await metaFor('/faq');
+const items = generalFaq();
+---
+<Page {...meta} heading="Frequently asked questions" trail={[{ name: 'FAQ', path: '/faq' }]} jsonld={[faqLd(items)]} narrow>
+  <Faq as="h2" items={items} />
+  <p>More detail on <a href="/services">our services</a> and <a href="/blog">in the blog</a>.</p>
+  <Cta />
+</Page>

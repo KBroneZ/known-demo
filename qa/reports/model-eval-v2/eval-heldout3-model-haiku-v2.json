@@ -1,0 +1,285 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 12,
+  "seeded_detected": 9,
+  "recall": 0.75,
+  "missed": [
+    "H3-01",
+    "H3-07",
+    "H3-10"
+  ],
+  "true_positive_findings": 9,
+  "false_positive_findings": 8,
+  "precision": 0.5294117647058824,
+  "clean_false_positives": 0,
+  "detail": {
+    "H3-01": [],
+    "H3-02": [
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "H3-03": [
+      {
+        "rule": "absolute_clinic_claim",
+        "line": 34,
+        "severity": "warn"
+      }
+    ],
+    "H3-04": [
+      {
+        "rule": "prohibited_promise",
+        "line": 20,
+        "severity": "block"
+      }
+    ],
+    "H3-05": [
+      {
+        "rule": "price_not_in_ficha",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "H3-06": [
+      {
+        "rule": "insurance_not_in_ficha",
+        "line": 34,
+        "severity": "block"
+      }
+    ],
+    "H3-07": [],
+    "H3-08": [
+      {
+        "rule": "dentist_not_in_roster",
+        "line": 7,
+        "severity": "block"
+      }
+    ],
+    "H3-09": [
+      {
+        "rule": "unsourced_stat",
+        "line": 34,
+        "severity": "warn"
+      }
+    ],
+    "H3-10": [],
+    "H3-11": [
+      {
+        "rule": "hours_mismatch",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "H3-12": [
+      {
+        "rule": "link_broken_internal",
+        "line": 34,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [
+    {
+      "file": "heldout3/01-root-canal-myths.md",
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/01-root-canal-myths.md",
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 44,
+      "evidence": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/01-root-canal-myths.md",
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.aae.org/patients/your-office-visit/post-treatment-care/",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/02-tooth-colored-fillings.md",
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/03-clear-aligners-for-adults.md",
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/03-clear-aligners-for-adults.md",
+      "rule": "link_broken_internal",
+      "severity": "block",
+      "line": 42,
+      "evidence": "https://www.bluebonnethollowdental.example/services/clear-aligners",
+      "message": "Internal link points to a page that is not in the ficha page list.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/04-childs-first-dental-visit.md",
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "heldout3/04-childs-first-dental-visit.md",
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.cdc.gov/oral-health/prevention/oral-health-tips-for-children.html",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "PUBLICAR",
+    "clean/02-dental-implants-vs-bridges.md": "PUBLICAR",
+    "clean/03-is-teeth-whitening-safe.md": "PUBLICAR",
+    "clean/04-dental-emergency-austin.md": "PUBLICAR",
+    "heldout3/01-root-canal-myths.md": "BLOQUEAR",
+    "heldout3/02-tooth-colored-fillings.md": "BLOQUEAR",
+    "heldout3/03-clear-aligners-for-adults.md": "BLOQUEAR",
+    "heldout3/04-childs-first-dental-visit.md": "BLOQUEAR"
+  },
+  "llm": {
+    "status": "ok",
+    "failed": [],
+    "cost_usd": 0.0227,
+    "model_detected": [
+      "H3-02",
+      "H3-03",
+      "H3-04",
+      "H3-05",
+      "H3-06",
+      "H3-07",
+      "H3-08",
+      "H3-09",
+      "H3-10",
+      "H3-11",
+      "H3-12"
+    ],
+    "model_recall": 0.9166666666666666,
+    "model_missed": [
+      "H3-01"
+    ],
+    "fixture_disclaimer_findings_ignored": 0,
+    "clean_posts_not_publish_with_model": 4,
+    "rules_detected_ids": [
+      "H3-05",
+      "H3-06",
+      "H3-12"
+    ],
+    "model_tp": 11,
+    "model_fp": 10,
+    "model_precision": 0.5238095238095238,
+    "model_clean_fp": 6,
+    "model_only_extra": [
+      "H3-02",
+      "H3-03",
+      "H3-04",
+      "H3-07",
+      "H3-08",
+      "H3-09",
+      "H3-10",
+      "H3-11"
+    ],
+    "combined_recall": 0.9166666666666666,
+    "combined_detected": 11,
+    "combined_precision": null,
+    "false_positive_list": [
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "block",
+        "type": "fact_vs_ficha",
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "why": "The ficha lists Delta Dental, Cigna and MetLife only as accepted insurance and says nothing about in-network contracts, so 'in network' asse"
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "reviewed_by: Dr. Elena Marsh",
+        "why": "The front matter attributes a clinical review to a named dentist, but nothing in the ficha or the post supports that a review took place, so"
+      },
+      {
+        "file": "clean/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "The ADA's [MouthHealthy page on bridges](https://www.mouthhealthy.org/all-topics-a-z/bridg",
+        "why": "I cannot verify that this exact URL exists or says what the sentence claims, so the citation is unverified and must not be published as-is."
+      },
+      {
+        "file": "clean/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "most patients describe soreness afterward rather than sharp pain",
+        "why": "This is a statistic-like statement about patient experience with no source, and a reader could take it as established fact."
+      },
+      {
+        "file": "clean/03-is-teeth-whitening-safe.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+        "why": "I cannot verify that this ADA MouthHealthy path exists, so the link may be broken or invented and cannot be confirmed to support the whiteni"
+      },
+      {
+        "file": "clean/04-dental-emergency-austin.md",
+        "severity": "block",
+        "type": "false_medical_claim",
+        "quote": "Pain that lasts more than a day or two, or comes with fever or swelling, needs a prompt ex",
+        "why": "Fever or swelling with a toothache can signal a spreading infection that needs same-day urgent care, and the post's own intro sends swelling"
+      },
+      {
+        "file": "heldout3/01-root-canal-myths.md",
+        "severity": "block",
+        "type": "other",
+        "quote": "Follow the instructions from your dentist, and contact the office if pain is severe, swell",
+        "why": "The ficha's emergency instruction is omitted, so readers with severe pain or swelling after hours are not told to call the main number and f"
+      },
+      {
+        "file": "heldout3/02-tooth-colored-fillings.md",
+        "severity": "block",
+        "type": "other",
+        "quote": "contact your dental office rather than trying to adjust the filling yourself",
+        "why": "The ficha gives an after-hours safety instruction (call the main number and follow the prompt for the on-call dentist), and the post omits i"
+      },
+      {
+        "file": "heldout3/03-clear-aligners-for-adults.md",
+        "severity": "block",
+        "type": "broken_or_fake_source",
+        "quote": "https://www.bluebonnethollowdental.example/services/clear-aligners",
+        "why": "The ficha lists the clinic's existing pages, and /services/clear-aligners is not among them, so this internal link would point to a nonexist"
+      },
+      {
+        "file": "heldout3/03-clear-aligners-for-adults.md",
+        "severity": "warn",
+        "type": "other",
+        "quote": "pain, a bite that feels different, or other unexpected symptoms should be discussed with y",
+        "why": "The ficha gives an after-hours emergency instruction, but the post sends pain and bite changes only to a routine discussion and omits any ur"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "colors": {
+    "primary": "#1d4e6b",
+    "primaryContrast": "#ffffff",
+    "accent": "#d99a1e",
+    "bg": "#ffffff",
+    "surface": "#f1f6f9",
+    "text": "#17242d",
+    "muted": "#4f6270",
+    "border": "#d3dfe6"
+  },
+  "fonts": {
+    "heading": "Georgia, 'Times New Roman', serif",
+    "body": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+  },
+  "radius": "6px"
+}

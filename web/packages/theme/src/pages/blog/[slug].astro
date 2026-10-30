@@ -1,0 +1,57 @@
+---
+import { render } from 'astro:content';
+import Page from '../../layouts/Page.astro';
+import Faq from '../../components/Faq.astro';
+import PostCard from '../../components/PostCard.astro';
+import Cta from '../../components/Cta.astro';
+import { clinic, getPosts, metaFor, servicePages, dentistSlug } from '../../lib/site.ts';
+import { blogPostingLd, faqLd } from '../../lib/jsonld.ts';
+import { formatDate, isoDay } from '../../lib/format.ts';
+
+export async function getStaticPaths() {
+  return (await getPosts()).map((p) => ({ params: { slug: p.data.slug }, props: { slug: p.data.slug } }));
+}
+const { slug } = Astro.props;
+const posts = await getPosts();
+const post = posts.find((p) => p.data.slug === slug)!;
+const path = `/blog/${slug}`;
+const meta = await metaFor(path);
+const { Content } = await render(post.entry);
+const d = post.data;
+const service = servicePages().find((s) => s.slug === d.service);
+const more = posts.filter((p) => p.data.slug !== slug).slice(0, 2);
+---
+<Page
+  {...meta}
+  heading={d.title}
+  trail={[{ name: 'Blog', path: '/blog' }, { name: d.title, path }]}
+  jsonld={[blogPostingLd(clinic, d), ...(d.faq.length ? [faqLd(d.faq)] : [])]}
+  ogType="article"
+  published={isoDay(d.date)}
+  modified={isoDay(d.updated)}
+  narrow
+>
+  <p class="meta">
+    By <a href={`/team#${dentistSlug(d.author)}`}>{d.author}</a>
+    {d.reviewed_by && <> · Reviewed by <a href={`/team#${dentistSlug(d.reviewed_by)}`}>{d.reviewed_by}</a></>}
+    <br />
+    Published <time datetime={isoDay(d.date)}>{formatDate(d.date)}</time> · Updated <time datetime={isoDay(d.updated)}>{formatDate(d.updated)}</time>
+  </p>
+  <article class="prose"><Content /></article>
+  {d.faq.length > 0 && (
+    <>
+      <h2>Frequently asked questions</h2>
+      <Faq items={d.faq} />
+    </>
+  )}
+  {service && <p class="card">Related service: <a href={`/services/${service.slug}`}>{service.name}</a></p>}
+  {more.length > 0 && (
+    <>
+      <h2>More from the blog</h2>
+      <div class="grid">
+        {more.map((p) => <PostCard slug={p.data.slug} title={p.data.title} description={p.data.description} author={p.data.author} date={p.data.date} />)}
+      </div>
+    </>
+  )}
+  <Cta />
+</Page>

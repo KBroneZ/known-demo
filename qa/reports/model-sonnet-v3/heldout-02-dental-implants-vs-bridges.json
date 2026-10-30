@@ -1,0 +1,142 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "qa/fixtures/posts/heldout/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "link_broken",
+      "severity": "block",
+      "line": 28,
+      "evidence": "https://www.nidcr.nih.gov/health-info/implant-maintenance-guide",
+      "message": "External link is dead (404).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 46,
+      "evidence": "guarantee",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "chatbot_residue",
+      "severity": "block",
+      "line": 48,
+      "evidence": "I hope this helps",
+      "message": "Chatbot residue left in the draft.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/heldout-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.032852000000000006,
+    "output": "qa/reports/model-sonnet-v3/llm/heldout-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "every implant we place comes with a lifetime guarantee",
+        "type": "prohibited_promise",
+        "kind": "error",
+        "severity": "block",
+        "why": "A lifetime guarantee is a prohibited guarantee under ADA advertising rules and is not in the ficha.",
+        "fix": "Remove the guarantee and say that outcomes vary and the dentist can discuss expectations at the consultation.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "I hope this helps! Let me know if you would like me to adjust the tone or add a section on costs.",
+        "type": "chatbot_residue",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is leftover AI assistant text addressed to the requester and must not appear in a published post.",
+        "fix": "Delete the sentence.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "The new patient exam with X-rays is $129.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The $129 matches the ficha figure but drops the ficha's price condition (new patients only), and its placement in the Cost and coverage section implies it is tied to implant costs or insurance.",
+        "fix": "State it as the new patient exam with X-rays price and keep it separate from the implant cost discussion, with any condition from the ficha.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Our front desk can check your benefits with Delta Dental, Cigna or MetLife.",
+        "type": "fact_vs_ficha",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The three carriers match the ficha as accepted, and the wording only promises a benefits check, which is fine.",
+        "fix": "Optionally add that coverage depends on the individual plan.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "A bridge needs them as anchors, and an implant does not.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a general, mainstream dental statement, but it is somewhat absolute and lacks a source.",
+        "fix": "Optionally cite the ADA MouthHealthy page and note that anchor teeth are usually prepared (reshaped) for a bridge.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "[NIDCR guide to implant maintenance](https://www.nidcr.nih.gov/health-info/implant-maintenance-guide)",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "block",
+        "why": "This specific NIDCR URL cannot be verified and looks fabricated, so it could be a fake source.",
+        "fix": "Replace it with a verified NIDCR or ADA page or remove the link and sentence.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "[MouthHealthy page on bridges](https://www.mouthhealthy.org/all-topics-a-z/bridges)",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "warn",
+        "why": "This exact MouthHealthy URL cannot be verified from here and may not exist.",
+        "fix": "Confirm the URL resolves and supports the description, or replace it with a verified ADA page.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Local anesthetic is used during the procedure, and most patients describe soreness afterward rather than sharp pain.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is consistent with general dental guidance but the claim about what most patients report has no source.",
+        "fix": "Soften to 'many patients' or cite an ADA or NIDCR source.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Dr. Elena Marsh sees implant patients at our Austin office",
+        "type": "fact_vs_ficha",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This matches the ficha (Dr. Marsh focuses on dental implants, Austin office).",
+        "fix": "No change needed.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Elena Marsh\"}, \"publisher\": {\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\"",
+        "type": "schema_incoherent",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The schema matches the visible text for headline, dates, author and phone, though a Dentist type as a BlogPosting publisher is unusual and the reviewer is not included.",
+        "fix": "Optionally use Organization or LocalBusiness-compatible markup and add the reviewer.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout-02-dental-implants-vs-bridges"
+}

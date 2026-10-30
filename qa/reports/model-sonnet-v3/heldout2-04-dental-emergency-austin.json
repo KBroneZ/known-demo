@@ -1,0 +1,88 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "qa/fixtures/posts/heldout2/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 18,
+      "evidence": "scrub it",
+      "message": "Knocked-out teeth must not be scrubbed or soaped; rinse gently with water or milk.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 34,
+      "evidence": "A patient who came in last month with a cracked molar on a Thursday evening told",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "hours_mismatch",
+      "severity": "block",
+      "line": 36,
+      "evidence": "Friday from 8 a.m. to 5 p.m.",
+      "message": "Hours for fri do not match the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/heldout2-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.0342,
+    "output": "qa/reports/model-sonnet-v3/llm/heldout2-04-dental-emergency-austin.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "A patient who came in last month with a cracked molar on a Thursday evening told us she was out the door pain-free within the hour.",
+        "type": "testimonial",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha lists no testimonials on file, so this is an invented patient story that also implies a pain-free outcome within an hour, and Thursday evening is after the clinic's 5 p.m. close.",
+        "fix": "Delete the anecdote entirely, since no testimonial is on file, and do not imply a speed or outcome.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "and on Friday from 8 a.m. to 5 p.m.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha lists Friday hours as 8:00 a.m. to 1:00 p.m., so this misstates when the clinic is open.",
+        "fix": "Change to 'on Friday from 8 a.m. to 1 p.m.'",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "If it is dirty, scrub it clean with soap and warm water before you put it back.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "ADA guidance is to rinse a dirty tooth gently with water only, without scrubbing or using soap, because this can damage the root tissue needed for reattachment.",
+        "fix": "Replace with 'If it is dirty, rinse it gently with water for a few seconds; do not scrub it, use soap or chemicals, or remove any attached tissue.'",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "\"publisher\": {\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\", \"telephone\": \"(512) 555-0142\"}",
+        "type": "schema_incoherent",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "A Dentist type is used as the BlogPosting publisher, where Organization is conventional, though the name and phone do match the text and ficha.",
+        "fix": "Use an Organization publisher (or reference the Dentist as a separate LocalBusiness entity) and optionally add reviewedBy for Dr. Marcus Oyelaran.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout2-04-dental-emergency-austin"
+}

@@ -1,0 +1,31 @@
+---
+import Page from '../layouts/Page.astro';
+import DoctorBio from '../components/DoctorBio.astro';
+import Cta from '../components/Cta.astro';
+import { clinic, getPosts, metaFor, dentistSlug } from '../lib/site.ts';
+
+const meta = await metaFor('/team');
+const posts = await getPosts();
+---
+<Page {...meta} heading="Our dentists" trail={[{ name: 'Our dentists', path: '/team' }]} narrow>
+  <p>The dentists of {clinic.name} in {clinic.nap.city}, {clinic.nap.state}.</p>
+  <div class="stack">
+    {clinic.dentists.map((d) => {
+      const written = posts.filter((p) => p.data.author === d.name);
+      return (
+        <>
+          <DoctorBio name={d.name} credentials={d.credentials} focus={d.focus} bio={d.bio} />
+          {written.length > 0 && (
+            <p class="meta" aria-label={`Articles by ${d.name}`}>
+              Articles by {d.name}: {written.map((p, i) => <>{i > 0 && ', '}<a href={`/blog/${p.data.slug}`}>{p.data.title}</a></>)}
+            </p>
+          )}
+        </>
+      );
+    })}
+  </div>
+  <Cta />
+</Page>
+<style>
+  .stack{display:grid;gap:1rem}
+</style>

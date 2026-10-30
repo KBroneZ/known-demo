@@ -1,0 +1,81 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "qa/fixtures/posts/clean/01-how-often-dental-cleaning.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/clean-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.041118,
+    "output": "qa/reports/model-sonnet-v3/llm/clean-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha says these carriers are accepted, not that the clinic is in network, so the post makes a stronger insurance claim than the source of truth supports.",
+        "fix": "Reword to match the ficha, e.g. 'We accept Delta Dental, Cigna and MetLife,' and suggest confirming coverage details with the office.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "our front desk can check your benefits before you come in",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "warn",
+        "why": "Benefit verification by the front desk is not in the ficha, so it is an unverified claim about how the clinic works.",
+        "fix": "Remove it, or add it only after the clinic confirms the service.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "If you are new to us and paying without insurance, the new patient exam with X-rays is $129.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The ficha lists $129 for the new patient exam with X-rays and attaches no 'paying without insurance' condition, so the post invents a pricing condition.",
+        "fix": "State the price as listed, e.g. 'The new patient exam with X-rays is $129,' without the added insurance condition.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "Tartar buildup varies considerably between people, and this contradicts the post's own later mention of heavy tartar buildup as a reason for more frequent visits.",
+        "fix": "Say that tartar buildup varies from person to person, which is why the right interval differs.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Ask five people how often they see the dentist and you will hear five answers.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a formulaic, generic opener typical of AI-written text.",
+        "fix": "Open with a concrete, specific statement about cleaning intervals.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "At each visit the hygienist checks your gums, and the dentist examines your teeth, your bite and the soft tissue in your mouth.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a general description of a visit, and the ficha does not list hygienists or the exact steps of an exam.",
+        "fix": "Keep it general or confirm the visit steps with the clinic.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-01-how-often-dental-cleaning"
+}

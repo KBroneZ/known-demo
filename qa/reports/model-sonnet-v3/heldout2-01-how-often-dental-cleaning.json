@@ -1,0 +1,132 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "qa/fixtures/posts/heldout2/01-how-often-dental-cleaning.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 3,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "Let's delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 44,
+      "evidence": "author.name: schema='Dr. Elena Marsh' vs post='Dr. Marcus Oyelaran'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/heldout2-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.028834,
+    "output": "qa/reports/model-sonnet-v3/llm/heldout2-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade.",
+        "type": "unsourced_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "This is an invented statistic with no source, and mainstream guidance (ADA, NIDCR) does not support this figure.",
+        "fix": "Remove the statistic or replace it with a verifiable, linked source that actually supports the claim.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "We are in network with Delta Dental, Cigna and MetLife, and our front desk can check your benefits before you come in.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha says these carriers are accepted, not that the clinic is in network, so 'in network' is a stronger claim than the ficha supports.",
+        "fix": "Say 'We accept Delta Dental, Cigna and MetLife' and, if wanted, advise confirming coverage with the front desk.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "[cleanings and exams page](/services/cleanings-exams)",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The link points to a page that does not exist; the ficha lists /services/cleanings-exams only as /services/cleanings-exams, but the post's path is missing nothing, yet check: the correct page is /services/cleanings-exams and the post uses it incorrectly as written.",
+        "fix": "Use the exact ficha path /services/cleanings-exams.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Elena Marsh\"}",
+        "type": "schema_incoherent",
+        "kind": "error",
+        "severity": "block",
+        "why": "The visible byline and front matter name Dr. Marcus Oyelaran as author (Dr. Marsh is the reviewer), so the JSON-LD author does not match the text.",
+        "fix": "Set the JSON-LD author to Dr. Marcus Oyelaran, and optionally add Dr. Marsh as reviewer.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Let's delve into what actually drives the right interval for you.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "'Delve' and the 'Let's' lead-in are common AI-writing tells.",
+        "fix": "Rewrite plainly, e.g. 'Here is what drives the right interval for you.'",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Ask five people how often they see the dentist and you will hear five answers.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This generic opener is a formulaic filler pattern.",
+        "fix": "Open with a more specific, concrete point about cleaning intervals.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Tartar builds up on a timeline that is similar for most people, and six months is long enough to see changes but short enough to catch a small problem before it grows.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a general rationale presented without a source, and tartar buildup actually varies between people.",
+        "fix": "Soften the wording or cite ADA guidance.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The demo disclaimer should be removed or handled deliberately before real publication.",
+        "fix": "Keep it only if the post is intentionally published as a demo; otherwise remove it.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout2-01-how-often-dental-cleaning"
+}

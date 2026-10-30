@@ -1,0 +1,52 @@
+--- draft.md
++++ final-candidate.md
+@@ -10,14 +10,14 @@
+ service: family-checkups
+ faq:
+   - question: "Can cavities between my teeth wait until my next checkup?"
+-    answer: "It is best not to wait. Cavities do not heal on their own, so book an earlier visit and let your dentist decide how soon you need treatment."
++    answer: "It is best not to wait. Cavities that have reached the tooth's inner layers do not heal on their own, so book an earlier visit and let your dentist decide how soon you need treatment."
+   - question: "Can the whole family book on the same day at Copper Wren Dental Studio?"
+-    answer: "Yes. Call (512) 555-0176 and ask for appointments on the same day for everyone in your family. Dr. Priya Raman sees adults and Dr. Tomas Alvarez sees children."
++    answer: "Often, yes. Tell our front desk how many people you are booking at (512) 555-0176 and we will look for back-to-back times. Dr. Priya Raman provides general and restorative care and Dr. Tomas Alvarez focuses on children's dentistry."
+   - question: "Does Copper Wren Dental Studio take dental insurance?"
+     answer: "We accept Aetna, Guardian and Principal. Call us at (512) 555-0176 and we can talk through your plan before you book."
+ ---
+ 
+-You should book an earlier appointment. Cavities do not heal on their own, and a spot between your teeth can grow without much warning, so it is better to have your dentist look at it soon.
++You should book an earlier appointment. Cavities that have reached the tooth's inner layers do not heal on their own, and a spot between your teeth can grow without much warning, so it is better to have your dentist look at it soon. Your dentist can tell whether a spot needs treatment or can be monitored.
+ 
+ This does not mean your last checkup was wrong. Your dentist can only judge what can be seen or shown on an X-ray at that visit, and you may have noticed something new since then. Only a dentist can confirm whether what you found is a cavity.
+ 
+@@ -25,7 +25,7 @@
+ 
+ The surfaces where teeth touch are hard to see in a mirror and hard to clean with a brush alone. A cavity there can start small and stay hidden. Cleaning between your teeth every day helps, and [MedlinePlus](https://medlineplus.gov/dentalhealth.html) has general guidance on brushing, flossing and regular checkups.
+ 
+-Many people ask, "Can my teeth be this bad off after a six-month checkup?" A cavity can be small and hard to detect at one visit, and it may be easier to see later. Your dentist will compare what they find now with your earlier records and X-rays.
++A cavity can be small and hard to detect at one visit, and it may be easier to see later. Your dentist will compare what they find now with your earlier records and X-rays.
+ 
+ ## What you can do while you wait for your visit
+ 
+@@ -47,11 +47,11 @@
+ 
+ Your dentist will examine the area and may take X-rays if they are needed. Then they will explain what they see and what treatment, if any, makes sense. The treatment depends on the size and location of the cavity, and your dentist will go over the options with you.
+ 
+-Many patients also ask whether they can see the same dentist for the checkup and the cavity treatment. Call us when you book and tell us what you would like. You can read about our dentists on the [team page](/team).
++You can ask to see the same dentist for the checkup and the cavity treatment. Call us when you book and tell us what you would like. You can read about our dentists on the [team page](/team).
+ 
+ ## Booking for the whole family
+ 
+-Yes, the whole family can book on the same day. Call us and ask for appointments together. Dr. Tomas Alvarez provides children's dentistry, and Dr. Priya Raman provides general and restorative dentistry for adults.
++Often, yes. Tell our front desk how many people you are booking and we will look for back-to-back times. Dr. Tomas Alvarez focuses on children's dentistry, and Dr. Priya Raman provides general and restorative care.
+ 
+ ## Insurance
+ 
+@@ -59,7 +59,7 @@
+ 
+ ## What Copper Wren Dental Studio offers
+ 
+-Our [family checkups and cleanings](/services/family-checkups) include exams and cleanings for every age in one visit, with X-rays only when your dentist needs them.
++Our [family checkups and cleanings](/services/family-checkups) cover exams and cleanings for every age, with X-rays only when your dentist needs them.
+ 
+ - For new patients paying without insurance, the new patient exam with X-rays is $110.
+ - The first visit for a child is $60.

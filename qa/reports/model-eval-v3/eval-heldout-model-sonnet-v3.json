@@ -1,0 +1,202 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 10,
+  "seeded_detected": 10,
+  "recall": 1.0,
+  "missed": [],
+  "true_positive_findings": 10,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "H01": [
+      {
+        "rule": "insurance_not_in_ficha",
+        "line": 35,
+        "severity": "block"
+      }
+    ],
+    "H02": [
+      {
+        "rule": "unsourced_stat",
+        "line": 18,
+        "severity": "warn"
+      }
+    ],
+    "H03": [
+      {
+        "rule": "unsupported_superlative",
+        "line": 33,
+        "severity": "warn"
+      }
+    ],
+    "H04": [
+      {
+        "rule": "link_broken",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "H05": [
+      {
+        "rule": "prohibited_promise",
+        "line": 46,
+        "severity": "block"
+      }
+    ],
+    "H06": [
+      {
+        "rule": "chatbot_residue",
+        "line": 48,
+        "severity": "block"
+      }
+    ],
+    "H07": [
+      {
+        "rule": "medical_myth",
+        "line": 22,
+        "severity": "block"
+      }
+    ],
+    "H08": [
+      {
+        "rule": "fake_testimonial",
+        "line": 37,
+        "severity": "block"
+      }
+    ],
+    "H09": [
+      {
+        "rule": "schema_mismatch",
+        "line": 46,
+        "severity": "block"
+      }
+    ],
+    "H10": [
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      }
+    ]
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "PUBLICAR",
+    "clean/02-dental-implants-vs-bridges.md": "PUBLICAR",
+    "clean/03-is-teeth-whitening-safe.md": "PUBLICAR",
+    "clean/04-dental-emergency-austin.md": "PUBLICAR",
+    "heldout/01-how-often-dental-cleaning.md": "BLOQUEAR",
+    "heldout/02-dental-implants-vs-bridges.md": "BLOQUEAR",
+    "heldout/03-is-teeth-whitening-safe.md": "BLOQUEAR",
+    "heldout/04-dental-emergency-austin.md": "BLOQUEAR"
+  },
+  "llm": {
+    "status": "ok",
+    "failed": [],
+    "cost_usd": 0.2636,
+    "model_detected": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09"
+    ],
+    "model_recall": 0.9,
+    "model_missed": [
+      "H10"
+    ],
+    "fixture_disclaimer_findings_ignored": 0,
+    "clean_posts_not_publish_with_model": 1,
+    "rules_detected_ids": [
+      "H01",
+      "H02",
+      "H04",
+      "H05",
+      "H06",
+      "H09",
+      "H10"
+    ],
+    "model_tp": 9,
+    "model_fp": 9,
+    "model_precision": 0.5,
+    "model_clean_fp": 4,
+    "model_only_extra": [
+      "H03",
+      "H07",
+      "H08"
+    ],
+    "combined_recall": 1.0,
+    "combined_detected": 10,
+    "combined_precision": null,
+    "false_positive_list": [
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "block",
+        "type": "fact_vs_ficha",
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "why": "The ficha says these carriers are accepted, not that the clinic is in network, so the post makes a stronger insurance claim than the source "
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "fact_vs_ficha",
+        "quote": "our front desk can check your benefits before you come in",
+        "why": "Benefit verification by the front desk is not in the ficha, so it is an unverified claim about how the clinic works."
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "fact_vs_ficha",
+        "quote": "If you are new to us and paying without insurance, the new patient exam with X-rays is $12",
+        "why": "The ficha lists $129 for the new patient exam with X-rays and attaches no 'paying without insurance' condition, so the post invents a pricin"
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "block",
+        "type": "false_medical_claim",
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "why": "Tartar buildup varies considerably between people, and this contradicts the post's own later mention of heavy tartar buildup as a reason for"
+      },
+      {
+        "file": "heldout/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "fact_vs_ficha",
+        "quote": "If you are new to us and paying without insurance, the new patient exam with X-rays is $12",
+        "why": "The $129 price matches the ficha, but the added condition 'paying without insurance' is not in the ficha, so the stated condition is invente"
+      },
+      {
+        "file": "heldout/01-how-often-dental-cleaning.md",
+        "severity": "block",
+        "type": "broken_or_fake_source",
+        "quote": "[cleanings and exams page](/services/cleanings-exams)",
+        "why": "This internal link is not in the ficha's page list; the real page is /services/cleanings-exams only under that exact path, and '/services/cl"
+      },
+      {
+        "file": "heldout/02-dental-implants-vs-bridges.md",
+        "severity": "block",
+        "type": "fact_vs_ficha",
+        "quote": "The new patient exam with X-rays is $129.",
+        "why": "The $129 matches the ficha figure but drops the ficha's price condition (new patients only), and its placement in the Cost and coverage sect"
+      },
+      {
+        "file": "heldout/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "broken_or_fake_source",
+        "quote": "[MouthHealthy page on bridges](https://www.mouthhealthy.org/all-topics-a-z/bridges)",
+        "why": "This exact MouthHealthy URL cannot be verified from here and may not exist."
+      },
+      {
+        "file": "heldout/04-dental-emergency-austin.md",
+        "severity": "block",
+        "type": "fact_vs_ficha",
+        "quote": "We offer same-day emergency visits when we have room in the schedule, and the emergency ex",
+        "why": "The ficha lists the $95 emergency exam as a price without any condition, but the sentence ties same-day visits to schedule availability, whi"
+      }
+    ]
+  }
+}

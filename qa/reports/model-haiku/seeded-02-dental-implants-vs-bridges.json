@@ -1,0 +1,85 @@
+{
+  "post": "02-dental-implants-vs-bridges",
+  "file": "fixtures/posts/seeded/02-dental-implants-vs-bridges.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "Studies show that 98% of dental implants are still working after 25 years.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "guarantee",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "prohibited_promise",
+      "severity": "block",
+      "line": 28,
+      "evidence": "guaranteed",
+      "message": "Outcome guarantee or absolute claim; not allowed in dental advertising.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 51,
+      "evidence": "author.name: schema='Dr. Brian Walsh' vs post='Dr. Elena Marsh'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-haiku/prompts/seeded-02-dental-implants-vs-bridges.prompt.md",
+    "cost_usd": 0.0020089,
+    "output": "reports/model-haiku/llm/seeded-02-dental-implants-vs-bridges.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "Our implants come with a lifetime guarantee, so your new tooth is guaranteed to last.",
+        "type": "prohibited_promise",
+        "severity": "block",
+        "why": "A lifetime guarantee on implant outcomes is a guarantee of results, which ADA advertising rules prohibit, and no such warranty is in the ficha.",
+        "fix": "Delete the sentence and replace it with a neutral statement that implant longevity depends on oral health, bone, habits and maintenance, and that the dentist will review the specifics at the consultation."
+      },
+      {
+        "quote": "Studies show that 98% of dental implants are still working after 25 years.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The statistic has no citation or link, and I cannot verify a 98% figure at 25 years from the sources available to me.",
+        "fix": "Either cite a specific peer-reviewed study or ADA/NIDCR source with a working link, or remove the figure and state the general point qualitatively."
+      },
+      {
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "I cannot confirm that this exact MouthHealthy path exists, so the link may be broken or misattributed.",
+        "fix": "Open the link, confirm it resolves to an ADA MouthHealthy bridges page that supports the sentence, and correct the URL if it does not."
+      },
+      {
+        "quote": "Dr. Brian Walsh",
+        "type": "schema_incoherent",
+        "severity": "block",
+        "why": "The BlogPosting JSON-LD author is not in the ficha and contradicts the visible byline, which lists Dr. Elena Marsh.",
+        "fix": "Change the schema author name to Dr. Elena Marsh so it matches the frontmatter and the ficha."
+      }
+    ]
+  },
+  "name": "seeded-02-dental-implants-vs-bridges"
+}

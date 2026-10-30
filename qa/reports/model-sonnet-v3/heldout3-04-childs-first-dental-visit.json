@@ -1,0 +1,132 @@
+{
+  "post": "04-childs-first-dental-visit",
+  "file": "qa/fixtures/posts/heldout3/04-childs-first-dental-visit.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "schema_missing",
+      "severity": "warn",
+      "line": 0,
+      "evidence": "",
+      "message": "No JSON-LD block in the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "hours_mismatch",
+      "severity": "block",
+      "line": 28,
+      "evidence": "Sundays from 9:00 a.m. to 1:00 p.m.",
+      "message": "Hours for sun do not match the ficha.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_broken_internal",
+      "severity": "block",
+      "line": 34,
+      "evidence": "https://www.bluebonnethollowdental.example/services/clear-aligners",
+      "message": "Internal link points to a page that is not in the ficha page list.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "link_unverifiable",
+      "severity": "warn",
+      "line": 45,
+      "evidence": "https://www.cdc.gov/oral-health/prevention/oral-health-tips-for-children.html",
+      "message": "Link could not be confirmed (403); check by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v3/prompts/heldout3-04-childs-first-dental-visit.prompt.md",
+    "cost_usd": 0.03028,
+    "output": "qa/reports/model-sonnet-v3/llm/heldout3-04-childs-first-dental-visit.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "A child's first dental visit should happen at age three.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "ADA and AAPD recommend the first visit by the first birthday or within six months of the first tooth, not at age three, so this delays care.",
+        "fix": "Replace with: a child's first dental visit should happen by their first birthday or within six months after the first tooth appears, per ADA and AAPD guidance.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "We are open Sundays from 9:00 a.m. to 1:00 p.m.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha lists no Sunday hours (anything not listed is closed), and this also contradicts the correct hours at the end of the post.",
+        "fix": "Delete the sentence; the correct hours are already given in the final section.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "For older siblings, see our [clear aligner page](https://www.bluebonnethollowdental.example/services/clear-aligners).",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "block",
+        "why": "/services/clear-aligners is not among the pages listed in the ficha, so the internal link would be broken.",
+        "fix": "Remove the link or point to an existing page such as /services.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "For a child under two, ask a health professional about fluoride toothpaste; for young children, supervise brushing and encourage spitting rather than swallowing.",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "warn",
+        "why": "Mainstream ADA guidance says to use a smear (grain of rice size) of fluoride toothpaste from the first tooth for children under three, so deferring the question for under-twos is inconsistent and the post never states the amount.",
+        "fix": "State that ADA advises a smear of fluoride toothpaste, about the size of a grain of rice, from the first tooth until age 3, then a pea-sized amount from ages 3 to 6.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Use an age-appropriate amount of fluoride toothpaste based on your dentist\u2019s or doctor\u2019s advice.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The vague wording leaves parents without the concrete amounts that ADA guidance provides.",
+        "fix": "Add the specific ADA amounts (rice-grain smear, then pea-sized).",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Water between meals can be a useful choice, while juice and sweet drinks should not be treated as substitutes for water.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a harmless general statement but is not tied to a specific cited source.",
+        "fix": "Attribute it to the CDC or AAPD page already listed in Sources if it appears there.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Early dental visits help families talk through brushing, feeding habits, fluoride, and ways to lower the risk of cavities.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "A general statement that is plausible and consistent with AAPD guidance but is not linked inline to a source.",
+        "fix": "Add an inline reference to the AAPD source.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Parents often wonder whether a baby will be able to sit still or whether the visit will involve a full cleaning.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The generic opener about what parents 'often wonder' reads as filler and is stylistically typical of AI drafts.",
+        "fix": "Open with a concrete, specific statement about the first visit.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout3-04-childs-first-dental-visit"
+}

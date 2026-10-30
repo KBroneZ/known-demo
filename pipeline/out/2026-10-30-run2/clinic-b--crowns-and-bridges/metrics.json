@@ -1,0 +1,42 @@
+{
+  "clinic": "clinic-b",
+  "service": "Crowns and bridges",
+  "topic": "Do I need a crown replacement or just seal the gap?",
+  "dir": "clinic-b--crowns-and-bridges",
+  "status": "needs-human",
+  "rounds": 0,
+  "verdict_path": [
+    "BLOQUEAR"
+  ],
+  "human_review": [
+    "BLOQUEAR (model only, confirm or dismiss) false_medical_claim: 'If you have facial swelling along with a fever, or trouble breathing or swallowing, go to an emergen': The ficha's emergency guidance also covers uncontrolled bleeding and swelling that spreads to the face or neck, and says to call 911, while this text narrows the trigger to swelling with fever and omits 911, which could delay care for a dangerous infection."
+  ],
+  "slug": "crown-gap-after-placement-replace-it-seal-it",
+  "verdict": "BLOQUEAR",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.04706,
+      "seconds": 30.9,
+      "input_tokens": 2,
+      "output_tokens": 3666,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "haiku",
+      "cost_usd": 0.00344,
+      "seconds": 21.4
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 30.96,
+    "qa": 21.98
+  },
+  "cost_usd": 0.0505,
+  "input_tokens": 2,
+  "output_tokens": 3666,
+  "wall_seconds": 52.9
+}

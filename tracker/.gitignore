@@ -1,0 +1,13 @@
+# real practice names and raw answers never go into git
+*.local.yaml
+*.local.jsonl
+*.local.json
+config/*.local.*
+gold/*.local.*
+report/local/
+runs/
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/

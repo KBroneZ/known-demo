@@ -1,0 +1,107 @@
+{
+  "post": "03-is-teeth-whitening-safe",
+  "file": "qa/fixtures/posts/heldout/03-is-teeth-whitening-safe.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 2
+  },
+  "findings": [
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 37,
+      "evidence": "\" says Maria",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 46,
+      "evidence": "author.name: schema='Dr. Elena Marsh' vs post='Dr. Marcus Oyelaran'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-haiku-v2/prompts/heldout-03-is-teeth-whitening-safe.prompt.md",
+    "cost_usd": 0.0028592,
+    "output": "qa/reports/model-haiku-v2/llm/heldout-03-is-teeth-whitening-safe.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "\"I was nervous about whitening, but my teeth are four shades brighter and I had no sensitivity at all,\" says Maria T., a recent patient.",
+        "type": "testimonial",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha lists no testimonials on file, so this patient quote and its outcome claims (four shades brighter, no sensitivity) are fabricated.",
+        "fix": "Delete the quote and attribution, and describe typical outcomes only in general terms that you can support.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Elena Marsh\"}",
+        "type": "schema_incoherent",
+        "kind": "error",
+        "severity": "block",
+        "why": "The visible byline and front matter name Dr. Marcus Oyelaran as author, with Dr. Elena Marsh only as reviewer, so the JSON-LD author does not match the page.",
+        "fix": "Set the schema author to Dr. Marcus Oyelaran, and list Dr. Elena Marsh as reviewer only if the schema supports that field.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+        "type": "broken_or_fake_source",
+        "kind": "error",
+        "severity": "warn",
+        "why": "I cannot verify this URL from the provided materials, and the path structure looks unusual for the ADA MouthHealthy site, so the citation may be broken.",
+        "fix": "Open the link, confirm it loads and is the ADA MouthHealthy teeth whitening page, and replace it with a verified URL if it is not.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Whitening is one of the most requested cosmetic treatments, and one of the most misunderstood.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The sentence uses generic framing ('one of the most...' twice) that reads as template AI prose.",
+        "fix": "Replace it with a specific, plain opening about what patients commonly ask about whitening.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Whitening is safe for most healthy mouths when done correctly.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This general safety statement is consistent with ADA guidance but has no attached source in the post.",
+        "fix": "Link it to the ADA or NIDCR guidance on whitening, or soften it to 'generally considered safe' as the body does.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "At-home kits are cheaper and slower, and results depend on how consistently you use them.",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The cost and speed comparison is a general statement with no source or ficha basis, though it is harmless.",
+        "fix": "Keep it as general context or add a source for the cost and speed comparison.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Bluebonnet Hollow Dental is a fictional practice created for a software demonstration. This post is sample content.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This disclaimer is accurate for the demo but would be false and confusing on a live clinic blog meant to be published for real patients.",
+        "fix": "Remove this disclaimer before any real publication, and keep it only in the demo build.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout-03-is-teeth-whitening-safe"
+}

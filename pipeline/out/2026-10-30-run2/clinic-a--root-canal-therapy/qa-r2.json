@@ -1,0 +1,18 @@
+{
+  "name": "r2",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.45,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0034454,
+    "seconds": 21.0,
+    "findings": [],
+    "dropped_unverifiable_url": 1,
+    "downgraded_blocks": 0,
+    "verdict": "PUBLICAR"
+  },
+  "verdict": "PUBLICAR"
+}

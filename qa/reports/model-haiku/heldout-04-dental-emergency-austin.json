@@ -1,0 +1,69 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "fixtures/posts/heldout/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 1,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "In today's fast-paced",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 22,
+      "evidence": "aspirin directly against the gum",
+      "message": "Aspirin placed on gums or teeth burns the tissue; swallow it as directed.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "reports/model-haiku/prompts/heldout-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.0021257999999999997,
+    "output": "reports/model-haiku/llm/heldout-04-dental-emergency-austin.llm.txt",
+    "verdict": "BLOQUEAR",
+    "findings": [
+      {
+        "quote": "Placing an aspirin directly against the gum helps numb the pain faster.",
+        "type": "false_medical_claim",
+        "severity": "block",
+        "why": "Placing aspirin on the gum is not a recognized remedy, and mainstream dental guidance warns against it because it can burn the soft tissue.",
+        "fix": "Delete the sentence and replace it with a line saying that over-the-counter pain relievers should be taken by label directions and that aspirin should not be placed on the gums."
+      },
+      {
+        "quote": "The ADA's [MouthHealthy page on dental emergencies]",
+        "type": "broken_or_fake_source",
+        "severity": "warn",
+        "why": "I cannot confirm that this URL resolves or that the page supports the sentence, so the citation is unverified.",
+        "fix": "Open the link, confirm it loads and covers the listed cases, and keep it only if it does; otherwise remove the citation."
+      },
+      {
+        "quote": "a piece of sugar-free gum or dental wax can protect your tongue until you are seen",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The post offers gum as an equal option for covering a sharp edge without any source, and gum can stick to the area or come apart in the mouth.",
+        "fix": "Recommend only dental wax, or say to see a dentist promptly and avoid chewing on the broken area."
+      },
+      {
+        "quote": "In today's fast-paced world",
+        "type": "ai_tell",
+        "severity": "info",
+        "why": "This generic opener is a common AI-written filler phrase that adds nothing specific to the topic.",
+        "fix": "Start the post with the practical point, such as 'Knowing the first steps can protect a tooth while you get to a dentist.'"
+      }
+    ]
+  },
+  "name": "heldout-04-dental-emergency-austin"
+}

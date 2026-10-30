@@ -1,0 +1,15 @@
+---
+import { formatDate } from '../lib/format.ts';
+interface Props { slug: string; title: string; description: string; author: string; date: Date; as?: 'h2' | 'h3' }
+const { slug, title, description, author, date, as: Tag = 'h3' } = Astro.props;
+---
+<article class="card post">
+  <Tag><a href={`/blog/${slug}`}>{title}</a></Tag>
+  <p class="meta">{formatDate(date)} · {author}</p>
+  <p>{description}</p>
+</article>
+<style>
+  .post :is(h2,h3){margin:0 0 .3rem;font-size:1.2rem}
+  .post a{text-decoration:none}
+  .post p:last-child{margin:0}
+</style>

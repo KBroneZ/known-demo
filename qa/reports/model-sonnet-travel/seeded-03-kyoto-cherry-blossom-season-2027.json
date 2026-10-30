@@ -1,0 +1,145 @@
+{
+  "post": "03-kyoto-cherry-blossom-season-2027",
+  "file": "qa/fixtures/travel/posts/seeded/03-kyoto-cherry-blossom-season-2027.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 2,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "stale_year_title",
+      "severity": "warn",
+      "line": 2,
+      "evidence": "Kyoto Cherry Blossom Season: When to Go in 2025",
+      "message": "The title names 2025 but it is already 2026; update the title and the facts, or retire the post.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "weekday_date_mismatch",
+      "severity": "block",
+      "line": 31,
+      "evidence": "Friday March 27, 2027",
+      "message": "March 27, 2027 2027 is a Saturday, not Friday.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "date_inconsistency",
+      "severity": "warn",
+      "line": 36,
+      "evidence": "April 3, 2027 (line 31) vs April 10, 2027",
+      "message": "'gion evening walk' is given two different dates in the same post; keep one.",
+      "layer": "deterministic",
+      "also": [
+        31
+      ]
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-travel/prompts/seeded-03-kyoto-cherry-blossom-season-2027.prompt.md",
+    "cost_usd": 0.026998,
+    "output": "qa/reports/model-sonnet-travel/llm/seeded-03-kyoto-cherry-blossom-season-2027.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Most years the trees reach full bloom somewhere between the last week of June and the first week of July.",
+        "type": "seasonality",
+        "kind": "error",
+        "severity": "block",
+        "why": "Kyoto's cherry blossoms peak in late March to early April, as the post's own TL;DR says; late June to early July is wrong and would send readers at the wrong time.",
+        "fix": "Change to the last week of March through the first week of April.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "title: \"Kyoto Cherry Blossom Season: When to Go in 2025\"",
+        "type": "stale_fact",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The title says 2025, which is already past, while the slug and the event dates refer to 2027.",
+        "fix": "Change the title year to 2027 to match the slug and the content.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "A second evening walk, the Gion Evening Walk, is on Saturday, April 3, 2027.",
+        "type": "internal_inconsistency",
+        "kind": "error",
+        "severity": "block",
+        "why": "The text gives April 3, but the table gives April 10, 2027; readers could book or travel on the wrong date. April 3, 2027 is also a Saturday, so the table is the likely outlier, but this is unverifiable.",
+        "fix": "Confirm the date against the official source and use the same date in the text and the table.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "| Kyoto Spring Lights | March 27, 2027 | \u00a51,800 |",
+        "type": "source_does_not_support_figure",
+        "kind": "error",
+        "severity": "warn",
+        "why": "Ticket prices are stated without being tied to a source, and the listed link (kyoto-tourism.example/events/spring-lights) covers only Spring Lights, not the Gion walk. The fixed dates for 2027 are also unlikely to be announced this far ahead.",
+        "fix": "Cite the official page next to each price and date, or describe them as provisional and unconfirmed.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "| Gion Evening Walk | April 10, 2027 | \u00a51,500 |",
+        "type": "source_does_not_support_figure",
+        "kind": "error",
+        "severity": "warn",
+        "why": "No source in the Sources list covers the Gion Evening Walk, its date or its price.",
+        "fix": "Add an official source for this event or remove the date and price.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Both are run by the city tourism office, and tickets are sold in advance.",
+        "type": "entity_unverified",
+        "kind": "error",
+        "severity": "warn",
+        "why": "The organiser claim is not backed by any listed source, and the Gion Evening Walk cannot be verified as an event run by the city tourism office.",
+        "fix": "Name the actual organiser with a source or remove the claim.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Prices checked October 2026.",
+        "type": "unsupported_first_hand_claim",
+        "kind": "error",
+        "severity": "warn",
+        "why": "It claims a verification with no evidence or method, and no source in the list supports the prices.",
+        "fix": "Remove the claim or link the pages checked and add a short methodology.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Use the Hanami Shuttle on busy weekends; it connects the main blossom spots and costs \u00a5600 per ride.",
+        "type": "entity_unverified",
+        "kind": "error",
+        "severity": "warn",
+        "why": "I cannot verify that a 'Hanami Shuttle' exists in Kyoto, and its fare has no source.",
+        "fix": "Cite an official transport source for the service and fare, or remove it.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "Maruyama Park in Higashiyama has a famous weeping cherry.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The fact is generally correct (Maruyama Park's weeping cherry), but it is unsourced.",
+        "fix": "Optionally link a source.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Trains are quicker on weekdays than on peak weekends.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The claim is vague and generic filler; trains do not run faster on weekdays.",
+        "fix": "Say that roads and buses are more crowded on weekends, or remove the line.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "seeded-03-kyoto-cherry-blossom-season-2027"
+}

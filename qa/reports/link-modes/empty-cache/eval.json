@@ -1,0 +1,197 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 10,
+  "seeded_detected": 9,
+  "recall": 0.9,
+  "missed": [
+    "E03"
+  ],
+  "true_positive_findings": 12,
+  "false_positive_findings": 10,
+  "precision": 0.5454545454545454,
+  "clean_false_positives": 5,
+  "detail": {
+    "E01": [
+      {
+        "rule": "nap_phone_mismatch",
+        "line": 39,
+        "severity": "block"
+      }
+    ],
+    "E02": [
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "E03": [],
+    "E04": [
+      {
+        "rule": "unsourced_stat",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "E05": [
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      },
+      {
+        "rule": "prohibited_promise",
+        "line": 28,
+        "severity": "block"
+      }
+    ],
+    "E06": [
+      {
+        "rule": "schema_mismatch",
+        "line": 51,
+        "severity": "block"
+      }
+    ],
+    "E07": [
+      {
+        "rule": "fake_testimonial",
+        "line": 24,
+        "severity": "block"
+      }
+    ],
+    "E08": [
+      {
+        "rule": "unsupported_superlative",
+        "line": 43,
+        "severity": "warn"
+      }
+    ],
+    "E09": [
+      {
+        "rule": "medical_myth",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "E10": [
+      {
+        "rule": "chatbot_residue",
+        "line": 14,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [
+    {
+      "file": "clean/01-how-often-dental-cleaning.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 24,
+      "evidence": "https://www.nidcr.nih.gov/health-info/gum-disease",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "clean/01-how-often-dental-cleaning.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 33,
+      "evidence": "https://www.mouthhealthy.org/",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "clean/02-dental-implants-vs-bridges.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "clean/03-is-teeth-whitening-safe.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "clean/04-dental-emergency-austin.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 22,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "seeded/01-how-often-dental-cleaning.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 24,
+      "evidence": "https://www.nidcr.nih.gov/health-info/gum-disease-treatment-guidelines-2026",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "seeded/01-how-often-dental-cleaning.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 33,
+      "evidence": "https://www.mouthhealthy.org/",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "seeded/02-dental-implants-vs-bridges.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "seeded/03-is-teeth-whitening-safe.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    },
+    {
+      "file": "seeded/04-dental-emergency-austin.md",
+      "rule": "link_unverified",
+      "severity": "warn",
+      "line": 22,
+      "evidence": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies",
+      "message": "External link not verified: no usable cached result (offline) - check it online or by hand.",
+      "layer": "deterministic"
+    }
+  ],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "CORREGIR",
+    "clean/02-dental-implants-vs-bridges.md": "CORREGIR",
+    "clean/03-is-teeth-whitening-safe.md": "CORREGIR",
+    "clean/04-dental-emergency-austin.md": "CORREGIR",
+    "seeded/01-how-often-dental-cleaning.md": "BLOQUEAR",
+    "seeded/02-dental-implants-vs-bridges.md": "BLOQUEAR",
+    "seeded/03-is-teeth-whitening-safe.md": "BLOQUEAR",
+    "seeded/04-dental-emergency-austin.md": "BLOQUEAR"
+  },
+  "llm": null
+}

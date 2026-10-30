@@ -1,0 +1,234 @@
+{
+  "link_mode": "offline (cached link results)",
+  "seeded_total": 10,
+  "seeded_detected": 10,
+  "recall": 1.0,
+  "missed": [],
+  "true_positive_findings": 11,
+  "false_positive_findings": 0,
+  "precision": 1.0,
+  "clean_false_positives": 0,
+  "detail": {
+    "K01": [
+      {
+        "rule": "hours_mismatch",
+        "line": 36,
+        "severity": "block"
+      }
+    ],
+    "K02": [
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      },
+      {
+        "rule": "ai_phrase",
+        "line": 14,
+        "severity": "warn"
+      }
+    ],
+    "K03": [
+      {
+        "rule": "link_broken",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "K04": [
+      {
+        "rule": "unsourced_stat",
+        "line": 18,
+        "severity": "warn"
+      }
+    ],
+    "K05": [
+      {
+        "rule": "prohibited_promise",
+        "line": 37,
+        "severity": "block"
+      }
+    ],
+    "K06": [
+      {
+        "rule": "schema_mismatch",
+        "line": 44,
+        "severity": "block"
+      }
+    ],
+    "K07": [
+      {
+        "rule": "medical_myth",
+        "line": 18,
+        "severity": "block"
+      }
+    ],
+    "K08": [
+      {
+        "rule": "fake_testimonial",
+        "line": 34,
+        "severity": "block"
+      }
+    ],
+    "K09": [
+      {
+        "rule": "unsupported_superlative",
+        "line": 46,
+        "severity": "warn"
+      }
+    ],
+    "K10": [
+      {
+        "rule": "chatbot_residue",
+        "line": 32,
+        "severity": "block"
+      }
+    ]
+  },
+  "false_positive_list": [],
+  "verdicts": {
+    "clean/01-how-often-dental-cleaning.md": "PUBLICAR",
+    "clean/02-dental-implants-vs-bridges.md": "PUBLICAR",
+    "clean/03-is-teeth-whitening-safe.md": "PUBLICAR",
+    "clean/04-dental-emergency-austin.md": "PUBLICAR",
+    "heldout2/01-how-often-dental-cleaning.md": "BLOQUEAR",
+    "heldout2/02-dental-implants-vs-bridges.md": "BLOQUEAR",
+    "heldout2/03-is-teeth-whitening-safe.md": "BLOQUEAR",
+    "heldout2/04-dental-emergency-austin.md": "BLOQUEAR"
+  },
+  "llm": {
+    "status": "ok",
+    "failed": [],
+    "cost_usd": 0.2575,
+    "model_detected": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "K07",
+      "K08",
+      "K09",
+      "K10"
+    ],
+    "model_recall": 1.0,
+    "model_missed": [],
+    "fixture_disclaimer_findings_ignored": 0,
+    "clean_posts_not_publish_with_model": 2,
+    "rules_detected_ids": [
+      "K01",
+      "K02",
+      "K03",
+      "K06",
+      "K07",
+      "K09",
+      "K10"
+    ],
+    "model_tp": 10,
+    "model_fp": 13,
+    "model_precision": 0.43478260869565216,
+    "model_clean_fp": 4,
+    "model_only_extra": [
+      "K04",
+      "K05",
+      "K08"
+    ],
+    "combined_recall": 1.0,
+    "combined_detected": 10,
+    "combined_precision": null,
+    "false_positive_list": [
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Tartar builds up on a timeline that is similar for most people",
+        "why": "Tartar formation rates vary considerably between individuals, no source is given, and the claim conflicts with the post's own 'heavy tartar "
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "fact_vs_ficha",
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "why": "The ficha lists these carriers as accepted, not as in network, and in-network status is a specific contractual claim that cannot be verified"
+      },
+      {
+        "file": "clean/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "If you are new to us and paying without insurance, the new patient exam with X-rays is $12",
+        "why": "The ficha confirms the $129 new patient exam with X-rays but does not say it applies only to patients paying without insurance."
+      },
+      {
+        "file": "clean/03-is-teeth-whitening-safe.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Whitening is one of the most requested cosmetic treatments, and one of the most misunderst",
+        "why": "The claim that whitening is among the most requested cosmetic treatments is a checkable statistic-style statement with no source, and the fi"
+      },
+      {
+        "file": "heldout2/01-how-often-dental-cleaning.md",
+        "severity": "block",
+        "type": "broken_or_fake_source",
+        "quote": "[cleanings and exams page](/services/cleanings-exams)",
+        "why": "The ficha lists /services/cleanings-exams as the page path but the post links to /services/cleanings-exams, which does not exist; the valid "
+      },
+      {
+        "file": "heldout2/01-how-often-dental-cleaning.md",
+        "severity": "warn",
+        "type": "fact_vs_ficha",
+        "quote": "We are in network with Delta Dental, Cigna and MetLife",
+        "why": "The ficha says these carriers are accepted, not that the clinic is in network, so the stronger claim is unsupported."
+      },
+      {
+        "file": "heldout2/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "while a bridge is typically completed in fewer visits",
+        "why": "Treatment-timeline comparison is checkable but has no supporting source and varies by case."
+      },
+      {
+        "file": "heldout2/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "most patients describe soreness afterward rather than sharp pain",
+        "why": "A statement about what most patients experience is unsourced and could set a pain expectation the clinic cannot guarantee."
+      },
+      {
+        "file": "heldout2/02-dental-implants-vs-bridges.md",
+        "severity": "warn",
+        "type": "schema_incoherent",
+        "quote": "\"publisher\": {\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\", \"telephone\": \"(512) ",
+        "why": "A Dentist is a local business type used as the publisher of a BlogPosting, where Organization is expected, and it lacks a url or address; th"
+      },
+      {
+        "file": "heldout2/03-is-teeth-whitening-safe.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Whitening is one of the most requested cosmetic treatments, and one of the most misunderst",
+        "why": "This is a checkable popularity claim with no supporting source or clinic data."
+      },
+      {
+        "file": "heldout2/03-is-teeth-whitening-safe.md",
+        "severity": "warn",
+        "type": "unsourced_claim",
+        "quote": "Pregnancy or breastfeeding, where many dentists advise waiting.",
+        "why": "The claim about what many dentists advise is plausible but has no cited ADA or NIDCR support."
+      },
+      {
+        "file": "heldout2/03-is-teeth-whitening-safe.md",
+        "severity": "warn",
+        "type": "schema_incoherent",
+        "quote": "\"publisher\": {\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\", \"telephone\": \"(512) ",
+        "why": "A Dentist is a local business type, not a valid publisher, which should be an Organization, and the JSON-LD omits the address even though th"
+      },
+      {
+        "file": "heldout2/04-dental-emergency-austin.md",
+        "severity": "warn",
+        "type": "schema_incoherent",
+        "quote": "\"publisher\": {\"@type\": \"Dentist\"",
+        "why": "A BlogPosting publisher should be an Organization, and this entry omits the address and URL that appear in the visible text. The reviewer (D"
+      }
+    ]
+  }
+}

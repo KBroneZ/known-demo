@@ -1,0 +1,97 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "qa/fixtures/posts/heldout2/04-dental-emergency-austin.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 3
+  },
+  "findings": [
+    {
+      "rule": "medical_myth",
+      "severity": "block",
+      "line": 18,
+      "evidence": "scrub it",
+      "message": "Knocked-out teeth must not be scrubbed or soaped; rinse gently with water or milk.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "fake_testimonial",
+      "severity": "block",
+      "line": 34,
+      "evidence": "A patient who came in last month with a cracked molar on a Thursday evening told",
+      "message": "Patient testimonial with none on file (FTC 16 CFR 465 risk).",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "hours_mismatch",
+      "severity": "block",
+      "line": 36,
+      "evidence": "Friday from 8 a.m. to 5 p.m.",
+      "message": "Hours for fri do not match the ficha.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v2/prompts/heldout2-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.037466,
+    "output": "qa/reports/model-sonnet-v2/llm/heldout2-04-dental-emergency-austin.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "and on Friday from 8 a.m. to 5 p.m.",
+        "type": "fact_vs_ficha",
+        "kind": "error",
+        "severity": "block",
+        "why": "The ficha lists Friday hours as 8:00 to 13:00 (1 p.m.), so this overstates opening hours and could send an emergency patient to a closed office.",
+        "fix": "Change to 'on Friday from 8 a.m. to 1 p.m.'",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "A patient who came in last month with a cracked molar on a Thursday evening told us she was out the door pain-free within the hour.",
+        "type": "testimonial",
+        "kind": "error",
+        "severity": "block",
+        "why": "No testimonials are on file, so this is an invented patient story. It also implies a pain-free-within-the-hour outcome, and Thursday evening is outside the listed 8-5 hours.",
+        "fix": "Delete the anecdote and describe the emergency service factually, without outcome claims.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "scrub it clean with soap and warm water before you put it back",
+        "type": "false_medical_claim",
+        "kind": "error",
+        "severity": "block",
+        "why": "ADA/NIDCR guidance is to rinse a dirty tooth gently with water only, without scrubbing or using soap or chemicals, because this damages the root cells needed for reattachment.",
+        "fix": "Replace with 'rinse it gently with water for a few seconds, without scrubbing or using soap, and do not remove attached tissue'.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "Dental emergencies rarely happen at a convenient time.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "This is a generic, formulaic opener typical of AI-written text.",
+        "fix": "Open with something specific, such as the first-hour steps for a knocked-out tooth.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "\"publisher\": {\"@type\": \"Dentist\", \"name\": \"Bluebonnet Hollow Dental\", \"telephone\": \"(512) 555-0142\"}",
+        "type": "schema_incoherent",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The values match the visible text, but a Dentist type as publisher and the missing address and reviewer make the markup thin.",
+        "fix": "Consider an Organization publisher with the full address and add reviewedBy for Dr. Marcus Oyelaran.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout2-04-dental-emergency-austin"
+}

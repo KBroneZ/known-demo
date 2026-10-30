@@ -1,0 +1,96 @@
+{
+  "post": "01-how-often-dental-cleaning",
+  "file": "qa/fixtures/posts/heldout2/01-how-often-dental-cleaning.md",
+  "verdict": "BLOQUEAR",
+  "deterministic_verdict": "BLOQUEAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 3,
+    "block": 1
+  },
+  "findings": [
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "ai_phrase",
+      "severity": "warn",
+      "line": 14,
+      "evidence": "Let's delve",
+      "message": "Typical AI-writing phrase; rewrite with a concrete detail.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 18,
+      "evidence": "Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade.",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    },
+    {
+      "rule": "schema_mismatch",
+      "severity": "block",
+      "line": 44,
+      "evidence": "author.name: schema='Dr. Elena Marsh' vs post='Dr. Marcus Oyelaran'",
+      "message": "JSON-LD 'author.name' does not match the post.",
+      "layer": "deterministic"
+    }
+  ],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-haiku-v2/prompts/heldout2-01-how-often-dental-cleaning.prompt.md",
+    "cost_usd": 0.0024657999999999998,
+    "output": "qa/reports/model-haiku-v2/llm/heldout2-01-how-often-dental-cleaning.llm.txt",
+    "verdict": "BLOQUEAR",
+    "model_verdict": "BLOQUEAR",
+    "raw_verdict": "BLOQUEAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "Studies have found that people who keep a twice-yearly schedule lose about a third fewer teeth over a decade.",
+        "type": "unsourced_claim",
+        "kind": "error",
+        "severity": "warn",
+        "why": "This specific statistic has no citation or link, and I cannot verify it, so it could mislead readers if it is invented or misquoted.",
+        "fix": "Cite the specific study with a working link, or remove the statistic and state the general guidance without a number.",
+        "raw_severity": "warn"
+      },
+      {
+        "quote": "\"author\": {\"@type\": \"Person\", \"name\": \"Dr. Elena Marsh\"}",
+        "type": "schema_incoherent",
+        "kind": "error",
+        "severity": "block",
+        "why": "The JSON-LD names Dr. Elena Marsh as author, but the visible front matter lists Dr. Marcus Oyelaran as author and Dr. Elena Marsh only as reviewer.",
+        "fix": "Set the schema author to Dr. Marcus Oyelaran to match the byline, keeping Dr. Elena Marsh as reviewer if the schema supports it.",
+        "raw_severity": "block"
+      },
+      {
+        "quote": "our front desk can check your benefits before you come in",
+        "type": "unsourced_claim",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The ficha does not describe a benefits-check service, so this operational claim is unverified, though it is low risk.",
+        "fix": "Confirm the front desk offers this service and keep it, or drop it and point readers to the contact page.",
+        "raw_severity": "info"
+      },
+      {
+        "quote": "Let's delve into what actually drives the right interval for you.",
+        "type": "ai_tell",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The word \"delve\" and the \"Let's\" opener are stock AI phrasing that reads less natural than a plain sentence.",
+        "fix": "Replace it with a direct sentence such as \"Here is what actually determines the right interval for you.\"",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "heldout2-01-how-often-dental-cleaning"
+}

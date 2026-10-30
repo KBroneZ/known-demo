@@ -1,0 +1,42 @@
+{
+  "name": "r0",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.51,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0036132000000000004,
+    "seconds": 21.7,
+    "findings": [
+      {
+        "quote": "A new patient exam and X-rays are $129.",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha limits the $129 new patient exam with X-rays to new patients paying without insurance, but the post states the price with no condition.",
+        "fix": "Add the qualifier, e.g. \"For new patients paying without insurance, the new patient exam and X-rays are $129.\"",
+        "downgraded_from": "block"
+      },
+      {
+        "quote": "In-office whitening is $395. The new patient exam and X-rays are $129.",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The FAQ answer drops the ficha's condition (new patients paying without insurance) on the $129 price, so the answer is inaccurate as written.",
+        "fix": "Restate the FAQ answer with the same qualifier used in the ficha, and make the FAQ answer match the body text.",
+        "downgraded_from": "block"
+      },
+      {
+        "quote": "The ADA's [MouthHealthy page on whitening](https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening) covers sensitivity and what to ask your dentist.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "I cannot verify from this review that the linked page contains the sensitivity and dentist-question content the post attributes to it.",
+        "fix": "Open the link, confirm the page covers sensitivity and questions to ask, and quote or paraphrase only what it says, or remove the content claim."
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 2,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

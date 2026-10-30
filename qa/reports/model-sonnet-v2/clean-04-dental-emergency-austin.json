@@ -1,0 +1,36 @@
+{
+  "post": "04-dental-emergency-austin",
+  "file": "qa/fixtures/posts/clean/04-dental-emergency-austin.md",
+  "verdict": "PUBLICAR",
+  "deterministic_verdict": "PUBLICAR",
+  "link_mode": "offline-cache",
+  "counts": {
+    "info": 0,
+    "warn": 0,
+    "block": 0
+  },
+  "findings": [],
+  "llm": {
+    "status": "ok",
+    "backend": "claude",
+    "prompt": "qa/reports/model-sonnet-v2/prompts/clean-04-dental-emergency-austin.prompt.md",
+    "cost_usd": 0.031354,
+    "output": "qa/reports/model-sonnet-v2/llm/clean-04-dental-emergency-austin.llm.txt",
+    "verdict": "PUBLICAR",
+    "model_verdict": "PUBLICAR",
+    "raw_verdict": "PUBLICAR",
+    "verdict_note": "",
+    "findings": [
+      {
+        "quote": "A dental cement from a pharmacy can hold it in place temporarily, but a dentist needs to see it soon, since the tooth underneath is exposed.",
+        "type": "other",
+        "kind": "suggestion",
+        "severity": "info",
+        "why": "The advice is consistent with mainstream guidance, but it does not warn readers against household adhesives such as super glue.",
+        "fix": "Add a short line telling readers to use only pharmacy dental cement and never household glue.",
+        "raw_severity": "info"
+      }
+    ]
+  },
+  "name": "clean-04-dental-emergency-austin"
+}

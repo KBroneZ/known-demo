@@ -1,0 +1,17 @@
+{
+  "colors": {
+    "primary": "#7a3b1a",
+    "primaryContrast": "#ffffff",
+    "accent": "#2a9d8f",
+    "bg": "#fffaf5",
+    "surface": "#f6ebe0",
+    "text": "#2b1d14",
+    "muted": "#6b5444",
+    "border": "#e4d2c1"
+  },
+  "fonts": {
+    "heading": "'Trebuchet MS', 'Segoe UI', sans-serif",
+    "body": "'Segoe UI', system-ui, -apple-system, Roboto, sans-serif"
+  },
+  "radius": "14px"
+}

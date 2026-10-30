@@ -1,0 +1,33 @@
+{
+  "name": "r1",
+  "rules_verdict": "PUBLICAR",
+  "rules_seconds": 0.35,
+  "rules_findings": [],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.0032474,
+    "seconds": 18.7,
+    "findings": [
+      {
+        "quote": "Many people ask, \"Can my teeth be this bad off after a six-month checkup?\"",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The \"many people ask\" framing is an unsupported statistic-style claim with no source, and it reads like a generic AI-written hook.",
+        "fix": "Remove the \"many people ask\" framing and state the point directly, e.g. \"A cavity can be small and hard to detect at one visit.\""
+      },
+      {
+        "quote": "Many patients also ask whether they can see the same dentist for the checkup and the cavity treatment.",
+        "type": "unsourced_claim",
+        "severity": "warn",
+        "why": "The frequency of patient questions is not in the ficha or any cited source, so the claim is unverified.",
+        "fix": "Delete the sentence or rephrase it as a practical instruction, e.g. \"You can ask us to book the checkup and treatment with the same dentist.\""
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 0,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

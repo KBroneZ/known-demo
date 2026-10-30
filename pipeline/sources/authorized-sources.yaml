@@ -1,0 +1,38 @@
+# Pool of external pages a post may link to. Every URL was opened on 2026-10-30 (HTTP 200).
+# The writer may link ONLY to URLs in this file. A topic with no matching entry gets no external link and must
+# make no statistic or study claim. Add a source only after opening it and reading that it says what the post uses it for.
+# aae.org and cdc.gov are left out on purpose: they answer 403 to scripts, so the link check can only say "could not confirm".
+sources:
+  - url: https://www.mouthhealthy.org/all-topics-a-z/fluoride
+    publisher: American Dental Association (MouthHealthy)
+    covers: [fluoride, toothpaste, cavity prevention]
+  - url: https://www.mouthhealthy.org/all-topics-a-z/root-canals
+    publisher: American Dental Association (MouthHealthy)
+    covers: [root canal, root canals, endodontic, tooth nerve, infected tooth]
+  - url: https://www.mouthhealthy.org/all-topics-a-z/bridges
+    publisher: American Dental Association (MouthHealthy)
+    covers: [bridge, bridges, crown, crowns, missing tooth]
+  - url: https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening
+    publisher: American Dental Association (MouthHealthy)
+    covers: [whitening, bleaching, stain, sensitivity]
+  - url: https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies
+    publisher: American Dental Association (MouthHealthy)
+    covers: [emergency, knocked-out tooth, toothache, broken tooth, lost crown]
+  - url: https://www.mouthhealthy.org/all-topics-a-z/fillings-tooth-colored/
+    publisher: American Dental Association (MouthHealthy)
+    covers: [filling, fillings, composite, tooth-colored, cavity]
+  - url: https://www.nidcr.nih.gov/health-info/tooth-decay
+    publisher: National Institute of Dental and Craniofacial Research (NIH)
+    covers: [cavity, cavities, tooth decay, caries, filling]
+  - url: https://www.nidcr.nih.gov/health-info/gum-disease
+    publisher: National Institute of Dental and Craniofacial Research (NIH)
+    covers: [gum disease, gingivitis, periodontitis, bleeding gums, cleaning]
+  - url: https://www.nidcr.nih.gov/health-info/dental-fillings
+    publisher: National Institute of Dental and Craniofacial Research (NIH)
+    covers: [filling, fillings, composite, amalgam]
+  - url: https://www.aapd.org/resources/parent/faq/
+    publisher: American Academy of Pediatric Dentistry
+    covers: [child, children, kids, pediatric, baby teeth, first visit]
+  - url: https://medlineplus.gov/dentalhealth.html
+    publisher: MedlinePlus (US National Library of Medicine)
+    covers: [dental health, checkup, cleaning, brushing, flossing]

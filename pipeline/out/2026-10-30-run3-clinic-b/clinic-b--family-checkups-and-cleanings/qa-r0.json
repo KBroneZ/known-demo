@@ -1,0 +1,58 @@
+{
+  "name": "r0",
+  "rules_verdict": "CORREGIR",
+  "rules_seconds": 0.35,
+  "rules_findings": [
+    {
+      "rule": "unsourced_stat",
+      "severity": "warn",
+      "line": 62,
+      "evidence": "Our [family checkups and cleanings](/services/family-checkups) include exams and cleanings for every age in on",
+      "message": "Statistic or study claim with no source link in the paragraph.",
+      "layer": "deterministic"
+    }
+  ],
+  "link_mode": "online",
+  "model": {
+    "status": "ok",
+    "model": "haiku",
+    "cost_usd": 0.004077600000000001,
+    "seconds": 26.5,
+    "findings": [
+      {
+        "quote": "Yes, the whole family can book on the same day. Call us and ask for appointments together.",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha says same-day family booking is only \"Often, yes\" and that the front desk will look for back-to-back times, so the post's unconditional \"Yes\" overstates what the clinic offers.",
+        "fix": "Change to \"Often, yes. Tell our front desk how many people you are booking and we will look for back-to-back times.\"",
+        "downgraded_from": "block"
+      },
+      {
+        "quote": "Yes. Call (512) 555-0176 and ask for appointments on the same day for everyone in your family. Dr. Priya Raman sees adults and Dr. Tomas Alvarez sees children.",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "This FAQ answer repeats the unconditional same-day promise from the ficha's conditional \"Often, yes\" wording, and it appears in the front matter, the visible FAQ and the FAQPage JSON-LD.",
+        "fix": "Replace with the ficha wording (\"Often, yes\" plus back-to-back scheduling on request) in the front matter, the visible FAQ and the FAQPage JSON-LD so they match.",
+        "downgraded_from": "block"
+      },
+      {
+        "quote": "Cavities do not heal on their own, and a spot between your teeth can grow without much warning",
+        "type": "false_medical_claim",
+        "severity": "warn",
+        "why": "This is an oversimplification: early enamel lesions can remineralize with fluoride, while cavities that have reached dentin do not heal on their own, so the absolute wording overstates the case.",
+        "fix": "Say \"Cavities that have reached the tooth's inner layers do not heal on their own; your dentist can tell whether a spot needs treatment or can be monitored.\""
+      },
+      {
+        "quote": "Dr. Priya Raman sees adults and Dr. Tomas Alvarez sees children.",
+        "type": "fact_vs_ficha",
+        "severity": "warn",
+        "why": "The ficha assigns Dr. Raman general, restorative and emergency care and Dr. Alvarez children's dentistry, but it does not say Dr. Raman sees only adults.",
+        "fix": "Use the ficha's own wording, for example \"Dr. Priya Raman provides general and restorative care and Dr. Tomas Alvarez focuses on children's dentistry.\""
+      }
+    ],
+    "dropped_unverifiable_url": 0,
+    "downgraded_blocks": 2,
+    "verdict": "CORREGIR"
+  },
+  "verdict": "CORREGIR"
+}

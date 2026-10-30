@@ -1,0 +1,46 @@
+{
+  "clinic": "clinic-a",
+  "service": "Tooth-colored fillings",
+  "topic": "Does getting a tooth-colored filling hurt?",
+  "dir": "clinic-a--tooth-colored-fillings",
+  "status": "published",
+  "rounds": 0,
+  "verdict_path": [
+    "PUBLICAR"
+  ],
+  "human_review": [
+    "Dentist sign-off on clinical statements (reviewer of record: see reviewed_by)",
+    "Open each external link in a browser (the check only fetches status codes)",
+    "2 model style suggestion(s) were logged and did not block; see qa-r*.json"
+  ],
+  "slug": "does-tooth-colored-filling-hurt-what-expect",
+  "verdict": "PUBLICAR",
+  "pages_route_added": true,
+  "published_to": "web/sites/clinic-a/src/content/posts/does-tooth-colored-filling-hurt-what-expect.md",
+  "calls": [
+    {
+      "stage": "draft",
+      "model": "sonnet",
+      "cost_usd": 0.03828,
+      "seconds": 22.2,
+      "input_tokens": 2,
+      "output_tokens": 2650,
+      "cache_read_tokens": 0
+    },
+    {
+      "stage": "qa-r0",
+      "model": "sonnet",
+      "cost_usd": 0.05448,
+      "seconds": 19.6
+    }
+  ],
+  "stage_seconds": {
+    "brief": 0.0,
+    "draft": 22.24,
+    "qa": 21.82
+  },
+  "cost_usd": 0.0928,
+  "input_tokens": 2,
+  "output_tokens": 2650,
+  "wall_seconds": 44.1
+}

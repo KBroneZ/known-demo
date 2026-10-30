@@ -1,5 +1,7 @@
 # Known demo: sites, posts, QA and AI-visibility measurement
 
+[![CI](https://github.com/KBroneZ/known-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/KBroneZ/known-demo/actions/workflows/ci.yml)
+
 Built by Andrew Rodrigo in October 2026, mostly with Claude Code agents, the way Known works. Every number below comes from a run in this repo; each folder's README says how to reproduce it. Where something did not work, it says so.
 
 The clinics in `web/`, `qa/` and `pipeline/` are **fictional** (555 phone numbers, `.example` domains). The tracker measured **real** Austin practices from public directories, shown anonymised as Practice A–H. They are a sample, not clients and not a ranking.

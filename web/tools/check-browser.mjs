@@ -59,6 +59,22 @@ const VITALS = `(() => { window.__v = { cls: 0, lcp: 0 };
   new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) window.__v.cls += e.value; }).observe({ type: 'layout-shift', buffered: true });
   new PerformanceObserver(l => { for (const e of l.getEntries()) window.__v.lcp = e.startTime; }).observe({ type: 'largest-contentful-paint', buffered: true }); })()`;
 
+// Runs in the page: width overflow plus the element that sticks out furthest, so a failure names its cause.
+function overflowProbe() {
+  const vw = window.innerWidth;
+  let culprit = 'none';
+  let worst = 0;
+  for (const el of document.body.querySelectorAll('*')) {
+    const over = el.getBoundingClientRect().right - vw;
+    if (over > 0 && over >= worst) {
+      worst = over;
+      const cls = typeof el.className === 'string' && el.className ? '.' + el.className.trim().split(/\s+/)[0] : '';
+      culprit = `${el.tagName.toLowerCase()}${cls} "${(el.textContent || '').trim().slice(0, 40)}"`;
+    }
+  }
+  return { ...window.__v, overflow: document.documentElement.scrollWidth - vw, culprit };
+}
+
 export async function checkBrowser(sites) {
   const exe = BROWSERS.find((b) => fs.existsSync(b));
   if (!exe) throw new Error('no local Chrome/Edge found for puppeteer-core');
@@ -106,11 +122,9 @@ export async function checkBrowser(sites) {
             violations += v.nodes;
             rep.ok(false, `${route} [${label}]: axe ${v.id} (${v.impact}) x${v.nodes}, e.g. ${v.sample}`);
           }
-          const m = await page.evaluate(() => ({
-            ...window.__v,
-            overflow: document.documentElement.scrollWidth - window.innerWidth,
-          }));
-          if (label === 'mobile') rep.ok(m.overflow <= 0, `${route}: horizontal overflow ${m.overflow}px at 375px`);
+          const m = await page.evaluate(overflowProbe);
+          if (label === 'mobile')
+            rep.ok(m.overflow <= 0, `${route}: horizontal overflow ${m.overflow}px at 375px, widest: ${m.culprit}`);
           if (label === 'desktop') vitals.push({ route, lcp: m.lcp, cls: m.cls });
           await page.close();
         }

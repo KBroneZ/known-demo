@@ -8,7 +8,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { WEB_ROOT, Report, listSites, isMain } from '../lib.mjs';
-import { snapshot, diffSite, diffFailed } from '../golden.mjs';
+import { snapshot, diffSite, diffFailed, stableCids } from '../golden.mjs';
 import { checkParity } from '../check-fixture-parity.mjs';
 import { safeJson, cssTokens } from '../../packages/theme/src/lib/safe.ts';
 import { ThemeSchema, ClinicSchema } from '../../packages/schema/src/index.ts';
@@ -106,6 +106,15 @@ test('golden diff fails on an empty golden, on pages added since approval, and o
   const footerOnly = diffSite('clinic-a', 'footer', g);
   assert.equal(footerOnly.regionOnly, 1);
   assert.equal(diffFailed(footerOnly), false, 'a footer-only change is allowed');
+});
+
+test('stableCids ignores where the repo was built but still sees a real change', () => {
+  const page = (x, y, text) =>
+    `<style>a[data-astro-cid-${x}]{color:red}</style><a data-astro-cid-${x}>${text}</a><p data-astro-cid-${y}></p>`;
+  assert.equal(stableCids(page('2dxizym6', 'ng5hga67', 'Book')), stableCids(page('k3j9qa01', 'p0x7rr2b', 'Book')));
+  assert.notEqual(stableCids(page('2dxizym6', 'ng5hga67', 'Book')), stableCids(page('k3j9qa01', 'p0x7rr2b', 'Call')));
+  // two ids collapsing into one is a structural change, not a rename
+  assert.notEqual(stableCids(page('aaaaaaaa', 'bbbbbbbb', 'Book')), stableCids(page('aaaaaaaa', 'aaaaaaaa', 'Book')));
 });
 
 test('golden snapshot refuses to overwrite with a site that has no built HTML', () => {

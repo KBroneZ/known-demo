@@ -3,6 +3,9 @@
 //   golden.mjs diff [--region footer]   compare dist/ with golden/
 // A page "may change only in <region>" means: HTML outside that region is byte-identical and the
 // visible text outside it is identical (content text diff = 0).
+// Before comparing, Astro's scoped-style ids (data-astro-cid-<hash>) are renamed in order of first appearance.
+// Astro hashes the absolute path of components that live outside the site root (the shared theme), so the hash
+// changes with the checkout folder and the OS; the renaming keeps every other byte of the comparison exact.
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
@@ -30,6 +33,15 @@ export function snapshot(site, golden = GOLDEN) {
 }
 
 const norm = (s) => s.replace(/\s+/g, ' ').trim();
+
+/** Rename each distinct astro-cid-<hash> to astro-cid-<n>, numbered by first appearance in the page. */
+export function stableCids(html) {
+  const ids = new Map();
+  return html.replace(/astro-cid-[a-z0-9]+/g, (cid) => {
+    if (!ids.has(cid)) ids.set(cid, `astro-cid-${ids.size}`);
+    return ids.get(cid);
+  });
+}
 
 /** Split HTML into [before, region, after]. Region = <tag data-region="name">...</tag>. */
 function split(html, region) {
@@ -70,8 +82,8 @@ export function diffSite(site, region, golden = GOLDEN) {
       res.missing.push(rel);
       continue;
     }
-    const a = fs.readFileSync(g, 'utf8');
-    const b = fs.readFileSync(cur, 'utf8');
+    const a = stableCids(fs.readFileSync(g, 'utf8'));
+    const b = stableCids(fs.readFileSync(cur, 'utf8'));
     if (a === b) {
       res.unchanged++;
       continue;

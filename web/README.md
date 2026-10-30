@@ -83,7 +83,7 @@ run that by hand on a sample before launch. The evidence that the gates are not 
 
 `npm run prove:scale` first checks that the current build equals the approved `golden/` (which it never rewrites),
 then edits one template (`Footer.astro`), rebuilds all sites and compares every page with a scratch snapshot.
-"Only the footer changed" means: HTML outside `<footer>` is byte-identical and the visible text outside it is identical.
+"Only the footer changed" means: HTML outside `<footer>` is byte-identical and the visible text outside it is identical. The one exception is Astro's scoped-style ids (`data-astro-cid-<hash>`): Astro hashes the absolute path of the shared theme's components, so the hash depends on the checkout folder and the OS. The diff renames each id in order of first appearance before comparing (`stableCids` in `tools/golden.mjs`, with a test), so the golden snapshots pass on any machine and in CI.
 A negative control (editing the CTA outside the footer) must be flagged, and the templates are restored and rebuilt at the end.
 Measured on 2 sites; it shows the mechanism, not behavior at 50 sites.
 

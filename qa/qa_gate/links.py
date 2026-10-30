@@ -22,7 +22,9 @@ from urllib.parse import urljoin, urlparse
 from .findings import BLOCK, WARN, Finding
 from .loader import Clinic, Post
 
-MD_LINK_RE = re.compile(r"\[([^\]]*)\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\s*\)")
+# A Markdown link target may hold balanced parentheses, as in https://en.wikipedia.org/wiki/Titan_(submersible).
+MD_URL = r"(?:[^()\s<>]|\([^()\s<>]*\))+"
+MD_LINK_RE = re.compile(rf"\[([^\]]*)\]\(\s*<?({MD_URL})>?(?:\s+\"[^\"]*\")?\s*\)")
 BARE_URL_RE = re.compile(r"https?://[^\s)\]<>\"']+")
 USER_AGENT = "Mozilla/5.0 (compatible; content-qa-gate/1.0)"
 HEAD_FALLBACK_CODES = {400, 403, 405, 501}
@@ -119,6 +121,14 @@ def cache_lookup(cache: dict, url: str, max_age_days: int | None, today: date | 
     return entry
 
 
+LOCALE_ROOT_RE = re.compile(r"^/[a-z]{2}(?:[-_][a-zA-Z]{2,4})?/?$")
+
+
+def _is_root_path(path: str) -> bool:
+    """The site root, or a language root such as /en/ or /fr-ca: redirecting that to / is the home page itself."""
+    return path in ("", "/") or bool(LOCALE_ROOT_RE.match(path))
+
+
 def classify(lineno: int, url: str, result: dict | None, offline: bool = False) -> Finding | None:
     if result is None:
         return Finding(
@@ -134,7 +144,7 @@ def classify(lineno: int, url: str, result: dict | None, offline: bool = False) 
     status = result.get("status")
     if status is not None and 200 <= status < 400:
         final_path = urlparse(str(result.get("final") or url)).path
-        if final_path in ("", "/") and urlparse(url).path not in ("", "/"):
+        if final_path in ("", "/") and not _is_root_path(urlparse(url).path):
             return Finding(
                 "link_redirects_home",
                 WARN,
@@ -256,6 +266,8 @@ def check_links(
 ) -> tuple[list[Finding], dict]:
     """Return (findings, fresh_results) where fresh_results are URLs fetched from the network."""
     pages = {p.rstrip("/") or "/" for p in clinic.get("pages") or []}
+    # server-side redirect endpoints (affiliate cloaking such as /go/booking) are not in a sitemap but are not broken
+    redirect_prefixes = tuple(p.rstrip("/") + "/" for p in clinic.get("redirect_prefixes") or [])
     base_path = f"/blog/{post.frontmatter.get('slug') or 'post'}"
     cache = cache or {}
     findings: list[Finding] = []
@@ -280,7 +292,7 @@ def check_links(
             continue
         path = _internal_path(url, clinic, base_path)
         if path is not None:
-            if path not in pages:
+            if path not in pages and not path.startswith(redirect_prefixes):
                 findings.append(
                     Finding(
                         "link_broken_internal",
@@ -314,8 +326,12 @@ def check_links(
     judge = classify_travel if clinic.get("profile") == "travel" else classify
     for lineno, url in external:
         finding = judge(lineno, url, results.get(url), offline)
-        if finding and finding.rule == "link_redirects_home" and _is_affiliate_redirector(url, clinic):
-            continue  # an affiliate short link is meant to land on the merchant's front page with the tracking tag
+        if (
+            finding
+            and finding.rule in ("link_redirects_home", "link_moved_domain")
+            and _is_affiliate_redirector(url, clinic)
+        ):
+            continue  # an affiliate short link is meant to land on the merchant's site with the tracking tag
         if finding:
             findings.append(finding)
     return findings, fresh

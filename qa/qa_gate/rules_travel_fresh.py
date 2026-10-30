@@ -9,16 +9,20 @@ from datetime import date
 from .findings import WARN, Finding
 from .loader import Clinic, Post
 from .rules_structure import _key_line
+from .spans import inside_citation
 from .travel_text import MONTHS, dates_in, parse_any_date, quantities, safe_date, units
 
 DEFAULT_REVIEW_MAX_AGE_DAYS = 180
 DEFAULT_STAMP_GRACE_DAYS = 30
 ASOF_UNIT_RE = re.compile(
-    r"\b(?:as of|checked|reviewed|updated|verified|confirmed|published|accessed|retrieved|last updated)\b", re.I
+    r"\b(?:as of|checked|reviewed|updated|verified|verification|confirmed|published|accessed|retrieved|last updated)\b",
+    re.I,
 )
 PAST_RE = re.compile(
     r"\b(?:was|were|had|took place|held|ended|opened|closed|launched|founded|built|completed|last year|"
-    r"previously|used to|ran|began in|since)\b",
+    r"previously|used to|ran|began in|since|fielded|surveyed|conducted|published|released|announced|reported|"
+    r"introduced|changed|affected|switched|broke|raised|increased|rolled out|took effect|came into effect|signed|"
+    r"amended|issued)\b",
     re.I,
 )
 ASOF_RE = re.compile(
@@ -26,6 +30,7 @@ ASOF_RE = re.compile(
     r"correct as of|current as of|accurate as of|last checked)\b",
     re.I,
 )
+PRICE_ASOF_RE = re.compile(r"prices?", re.I)
 REVIEWED_RE = re.compile(r"\blast reviewed[:\s]+([^\n|]+)", re.I)
 
 
@@ -64,8 +69,15 @@ def _resolve_year(mention, post: Post) -> int | None:
     return year + 1 if start and start < published else year
 
 
+def _history(mention, end: date, text: str, published: date | None) -> bool:
+    """A date from an earlier year than the post, or one that sits inside a '(source: ...)' citation, is history or
+    a reference, not an event the post presents as coming."""
+    return bool(published and end.year < published.year) or inside_citation(text, mention.start)
+
+
 def check_event_dates(post: Post, today: date) -> list[Finding]:
     out = []
+    published = parse_any_date(post.frontmatter.get("date"))
     for unit in units(post):
         if unit.skipped or ASOF_UNIT_RE.search(unit.text) or PAST_RE.search(unit.text):
             continue
@@ -76,7 +88,7 @@ def check_event_dates(post: Post, today: date) -> list[Finding]:
                 if year
                 else None
             )
-            if end and end < today:
+            if end and end < today and not _history(d, end, unit.text, published):
                 out.append(
                     Finding(
                         "event_date_past",
@@ -137,7 +149,10 @@ def _as_of_dates(post: Post) -> list[date]:
     if declared:
         found.append(declared)
     for _, text in post.prose:
+        has_price = any(q.kind == "price" for q in quantities(text))
         for m in ASOF_RE.finditer(text):
+            if not (has_price or PRICE_ASOF_RE.match(m.group())):
+                continue  # "as of December 2022" about luggage rules does not date the prices
             parsed = parse_any_date(text[m.end() : m.end() + 40])
             if parsed:
                 found.append(parsed)

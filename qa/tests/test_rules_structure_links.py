@@ -110,6 +110,15 @@ def test_extract_links_markdown_and_bare(make_post):
     assert urls.count("https://a.example/x") == 1
 
 
+def test_extract_links_keeps_balanced_parentheses_in_the_url(make_post):
+    post = make_post(
+        "See [Ferry (boat)](https://wiki.example/wiki/Ferry_(boat)) and [b](https://b.example/a_(x)_(y)).\n\n"
+        "Then (see [c](https://c.example/z)) after."
+    )
+    urls = [u for _, u in links.extract_links(post)]
+    assert urls == ["https://wiki.example/wiki/Ferry_(boat)", "https://b.example/a_(x)_(y)", "https://c.example/z"]
+
+
 def test_internal_links_checked_against_ficha(make_post, clinic):
     post = make_post(
         "[ok](/services/cleanings-exams) [gone](/services/veneers) "

@@ -12,6 +12,7 @@ from .findings import BLOCK, WARN, Finding
 from .loader import Clinic, Post
 from .negation import is_negated
 from .rules_structure import DATE_RE, SLUG_RE, _key_line
+from .spans import inside_question, quoted_or_cited
 from .travel_text import HEADING_RE, SKIP_SECTIONS, clean_markdown
 
 REQUIRED_FIELDS = ("title", "description", "slug", "date", "updated", "author", "category")
@@ -26,7 +27,7 @@ VERIFIED_CLAIMS = (  # claims of testing or checking: need an evidence block (bl
     r"(?:tested|verified|cross-?checked|cross-?referenced|inspected|audited|measured|vetted)\b",
     r"\beditor'?s?'? verification\b",
     r"\bour editors? (?:verified|checked|cross-?referenced|confirmed|tested)\b",
-    r"\b(?:personally|independently) (?:tested|verified|checked)\b",
+    r"\bpersonally (?:tested|verified|checked)\b",
     r"\bhands-on (?:test|testing|review)\b|\bfirst-?hand (?:test|testing|experience)\b",
 )
 EXPERIENCE_CLAIMS = (  # a person says they were there or tried it (warn)
@@ -116,7 +117,7 @@ def check_sections(post: Post, site: Clinic) -> list[Finding]:
 
 
 def _scannable(text: str) -> str:
-    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    text = re.sub(rf"\[([^\]]*)\]\({links.MD_URL}[^)]*\)", r"\1", text)
     return re.sub(r"<https?://[^>]*>|https?://\S+|`[^`]*`", " ", text)
 
 
@@ -182,7 +183,7 @@ def _evidence_ranges(post: Post, site: Clinic) -> tuple[bool, set[int]]:
     heads = headings(post)
     inside, real = set(), False
     for i, (lineno, level, text) in enumerate(heads):
-        if not any(_norm(text).startswith(n) for n in names):
+        if not any(n in _norm(text) for n in names):
             continue
         end = next((h[0] for h in heads[i + 1 :] if h[1] <= level), 10**9)
         body = [(n, t) for n, t in post.prose if lineno < n < end]
@@ -200,13 +201,21 @@ def _denied(text: str, match: re.Match) -> bool:
     )
 
 
+def _is_claim(text: str, m: re.Match) -> bool:
+    """A match counts when the post says it about itself: not negated, not quoted, not a citation of another site's
+    headline ("We Tested 30 VPNs"), not a question the reader might ask."""
+    return not (_denied(text, m) or quoted_or_cited(text, m.start()) or inside_question(text, m.start()))
+
+
 def _first_claim(text: str, patterns, passive: bool = False):
     for p in patterns:
         for m in re.finditer(p, text, re.I):
-            if not _denied(text, m):
+            if _is_claim(text, m):
                 return m
     if passive:
-        return PASSIVE_TESTED.search(text)
+        m = PASSIVE_TESTED.search(text)
+        if m and _is_claim(text, m):
+            return m
     return None
 
 

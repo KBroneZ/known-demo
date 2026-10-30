@@ -120,8 +120,38 @@ def item_words(text: str, quals: frozenset[str], names: frozenset[str] = frozens
     """Content words of a unit, minus generic, qualifier and entity-name words:
     'tasting plate' vs 'walnut torte slice'."""
     skip = {w for q in quals for w in q.split()} | names
-    words = re.findall(r"\b[a-z][a-z'-]{3,}\b", text.lower())
+    words = re.findall(r"\b[a-z][a-z'-]{2,}\b", text.lower())
     return frozenset(_stem(w) for w in words if w not in GENERIC_WORDS and w not in skip)
+
+
+# "Standard" vs "Standard Plus": a tier word after the same name makes a different product, not the same entity
+TIER_WORDS = frozenset(
+    [
+        "plus",
+        "pro",
+        "max",
+        "premium",
+        "enhanced",
+        "deluxe",
+        "lite",
+        "mini",
+        "ultra",
+        "elite",
+        "prime",
+        "express",
+        "select",
+        "advanced",
+        "essential",
+        "essentials",
+        "basic",
+        "classic",
+        "family",
+        "vip",
+        "platinum",
+        "gold",
+        "silver",
+    ]
+)
 
 
 def same_entity(a: str, b: str) -> bool:
@@ -130,7 +160,8 @@ def same_entity(a: str, b: str) -> bool:
         return True
     ta, tb = a.split(), b.split()
     short, long_ = (ta, tb) if len(ta) <= len(tb) else (tb, ta)
-    return len(short) >= 2 and long_[: len(short)] == short
+    extra = long_[len(short) :]
+    return len(short) >= 2 and long_[: len(short)] == short and not TIER_WORDS.intersection(extra)
 
 
 def _nearest(phrases, start: int, end: int, gap: int = 50):

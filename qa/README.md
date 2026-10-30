@@ -41,7 +41,7 @@ python run_gate.py my-post.md --clinic my-clinic.yaml                     # live
 python run_gate.py my-post.md --llm claude --llm-model sonnet             # add the model layer
 python evaluate.py --set seeded|heldout|heldout2|heldout3                 # score the rules (add --online for live links)
 python evaluate.py --set heldout2 --with-llm --model-dir reports/model-sonnet   # score the model layer
-python -m pytest                                                          # 291 unit tests
+python -m pytest                                                          # 315 unit tests
 ```
 
 **Exit codes. CI should fail on any code of 2 or more.**
@@ -218,7 +218,7 @@ python run_gate.py post.md --clinic fixtures/travel/site.yaml --today 2026-10-30
 python evaluate.py --set travel-seeded     # or travel-heldout; add --with-llm --model-dir reports/model-sonnet-travel
 ```
 
-`site.yaml` keys: `required_sections` (a `## Sources` heading), `banned_characters` (em dash, `...`), `bylines` and
+`site.yaml` keys: `redirect_prefixes` (paths such as `/go/` that redirect server-side and are not in the sitemap), `required_sections` (a `## Sources` heading), `banned_characters` (em dash, `...`), `bylines` and
 `author_titles`, `evidence_headings` (what counts as a method section), `affiliate` (hosts, query params, disclosure
 phrases, optionally `disclosure_on_every_post`), `review_max_age_days`, `stamp_grace_days`, and `pages` (the internal page
 list, from the sitemap). `--today` fixes the check date so the staleness rules are reproducible.
@@ -279,6 +279,27 @@ test): table rows that share a category tag in parentheses are different product
 first-hand claims; affiliate short links may land on the merchant's front page; a 403 that also changed domain is
 reported as moved.
 
+### Full run on a real blog (30 Oct)
+
+The travel rules were then run on all 224 posts of a public travel blog (rules only, live link checks) and 231 findings
+were checked by hand in three stratified samples. Rules changed because of what the audit showed, each with a test
+(`tests/test_travel_full_run_fixes.py`): a bare "as an AI" describing a product is not chatbot residue; bracket slots
+inside a quoted prompt template and a "TBD" inside a sentence are not placeholders; a claim or an AI phrase inside a
+`(source: ...)` citation, a `Sources:` line, a link anchor, quotation marks or a question is not the post speaking;
+dates from an earlier year than the post, inside citations, next to past-tense or reporting verbs are history;
+an "as of" date counts for prices only when it sits on a line with a price; affiliate short links may end on the
+merchant's domain; a language root (`/en/`) redirecting to `/` is not a soft 404; "Standard" and "Standard Plus" are
+different products; acronyms, status flags (`SOLD OUT`) and monthly rates are not entities or the same quantity as a
+one-off price. The dental numbers and the travel fixture numbers did not change. The remaining false positives are mostly
+in `numeric_inconsistency` and `date_inconsistency`, which are heuristics; they stay WARN.
+
+Hand-checked precision on a fresh sample after those fixes: **75% of block findings fully right (95% right or
+defensible)**, 62% of all findings (78% with the defensible ones); dead links, missing Sources and moved domains were
+right in 93-100% of sampled cases, while the number and date contradiction heuristics were right in 14% and 0%. A single
+reviewer labelled everything, and the per-rule samples are small (2 to 24), so treat these as rough. A later
+check found one more false dead link: a URL with parentheses (`.../wiki/Titan_(submersible)`) was cut at the first
+`)`; link targets now keep balanced parentheses, with a test.
+
 ## Files
 
 ```
@@ -289,7 +310,7 @@ fixtures/posts/        clean/ seeded/ heldout/ heldout2/ heldout3/   (seeded bui
 fixtures/travel/       site.yaml, posts/{clean,seeded,heldout}, seeded-errors.json, heldout-errors.json, link-cache.json,
                        build_seeded.py (the blind set and heldout-link-status.json were written by a separate agent)
 fixtures/*-errors.json error lists; link-cache.json holds link results dated 2026-10-30
-tests/                 291 pytest tests (rules, links incl. a local HTTP server, CLI exit codes, scorer, model-answer parsing, travel)
+tests/                 315 pytest tests (rules, links incl. a local HTTP server, CLI exit codes, scorer, model-answer parsing, travel)
 skill/content-qa-gate/ Claude Code skill that explains how to use the gate
 reports/               JSON per post, SUMMARY.md, EVAL*.md, blind snapshots (EVAL-*-blind*.md), EVAL-travel-*, model-sonnet-travel/,
                        model-haiku/ and model-sonnet/ (raw model runs), model-eval/ (their scores),

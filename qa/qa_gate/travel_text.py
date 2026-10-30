@@ -6,6 +6,7 @@ import re
 from dataclasses import dataclass
 from datetime import date
 
+from .links import MD_URL
 from .loader import Post
 
 MONTHS = {
@@ -49,8 +50,8 @@ class Unit:
 
 
 def clean_markdown(text: str) -> str:
-    text = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", text)
-    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    text = re.sub(rf"!\[[^\]]*\]\({MD_URL}[^)]*\)", " ", text)
+    text = re.sub(rf"\[([^\]]*)\]\({MD_URL}[^)]*\)", r"\1", text)
     text = re.sub(r"<https?://[^>]*>|https?://\S+", " ", text)
     text = re.sub(r"`[^`]*`", " ", text)
     text = re.sub(r"[*_]{1,3}", "", text)
@@ -261,6 +262,8 @@ def entity_phrases(text: str, at_unit_start_ok: bool = False) -> list[tuple[int,
         if tail and kept[-1].lower() in NUMBERED:
             kept.append(tail.group(1))
             end += tail.end()
+        if all(t.isupper() or len(t) == 1 for t in kept) or (len(kept) == 1 and len(kept[0]) == 1):
+            continue  # US, TX, SOLD OUT, a stray "T" from "3T": acronyms and flags are not names
         if len(kept) == 1 and start == 0 and not at_unit_start_ok:
             continue  # "Prices ..." / "Plan ...": a capitalised word only because it opens the sentence
         out.append((start, end, " ".join(kept).lower()))
@@ -321,7 +324,7 @@ QUALIFIERS = (
     "until",
 )
 _QUAL_RE = re.compile(r"(?<![\w-])(?:" + "|".join(re.escape(q) for q in QUALIFIERS) + r")(?![\w-])", re.I)
-_DURATION_RE = re.compile(r"\b\d+[- ]?(?:day|night|hour|week|month|person|people|guest|passenger)s?\b", re.I)
+_DURATION_RE = re.compile(r"\b\d+[- ]?(?:day|night|hour|week|month|year|person|people|guest|passenger)s?\b", re.I)
 
 
 SLOT_QUALIFIERS = frozenset(
@@ -368,6 +371,12 @@ FLOOR_WORDS = ("from", "starting at", "starts at", "at least", "over", "more tha
 CAP_WORDS = ("up to", "under", "at most", "less than", "max", "maximum")
 
 
+RATE_RE = re.compile(
+    r"^\s*(?:/|per\s+|a\s+|each\s+)(mo(?:nth)?|y(?:ea)?r)\b|^\s*(monthly|yearly|annually)\b",
+    re.I,
+)
+
+
 def _num(text: str, k: str | None = None) -> float:
     return float(text.replace(",", "")) * (1000 if k else 1)
 
@@ -407,6 +416,9 @@ def quantities(text: str) -> list[Quantity]:
         hi = _num(m.group("b"), m.group("bk")) if m.group("b") else lo
         shape = bound_kind(text[: m.start()], m.group("plus"), bool(m.group("b")))
         cur = {"US$": "$", "USD": "$", "CA$": "CAD", "A$": "AUD"}.get(m.group("cur"), m.group("cur"))
+        rate = RATE_RE.match(text[m.end() :])
+        if rate:  # "$50/month" is a rate, not the same quantity as a one-off "$400"
+            cur += "/" + ("month" if (rate.group(1) or rate.group(2)).lower().startswith(("mo", "month")) else "year")
         out.append(
             Quantity("price", cur, shape, lo, hi, is_approx(text[: m.start()]), m.start(), m.end(), m.group().strip())
         )

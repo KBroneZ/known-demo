@@ -8,9 +8,11 @@ import re
 from .findings import BLOCK, INFO, WARN, Finding
 from .loader import Clinic, Post, paragraphs
 from .negation import is_negated
+from .spans import inside_citation, inside_link_text, inside_quotes
 
 CHATBOT_PATTERNS = (
-    r"\bas an? (?:ai|artificial intelligence)(?: language model| assistant)?\b",
+    r"\bas an? (?:ai|artificial intelligence)(?: language model| assistant)\b",
+    r"\bas an? (?:ai|artificial intelligence)\s*,",
     r"\bas an? (?:large )?language model\b",
     r"\bi(?:'m| am) (?:just )?an? (?:ai|language model)\b",
     r"\bi (?:cannot|can't|am unable to|do not have the ability to) (?:browse|provide medical|give medical|access)\b",
@@ -27,6 +29,7 @@ PLACEHOLDER_PATTERNS = (
     r"\{\{[^}]+\}\}",
     r"\bTODO\b|\bTBD\b|\blorem ipsum\b|\bXX+%",
 )
+BARE_TBD_RE = re.compile(r"^\W*TBD\W*$|\|\s*TBD\s*\|", re.I)
 AI_PHRASES = (
     r"in today'?s (?:fast[- ]paced|digital|modern|ever[- ]changing)\b",
     r"in the ever[- ]evolving\b",
@@ -164,6 +167,19 @@ def _sentence_start(text: str, pos: int) -> int:
     return cut + 2 if cut >= 0 else 0
 
 
+def _placeholder(text: str):
+    """First placeholder that is a leftover: a bracket slot inside quotes is a template the reader fills in, and a TBD
+    inside a sentence is a status ("dates TBD"); a bare TBD line or table cell, [TBD], TODO and {{ }} still count."""
+    for pattern in PLACEHOLDER_PATTERNS:
+        for m in re.finditer(pattern, text):
+            if m.group().startswith("[") and inside_quotes(text, m.start()):
+                continue
+            if m.group() == "TBD" and not BARE_TBD_RE.search(text) and text[m.start() - 1 : m.start()] != "[":
+                continue
+            return m
+    return None
+
+
 def check_chatbot(post: Post, clinic: Clinic) -> list[Finding]:
     out = []
     for lineno, text in post.prose:
@@ -172,7 +188,7 @@ def check_chatbot(post: Post, clinic: Clinic) -> list[Finding]:
             out.append(
                 Finding("chatbot_residue", BLOCK, lineno, m.group().strip(), "Chatbot residue left in the draft.")
             )
-        p = _first_match(PLACEHOLDER_PATTERNS, text, 0)
+        p = _placeholder(text)
         if p:
             out.append(Finding("placeholder", BLOCK, lineno, p.group().strip(), "Placeholder left in the draft."))
     return out
@@ -183,6 +199,8 @@ def check_ai_phrases(post: Post, clinic: Clinic) -> list[Finding]:
     for lineno, text in post.prose:
         for pattern in AI_PHRASES:
             for m in re.finditer(pattern, text, re.I):
+                if inside_citation(text, m.start()) or inside_link_text(text, m.start()):
+                    continue
                 out.append(
                     Finding(
                         "ai_phrase",
